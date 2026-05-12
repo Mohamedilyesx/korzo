@@ -1,0 +1,2523 @@
+
+<!DOCTYPE html>
+<html translate="no" class="notranslate" lang="ar" dir="rtl">
+<head>    <link href="/rappasoft/laravel-livewire-tables/core.min.css" rel="stylesheet" />     <link href="/rappasoft/laravel-livewire-tables/thirdparty.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="69t9UlksK9A2da1i5F9RhJ2wdNuEcyCXywBlM1D9">
+	<meta name="google" content="notranslate" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400&display=swap" rel="stylesheet">
+    <title>الدفع | متجر جوك TV</title>
+	<link rel="icon" href="https://cdn.tjar.sa/media-uploader/sxtdr/avIB8zYWAVJpbe9AlQSVR6APjlnCZ8QrSUSymLuV.png" type="image/png">
+	<link rel="icon" href="https://cdn.tjar.sa/media-uploader/sxtdr/avIB8zYWAVJpbe9AlQSVR6APjlnCZ8QrSUSymLuV.png" type="image/png">
+    <style>
+    :root {
+                    --main-color-one: #daae49;
+                    --secondary-color: #f8e7b9;
+                --heading-font: "IBM Plex Sans Arabic", sans-serif;
+        --body-font: "IBM Plex Sans Arabic", sans-serif;
+    }
+</style>
+    <link rel="stylesheet" href="https://jawaktv.com/assets/tenant/frontend/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://jawaktv.com/assets/tenant/frontend/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://jawaktv.com/assets/tenant/frontend/css/common.css?1.38">
+    <link rel="stylesheet" href="https://jawaktv.com/assets/css/tap-tjar-style.css?1.3">
+    <link href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+            <link rel="stylesheet" href="https://jawaktv.com/shop/assets/css/tmp2-style?1.1" type="text/css"/>
+    
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js"></script>
+    <script src="https://secure.gosell.io/js/sdk/tap.min.js"></script>
+    <script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet/0.0.1-beta.5/esri-leaflet.js"></script>
+    <script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js"></script>
+    <script src="https://paylink.sa/assets/js/paylink.js"></script>
+    
+            <script src="https://sa.myfatoorah.com/applepay/v3/applepay.js"></script>
+        <script src="https://sa.myfatoorah.com/googlepay/v1/googlepay.js"></script>
+    
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+        *{
+            --ch-border: #dee2e6;
+            --ch-round-12: 12px;
+        }
+        .ch-border{
+            border-color: var(--ch-border)
+        }
+        .ch-round-12{
+            border-radius: var(--ch-round-12)
+        }
+        .login_back-home {
+            --x-pos: 18px;
+            color: var(--bs-gray-500);
+            position: absolute;
+            top: var(--x-pos);
+            left: var(--x-pos);
+            transition: .3s;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        [dir=ltr] .login_back-home {
+            left: auto;
+            right: var(--x-pos);
+            transform: scale(-1);
+        }
+
+        .login_back-home:hover {
+            color: var(--main-color-one);
+        }
+
+        .checkout{
+            padding: 32px 0;
+            background: #F1F1F1;
+        }
+        .checkout > .container{
+            max-width: 980px;
+        }
+        .row{gap: 0;}
+        .checkout .form-control{
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: none !important;
+        }
+        .checkout .form-select{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: none !important;
+        }
+        .checkout .form-control:focus,
+        .checkout .form-select:focus{
+            border-color: var(--main-color-one);
+        }
+        [dir=rtl] .input-group .form-control{
+            border-radius: 8px 0 0 8px !important
+        }
+
+        .checkout .input-group .input-group-text{
+            background: #fff;
+            border-radius: 8px;
+        }
+        [dir=rtl] .checkout .input-group .input-group-text{
+            border-left-width: 0;
+            border-radius: 0 8px 8px 0 !important
+        }
+
+        .form-check{
+            padding: 0;
+        }
+        .form-check .form-label{
+            display: inline;
+            margin: 0 0 0 6px;
+        }
+        [dir=rtl] .form-check .form-label{
+            margin: 0 6px 0 0;
+        }
+        .form-check .form-check-input {
+            width: 1.25rem;
+            height: 1.25rem;
+            margin: 4px 0 0 !important;
+            float: none !important;
+            box-shadow: none !important;
+        }
+        .form-check  .form-check-input:checked[type=checkbox] {
+            background-color: var(--main-color-one) !important;
+            border-color: var(--main-color-one) !important;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 11' width='13' height='11' fill='none'%3e%3cpath d='M11.0426 1.02893C11.3258 0.695792 11.8254 0.655283 12.1585 0.938451C12.4917 1.22162 12.5322 1.72124 12.249 2.05437L5.51985 9.97104C5.23224 10.3094 4.72261 10.3451 4.3907 10.05L0.828197 6.88335C0.50141 6.59288 0.471975 6.09249 0.762452 5.7657C1.05293 5.43891 1.55332 5.40948 1.88011 5.69995L4.83765 8.32889L11.0426 1.02893Z' fill='%23FFFFFF'/%3e%3c/svg%3e");
+            background-size: 64% 60%;
+        }
+        #notes{
+            resize: none;
+        }
+        #notes::placeholder{
+            color: var(--bs-gray-600);
+        }
+
+        .checkout .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            border-radius: 8px;
+            font-weight: 600;
+            line-height: 1
+        }
+        .checkout .btn-lg{
+            width: 100%;
+            padding: 14px 16px;
+        }
+        .checkout .btn i{padding: 0;}
+        .btn-light-primary{
+            position: relative;
+            color: var(--main-color-one) !important;
+            overflow: hidden;
+        }
+        .btn-light-primary::before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: var(--main-color-one);
+            position: absolute;
+            top: 0; left: 0;
+            opacity: .1;
+        }
+        .btn-light-danger{
+            background: #dc354510;
+            color: #dc3545 !important;
+        }
+        .btn-border-main{
+            background: none;
+            color: var(--main-color-one) !important;
+            border: 1px solid var(--main-color-one);
+        }
+        .custom_radio {
+            box-shadow: 0 0 0 1px var(--ch-border);
+            font-size: 3em;
+            width: 16px;
+            min-width: 16px;
+            height: 16px;
+            margin: 2px;
+            border-radius: 50%;
+            appearance: none;
+            transition: background .3s, box-shadow .3s;
+            cursor: pointer;
+        }
+        .custom_radio:hover {
+            box-shadow: 0 0 0 1px var(--main-color-one), inset 0 0 1.5rem -1rem var(--main-color-one);
+        }
+        .custom_radio:disabled {
+            pointer-events: none;
+            box-shadow: 0 0 0 1px var(--ch-border), inset 0 0 0 2rem #F2F4F7;
+            opacity: .5;
+        }
+        .custom_radio:checked {
+            box-shadow: 0 0 0 1px var(--main-color-one);
+            background-color: var(--main-color-one);
+            border: 5px solid #fff;
+        }
+        .form-group.select2 .select2-container {
+            min-width: auto;
+        }
+        .form-group.select2 .select2-selection,
+        .select2-container--open .select2-dropdown,
+        .select2-container--default .select2-search--dropdown .select2-search__field {
+            border-color: #ced4da;
+            border-radius: 8px !important;
+        }
+        .form-group.select2 .select2-selection__arrow:before{
+            content: "\f107";
+            font-family: 'Line Awesome Free';
+            font-weight: 900;
+        }
+        .select2-results__option {
+            border-radius: 8px;
+        }
+
+        .login_modal {
+            backdrop-filter: blur(16px);
+        }
+        .sign-in .form-control {
+            border-radius: 0;
+        }
+
+        .map {
+            height: 300px;
+        }
+        .spinner-border {
+            color: var(--main-color-one) !important;
+        }
+        .text-gray-600{
+            color: var(--bs-gray-600) !important;
+        }
+
+        .checkout_head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            border-radius: 24px;
+            background: #fff;
+            box-shadow: 0px 2px 4px 0px #0000000F;
+        }
+
+        .checkout_head .logo img {
+            max-width: 160px;
+            max-height: 60px;
+        }
+        .back_cart {
+            padding: 12px;
+        }
+        [dir=ltr] .back_cart i{
+            transform: scaleX(-1)
+        }
+
+        .checkout_cart,
+        .checkout_details{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding: 32px;
+            border-radius: 24px;
+            background: #fff;
+            box-shadow: 0px 2px 4px 0px #0000000F;
+        }
+
+        .coupon_promo-input .btn span{
+            display: flex;
+            gap: 6px
+        }
+
+        .step_head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        .step_head-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .step_head-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            min-width: 40px;
+            height: 40px;
+            font-size: 20px;
+            background: #1ABF72;
+            border-radius: 50%;
+            color: #fff;
+        }
+
+        .step_body {
+            padding: 24px;
+            border-radius: 16px;
+            background: #F8F8F8;
+        }
+
+        .step_edit-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--main-color-one);
+            color: #fff;
+            box-shadow: inset 0 0 0 3px #fff;
+            border: 1px solid var(--main-color-one);
+            border-radius: 50%;
+            font-size: 22px;
+        }
+
+        /* address */
+        .saved_address,
+        .new_address-bar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            background: #fff;
+            border: 1px solid var(--ch-border);
+            border-radius: 12px;
+            padding: 16px;
+        }
+        .saved_address label,
+        .new_address-bar,
+        .new_address-bar label{
+            cursor: pointer;
+        }
+        .new_address-bar label i{
+            color: var(--main-color-one);
+        }
+
+        .edit_address-wrap {
+            background: #fff;
+            padding: 24px;
+            border: 1px solid var(--ch-border);
+            border-radius: 20px;
+        }
+        .address_form-wrap{
+            background: #F8F8F8;
+            padding: 24px;
+            border: 1px solid var(--ch-border);
+            border-radius: 20px;
+        }
+
+        .saved_address-action{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .saved_address-action .btn,
+        .step_head .btn{
+            padding: 10px 12px;
+        }
+
+        /* shopping method */
+        .shipping_card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid var(--ch-border);
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .shipping_info {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+        }
+        .shipping_price {
+            background: #F5F5F5;
+            border-radius: 8px;
+            border: 1px solid #80808059;
+            padding: 12px 16px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        /* payment methods */
+        .payment_tab-wrap {
+            align-items: center;
+            gap: 16px 0;
+            border: none;
+        }
+        .payment_tab {
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            background: #fff;
+            padding: 24px;
+            border: 1px solid var(--ch-border);
+            border-radius: 12px;
+            box-shadow: 0px 1px 2px 0px #1018280D;
+            cursor: pointer;
+        }
+        .payment_tab .img {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            height: 26px;
+        }
+        .payment_tab .img img{
+            max-height: 100%;
+        }
+        .payment_name{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            line-height: 1.6;
+        }
+
+        .card_payment_form{
+            background: #fff;
+            border-radius: 12px;
+        }
+
+        .payment-form{
+            background: #fff;
+            border: 1px solid var(--ch-border);
+            border-radius: var(--ch-round-12);
+        }
+
+        .bank_details {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            gap: 24px;
+            background: #fff;
+            padding: 24px 34px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .bank_dot{
+            width: 12px;
+            height: 12px;
+            background: var(--main-color-one);
+            border-radius: 50%;
+        }
+
+        #document::file-selector-button {
+            display: none;
+        }
+
+        .uploader {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            text-align: center;
+            padding: 24px;
+            background: #fff;
+            border-radius: 8px;
+        }
+        .uploader_icon {
+            min-width: 45px;
+            width: 45px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--main-color-one);
+            color: #fff;
+            font-size: 22px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .btn-popup-map {
+            border-radius: 0 !important;
+            line-height: normal !important;
+            font-weight: 400 !important;
+        }
+
+        .pac-container {
+            z-index: 9999;
+        }
+
+        [dir=ltr] .btn-search-modal {
+            margin-left: 10px !important;
+            border-radius: 8px !important;
+        }
+
+        .input-search-modal {
+            border-radius: 8px !important;
+        }
+
+        [dir=rtl] .btn-search-modal {
+            margin-right: 10px !important;
+            border-radius: 8px !important;
+        }
+
+        @media(min-width:1200px){
+            .checkout > .container {
+                max-width: 980px;
+            }
+        }
+        @media(min-width:992px){
+            .payment_tab-wrap li:nth-last-child(2),
+            .payment_tab-wrap li:last-child {
+                flex: 1 0 0%;
+            }
+        }
+        @media (min-width: 900px) {
+            .checkout .container {
+                padding: 0 55px;
+            }
+        }
+        @media(min-width:768px){
+            .payment_tab-wrap li:last-child {
+                flex: 1 0 0%;
+            }
+        }
+        @media (max-width: 1098px) and (min-width: 981px) {
+            .checkout .container {
+                padding: 0 70px;
+            }
+        }
+        @media(max-width:767px){
+            *{
+                --ch-round-12: 8px;
+            }
+            .checkout{
+                padding: 60px 0;
+            }
+            .container{
+                max-width: 100% !important;
+                padding: 0 24px;
+            }
+            .custom_radio{
+                width: 16px;
+                min-width: 16px;
+                height: 16px;
+                border: 4px solid #fff
+            }
+            .checkout_head,
+            .checkout_cart,
+            .checkout_details{
+                padding: 20px;
+                border-radius: 16px;
+            }
+            .checkout_head .logo img {
+                max-width: 120px;
+                max-height: 50px;
+            }
+
+            .step_head,
+            .saved_address,
+            .new_address-bar:not(.flex-row),
+            .shipping_card {
+                flex-direction: column;
+                align-items: start !important;
+            }
+            .step_head-content{
+                /* align-items: start; */
+                gap: 12px;
+            }
+            .step_head-icon {
+                width: 32px;
+                min-width: 32px;
+                height: 32px;
+                font-size: 16px;
+            }
+            .step_head .btn{
+                width: 100%;
+                padding: 10px;
+            }
+            .step_body {
+                padding: 20px 16px;
+            }
+
+            .edit_address-wrap,
+            .address_form-wrap {
+                padding: 18px;
+                border-radius: 16px;
+            }
+
+            .shipping_card {
+                padding: 16px;
+            }
+            .shipping_price{
+                width: 100%;
+            }
+
+            .payment_tab .img {
+                height: 20px;
+            }
+            .payment_tab {
+                min-width: 100%;
+                gap: 12px;
+                padding: 18px;
+                border-radius: 8px;
+            }
+
+            .card_payment_form{
+                background: none;
+                border-radius: 0;
+            }
+            .bank_details {
+                align-items: start;
+                text-align: start;
+                flex-direction: column;
+                padding: 18px;
+            }
+            .bank_dot{
+                display: none;
+            }
+            .uploader {
+                flex-direction: column-reverse;
+            }
+            .uploader_icon {
+                width: 100%;
+            }
+        }
+    </style>
+    <style>
+        /* =========================================================
+   JAWAK TV — منصة تجار — DARK MODE COMPLETE
+   خلفية: #1a1815 | ذهبي وتدرجاته
+   نفس هوية workszox مع تكيّف لمنصة تجار
+========================================================= */
+
+/* =========================================================
+   DARK MODE BASE
+========================================================= */
+:root {
+  --bg-dark:       #1a1815;
+  --bg-card:       #1f1c19;
+  --bg-surface:    #242018;
+  --bg-surface-2:  #2a261f;
+  --border-gold:   rgba(218,174,73,.18);
+  --border-gold-2: rgba(218,174,73,.30);
+  --gold:          #daae49;
+  --gold-light:    #f0d080;
+  --gold-pale:     #fff3cf;
+  --gold-muted:    #c9a25e;
+  --gold-dim:      #e8dfc0;
+  --gold-dark:     #0A0800;
+  --text-main:     #f0ead8;
+  --text-sub:      #c8bfa8;
+  --text-muted:    #908778;
+  --radius-card:   22px;
+  --shadow-card:   0 14px 36px rgba(0,0,0,.45);
+}
+
+/* Force dark background on entire store */
+body,
+.xc-main,
+.main-content,
+[class*="page-wrapper"],
+[class*="layout-wrapper"],
+.xc-content,
+#main,
+.xc-storefront {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-main) !important;
+}
+
+/* =========================================================
+   DARK SURFACES — Cards, Sections
+========================================================= */
+.xc-product-card,
+.xc-card,
+[class*="card-item"],
+[class*="product-card"],
+[class*="section-card"],
+.xc-category-one__item-inner,
+[class*="category-item"],
+.xc-checkout-box,
+[class*="checkout-"],
+[class*="order-"],
+.xc-sidebar,
+[class*="sidebar-"],
+[class*="filter-"],
+.xc-breadcrumb,
+[class*="breadcrumb"],
+.xc-alert,
+[class*="alert-box"] {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-gold) !important;
+  color: var(--text-main) !important;
+}
+
+/* =========================================================
+   PROMO BAR TICKER — متحرك
+========================================================= */
+#jwkBar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 42px;
+  overflow: hidden;
+  background: linear-gradient(135deg,#0e0901 0%,#1a1000 35%,#221400 65%,#0e0901 100%);
+  border-bottom: 1px solid rgba(218,174,73,.22);
+  box-shadow: 0 2px 12px rgba(0,0,0,.55), inset 0 1px 0 rgba(218,174,73,.08);
+  z-index: 99999;
+  box-sizing: border-box;
+  direction: ltr;
+}
+
+#jwkBar::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(218,174,73,.55) 50%, transparent);
+  pointer-events: none;
+}
+
+#jwkMask {
+  flex: 1 1 auto;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  direction: ltr;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+}
+
+#jwkTrack {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  height: 100%;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  transform: translate3d(0,0,0);
+  direction: ltr;
+}
+
+.jwk-item {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 28px;
+  color: #e8dfc0;
+  font-family: 'IBM Plex Sans Arabic','Tajawal','Cairo',Arial,sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  direction: rtl;
+  flex: 0 0 auto;
+  text-shadow: 0 1px 6px rgba(0,0,0,.6);
+  transition: color .2s;
+  cursor: default;
+}
+
+.jwk-item:hover { color: #f5e9aa; }
+
+.jwk-sep {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 4px;
+  color: rgba(218,174,73,.6);
+  font-size: 8px;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+#jwkX {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0; margin: 0;
+  opacity: .55;
+  transition: opacity .2s, color .2s;
+  color: #c9a84c;
+}
+
+#jwkX:hover { opacity: 1; color: #f0d080; }
+
+@media (max-width: 767px) {
+  #jwkBar   { height: 38px; }
+  .jwk-item { font-size: 12.5px; padding: 0 18px; }
+}
+
+/* =========================================================
+   HERO VIDEO — تغيير الـ hero-area بالفيديو
+========================================================= */
+.xc-main-slider,
+[class*="main-slider"],
+[class*="hero-slider"],
+[class*="slide-hero"],
+.xc-hero {
+  position: relative !important;
+  overflow: hidden !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+.jawak-hero-video-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background: #000 !important;
+}
+
+.xc-main-slider::before,
+[class*="main-slider"]::before,
+.xc-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.72) 0%,
+    rgba(0,0,0,.38) 24%,
+    rgba(0,0,0,.18) 52%,
+    rgba(0,0,0,.34) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.xc-main-slider .container,
+[class*="main-slider"] .container,
+.xc-hero .container,
+.xc-main-slider [class*="slide-item"],
+[class*="main-slider"] [class*="slide-item"] {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* =========================================================
+   JAWAK INTERACTIVE BLOCK — كل ما تحتاجه في اشتراك واحد
+========================================================= */
+.jawak-interactive-block {
+  position: relative;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.jawak-interactive-shell {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 28px;
+  align-items: stretch;
+  background: linear-gradient(180deg, #181818 0%, #111111 100%);
+  border: 1px solid rgba(218,174,73,.16);
+  border-radius: 30px;
+  padding: 24px;
+  box-shadow:
+    0 18px 44px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,236,184,.03);
+  overflow: hidden;
+  position: relative;
+}
+
+.jawak-interactive-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(218,174,73,.08), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(218,174,73,.05), transparent 24%);
+  pointer-events: none;
+}
+
+.jawak-media-card {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid rgba(218,174,73,.18);
+  background: linear-gradient(180deg, #15120d 0%, #0f0f0f 100%);
+  min-height: 460px;
+  box-shadow:
+    0 14px 36px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,236,184,.04);
+}
+
+.jawak-media-card video {
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  object-fit: cover;
+  display: block;
+}
+
+.jawak-content-side {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.jawak-top-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 10px 18px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #18140e 0%, #221a12 100%);
+  border: 1px solid rgba(218,174,73,.28);
+  color: #daae49;
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.25),
+    inset 0 1px 0 rgba(255,236,184,.05),
+    0 0 14px rgba(218,174,73,.08);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.jawak-main-title {
+  color: #fff3cf;
+  font-size: 40px;
+  line-height: 1.25;
+  margin: 0 0 12px;
+  font-weight: 800;
+}
+
+.jawak-subtitle {
+  color: #d7cfbf;
+  font-size: 16px;
+  line-height: 2;
+  margin: 0 0 22px;
+  max-width: 58ch;
+}
+
+.jawak-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.jawak-tab-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 64px;
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,.02) 0%, rgba(218,174,73,.03) 100%);
+  border: 1px solid rgba(218,174,73,.14);
+  color: #ecd9a0;
+  cursor: pointer;
+  text-align: right;
+  transition: all .28s ease;
+  box-shadow: inset 0 1px 0 rgba(255,236,184,.02);
+}
+
+.jawak-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(218,174,73,.28);
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.18),
+    0 0 0 1px rgba(218,174,73,.04) inset;
+}
+
+.jawak-tab-btn.active {
+  background: linear-gradient(180deg, rgba(218,174,73,.16) 0%, rgba(218,174,73,.07) 100%);
+  border-color: rgba(218,174,73,.34);
+  color: #fff3cf;
+  box-shadow:
+    0 12px 24px rgba(0,0,0,.20),
+    0 0 0 1px rgba(218,174,73,.06) inset,
+    0 0 18px rgba(218,174,73,.10);
+}
+
+.jawak-tab-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(218,174,73,.11) 0%, rgba(218,174,73,.05) 100%);
+  border: 1px solid rgba(218,174,73,.24);
+  box-shadow: inset 0 1px 0 rgba(255,236,184,.04);
+}
+
+.jawak-tab-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: #daae49;
+  fill: none;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.jawak-tab-label {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.jawak-feature-view {
+  position: relative;
+  min-height: 168px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,.02) 0%, rgba(218,174,73,.03) 100%);
+  border: 1px solid rgba(218,174,73,.14);
+  padding: 22px 22px 18px;
+  overflow: hidden;
+  box-shadow:
+    inset 0 1px 0 rgba(255,236,184,.02),
+    0 10px 26px rgba(0,0,0,.18);
+}
+
+.jawak-feature-view::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(255,228,154,.06) 50%, transparent 80%);
+  transform: translateX(-140%);
+  transition: transform .8s ease;
+  pointer-events: none;
+}
+
+.jawak-feature-view.is-animating::before {
+  transform: translateX(140%);
+}
+
+.jawak-feature-title {
+  margin: 0 0 10px;
+  color: #fff3cf;
+  font-size: 28px;
+  line-height: 1.35;
+  font-weight: 800;
+}
+
+.jawak-feature-desc {
+  margin: 0 0 18px;
+  color: #d8cfbf;
+  font-size: 15px;
+  line-height: 2;
+  max-width: 52ch;
+}
+
+.jawak-buy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #daae49 0%, #c79b39 100%);
+  border: 1px solid rgba(255,227,150,.26);
+  color: #0A0800 !important;
+  text-decoration: none !important;
+  font-weight: 800;
+  box-shadow:
+    0 12px 26px rgba(218,174,73,.22),
+    inset 0 1px 0 rgba(255,245,214,.28);
+  transition: all .28s ease;
+}
+
+.jawak-buy-btn:hover {
+  transform: translateY(-2px);
+  color: #0A0800 !important;
+  box-shadow:
+    0 16px 30px rgba(218,174,73,.30),
+    inset 0 1px 0 rgba(255,245,214,.30);
+}
+
+/* =========================================================
+   ABOUT BOX — استبدال بالـ interactive block
+========================================================= */
+.xc-about-section,
+[class*="about-section"],
+[class*="about-area"] {
+  background-color: var(--bg-dark) !important;
+  padding: 48px 0 !important;
+}
+
+/* =========================================================
+   GLOBAL DARK OVERRIDES — منصة تجار
+========================================================= */
+
+/* Header */
+.xc-header,
+[class*="header-wrapper"],
+[class*="top-bar"],
+.xc-navbar {
+  background-color: rgba(10, 8, 0, 0.92) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid rgba(201,162,95,.16) !important;
+}
+
+/* Nav links */
+.xc-header a,
+.xc-navbar a,
+[class*="nav-link"],
+[class*="menu-item"] a {
+  color: var(--text-main) !important;
+}
+
+.xc-header a:hover,
+.xc-navbar a:hover,
+[class*="nav-link"]:hover {
+  color: var(--gold) !important;
+}
+
+/* Buttons */
+.xc-btn,
+.xc-button,
+[class*="btn-primary"],
+[class*="add-to-cart"],
+[class*="buy-now"],
+button[type="submit"],
+.btn-main {
+  background: linear-gradient(180deg, #daae49 0%, #c79b39 100%) !important;
+  color: #0A0800 !important;
+  border: none !important;
+  font-weight: 700 !important;
+}
+
+.xc-btn:hover,
+.xc-button:hover,
+[class*="btn-primary"]:hover,
+[class*="add-to-cart"]:hover {
+  background: linear-gradient(180deg, #f0d080 0%, #daae49 100%) !important;
+  color: #0A0800 !important;
+}
+
+/* Input fields */
+input, textarea, select,
+[class*="form-control"],
+[class*="input-field"],
+.xc-input {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid rgba(218,174,73,.22) !important;
+  color: var(--text-main) !important;
+  border-radius: 10px !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+
+input:focus, textarea:focus, select:focus,
+[class*="form-control"]:focus {
+  border-color: rgba(218,174,73,.50) !important;
+  box-shadow: 0 0 0 3px rgba(218,174,73,.12) !important;
+  outline: none !important;
+}
+
+/* Product price */
+[class*="price"],
+.xc-price,
+.price-main,
+.sale-price {
+  color: var(--gold) !important;
+  font-weight: 700 !important;
+}
+
+[class*="old-price"],
+[class*="original-price"],
+.price-old {
+  color: var(--text-muted) !important;
+  text-decoration: line-through !important;
+}
+
+/* Product title */
+[class*="product-title"],
+[class*="product-name"],
+.xc-product-name {
+  color: var(--text-main) !important;
+}
+
+/* Product description */
+[class*="product-desc"],
+[class*="product-description"],
+.xc-product-desc {
+  color: var(--text-sub) !important;
+}
+
+/* Category title */
+[class*="category-title"],
+[class*="section-title"],
+.xc-section-title {
+  color: var(--gold-pale) !important;
+}
+
+/* Breadcrumbs */
+[class*="breadcrumb"] a { color: var(--text-sub) !important; }
+[class*="breadcrumb"] .active { color: var(--gold) !important; }
+
+/* Footer */
+footer,
+.xc-footer,
+[class*="footer-"] {
+  background-color: #0f0e0b !important;
+  border-top: 1px solid rgba(218,174,73,.14) !important;
+  color: var(--text-sub) !important;
+}
+
+footer a,
+.xc-footer a { color: var(--text-sub) !important; }
+footer a:hover,
+.xc-footer a:hover { color: var(--gold) !important; }
+
+/* Dividers */
+hr, [class*="divider"] {
+  border-color: rgba(218,174,73,.12) !important;
+}
+
+/* Badges & tags */
+[class*="badge"],
+[class*="tag-"],
+.xc-badge {
+  background: linear-gradient(180deg, #18140e 0%, #221a12 100%) !important;
+  border: 1px solid rgba(218,174,73,.28) !important;
+  color: var(--gold) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb {
+  background: rgba(218,174,73,.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(218,174,73,.55); }
+
+/* Selection */
+::selection {
+  background: rgba(218,174,73,.25);
+  color: var(--gold-pale);
+}
+
+/* =========================================================
+   GOLD GLOW ANIMATION — للعناصر المميزة
+========================================================= */
+@keyframes jawakGoldGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(218,174,73,0); }
+  50%       { box-shadow: 0 0 22px 4px rgba(218,174,73,.18); }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 1100px) {
+  .jawak-interactive-shell {
+    grid-template-columns: 1fr;
+  }
+  .jawak-media-card,
+  .jawak-media-card video {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 767px) {
+  .jawak-interactive-shell {
+    padding: 16px;
+    border-radius: 22px;
+    gap: 18px;
+  }
+  .jawak-media-card {
+    min-height: 260px;
+    border-radius: 18px;
+  }
+  .jawak-media-card video {
+    min-height: 260px;
+  }
+  .jawak-main-title {
+    font-size: 28px;
+  }
+  .jawak-subtitle {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  .jawak-tabs {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .jawak-tab-btn {
+    min-height: 58px;
+    padding: 12px;
+    border-radius: 16px;
+  }
+  .jawak-tab-label {
+    font-size: 13px;
+  }
+  .jawak-feature-title {
+    font-size: 22px;
+  }
+}
+	</style>
+        <style>
+        @media (min-width: 992px) {
+            .modal-lg, .modal-xl {
+                max-width: 800px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .modal-xl {
+                max-width: 1140px;
+            }
+        }
+        .input-search-modal {
+            width: 1% !important;
+        }
+        .modal-title {
+            font-size: 20px !important;
+        }
+        .btn.btn-secondary {
+            color: var(--bs-gray-900) !important;
+            background: var(--secondary-color) !important;
+            border-color: var(--secondary-color) !important;
+        }
+    </style>
+
+    
+<script src="/rappasoft/laravel-livewire-tables/core.min.js"  ></script> <script src="/rappasoft/laravel-livewire-tables/thirdparty.min.js"  ></script></head>
+<body x-data="{'isModalOpen': false}" x-on:keydown.escape="isModalOpen=false" class="checkout_page">
+    <div wire:snapshot="{&quot;data&quot;:{&quot;allDigital&quot;:true,&quot;shippingAddressId&quot;:null,&quot;shippingMethodId&quot;:null,&quot;paymentGateway&quot;:null,&quot;notes&quot;:null,&quot;orderId&quot;:1,&quot;user&quot;:[null,{&quot;class&quot;:&quot;App\\Models\\User&quot;,&quot;key&quot;:1,&quot;s&quot;:&quot;mdl&quot;}],&quot;currency&quot;:&quot;&lt;sar&gt;&lt;\/sar&gt;&quot;,&quot;isAuthenticated&quot;:true,&quot;showNotes&quot;:false,&quot;codFees&quot;:1,&quot;codFeesLimit&quot;:1,&quot;totalTax&quot;:14.85,&quot;totalItems&quot;:0,&quot;totalShipping&quot;:0,&quot;coupon&quot;:null,&quot;couponCode&quot;:&quot;&quot;,&quot;totalCouponDiscount&quot;:0,&quot;subtotal&quot;:99,&quot;total&quot;:0,&quot;checkoutLoading&quot;:false,&quot;shippingAddresses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;shippingMethods&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;cart&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;currencyNote&quot;:false},&quot;memo&quot;:{&quot;id&quot;:&quot;BnsNTNE4g41k6uZrgGwH&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:{&quot;kpPETvC&quot;:[&quot;div&quot;,&quot;au9R7fMYArB8T7RNZz4Q&quot;],&quot;97eeaZx&quot;:[&quot;div&quot;,&quot;8a9i48OsoMbjgFPcXYI7&quot;],&quot;tpHgouV&quot;:[&quot;div&quot;,&quot;2ul8buQaxyT6wwUP0NJu&quot;],&quot;hU419pM&quot;:[&quot;div&quot;,&quot;8Ni2Q78ublHbEYUjDfSM&quot;],&quot;TqpNdr0&quot;:[&quot;div&quot;,&quot;ZUZBRHgmFdup837Mqgt1&quot;]},&quot;scripts&quot;:[&quot;19293550-0&quot;],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;e8625ac82821fdd8bf00b1bab291b942ace2348aeba381bea6a7bc1e198be0b9&quot;}" wire:effects="{&quot;scripts&quot;:{&quot;19293550-0&quot;:&quot;&lt;script&gt;\n\n    document.addEventListener(&#039;tester&#039;, function (evt) {\n        evt.detail.submit()\n            .then(response =&gt; console.log(response))\n    })\n\n    Alpine.data(&#039;checkout&#039;, () =&gt; ({\n\n        \/\/ collapse instances\n        collapseShippingAddress: null,\n        collapseShippingAddressParent: null,\n        collapseShippingMethod: null,\n        collapseShippingMethodParent: null,\n        collapsePayment: null,\n        collapsePaymentParent: null,\n\n        \/\/ Etc.\n        showNotes: $wire.entangle(&#039;showNotes&#039;),\n        notes: $wire.entangle(&#039;notes&#039;),\n        currency: $wire.entangle(&#039;currency&#039;),\n        isAuthenticated: $wire.entangle(&#039;isAuthenticated&#039;),\n        shippingAddresses: $wire.entangle(&#039;shippingAddresses&#039;),\n        shippingMethods: $wire.entangle(&#039;shippingMethods&#039;),\n        checkoutLoading: $wire.entangle(&#039;checkoutLoading&#039;),\n        allDigital: $wire.entangle(&#039;allDigital&#039;),\n        codFees: $wire.entangle(&#039;codFees&#039;),\n        codFeesLimit: $wire.entangle(&#039;codFeesLimit&#039;),\n\n        \/\/ Order Headers\n        paymentGateway: $wire.entangle(&#039;paymentGateway&#039;),\n        shippingAddressId: $wire.entangle(&#039;shippingAddressId&#039;),\n        shippingMethodId: $wire.entangle(&#039;shippingMethodId&#039;),\n        totalShipping: $wire.entangle(&#039;totalShipping&#039;),\n        total: $wire.entangle(&#039;total&#039;),\n        subtotal: $wire.entangle(&#039;subtotal&#039;),\n        totalTax: $wire.entangle(&#039;totalTax&#039;),\n        orderId: $wire.entangle(&#039;orderId&#039;),\n        couponCode: $wire.entangle(&#039;couponCode&#039;),\n        coupon: $wire.entangle(&#039;coupon&#039;),\n        totalCouponDiscount: $wire.entangle(&#039;totalCouponDiscount&#039;),\n\n        paymentGatewayTab: null,\n\n        requiredDeclaration: false,\n        enableReCaptcha: false,\n\n        \/\/ Methods\n        get displayCodFees() {\n            return this.paymentGateway === &#039;cash-on-delivery&#039; &amp;&amp; (this.subtotal &gt;= this.codFeesLimit)\n        },\n        get codFeesComputed() {\n            return `${this.codFees} ${this.currency}`\n        },\n        get hasShippingAddress() {\n            return this.shippingAddressId !== null &amp;&amp; this.shippingAddressId !== &#039;&#039;\n        },\n\n        get hasCoupon() {\n            return this.coupon !== null &amp;&amp; this.coupon !== &#039;&#039;\n        },\n\n        get couponDiscountValue() {\n            if (this.coupon === null || this.coupon === &#039;&#039;)\n                return 0;\n            if (this.coupon.discount_type === &#039;percentage&#039;) {\n                value = this.totalCouponDiscount\n                return parseFloat(value).toFixed(2)\n            } else {\n                value = parseFloat(this.coupon.discount).toFixed(2)\n            }\n            return value\n        },\n\n        get couponText() {\n            if (this.coupon === null || this.coupon === &#039;&#039;)\n                return &#039;&#039;;\n\n            let type = this.coupon.discount_type == &#039;percentage&#039; ? this.coupon.discount + &#039;%&#039; : this.coupon.discount + this.currency\n\n            return `${type} (-${this.couponDiscountValue}${this.currency})`\n        },\n\n        get hasShippingMethod() {\n            return this.shippingMethodId !== null &amp;&amp; this.shippingMethodId !== &#039;&#039;\n        },\n\n        get hasOrderId() {\n            return this.orderId != null &amp;&amp; this.orderId != &#039;&#039;\n        },\n\n        get shippingText() {\n            return this.totalShipping == 0 ? `\u0645\u062c\u0627\u0646\u0627\u064b` : parseFloat(this.totalShipping, 2) + &#039; &lt;sar&gt;&lt;\/sar&gt;&#039;\n        },\n\n        get canSelectPayment() {\n            return (this.shippingMethodId != null &amp;&amp; this.shippingAddressId != null) || this.allDigital\n        },\n\n        get canCheckout() {\n            return this.shippingMethodId != null &amp;&amp; this.shippingAddressId != null &amp;&amp; this.paymentGateway != null\n        },\n\n        get taxText() {\n            return parseFloat(this.totalTax, 2) + &#039; &lt;sar&gt;&lt;\/sar&gt;&#039;\n        },\n\n        get grandTotalText() {\n            let grandTotal = (parseFloat(this.subtotal) - parseFloat(this.coupon !== null ? this.couponDiscountValue : 0)) + (parseFloat(this.totalShipping))\n            if (this.paymentGateway === &#039;cash-on-delivery&#039; &amp;&amp; this.subtotal &gt;= this.codFeesLimit){\n                grandTotal += parseFloat(this.codFees)\n            }\n            grandTotal = (grandTotal &lt; 0) ? 0 : grandTotal\n            return grandTotal.toFixed(2) + &#039; &lt;sar&gt;&lt;\/sar&gt;&#039;\n        },\n\n        get selectedShippingAddressText() {\n            var index = this.shippingAddresses.map(e =&gt; String(e.id)).indexOf(String(this.shippingAddressId))\n            if (index &gt;= 0) {\n                return  `${this.shippingAddresses[index].address}, ${this.shippingAddresses[index].cities?.formatted_name}, ${this.shippingAddresses[index].country?.formatted_name}`\n            } else {\n                return &#039;&#039;\n            }\n        },\n\n        get selectedShippingMethodText() {\n            var index = this.shippingMethods.map(e =&gt; String(e.id)).indexOf(String(this.shippingMethodId))\n            if (index &gt;= 0) {\n                return this.shippingMethods[index].name\n            } else {\n                return &#039;&#039;\n            }\n        },\n\n        setShippingCost(cost = 0, shipping_id = &#039;&#039;) {\n            this.totalShipping = cost\n            $wire.dispatch(&#039;updateShippingCost:set-shippingCost&#039;, { cost: cost, shipping_id: shipping_id})\n            $wire.on(&#039;updateShippingCost&#039;, (val) =&gt; {\n                this.totalShipping = val[0][&#039;cost&#039;] ?? 0\n            })\n        },\n\n        loadingCallback(val) {\n            this.checkoutLoading = val[0] ?? false\n        },\n\n        checkDeclaration(){\n            const xthis = this;\n            if(this.requiredDeclaration){\n                if(!$(&#039;input[name=\&quot;declaration_order_checkbox\&quot;]&#039;).is(&#039;:checked&#039;)){\n                    $(&#039;html, body&#039;).animate({\n                        scrollTop: $(\&quot;#declaration_order_section\&quot;).offset().top\n                    },0);\n                    $(&#039;#declaration_order_section label&#039;).css(&#039;color&#039;,&#039;red&#039;);\n                    $(&#039;input[name=\&quot;declaration_order_checkbox\&quot;]&#039;).change(function(){\n                        xthis._spm(this.paymentGatewayTab);\n                        $(&#039;#declaration_order_section label&#039;).css(&#039;color&#039;,&#039;green&#039;);\n                        $(this).attr(&#039;disabled&#039;,true);\n                    });\n                    return false;\n                }\n            }\n            return true;\n        },\n\n        _spm(paymentMethod) {\n            if (!this.checkDeclaration()) {\n                return;\n            }\n\n            if (this.paymentGatewayTab !== paymentMethod) {\n                this.paymentGatewayTab = paymentMethod;\n                $dispatch(&#039;checkout:create-order&#039;);\n            }\n        },\n        inactivityTime() {\n            var t;\n            window.onload = resetTimer;\n            document.onmousemove = resetTimer;\n            document.onkeypress = resetTimer;\n            function resetTimer() {\n                clearTimeout(t);\n                t = setTimeout(function(){\n                    window.location.reload();\n                }, 600000);\n            }\n        },\n\n        reCapatchaCallback() {\n\n            if (!this.enableReCaptcha) {\n                return;\n            }\n\n            if (typeof grecaptcha === &#039;undefined&#039;) {\n                return;\n            }\n\n            grecaptcha.ready(function() {\n                grecaptcha.execute(&#039;6LfQfPgqAAAAAGRJl163BgTPsQjU9PysTUcNEjPf&#039;, { action: &#039;submit&#039; }).then(function(token) {\n                    window.___fraudGuardianToken = token;\n                });\n            });\n        },\n\n        init() {\n            var loginEl = document.getElementById(&#039;loginModal&#039;)\n            var loginModal = new bootstrap.Modal(loginEl, {\n                keyboard: false\n            })\n            if (!this.isAuthenticated)\n                loginModal.toggle()\n\n            this.collapseShippingAddress = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_address-edit&#039;))\n            this.collapseShippingAddressParent = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_address-view&#039;))\n            this.collapseShippingMethod = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_shipping-edit&#039;))\n            this.collapseShippingMethodParent = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_shipping-view&#039;))\n            this.collapsePayment = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_payment-edit&#039;))\n            this.collapsePaymentParent = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_payment-view&#039;))\n\n            this.$watch(&#039;shippingAddressId&#039;, val =&gt; {\n                if (val) {\n                    setTimeout(() =&gt; {\n                        $wire.dispatch(&#039;shipping-methods:init&#039;, {\n                            id: val,\n                            coupon: this.coupon\n                        })\n\n                        $wire.dispatch(&#039;coupon-field:set-shippingId&#039;, {\n                            id: val\n                        });\n\n                        this.shippingMethodId = null\n                        this.totalShipping = 0\n                        this.collapseShippingAddressParent.show()\n                        this.collapseShippingMethodParent.hide()\n                        this.collapseShippingMethod.show()\n                    }, 350)\n                }\n            })\n\n            this.$watch(&#039;shippingMethodId&#039;, val =&gt; {\n                if (val) {\n\n                    this.collapseShippingMethodParent.show()\n                    this.collapseShippingMethod.hide()\n\n                    this.collapsePayment.show()\n                    this.collapsePaymentParent.hide()\n\n                    $wire.dispatch(&#039;payment:init-city&#039;, {\n                        shippingAddressId: this.shippingAddressId\n                    });\n                    $wire.dispatch(&#039;checkout:create-order&#039;)\n                } else {\n                    this.collapseShippingMethodParent.show()\n                    this.collapseShippingMethod.hide()\n                    this.collapsePayment.hide()\n                    this.collapsePaymentParent.show()\n                }\n            })\n\n            this.$watch(&#039;paymentGateway&#039;, val =&gt; {\n\n                $wire.dispatch(&#039;checkout:create-order&#039;)\n\n                if (!this.checkDeclaration()) {\n                    return;\n                }\n\n                if (val) {\n                    if (this.orderId != null) {\n                        $wire.dispatch(&#039;order:update-gateway&#039;)\n                    }\n                } else {\n                    this.collapsePayment.hide()\n                    this.collapsePaymentParent.show()\n                    $wire.dispatch(&#039;checkout:clear-embedded&#039;)\n                }\n            })\n\n            $wire.on(&#039;checkout:set-coupon&#039;, (val) =&gt; {\n                if (&#039;coupon&#039; in val &amp;&amp; &#039;couponCode&#039; in val &amp;&amp; &#039;totalCouponDiscount&#039; in val) {\n                    this.couponCode = val.couponCode\n                    this.totalCouponDiscount = val.totalCouponDiscount\n                    this.coupon = _.isEmpty(val.coupon) ? null : val.coupon\n                }\n\n                if (&#039;shippingId&#039; in val &amp;&amp; val.shippingId != null) {\n                    $wire.dispatch(&#039;shipping-methods:init&#039;, {\n                        id: val.shippingId,\n                        coupon: this.coupon\n                    })\n                }\n\n                if (this.orderId != null &amp;&amp; this.paymentGateway != null) {\n                    $wire.dispatch(&#039;checkout:create-order&#039;)\n                }\n            })\n\n\n\n            $wire.on(&#039;checkout:loading&#039;, this.loadingCallback)\n\n            $wire.on(&#039;form:update-shipping&#039;, val =&gt; {\n                this.shippingAddressId = val[0] ?? null;\n                new bootstrap.Collapse(document.getElementById(&#039;new_address-bar&#039;), {toggle: true})\n            })\n\n            $wire.on(&#039;shipping-address:set&#039;, val =&gt; {\n                this.shippingAddresses = val[0] ?? []\n            })\n\n            $wire.on(&#039;shipping-methods:set&#039;, val =&gt; {\n                this.shippingMethods = val[0] ?? []\n            })\n\n            if (this.allDigital) {\n                setTimeout(() =&gt; {\n                    this.collapsePayment.show()\n                    this.collapsePaymentParent.hide()\n                }, 500)\n            } else {\n                setTimeout(() =&gt; {\n                    this.collapseShippingMethodParent.show()\n                    this.collapseShippingMethod.hide()\n\n                    document.getElementById(&#039;step_shipping-edit&#039;).addEventListener(&#039;show.bs.collapse&#039;, () =&gt; {\n                        this.paymentGateway = null\n                        this.collapseShippingAddress.hide()\n                        this.collapseShippingAddressParent.show()\n                        this.collapsePayment.hide()\n                        this.collapsePaymentParent.show()\n                    })\n\n                    document.getElementById(&#039;step_address-edit&#039;).addEventListener(&#039;show.bs.collapse&#039;, () =&gt; {\n                        this.shippingMethodId = null\n                        this.collapseShippingMethodParent.show()\n                        this.collapseShippingMethod.hide()\n                        this.collapsePayment.hide()\n                        this.collapsePaymentParent.show()\n\n                        let savedAddress = document.querySelectorAll(&#039;.save_address-wrap&#039;);\n                        savedAddress.forEach((el) =&gt; {\n                            el.querySelector(&#039;.collapse&#039;).classList.add(&#039;show&#039;);\n                        });\n\n                        document.getElementById(&#039;new_address-bar&#039;).classList.add(&#039;show&#039;);\n                    })\n                }, 500)\n            }\n\n            this.inactivityTime();\n            this.reCapatchaCallback();\n        },\n    }))\n&lt;\/script&gt;\n    &quot;},&quot;listeners&quot;:[&quot;checkout:create-order&quot;,&quot;order:update-gateway&quot;]}" wire:id="BnsNTNE4g41k6uZrgGwH" class="checkout" x-data="checkout">
+    <div class="container">
+        <div class="modal login_modal" data-bs-backdrop="static" data-bs-keyboard="false" id="loginModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-0">
+                    <i class="las la-arrow-left rsf-20 login_back-home" onclick="(() => history.length > 1 ? history.back() : location.href = '/')()"></i>
+
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.7/build/css/intlTelInput.css">
+<style>
+    .hide-phone-dropdown .iti__country-container{pointer-events:none}
+    .hide-phone-dropdown .iti__dropdown-content{display:none!important}
+    .btn-text{background:none!important;padding:0!important;border:none!important;}
+
+    .offcanvas-card .iti__dropdown-content {
+        position: fixed !important;
+        z-index: 999999 !important;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        max-width: 500px !important;
+        overflow: visible !important;
+    }
+
+</style>
+<div x-data="loginForm" class="sign-in">
+    <template x-if="currentTab === 'inputForm'">
+        <div class="inputForm--screen">
+            <div>
+                <h4 class="form-title mb-3">تسجيل الدخول</h4>
+                
+                <div class="account-form">
+                    <template x-if="signInUsing == 'phone'">
+                        <div class="form-group mb-4">
+                            <label for="mobile" class="form-label">الجوال</label>
+                            <div class="input-wrap m-0" :class="{ 'hide-phone-dropdown' : !enableMultiCountryLogin}">
+                                <input @keydown.enter="submitStepOne()" class="form-control" type="tel" x-model="inputForm.phone" :disabled="metadata.inputLoading" name="mobile" id="mobile-input2" autocomplete="off" data-tel-input="ture" required>
+                            </div>
+                            <template x-if="getError('mobile')">
+                                <div class="text-danger error__mobile-input">
+                                    <span x-text="getError('mobile')"></span>
+                                </div>
+                            </template>
+                            <div class="msg rsf-14 mt-1"></div>
+                            <small x-show="!isSaudi" class="text-muted">سيتم إرسال OTP إلى رقم الواتس اب الخاص بك</small>
+                        </div>
+                    </template>
+                    <template x-if="signInUsing == 'email' && enableEmailLogin">
+                        <div>
+                            <div class="form-group mb-4" x-transition>
+                                <label for="mobile" class="form-label">البريد الإلكتروني</label>
+                                <input @keydown.enter="submitStepOne()" class="form-control" x-model="inputForm.email" :disabled="metadata.inputLoading" name="email" id="email-input" autocomplete="off" required>
+                                <template x-if="getError('email')">
+                                    <div class="text-danger error__mobile-input">
+                                        <span x-text="getError('email')"></span>
+                                    </div>
+                                </template>
+                                
+                                <div class="msg rsf-14 mt-1"></div>
+                            </div>
+                                                    </div>
+                    </template>
+
+                    <div class="btn-wrapper">
+                        <template x-if="!metadata.inputLoading">
+                            <button type="button" :disabled="metadata.inputLoading" @click.prevent="submitStepOne()" id="login_btn" class="submit-btn rsf-16">
+                                <span>تسجيل الدخول</span>
+                            </button>
+                        </template>
+                        <template x-if="metadata.inputLoading">
+                            <button type="button" :disabled="metadata.inputLoading" id="login_btn" class="submit-btn rsf-16">
+                                <span>تسجيل الدخول</span>
+                            </button>
+                        </template>
+                        <template x-if="!metadata.inputLoading && enableEmailLogin">
+                            <div class="mt-3">
+                                <template x-if="signInUsing == 'phone'">
+                                    <span type="button" id="login_as_email_btn" @click.prevent="signInUsing = 'email'" class="d-block btn-text text-center rsf-14">تسجيل الدخول باستخدام البريد الإلكتروني</span>
+                                </template>
+                                <template x-if="signInUsing == 'email'">
+                                    <span type="button" id="login_as_phone_btn" @click.prevent="signInUsing = 'phone'" class="d-block btn-text text-center rsf-14">تسجيل الدخول باستخدام الجوال</span>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template x-if="currentTab === 'OTPForm'">
+    <div class="OTPForm--screen">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+                <div>
+                    <h4 class="form-title mb-2 start-text">تسجيل الدخول</h4>
+                    <p class="form-sub m-0 start-text">
+                        أدخل رمز التحقق المرسل <span x-show="!isSaudi && sessionMobile">عبر الواتساب</span>
+                    </p>
+                </div>
+                <template x-if="!metadata.otpLoading">
+                    <button type="button" :disabled="metadata.changeLoading" @click.prevent="changeNumber" class="change_numb rsf-14"><i class="las la-angle-left"></i>
+                        <template x-if="sessionEmail">
+                            <span>
+                                تغيير البريد الإلكتروني
+                            </span>
+                        </template>
+                        <template x-if="sessionMobile">
+                            <span>
+                                تغيير الرقم
+                            </span>
+                        </template>
+                    </button>
+                </template>
+            </div>
+            <div>
+                <div class="form-group mb-4">
+                    <label for="otp" class="form-label">رمز التحقق</label>
+                    <div class="d-flex justify-content-between gap-3" dir="ltr" style="direction:ltr!important;">
+                        <input x-ref="otp1" x-on:paste="handlePasteOTP(event)" x-on:input="handleOTPInput(event, 'first')"
+                                x-model="otpSteps.first" 
+                                class="otp-input form-control text-center rounded-0" 
+                                type="text"
+                                inputmode="numeric"
+                                pattern="\d*"
+                                autocomplete="one-time-code"
+                                maxlength="4"
+                                name="otp1" 
+                                id="otp1" 
+                                autofocus="true">
+                        <input x-ref="otp2" x-on:paste="handlePasteOTP(event)" x-on:input="handleOTPInput(event, 'second')"
+                                x-model="otpSteps.second" 
+                                class="otp-input form-control text-center rounded-0" 
+                                type="text"
+                                inputmode="numeric"
+                                pattern="\d*"
+                                autocomplete="off"
+                                maxlength="1" 
+                                name="otp2" 
+                                id="otp2" 
+                                autofocus="true">
+                        <input x-ref="otp3" x-on:paste="handlePasteOTP(event)" x-on:input="handleOTPInput(event, 'third')"
+                                x-model="otpSteps.third" 
+                                class="otp-input form-control text-center rounded-0" 
+                                type="text"
+                                inputmode="numeric"
+                                pattern="\d*"
+                                autocomplete="off"
+                                maxlength="1" 
+                                name="otp3" 
+                                id="otp3" 
+                                autofocus="true">
+                        <input x-ref="otp4" x-on:paste="handlePasteOTP(event)" x-on:input="handleOTPInput(event, 'fourth')"
+                                x-model="otpSteps.fourth" 
+                                class="otp-input form-control text-center rounded-0" 
+                                type="text"
+                                inputmode="numeric"
+                                pattern="\d*"
+                                autocomplete="off"
+                                maxlength="1" 
+                                name="otp4" 
+                                id="otp4" 
+                                autofocus="true">
+                    </div>
+                    <div class="msg rsf-14 mt-1"></div>
+                </div>
+                <div class="btn-wrapper text-center">
+                    <button type="button" @click.prevent="checkOTP" :disabled="metadata.otpLoading" class="submit-btn rsf-16">التحقق من رمز التحقق</button>
+                    <template x-if="!metadata.otpLoading">
+                        <span class="mt-3 text-subtle d-block rsf-14">
+                            <template x-if="!timerStarted">
+                                <span @click.prevent="submitStepOne(true)" style="cursor: pointer;">أعادة أرسال رمز التحقق</span>
+                            </template>
+                            <template x-if="timerStarted">
+                                <span>يمكنك طلب OTP بعد ذلك <span x-text="timerText"></span></span>
+                            </template>
+                        </span>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template x-if="currentTab === 'inputNameForm'">
+        <div class="inputNameForm">
+            <h4 class="form-title mb-2">معلومات</h4>
+            <p class="form-sub mb-3">أدخل اسمك والبريد الإلكتروني</p>
+
+            <div>
+                <div class="form-group mb-4">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">الاسم <small class="text-danger">*</small></label>
+                        <div class="input-flag-wrap m-0">
+                            <div class="input-wrap">
+                                <input @keydown.enter="saveInformation" x-model="inputNameForm.name" class="form-control login-form__input" type="text" required placeholder="e.g. John Doe" name="name" autocomplete="off" value="" id="name-input">
+                                <i class="las la-user fs-4 icon"></i>
+                            </div>
+                        </div>
+                        <template x-if="getError('name')">
+                            <div class="text-danger error__name-input">
+                                <span x-text="getError('name')"></span>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">البريد الإلكتروني</label>
+                        <div class="input-flag-wrap m-0">
+                            <div class="input-wrap">
+                                <input @keydown.enter="saveInformation" :disabled="sessionEmail ? true : false" :readonly="sessionEmail ? true : false" x-model="inputNameForm.email" class="form-control" type="email" placeholder="example@email.com" name="email" autocomplete="off" value="" id="email-input">
+                                <i class="las la-envelope fs-4 icon"></i>
+                            </div>
+                        </div>
+                        <template x-if="getError('email')">
+                            <div class="text-danger error__email-input">
+                                <span x-text="getError('email')"></span>
+                            </div>
+                        </template>
+                        <div class="msg rsf-14 mt-1"></div>
+                    </div>
+
+                    
+                </div>
+
+                <div class="btn-wrapper">
+                    <button type="button" @click.prevent="saveInformation" :disabled="metadata.inputNameLoading" class="submit-btn rsf-16">
+                        <template x-if="metadata.inputNameLoading">
+                            <span>تسجيل الدخول ...</span>
+                        </template>
+                        <template x-if="!metadata.inputNameLoading">
+                            <span>تسجيل الدخول</span>
+                        </template>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </template>
+</div>
+                </div>
+            </div>
+        </div>
+        <div class="checkout_head">
+            <a href="https://jawaktv.com" class="logo" aria-label="home">
+                <img src="https://cdn.tjar.sa/media-uploader/sxtdr/wSqLbNG3bEnMLQuoTb2qjGdF9nY5pVUygahTVOTw.png" alt="logo">
+            </a>
+            <a href="https://jawaktv.com/shop/cart" class="btn btn-light-primary rounded-pill back_cart rsf-14">
+                الى سلة التسوق <i class="las la-angle-left"></i></a>
+        </div>
+
+        
+        <div class="checkout_cart mb-4">
+            <h4 class="rsf-20 fw-600 m-0">
+                راجع تفاصيل طلبك
+            </h4>
+                        <div class="checkout_cart-items border-top border-bottom py-4">
+                <div class="d-flex gap-2">
+                    <span class="col fw-500">ملخص السلة</span>
+                    <span>84.15 <sar></sar></span>
+                </div>
+                                    <div class="d-flex gap-2">
+                        <span class="col fw-500">ضريبة القيمة المضافة (15%)</span>
+                        <span>14.85 <sar></sar></span>
+                    </div>
+                                <template x-if="hasShippingMethod">
+                    <div class="d-flex gap-2">
+                        <span class="col fw-500">الشحن</span>
+                        <span x-html="shippingText"></span>
+                    </div>
+                </template>
+                <template x-if="hasCoupon">
+                    <div class="d-flex gap-2">
+                        <span class="col fw-500">كوبون الخصم</span>
+                        <span x-html="couponText"></span>
+                    </div>
+                </template>
+                <template x-if="displayCodFees">
+                    <div class="d-flex gap-2">
+                        <span class="col fw-500">رسوم الدفع عند الاستلام</span>
+                        <span x-html="codFeesComputed"></span>
+                    </div>
+                </template>
+            </div>
+
+            <div class="checkout_cart-total d-flex rsf-20 fw-600">
+                <h5 class="col rsf-20 fw-600 m-0">
+                    إجمالي الطلب
+                    <br>
+                                    </h5>
+                <span x-html="grandTotalText"></span>
+            </div>
+
+            
+
+            <div wire:snapshot="{&quot;data&quot;:{&quot;couponCode&quot;:&quot;&quot;,&quot;coupon&quot;:null,&quot;totalCouponDiscount&quot;:0,&quot;shippingCost&quot;:0,&quot;shipping_id&quot;:null},&quot;memo&quot;:{&quot;id&quot;:&quot;au9R7fMYArB8T7RNZz4Q&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.coupon-field&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;cce02af4ae0f3caf21c4d755e6ade8e0cde433d1e0e658003827ac1dbe9d5e11&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;checkout:remove-coupon&quot;,&quot;coupon-field:set-shippingId&quot;]}" wire:id="au9R7fMYArB8T7RNZz4Q" class="coupon_promo-card">
+    <div class="coupon_promo-content col">
+        <h6 class="coupon_promo-title rsf-16 m-0">
+            هل لديك كود خصم؟
+        </h6>
+        <div class="coupon_promo-input">
+                        <span class="coupon_promo-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg"><path
+                                    d="M8.165 10.667v6.667H4.83a2.5 2.5 0 0 1-2.5-2.5V11.5a.833.833 0 0 1 .834-.834zm6.667 0a.833.833 0 0 1 .833.834v3.333a2.5 2.5 0 0 1-2.5 2.5H9.83v-6.667zm-2.084-10a2.917 2.917 0 0 1 2.636 4.167h.28A1.667 1.667 0 0 1 17.332 6.5v.834A1.667 1.667 0 0 1 15.665 9H9.83V4.834H8.165V9H2.33A1.667 1.667 0 0 1 .665 7.334V6.5A1.667 1.667 0 0 1 2.33 4.834h.281A2.914 2.914 0 0 1 5.234.667c1.462-.025 2.76.91 3.65 2.445l.114.203C9.86 1.72 11.132.72 12.574.669zm-7.5 1.667a1.25 1.25 0 0 0 0 2.5h2.62c-.618-1.588-1.625-2.517-2.62-2.5m7.486 0c-.983-.017-1.988.913-2.605 2.5h2.62a1.25 1.25 0 1 0-.015-2.5"
+                                    fill="var(--main-color-one)"/></svg></span>
+            <input type="text"
+                   wire:model="couponCode"
+                   class="form-control rsf-16"
+                   aria-label="Recipient"
+                   aria-describedby="button-addon2">
+            <button
+                class="btn btn-main btn-copy rsf-14"
+                wire:click="applyCoupon()"
+                type="button"
+                id="button-apply-button">
+                <span>
+                    <i class="las la-plus" wire:loading.remove></i>
+                    <i class="las la-spinner la-spin d-none" wire:loading.class.remove="d-none"></i>
+                    تطبيق
+                </span>
+            </button>
+        </div>
+
+        
+            </div>
+</div>
+        </div>
+
+        
+        <div class="checkout_details">
+            <div class="accordion">
+
+                
+                    
+                    <div class="step_wrap d-none" id="step_address" wire:ignore>
+
+                        
+                        <div class="accordion-collapse collapse show" id="step_address-view"
+                             data-bs-parent="#step_address">
+                            <div class="step_head">
+                                <div class="step_head-content">
+                                <span class="step_head-icon" x-bind:class="shippingAddressId != null ? '' : 'bg-dark'">
+                                    <i x-show="shippingAddressId != null" x-clock class="las la-check"></i>
+                                    <svg x-show="shippingAddressId == null" width="18" height="20" viewBox="0 0 20 22"
+                                         fill="none"
+                                         xmlns="http://www.w3.org/2000/svg"><path
+                                            fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10.002.25C6.175.25 2.524 2.513.996 6.085c-1.422 3.324-.652 6.152.95 8.575 1.315 1.986 3.231 3.758 4.96 5.357h.001q.496.458.963.896l.001.002a3.12 3.12 0 0 0 2.13.835c.79 0 1.554-.297 2.129-.835q.441-.413.908-.842c1.748-1.61 3.691-3.4 5.02-5.412 1.6-2.425 2.367-5.256.947-8.576C17.478 2.513 13.828.25 10.002.25M10 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8"
+                                            fill="#fff"/></svg>
+                                </span>
+                                    <div>
+                                        <h4 class="rsf-20 fw-600 m-0">عنوان الشحن</h4>
+                                        <span class="show_address mt-2 text-muted rsf-16 lh-sm"
+                                              x-text="selectedShippingAddressText"
+                                              x-show="selectedShippingAddressText != ''"></span>
+                                    </div>
+                                </div>
+
+                                
+                                <button href="#step_address-edit"
+                                        class="btn btn-light-primary rsf-14 rounded-pill"
+                                        data-bs-toggle="collapse" data-bs-target="#step_address-edit">
+                                    <svg width="13" height="13" viewBox="0 0 16 16" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.335 2a1.885 1.885 0 1 1 2.667 2.666l-9 9-3.667 1 1-3.666z"
+                                              stroke="currentcolor" stroke-width="1.33" stroke-linejoin="round"/>
+                                    </svg>
+                                    تعديل</button>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-collapse collapse" id="step_address-edit" data-bs-parent="#step_address">
+                            <div class="step_body">
+                                <div class="d-flex align-items-center gap-3">
+                                <span class="step_edit-icon">
+                                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg"><path
+                                            fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10.002.25C6.175.25 2.524 2.513.996 6.085c-1.422 3.324-.652 6.152.95 8.575 1.315 1.986 3.231 3.758 4.96 5.357h.001q.496.458.963.896l.001.002a3.12 3.12 0 0 0 2.13.835c.79 0 1.554-.297 2.129-.835q.441-.413.908-.842c1.748-1.61 3.691-3.4 5.02-5.412 1.6-2.425 2.367-5.256.947-8.576C17.478 2.513 13.828.25 10.002.25M10 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8"
+                                            fill="#fff"/></svg>
+                                </span>
+                                    <h4 class="rsf-20 fw-500 m-0">عنوان الشحن</h4>
+                                </div>
+
+                                <hr class="hr_line mt-3 mb-4">
+
+                                <div class="step_edit-body">
+
+                                    
+                                        <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;8a9i48OsoMbjgFPcXYI7&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.shipping-address-list&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;lazyLoaded&quot;:false,&quot;lazyIsolated&quot;:true,&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;e1029afeb624c87b6e51e8e9478c221a3d5591db4f6cd08a52a4f29c66381cd2&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;shipping-address:refresh&quot;]}" wire:id="8a9i48OsoMbjgFPcXYI7" x-intersect="$wire.__lazyLoad(&#039;eyJkYXRhIjp7ImZvck1vdW50IjpbW10seyJzIjoiYXJyIn1dfSwibWVtbyI6eyJpZCI6Ild1NTBROHJtSUx5ZFRBNEEyb2tsIiwibmFtZSI6Il9fbW91bnRQYXJhbXNDb250YWluZXIifSwiY2hlY2tzdW0iOiJkY2FkZTM1NDIyMTEzNmUwNWY0MDVmYjA2ZThhMzZlYzU3NzBlY2M1MDlhMzRhOWEwMGRmNjQ5OTlmOTYxMDU5In0=&#039;)" class="text-center my-2">
+        <div class="spinner-border text-dark" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+                                    
+                                    <div class="accordion mt-3" id="new_address">
+                                        
+                                        <div id="new_address-bar" class="accordion-collapse collapse fade show"
+                                             data-bs-parent="#new_address">
+                                            
+                                            <div class="new_address-bar" data-bs-toggle="collapse"
+                                                 data-bs-target="#addressadd">
+                                                <label for="input-new_address"
+                                                       class="col d-flex align-items-center gap-2">
+                                                    <input type="radio" name="address2" class="d-none"
+                                                           id="input-new_address">
+                                                    <svg width="18" height="22" viewBox="0 0 18 22" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                              d="M9 .25C4.16.25.25 4.21.25 9.08c0 2.795 1.114 4.976 3.253 6.87 1.39 1.233 3.89 3.854 4.857 5.44a.75.75 0 0 0 1.268.02c1.03-1.575 3.492-4.239 4.87-5.46 2.138-1.894 3.252-4.075 3.252-6.87C17.75 4.21 13.84.25 9 .25M8 13v-3H5V8h3V5h2v3h3v2h-3v3z"
+                                                              fill="var(--main-color-one)"/>
+                                                    </svg>
+                                                    <span
+                                                        class="saved_address-text rsf-16 fw-500">إضافة عنوان جديد</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        
+                                        <div id="addressadd" class="accordion-collapse collapse fade"
+                                             data-bs-parent="#new_address">
+                                                <div wire:snapshot="{&quot;data&quot;:{&quot;mapInit&quot;:false,&quot;latitude&quot;:null,&quot;longitude&quot;:null,&quot;defaultCities&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;editing&quot;:false,&quot;id&quot;:null,&quot;countries&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;newShippingForm&quot;:[{&quot;shippingAddress&quot;:null,&quot;country_id&quot;:&quot;&quot;,&quot;state_id&quot;:&quot;&quot;,&quot;city_id&quot;:&quot;&quot;,&quot;zip_code&quot;:&quot;&quot;,&quot;short_address&quot;:&quot;&quot;,&quot;address&quot;:&quot;&quot;},{&quot;class&quot;:&quot;App\\Livewire\\Tenant\\Frontend\\Forms\\NewShippingAddress&quot;,&quot;s&quot;:&quot;form&quot;}],&quot;shippingAddress&quot;:null,&quot;isSingleCountry&quot;:false,&quot;states&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;cities&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;2ul8buQaxyT6wwUP0NJu&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.new-shipping-address&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;lazyLoaded&quot;:false,&quot;lazyIsolated&quot;:true,&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;f86127c2f644c01ff2b2b1e38907f425e4a27d0ed58057fbc3c1885455964166&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;address-form:set-city&quot;,&quot;address-form:set-country&quot;,&quot;address-form:set-full&quot;,&quot;address-form:set-country-address&quot;,&quot;address-form:set-address&quot;,&quot;address-form:set-state&quot;]}" wire:id="2ul8buQaxyT6wwUP0NJu" x-intersect="$wire.__lazyLoad(&#039;eyJkYXRhIjp7ImZvck1vdW50IjpbW10seyJzIjoiYXJyIn1dfSwibWVtbyI6eyJpZCI6IndJS0VlbWpsRUk2WU9nMTV6dGZaIiwibmFtZSI6Il9fbW91bnRQYXJhbXNDb250YWluZXIifSwiY2hlY2tzdW0iOiI5MmMzMGVlNDQ0ZDEwODI5ZGQ5YjNiZDdiNzVmMWYxNDA3Njk2ZTZjZTNlM2M3ZTBkZTQxYmYzZmNlODQzYjkxIn0=&#039;)" class="text-center my-2">
+        <div class="spinner-border text-dark" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <hr class="hr_line my-4 d-none">
+                    <div class="step_wrap d-none" id="step_shipping">
+
+                        
+                        <div class="accordion-collapse collapse" wire:ignore id="step_shipping-view"
+                             data-bs-parent="#step_shipping">
+                            <div class="step_head">
+                                <div class="step_head-content">
+                                <span class="step_head-icon" x-bind:class="shippingMethodId != null ? '' : 'bg-dark'">
+                                    <i x-show="shippingMethodId != null" class="las la-check"></i>
+                                    <svg x-show="shippingMethodId == null" width="20" height="16" viewBox="0 0 22 18"
+                                         fill="#fff" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+                                         clip-rule="evenodd">
+                                        <path
+                                            d="M-.002 5a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2h-6a1 1 0 0 1-1-1m0 3a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1"/>
+                                        <path
+                                            d="M9.447.25c.983 0 1.655-.001 2.223.183a3.75 3.75 0 0 1 2.015 1.568h1.448c.688 0 1.278 0 1.767.049.522.053 1.011.168 1.478.446.466.279.8.654 1.093 1.09.276.406.555.925.881 1.53l1.3 2.414c.08.147.118.305.12.461v2.068c0 1.134 0 2.06-.098 2.792-.103.764-.325 1.427-.854 1.956-.2.2-.42.356-.658.479-.093.048-.14.072-.184.074a.2.2 0 0 1-.189-.115c-.019-.04-.019-.106-.019-.236a3.753 3.753 0 0 0-3.754-3.752 3.753 3.753 0 0 0-3.746 4.008c.016.24.024.359-.035.422-.06.064-.17.063-.391.062l-1.671-.007c-.219-.001-.328-.002-.387-.065s-.051-.182-.036-.418a3.753 3.753 0 0 0-3.746-4.003A3.753 3.753 0 0 0 2.25 15.01c0 .13 0 .195-.02.236a.2.2 0 0 1-.188.115c-.044-.002-.091-.026-.184-.074a2.6 2.6 0 0 1-.657-.48c-.702-.7-.869-1.643-.925-2.762v-.035l-.003-1.07c-.001-.235-.001-.353.063-.412.064-.06.198-.05.466-.029q.097.008.197.008h4.004a2.5 2.5 0 0 0 2.503-2.502c0-.243 0-.365.028-.425a.2.2 0 0 1 .05-.076c.046-.05.159-.096.384-.19A2.502 2.502 0 0 0 7.005 2.5H1c-.213 0-.319 0-.372-.04a.2.2 0 0 1-.074-.112c-.016-.065.017-.143.084-.299.133-.31.315-.592.567-.845.53-.53 1.194-.754 1.96-.857C3.897.25 4.826.25 5.963.25zm9.112 7.004c.3 0 .45 0 .507-.098.059-.097-.012-.229-.154-.492l-.3-.557c-.355-.659-.587-1.087-.8-1.4-.199-.295-.335-.417-.461-.493-.127-.075-.299-.137-.652-.173-.377-.038-.865-.04-1.613-.04h-.418c-.194 0-.292 0-.35.06-.06.06-.058.159-.056.357q.003.3.002.597v.188c0 .803.01 1.027.061 1.187.124.38.423.679.804.803.16.052.383.06 1.187.06z"/>
+                                        <circle cx="15.998" cy="14.999" r="2.5"/>
+                                        <circle cx="5.997" cy="15" r="2.5"/>
+                                    </svg>
+                                </span>
+                                    <div>
+                                        <h4 class="rsf-20 fw-600 m-0">طريقة الشحن</h4>
+                                        <span class="show_shipping mt-2 text-muted text-break rsf-16 lh-sm"
+                                              x-text="selectedShippingMethodText"
+                                              x-show="selectedShippingMethodText != ''"></span>
+                                    </div>
+                                </div>
+
+                                
+                                <button href="#step_shipping-edit"
+                                        x-bind:disabled="shippingAddressId == null"
+                                        class="btn btn-light-primary rsf-14 rounded-pill"
+                                        data-bs-toggle="collapse" data-bs-target="#step_shipping-edit">
+                                    <svg width="13" height="13" viewBox="0 0 16 16" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.335 2a1.885 1.885 0 1 1 2.667 2.666l-9 9-3.667 1 1-3.666z"
+                                              stroke="currentcolor" stroke-width="1.33" stroke-linejoin="round"/>
+                                    </svg>
+                                    تعديل</button>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-collapse collapse" wire:ignore id="step_shipping-edit"
+                             data-bs-parent="#step_shipping" aria-expanded="false" data-toggle="collapse">
+                            <div class="step_body">
+                                <div class="d-flex align-items-center gap-3">
+                                <span class="step_edit-icon">
+                                    <svg width="22" height="18" viewBox="0 0 22 18" fill="#fff"
+                                         xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                        <path
+                                            d="M-.002 5a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2h-6a1 1 0 0 1-1-1m0 3a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1"/>
+                                        <path
+                                            d="M9.447.25c.983 0 1.655-.001 2.223.183a3.75 3.75 0 0 1 2.015 1.568h1.448c.688 0 1.278 0 1.767.049.522.053 1.011.168 1.478.446.466.279.8.654 1.093 1.09.276.406.555.925.881 1.53l1.3 2.414c.08.147.118.305.12.461v2.068c0 1.134 0 2.06-.098 2.792-.103.764-.325 1.427-.854 1.956-.2.2-.42.356-.658.479-.093.048-.14.072-.184.074a.2.2 0 0 1-.189-.115c-.019-.04-.019-.106-.019-.236a3.753 3.753 0 0 0-3.754-3.752 3.753 3.753 0 0 0-3.746 4.008c.016.24.024.359-.035.422-.06.064-.17.063-.391.062l-1.671-.007c-.219-.001-.328-.002-.387-.065s-.051-.182-.036-.418a3.753 3.753 0 0 0-3.746-4.003A3.753 3.753 0 0 0 2.25 15.01c0 .13 0 .195-.02.236a.2.2 0 0 1-.188.115c-.044-.002-.091-.026-.184-.074a2.6 2.6 0 0 1-.657-.48c-.702-.7-.869-1.643-.925-2.762v-.035l-.003-1.07c-.001-.235-.001-.353.063-.412.064-.06.198-.05.466-.029q.097.008.197.008h4.004a2.5 2.5 0 0 0 2.503-2.502c0-.243 0-.365.028-.425a.2.2 0 0 1 .05-.076c.046-.05.159-.096.384-.19A2.502 2.502 0 0 0 7.005 2.5H1c-.213 0-.319 0-.372-.04a.2.2 0 0 1-.074-.112c-.016-.065.017-.143.084-.299.133-.31.315-.592.567-.845.53-.53 1.194-.754 1.96-.857C3.897.25 4.826.25 5.963.25zm9.112 7.004c.3 0 .45 0 .507-.098.059-.097-.012-.229-.154-.492l-.3-.557c-.355-.659-.587-1.087-.8-1.4-.199-.295-.335-.417-.461-.493-.127-.075-.299-.137-.652-.173-.377-.038-.865-.04-1.613-.04h-.418c-.194 0-.292 0-.35.06-.06.06-.058.159-.056.357q.003.3.002.597v.188c0 .803.01 1.027.061 1.187.124.38.423.679.804.803.16.052.383.06 1.187.06z"/>
+                                        <circle cx="15.998" cy="14.999" r="2.5"/>
+                                        <circle cx="5.997" cy="15" r="2.5"/>
+                                    </svg>
+                                </span>
+                                    <h4 class="rsf-20 fw-600 m-0">طريقة الشحن</h4>
+                                </div>
+
+                                <hr class="hr_line mt-3 mb-4">
+
+                                <div class="step_edit-body">
+                                    
+                                    <div wire:snapshot="{&quot;data&quot;:{&quot;shippingMethods&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;8Ni2Q78ublHbEYUjDfSM&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.shipping-method-list&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;b60899123d4cfcacc2ff135c3a1c3d9f1cbd04bc96c4e76c09a3ce021329fc72&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;shipping-methods:init&quot;,&quot;updateShippingCost:set-shippingCost&quot;]}" wire:id="8Ni2Q78ublHbEYUjDfSM" class="row gy-4">
+    <div wire:loading.class.remove="d-none" class="d-none">
+        <div class="col-12">
+            <div class="text-center">
+                <div class="spinner-border text-dark" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 row gy-2" wire:loading.remove>
+                    <div class="col-12">
+                <div class="text-center">
+                    <i class="las la-truck la-2x"></i>
+                    <p class="text-muted">لا توجد طرق شحن متاحة</p>
+                </div>
+            </div>
+            </div>
+</div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <hr class="hr_line my-4 d-none">
+
+                
+                <div class="step_wrap" id="step_payment">
+                    
+                    <div class="accordion-collapse collapse fade" wire:ignore id="step_payment-view"
+                         data-bs-parent="#step_payment">
+                        <div class="step_head">
+                            <div class="step_head-content">
+                                <span class="step_head-icon bg-dark">
+                                    <svg width="20" height="16" viewBox="0 0 22 18" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd"
+                                                                                  clip-rule="evenodd"
+                                                                                  d="M12.548.25c1.839 0 3.283 0 4.421.129 1.163.131 2.105.405 2.888 1.023q.353.279.65.612c.666.747.964 1.653 1.105 2.764.017.128.025.192.01.248a.3.3 0 0 1-.178.202c-.054.022-.121.022-.256.022H.812c-.135 0-.202 0-.256-.022a.3.3 0 0 1-.178-.202c-.015-.056-.007-.12.01-.248.141-1.111.439-2.017 1.105-2.764q.297-.333.65-.612C2.926.784 3.868.51 5.03.38 6.169.25 7.613.25 9.452.25zm9.202 8.803c0 1.724 0 3.09-.138 4.17-.141 1.11-.439 2.016-1.105 2.763a5 5 0 0 1-.65.612c-.783.619-1.725.892-2.888 1.024-1.138.128-2.582.128-4.422.128H9.452c-1.839 0-3.283 0-4.421-.128-1.163-.132-2.105-.405-2.888-1.024a5 5 0 0 1-.65-.612C.827 15.24.529 14.333.388 13.222.25 12.142.25 10.777.25 9.052v-.105q-.001-.862.005-1.61c.003-.275.004-.413.092-.5s.227-.087.504-.087H21.15c.277 0 .416 0 .504.087s.09.225.092.5q.006.748.005 1.61zM9.25 13a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75m5.25-.75a.75.75 0 0 0 0 1.5H18a.75.75 0 0 0 0-1.5z"
+                                                                                  fill="#fff"/></svg>
+                                </span>
+                                <div>
+                                    <h4 class="rsf-20 fw-600 m-0">الدفع</h4>
+                                </div>
+                            </div>
+
+                            
+                            <button x-bind:disabled="!canSelectPayment" href="#step_payment-edit"
+                                    class="btn btn-light-primary rsf-14 rounded-pill"
+                                    data-bs-toggle="collapse" data-bs-target="#step_payment-edit">
+                                <svg width="13" height="13" viewBox="0 0 16 16" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.335 2a1.885 1.885 0 1 1 2.667 2.666l-9 9-3.667 1 1-3.666z"
+                                          stroke="currentcolor" stroke-width="1.33" stroke-linejoin="round"/>
+                                </svg>
+                                تعديل</button>
+                        </div>
+                    </div>
+
+                    
+                    <div class="accordion-collapse collapse" wire:ignore id="step_payment-edit"
+                         data-bs-parent="#step_payment">
+
+                        <template x-if="canSelectPayment">
+                            <div class="step_body">
+                                <div class="d-flex align-items-center gap-3">
+                                <span class="step_edit-icon">
+                                    <svg width="22" height="18" viewBox="0 0 22 18" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd"
+                                                                                  clip-rule="evenodd"
+                                                                                  d="M12.548.25c1.839 0 3.283 0 4.421.129 1.163.131 2.105.405 2.888 1.023q.353.279.65.612c.666.747.964 1.653 1.105 2.764.017.128.025.192.01.248a.3.3 0 0 1-.178.202c-.054.022-.121.022-.256.022H.812c-.135 0-.202 0-.256-.022a.3.3 0 0 1-.178-.202c-.015-.056-.007-.12.01-.248.141-1.111.439-2.017 1.105-2.764q.297-.333.65-.612C2.926.784 3.868.51 5.03.38 6.169.25 7.613.25 9.452.25zm9.202 8.803c0 1.724 0 3.09-.138 4.17-.141 1.11-.439 2.016-1.105 2.763a5 5 0 0 1-.65.612c-.783.619-1.725.892-2.888 1.024-1.138.128-2.582.128-4.422.128H9.452c-1.839 0-3.283 0-4.421-.128-1.163-.132-2.105-.405-2.888-1.024a5 5 0 0 1-.65-.612C.827 15.24.529 14.333.388 13.222.25 12.142.25 10.777.25 9.052v-.105q-.001-.862.005-1.61c.003-.275.004-.413.092-.5s.227-.087.504-.087H21.15c.277 0 .416 0 .504.087s.09.225.092.5q.006.748.005 1.61zM9.25 13a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75m5.25-.75a.75.75 0 0 0 0 1.5H18a.75.75 0 0 0 0-1.5z"
+                                                                                  fill="#fff"/></svg>
+                                </span>
+                                    <h4 class="rsf-20 fw-600 m-0">الدفع</h4>
+                                </div>
+
+                                <hr class="hr_line mt-3 mb-4">
+
+                                <div class="step_edit-body">
+                                        <div wire:snapshot="{&quot;data&quot;:{&quot;paymentMethods&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;renderEmbeddedCode&quot;:null,&quot;___fraudGuardianToken&quot;:null,&quot;allIsDigital&quot;:&quot;1&quot;,&quot;selectedCityId&quot;:null},&quot;memo&quot;:{&quot;id&quot;:&quot;ZUZBRHgmFdup837Mqgt1&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.payment-method-list&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;lazyLoaded&quot;:false,&quot;lazyIsolated&quot;:true,&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;daaa932a09ad69a1bbf1de3b4981e33e8b6cb18c146ad69e1955a54548e7ae09&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;payment:init-city&quot;,&quot;checkout:load-payment-embedded&quot;,&quot;checkout:clear-embedded&quot;]}" wire:id="ZUZBRHgmFdup837Mqgt1" x-intersect="$wire.__lazyLoad(&#039;eyJkYXRhIjp7ImZvck1vdW50IjpbeyJhbGxJc0RpZ2l0YWwiOiIxIn0seyJzIjoiYXJyIn1dfSwibWVtbyI6eyJpZCI6IjNKVWRTRTR2b1RZUUF5R3dBZk5mIiwibmFtZSI6Il9fbW91bnRQYXJhbXNDb250YWluZXIifSwiY2hlY2tzdW0iOiI2NGI2NWQ4MjI2NzU0MWM0Y2MxYjc5OTQ3MWY3MDk5YTg5YzA5ZGU4ODJiNjZlMjk4OGE5NGRjYzBmNzViZTE2In0=&#039;)" class="text-center my-2">
+        <div class="spinner-border text-dark" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/livewire/livewire.js?id=e2b302e9"   data-csrf="69t9UlksK9A2da1i5F9RhJ2wdNuEcyCXywBlM1D9" data-update-uri="/tjar/livewire/update" data-navigate-once="true"></script>
+
+<!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ0gm-Y7RzCQyNvk-tXB0o0VMRzfY_dhM&libraries=places" defer async></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.7/build/js/intlTelInput.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<script>
+    let tabs = {
+        'inputForm': 'inputForm',
+        'OTPForm': 'OTPForm',
+        'inputNameForm': 'inputNameForm'
+    }
+
+    let signInTypes = ['phone', 'email']
+
+    let inputTelInputLib = window.intlTelInput
+
+    const errorMap = ['الرجاء إدخال رقم جوال صحيح', 'رمز البلد غير صالح', 'قصير جدًا', 'طويل جدًا', 'الرجاء إدخال رقم جوال صحيح'];
+
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('loginForm', () => ({
+            inputTelInputLib,
+            initializeTelInput : null,
+            isSaudi: true,
+            enableMultiCountryLogin: false,
+            enableEmailLogin: false,
+            currentTab: tabs.inputForm,
+            signInUsing: '' ? signInTypes[1] : signInTypes[0],
+            metadata: {
+                changeLoading: false,
+                inputLoading: false,
+                otpLoading: false,
+                inputNameLoading: false
+            },
+            sessionMobile: parseInt('0'),
+            sessionEmail: parseInt('0'),
+            stepOneOk: parseInt('0') ?? 0,
+            stepTwoOk: parseInt('1') ?? 0,
+            stepThreeOk: parseInt('1') ?? 0,
+            otpSteps: {
+                first: null,
+                second: null,
+                third: null,
+                fourth: null
+            },
+            errors: null,
+            inputForm: {
+                email: '' ? '' : null,
+                phone: null,
+                cloudflareCaptcha: null,
+            },
+            OTPForm: {
+                otp: null,
+            },
+            inputNameForm: {
+                name: null,
+                phone: '',
+                email: '',
+            },
+            timer: 0,
+            timerInterval: null,
+            otpSuccess: false,
+
+            // Getters
+            get otp1Value() {
+                return this.otpSteps.first;
+            },
+            get otp2Value() {
+                return this.otpSteps.second;
+            },
+            get otp3Value() {
+                return this.otpSteps.third;
+            },
+            get otp4Value() {
+                return this.otpSteps.fourth;
+            },
+            get otpValue() {
+                return `${this.otp1Value ?? ''}${this.otp2Value ?? ''}${this.otp3Value ?? ''}${this.otp4Value ?? ''}`;
+            },
+            get otpFilled() {
+                return this.otp1Value && this.otp2Value && this.otp3Value && this.otp4Value
+            },
+            get timerStarted() {
+                return this.timerInterval !== null
+            },
+            get timerText() {
+                return `${this.timer}s`
+            },
+            get inputFormPhone() {
+                return this.inputForm.phone
+            },
+
+            // Functions
+            getError(name = '') {
+                return this.errors != null && name in this.errors ? (this.errors[name][0] ?? null) : null
+            },
+
+            initPhoneInput() {
+                if((this.currentTab === tabs.inputForm || this.currentTab === tabs.inputNameForm)) {
+                    this.$nextTick(() => {
+                        document.querySelectorAll("[data-tel-input='ture']").forEach((phone) => {
+                            if (phone.dataset.initiated === "true") return;
+
+                            const oldValue = phone.value;
+                            phone.value = '';
+
+                            if (phone.classList.contains("iti")) {
+                                const iti = window.intlTelInputGlobals.getInstance(phone);
+                                if (iti) {
+                                    iti.destroy();
+                                }
+                            }
+
+                            if(this.enableMultiCountryLogin){
+                                this.initializeTelInput = this.inputTelInputLib(phone, {
+                                    initialCountry: "auto",
+                                    geoIpLookup: callback => {
+                                        fetch("https://ipapi.co/json")
+                                            .then(res => res.json())
+                                            .then(data => callback(data.country_code))
+                                            .catch(() => callback('sa'))
+                                    },
+                                    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.7/build/js/utils.js",
+                                    strictMode: true,
+                                    separateDialCode: true,
+                                    i18n: {
+                                        searchPlaceholder: 'بحث'
+                                    } 
+                                });
+
+                                phone.addEventListener('countrychange', () => {
+                                    let data = this.initializeTelInput.getSelectedCountryData();
+                                    this.isSaudi = data.iso2 == 'sa' ? true : false;
+                                });
+
+                            }else{
+                                this.initializeTelInput = this.inputTelInputLib(phone, {
+                                    initialCountry: "sa",
+                                    onlyCountries: ["sa"],
+                                    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.7/build/js/utils.js",
+                                    strictMode: true,
+                                    separateDialCode: true
+                                });
+                            }
+
+                            if(oldValue || this.inputNameForm.phone){
+                                let val = this.inputFormPhone.phone || oldValue;
+                                this.initializeTelInput.setNumber(val);
+                            }
+
+                            phone.dataset.initiated = "true";
+                        });
+                    });
+                }
+            },
+
+            async saveInformation() {
+                if (this.metadata.inputNameLoading) return;
+
+                let number = this.inputNameForm.phone?.replace(/[\s-]/g, '')
+
+                if ((this.inputNameForm.phone !== '') && !/^\d{9}$/.test(String(number))) {
+                    if(this.enableMultiCountryLogin){
+                        if (this.initializeTelInput != null) {
+                            if(!this.initializeTelInput.isValidNumber()){
+                                const errorCode = this.initializeTelInput.getValidationError();
+                                const msg = errorMap[errorCode] || 'الرجاء إدخال رقم جوال صحيح';
+                                this.errors = {
+                                    mobile: [msg]
+                                };
+                                toastr.error(errorMap[errorCode]);
+                                return;
+                            }else{
+                                number = this.initializeTelInput.getNumber();
+                            }
+                        }
+                    }else{
+                        if(!/^\d{9}$/.test(String(number))){
+                            this.errors = {
+                                mobile: [
+                                    'الرجاء إدخال رقم جوال صحيح'
+                                ]
+                            }
+                            toastr.error('الرجاء إدخال رقم جوال صحيح')
+                            return;
+                        }
+                    }
+                }
+
+                this.errors = null;
+                this.metadata.inputNameLoading = true;
+                try {
+                    const response = await fetch('https://jawaktv.com/v_ql_step3', {
+                        method: 'POST',
+                        headers: {
+                            "Content-type": "application/json; charset=UTF-8",
+                            "X-Requested-With": 'XMLHttpRequest',
+                            "X-CSRF-TOKEN": "69t9UlksK9A2da1i5F9RhJ2wdNuEcyCXywBlM1D9"
+                        },
+                        body: JSON.stringify({
+                            ...this.inputNameForm,
+                            mobile: this.inputNameForm.phone
+                        })
+                    })
+                    const data = await response.json();
+
+                    if(response.ok) {
+                        window.location.reload()
+                    } else {
+                        if (response.status === 401) {
+                            window.location.reload();
+                        }
+                        toastr.error(data.message)
+                        this.errors = {...data.errors}
+                        this.metadata.inputNameLoading = false;
+                    }
+                } catch (e) {
+                    console.error(e)
+                    this.metadata.inputNameLoading = false;
+                }
+            },
+
+            async changeNumber() {
+               if (this.metadata.changeLoading) return;
+
+               this.errors = null;
+               this.metadata.changeLoading = true;
+
+               try {
+                   const response = await fetch('https://jawaktv.com/v_ql_change_number', {
+                       method: 'POST',
+                       headers: {
+                           "Content-type": "application/json; charset=UTF-8",
+                           "X-Requested-With": 'XMLHttpRequest',
+                           "X-CSRF-TOKEN": "69t9UlksK9A2da1i5F9RhJ2wdNuEcyCXywBlM1D9"
+                       },
+                   })
+
+                   const data = await response.json();
+
+                   if(response.ok) {
+                       this.currentTab = tabs.inputForm
+                   } else {
+                       toastr.error(data.message)
+                       this.errors = {...data.errors}
+                   }
+               } catch (e) {
+                   console.error(e)
+               } finally {
+                   this.metadata.changeLoading = false;
+               }
+            },
+
+            async submitStepOne(resendOtp = false) {
+                if(this.metadata.inputLoading) return;
+
+                let number = this.inputForm.phone?.replace(/[\s-]/g, '')
+
+                if (this.signInUsing === signInTypes[0]) {
+                    if(this.enableMultiCountryLogin){
+                        if(!this.initializeTelInput.isValidNumber()){
+                            const errorCode = this.initializeTelInput.getValidationError();
+                            const msg = errorMap[errorCode] || 'الرجاء إدخال رقم جوال صحيح';
+                            this.errors = {
+                                mobile: [msg]
+                            };
+                            toastr.error(errorMap[errorCode]);
+                            return;
+                        }else{
+                            number = this.initializeTelInput.getNumber();
+                        }
+                    }else{
+                        if(!/^\d{9}$/.test(String(number))){
+                            this.errors = {
+                                mobile: [
+                                    'الرجاء إدخال رقم جوال صحيح'
+                                ]
+                            }
+                            toastr.error('الرجاء إدخال رقم جوال صحيح')
+                            return;
+                        }
+                    }
+                }
+
+                this.errors = null;
+                this.metadata.inputLoading = true
+
+                try {
+                    let params = {}
+
+                    if(this.signInUsing === signInTypes[1]) {
+                        params['email'] = this.inputForm.email
+                        params['captcha'] = this.inputForm.cloudflareCaptcha ?? null;
+                    } else if (this.signInUsing === signInTypes[0]) {
+                        params['mobile'] = this.inputForm.phone
+                    }
+
+                    const response = await fetch('https://jawaktv.com/_ql', {
+                        method: 'POST',
+                        headers: {
+                            "Content-type": "application/json; charset=UTF-8",
+                            "X-Requested-With": 'XMLHttpRequest',
+                            "X-CSRF-TOKEN": "69t9UlksK9A2da1i5F9RhJ2wdNuEcyCXywBlM1D9"
+                        },
+                        body: JSON.stringify({
+                            ...params,
+                            mobile: number,
+                            is_email: this.signInUsing === signInTypes[1],
+                            is_resend: resendOtp
+                        })
+                    });
+                    const data = await response.json()
+
+                    if(response.ok) {
+                        toastr.success(data.message);
+                        this.currentTab = tabs.OTPForm
+
+                        if(this.signInUsing === signInTypes[1]) {
+                            this.sessionEmail = true
+                            this.sessionMobile = false
+                        } else if(this.signInUsing === signInTypes[0]) {
+                            this.sessionEmail = false
+                            this.sessionMobile = true
+                        }
+
+                    } else {
+                        toastr.error(data.message);
+                        this.errors = {...data.errors}
+
+                        if (response.status === 419) {
+                            setTimeout(() => {
+                                window.location.reload();
+                            }, 1000);
+                        }
+
+                        if (response.status === 401) {
+                            window.location.reload();
+                        }
+                    }
+
+                } catch (e) {
+                    console.error(e)
+                } finally {
+                    this.metadata.inputLoading = false
+                }
+            },
+
+            startTimer() {
+                clearInterval(this.timerInterval)
+                this.timerInterval = null
+
+                this.timer = 60;
+                this.timerInterval = setInterval(() => {
+                    if(this.timer <= 0) {
+                        clearInterval(this.timerInterval)
+                        this.timerInterval = null
+                    } else
+                        this.timer -= 1;
+                }, 1000)
+            },
+
+            async checkOTP() {
+                if(this.metadata.otpLoading) return;
+
+                this.errors = null;
+                this.metadata.otpLoading = true
+
+                try {
+                    this.metadata.otpLoading = true
+
+                    const response = await fetch('https://jawaktv.com/v_ql', {
+                        method: 'POST',
+                        headers: {
+                            "Content-type": "application/json; charset=UTF-8",
+                            "X-Requested-With": 'XMLHttpRequest',
+                            "X-CSRF-TOKEN": "69t9UlksK9A2da1i5F9RhJ2wdNuEcyCXywBlM1D9"
+                        },
+                        body: JSON.stringify({
+                            otp: this.otpValue
+                        })
+                    });
+                    const data = await response.json();
+
+                    if(response.ok) {
+                        this.otpSuccess = true
+                        if(response.status === 202) {
+                            this.currentTab = tabs.inputNameForm
+
+                            if(this.signInUsing === signInTypes[0]) {
+                                this.inputNameForm.phone = this.inputForm.phone
+                            } else if(this.signInUsing === signInTypes[1]) {
+                                this.inputNameForm.email = this.inputForm.email
+                            }
+                        } else {
+                            window.location.reload()
+                        }
+                    } else {
+                        this.errors = {...data.errors} ?? null
+                        toastr.error(data.message)
+                        this.$refs.otp4?.focus()
+                        this.metadata.otpLoading = false
+
+                        if (response.status === 419) {
+                            setTimeout(() => {
+                                window.location.reload();
+                            }, 1000);
+                        }
+
+                        if (response.status === 401) {
+                            window.location.reload();
+                        }
+                    }
+                } catch (e) {
+                    this.metadata.otpLoading = false
+                    console.error(e)
+                }
+            },
+
+            checkActiveTabBySession() {
+                if(!this.stepOneOk) {
+                    this.currentTab = tabs.inputForm
+                }
+
+                else if(this.stepOneOk && !this.stepTwoOk) {
+                    this.currentTab = tabs.OTPForm
+                }
+
+                else if(this.stepOneOk && this.stepTwoOk && !this.stepThreeOk) {
+                    this.currentTab = tabs.inputNameForm
+                }
+
+                else
+                    this.currentTab = tabs.inputForm
+            },
+
+            fillOTPFromDigits(value = '') {
+                const data = String(value).replace(/\D/g, '').slice(0, 4);
+
+                if (data.length) {
+                    this.otpSteps.first = data[0] ?? null;
+                    this.otpSteps.second = data[1] ?? null;
+                    this.otpSteps.third = data[2] ?? null;
+                    this.otpSteps.fourth = data[3] ?? null;
+
+                    this.$nextTick(() => {
+                        const nextInput = this.$refs[`otp${Math.min(data.length + 1, 4)}`];
+                        nextInput?.focus();
+
+                        if (this.otpFilled) this.checkOTP();
+                    });
+                }
+            },
+
+            handlePasteOTP(event) {
+                const data = event.clipboardData.getData('Text');
+                if (data) {
+                    this.fillOTPFromDigits(data);
+                }
+
+                event.preventDefault();
+            },
+
+            handleOTPInput(event, step) {
+                const value = event.target.value.replace(/\D/g, '');
+
+                if (value.length > 1) {
+                    this.fillOTPFromDigits(value);
+                    return;
+                }
+
+                this.otpSteps[step] = value || null;
+                event.target.value = value;
+            },
+
+            renderCloudflare() {
+                let $this = this;
+
+                $this.$nextTick(() => {
+                    if ($this.$refs.cloudflareCaptcha) {
+                        turnstile.render(this.$refs.cloudflareCaptcha, {
+                            sitekey: '0x4AAAAAABACfqNbiXC_ADiW',
+                            theme: 'light',
+                            callback: (token) => {
+                                $this.inputForm.cloudflareCaptcha = token;
+                            }
+                        });
+                    }
+                })
+            },
+
+            async init() {
+                this.checkActiveTabBySession()
+
+                let $this = this
+
+                this.$watch('currentTab', function () {
+                    $this.errors = null
+                    this.otpSuccess = false
+                    $this.initPhoneInput()
+
+                    if($this.currentTab === tabs.OTPForm)
+                        $this.startTimer()
+                })
+
+                this.$watch('signInUsing', function(val) {
+                    $this.errors = null
+                    $this.initPhoneInput()
+
+                    // if (val === 'email' && '') {
+                    //     $this.renderCloudflare();
+                    // }
+                })
+
+                this.$watch('otp1Value', (val) => {
+                    if(val)
+                        $this.$refs.otp2?.focus()
+                    else
+                        $this.otpSteps.first = null
+                })
+
+                this.$watch('otp2Value', (val) => {
+                    if(val)
+                        $this.$refs.otp3?.focus()
+                    else
+                        $this.$refs.otp1?.focus()
+                })
+
+                this.$watch('otp3Value', (val) => {
+                    if(val)
+                        $this.$refs.otp4?.focus()
+                    else
+                        $this.$refs.otp2?.focus()
+                })
+
+                this.$watch('otp4Value', (val) => {
+                    if(val) {
+                        $this.$refs.otp4?.blur()
+                        if($this.otpFilled)
+                            this.checkOTP()
+                    } else {
+                        $this.$refs.otp3?.focus()
+                    }
+                })
+
+                this.$watch('inputFormPhone', val => {
+                    if(val === '' || val === null)
+                        return;
+
+                    let num = val.replaceAll(' ', '')
+                    let isZero = num.length ? parseInt(num.charAt(0)) === 0 : false
+                    if(isZero) {
+                        this.inputForm.phone = num.split('').splice(1, num.length - 1).join('')
+                    }
+                })
+
+                this.$nextTick(() => {
+                    $this.initPhoneInput()
+                })
+
+                if(this.currentTab === tabs.OTPForm)
+                    this.startTimer()
+
+                if(this.inputNameForm.phone) {
+                    this.inputNameForm.phone = this.inputNameForm.phone.substring(3, this.inputNameForm.phone.length)
+
+                    const prefixes = ['+966','966','05','5']; 
+                    this.isSaudi = prefixes.some(prefix => this.inputNameForm.phone.startsWith(prefix));
+                }
+            }
+        }))
+    })
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"d8cbba8f8306499b87bf83a7bb83917a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
