@@ -22,12 +22,323 @@
   --nav-h: 65px;
 }
 
+
+.prevBtn-SD5kV i {
+  color: #000 !important;
+}
+
+
+
+/* ===تمارا وضع ليلي   === */
+
+/* الكونتينر الرئيسي */
+.tamara-summary-widget--inline-outlined:hover {
+    background-color: #c29540!important;
+}
+/* ===تقييم باللون ذهبي مع نجمة  === */
+
+.sr_rating {
+    color: #daae49 !important;
+}
+
+.sr_rating i.la-star,
+.sr_rating .las.la-star {
+    color: #daae49 !important;
+}
+
+/* ===وضع ليلي تقييماتت  === */
+
+.rv2-list-item {
+    background: #242018;
+}
+
+.rv2-date,
+.rv2-total {
+    background-color: #daae49 !important;
+    color: #fff; /* لون النص */
+    padding: 4px 10px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.offcanvas-body {
+    background-color: transparen!important;
+}
+
+/* ===fix border === */
+.widgetArea.slider-widget-area {
+    border: transparent!important;
+}
+.widgetArea, section.widgetArea {
+    border: transparent!important;
+}
+
+/* ===dark mode  border === */
+.sign-in {
+    background: #231d15 !important;
+
+}
+
 /* === GLOBAL DARK BASE === */
 html { background-color: var(--bg) !important; }
 
 body {
   background-color: var(--bg) !important;
   color: var(--txt) !important;
+}
+
+/* === fix .store-isotope-list  color  === */
+
+.store-isotope-list .list {
+    color: white!important;
+}
+
+.arrow-box button {
+    color: #ffffff!important;
+}
+
+
+/* ===fix some prolbem in cart page   === */
+.la, .las {
+    color: #7b7b7b!important;
+}
+
+
+.admin .msg_details {
+    color: #fff!important;
+    background: #735d2d!important;
+}
+
+/* === checkout some fix  === */
+.coupon_promo-input .btn-copy, .coupon_promo-input .btn.btn-main {
+    border-radius: 10px !important;
+}
+.coupon_promo-input {
+    border-radius: 1rem!important;
+   background: #463b22!important;
+}
+
+.bank_details {
+    background: #463b22!important;
+}
+
+.uploader {
+    background: #242018!important;
+}
+
+.payment_tab .img img {
+    background: #e5c462!important;
+    padding: 2px!important;
+    border-radius: 10px!important;
+}
+
+/* === checkout dark mode   === */
+
+.order_left, .order_right {
+    background: #242018!important;
+    color: #f0ead3!important;
+}
+
+.order_list-content {
+    color: #ffffff!important;
+}
+.order_total li span {
+    color: #ffffff!important;
+}
+
+.order_total li.price-total {
+    background: #463b22!important;
+}
+
+.quantity-product {
+    background: #463b22!important;
+}
+
+/* ===order-review dark mode   === */
+
+.order-header {
+    background: #242018!important;
+    padding: 32px!important;
+    border-radius: 20px!important;
+}
+
+.contact-info-wrap > div {
+    background: #242018!important;
+}
+
+.rv_floating-footer {
+    background: rgb(70 59 34)!important;
+}
+
+.p-4 {
+    background: #242018!important;
+}
+.rv_item-head {
+    background: #242018!important;
+}
+
+[dir=rtl] .order-header > .rv_btn {
+        margin-right: auto;
+        background: #463b22!important;
+}
+.rating_txt {
+    background: #463b22!important;
+}
+.order-id {
+    background: #463b22!important;
+}
+
+.rv_btn {
+    background: #dfb753!important;
+    color: #000000!important;
+}
+.rv_badg_num {
+    background: transparent!important;
+    border: transparent!important;
+}
+
+/* ===wishlist dark mode   === */
+.cart-item-wrap {
+    background: #242018;
+    color: white!important;
+    border: transparent!important;
+}
+
+.cart-item-price {
+    color: #ffffff!important;
+}
+/* ===pop up cart and wishlist and user dark mode   === */
+[dir="rtl"] .custom-navbar .dropdown-contents.dropdown-left {
+    background: #463b22!important;
+}
+
+/* ===manage-account dark mode   === */
+.dash_table-wrap tbody td {
+    background: #242018!important;
+
+}
+
+.dash_btn.dash_table-btn {
+    background: #e8ca68!important;
+    color: #000000!important;
+}
+
+[dir=rtl] .dash_table-wrap thead th:first-child, [dir=ltr] .dash_table-wrap thead th:last-child, [dir=rtl] .dash_table-wrap tbody td:first-child, [dir=ltr] .dash_table-wrap tbody td:last-child {
+    background: #242018!important;
+}
+
+.manage_account-head {
+    background: #232323!important;
+}
+
+.dash_body-head span {
+    color: #ffffff!important;
+}
+
+.manage_account-row {
+    color: #ffffff!important;
+}
+
+.manage_account-img span {
+    color: #ffffff!important;
+}
+.manage_account-list li span {
+    color: #ffffff!important;
+}
+
+.manage_account-head .dash_btn {
+    color: #000000!important;
+    background: #ebcd6c!important;
+}
+.form-group label {
+    color: #ffffff!important;
+}
+
+.dash_modal-header span {
+    color: #ffffff!important;
+}
+
+.dash_btn {
+    background: #daae49;
+    color: #000000!important;
+}
+
+/* ===pop up cart and wishlist and user dark mode   === */
+.support_ticket-view .dash_body-head, .refund_chat-view .dash_body-head {
+    background: #1f1c19!important;
+}
+
+.ticket_msg-wrap .title {
+    background: #1f1c19!important;
+}
+
+.ticket_info {
+    color: #ffffff!important;
+}
+
+.ticket_msg {
+ color: #ffffff!important;
+}
+
+.mt-1 {
+    color: #ffffff!important;
+}
+.dash_modal label, .form-label {
+
+    color: #ffe8b4!important;
+}
+
+.ticket_msg-wrap .title {
+    background: #1f1c19!important;
+}
+
+.msg_area-btn 
+    background: #daae49!important;
+}
+
+.dash_body-head-title, .manage_account-title {
+    color: #ffffff!important;
+}
+
+.ticket_msg-wrap .title {
+    color: #ffffff!important;
+}
+
+
+/* ===order_details dark mode   === */
+
+.order_details {
+    background: #1f1c19!important;
+    border: 1px solid var(--br-clr)!important;
+    color: #ffffff!important;
+    border: solid 0.5px #ddb44f!important;
+}
+
+.order_head .order_date {
+    background: #715621!important;
+}
+
+.order_list-title {
+    border: transparent!important;
+}
+
+.order_list li {
+    border: 1px solid #060605!important;
+}
+
+
+  /* ── WhatsApp floating button ──
+._wa {
+    width: 50px !important;
+    height: 50px !important;
+    background-color: #2cd46b !important;
+
+}
+
+
+.cart-item-img img {
+    aspect-ratio: auto!important
 }
 
 /* Headings */
@@ -273,7 +584,6 @@ nav.navbar.navbar3 svg, nav.navbar.navbar3 i,
   background-color: var(--bg2) !important;  /* ← background-color, not background */
   border: 1px solid rgba(218,174,73,.14) !important;
   border-radius: 16px !important;
-  overflow: hidden !important;
   box-shadow: 0 4px 16px rgba(0,0,0,.3) !important;
   transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease) !important;
 }
@@ -287,7 +597,6 @@ nav.navbar.navbar3 svg, nav.navbar.navbar3 i,
 .product-item .product-thumbnail-wrap,
 .card2 .product-thumbnail-wrap {
   display: block !important;
-  overflow: hidden !important;
   background-color: var(--bg3) !important;
 }
 .product-item img, .card2 img {
@@ -362,8 +671,8 @@ strong.product-price { color: var(--g) !important; font-weight: 700 !important; 
 /* ONLY brand-img images get the filter — NOT widgetArea images globally */
 .brand-img img {
   filter: brightness(0) invert(1) !important;
-  opacity: .55 !important;
-  max-height: 72px !important;   /* bigger logos */
+  opacity: .9 !important;
+  max-height: 150px !important; 
   width: auto !important;
   object-fit: contain !important;
   transition: opacity .25s ease !important;
@@ -620,6 +929,11 @@ p.single-promo-contents-para {
   background-color: var(--bg4) !important;
   position: relative !important;
 }
+
+ .store-section.footer-store-section, .col-lg-12 {
+        color: #ffffff;
+    }
+
 .store-section.footer-store-section::before, footer::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 2px;
@@ -641,12 +955,19 @@ footer .footer-widget-title, footer .widget-title {
   border-bottom: 1px solid rgba(218,174,73,.14) !important;
   margin-bottom: 14px !important;
 }
-.store-section.footer-store-section a, footer a { color: var(--txm) !important; }
+.store-section.footer-store-section a, footer a { color: #ffffff !important; }
 .store-section.footer-store-section a:hover, footer a:hover { color: var(--g) !important; }
 .store-section.footer-store-section p,
 .store-section.footer-store-section span,
 footer p, footer span,
 footer li { color: var(--txm) !important; }
+
+.store-section.footer-store-section p, .store-section.footer-store-section span, footer p, footer span, footer li {
+    color: #ffffff !important;
+}
+    .store-section.footer-store-section.justify-content-lg-start {
+        color: #eacc6b;
+    }
 
 /* Social icons */
 .footer-social a, .social-links a {
@@ -671,7 +992,7 @@ footer li { color: var(--txm) !important; }
 .payment-methods img:hover { filter: grayscale(0) brightness(1) !important; }
 
 /* ============================================================
-   PRODUCT PAGE — DARK MODE
+   PRODUCT PAGE —  MODE
    ============================================================ */
 /* Splide slider on product page */
 .product-image-slide .splide,
@@ -728,16 +1049,7 @@ footer li { color: var(--txm) !important; }
   border-color: transparent !important; color: #0a0800 !important;
 }
 
-/* WhatsApp buy button — gold gradient instead of green */
-.btn-direct-wa,
-a.btn-direct-wa,
-[class*="btn-wa"], [class*="btn-whatsapp"],
-a[href*="wa.me"].btn, a[href*="whatsapp"].btn {
-  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
-  border: none !important; color: #0a0800 !important; font-weight: 800 !important;
-  border-radius: 999px !important;
-  box-shadow: 0 6px 18px rgba(218,174,73,.22) !important;
-}
+
 .btn-direct-wa:hover { transform: translateY(-2px) !important; color: #0a0800 !important; }
 .btn-direct-wa svg, .btn-direct-wa i { color: #0a0800 !important; fill: #0a0800 !important; }
 
@@ -767,30 +1079,12 @@ a[href*="wa.me"].btn, a[href*="whatsapp"].btn {
 }
 .tab-content { background-color: var(--bg) !important; }
 .tab-pane { background-color: var(--bg) !important; color: var(--txs) !important; }
-.tab-pane * { color: var(--txs) !important; }
+.tab-pane * { color: #ffffff !important; }
 
-/* ============================================================
-   WHATSAPP FLOATING BUTTON — gold gradient
-   ============================================================ */
-.whatsapp_float, .whatsapp-float, .wa-chat-btn,
-#whatsapp_float, #whatsapp-float,
-[class*="whatsapp_float"],
-[class*="wa-float"] {
-  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
-  border-color: transparent !important;
-  box-shadow: 0 6px 22px rgba(218,174,73,.35) !important;
-  transition: transform .25s var(--ease), box-shadow .25s var(--ease) !important;
+.gl-star-rating--stars span {
+    color: #ffffff!important;
 }
-.whatsapp_float:hover, [class*="whatsapp_float"]:hover {
-  transform: scale(1.08) !important;
-  box-shadow: 0 10px 30px rgba(218,174,73,.5) !important;
-}
-.whatsapp_float svg, .whatsapp_float i,
-[class*="whatsapp_float"] svg, [class*="whatsapp_float"] i {
-  color: #0a0800 !important;
-  fill: #0a0800 !important;
-  stroke: #0a0800 !important;
-}
+
 
 /* ============================================================
    CART POPUP / MINI-CART  (white → dark)
@@ -820,7 +1114,6 @@ a[href*="wa.me"].btn, a[href*="whatsapp"].btn {
 .offcanvas-title { color: var(--txt) !important; font-weight: 700 !important; }
 .btn-close { filter: brightness(0) invert(1) !important; opacity: .6 !important; }
 .btn-close:hover { opacity: 1 !important; }
-.offcanvas-body { background-color: var(--bg2) !important; }
 
 /* Cart specific inside offcanvas */
 .offcanvas .nav-link { color: var(--txs) !important; }
@@ -1549,7 +1842,7 @@ section { background-color: transparent !important; }
     border-radius: 10px !important;
   }
   .brand-img img {
-    max-height: 44px !important;
+    max-height: 150x !important;
   }
 
   /* ── Splide (brand + product sliders) ── */
@@ -1616,16 +1909,16 @@ section { background-color: transparent !important; }
     max-height: 70px !important;
   }
 
-  /* ── WhatsApp floating button ──
-     Tjar mobile bottom nav bar is ~60px.
-     Push the WhatsApp button above it.           */
-  .whatsapp_float, .whatsapp-float, #whatsapp_float, #whatsapp-float,
-  [class*="whatsapp_float"], [class*="wa-float"] {
-    bottom: 76px !important; /* above Tjar bottom nav */
-    right: 16px !important;
-    z-index: 9998 !important;
-  }
 
+  /* ── WhatsApp floating button on phone   ──
+@media (max-width: 992px) {
+    ._wa {
+        bottom: 90px!important;
+        right: 12px!important;
+    }
+}
+
+   
   /* ── Tjar mobile bottom nav ─
      Ensure it stays on top and dark             */
   .navbar-bottom, .bottom-navbar, .mobile-navbar,
@@ -1675,7 +1968,7 @@ section { background-color: transparent !important; }
 
   /* Brand logos */
   .brand-img { padding: 8px 10px !important; }
-  .brand-img img { max-height: 36px !important; }
+  .brand-img img { max-height: 50px !important; }
 
   /* Interactive tabs: 2-col still ok at 480 */
   .jawak-tabs { grid-template-columns: 1fr 1fr !important; }
@@ -1701,7 +1994,7 @@ section { background-color: transparent !important; }
 
 /* Container */
 div.mobile-nav:not(.opacity-0) {
-  background-color: #0d0a00 !important;
+  background-color: #231c06 !important;
   border-top: 1px solid rgba(218,174,73,.28) !important;
   box-shadow: 0 -4px 24px rgba(0,0,0,.6) !important;
 }
