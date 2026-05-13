@@ -1,6 +1,6 @@
 /* =====================================================
    JAWAK TV — TJAR PLATFORM REDESIGN
-   jawaktv-tjar.js  |  v3.4  |  2026
+   jawaktv-tjar.js  |  v3.5  |  2026
    ===================================================== */
 
 /* ================================================================
@@ -168,6 +168,10 @@
       setTimeout(function () {
         if (bar.parentNode) bar.parentNode.removeChild(bar);
         document.body.classList.add('jwk-bar-closed');
+        /* ── FIX 1: update body padding when bar closes ── */
+        var IS_MOB = window.innerWidth <= 767;
+        var navH   = IS_MOB ? 56 : 65;
+        document.body.style.setProperty('padding-top', navH + 'px', 'important');
         var nav = document.querySelector('nav.navbar.navbar3, .custom-navbar, .navbar.navbar3');
         if (nav) nav.style.setProperty('top', '0px', 'important');
       }, 280);
@@ -226,28 +230,30 @@
   var BOTTOM_NAV_H = 64;
 
   /* ================================================================
+     FIX 1 — body padding-top يحسب الشريط + الناف بار
+     يُطبَّق فوراً ويُعاد تطبيقه عند DOMContentLoaded
+     ================================================================ */
+  function applyBodyPadding() {
+    var totalPad = BAR_H + NAV_H;
+    document.body.style.setProperty('padding-top', totalPad + 'px', 'important');
+  }
+  applyBodyPadding();
+  document.addEventListener('DOMContentLoaded', applyBodyPadding);
+
+  /* ================================================================
      HERO MOBILE CSS — injected once
-     الإصلاحات:
-     1. ارتفاع الهيرو 70vh في الهاتف
-     2. إخفاء زر الصوت في الهاتف
-     3. توسيط نص الهيرو في الهاتف
      ================================================================ */
   (function injectHeroMobileStyles() {
     if (document.getElementById('jwkHeroMobileStyles')) return;
     var s = document.createElement('style');
     s.id = 'jwkHeroMobileStyles';
     s.textContent = [
-      /* ── Hero height on mobile ── */
       '@media (max-width: 767px) {',
       '  .hero.hero-area, .hero-area {',
       '    min-height: 70vh !important;',
       '    max-height: 70vh !important;',
       '  }',
-
-      /* ── Hide mute button on mobile ── */
       '  #jwk-mute-btn { display: none !important; }',
-
-      /* ── Center hero text block on mobile (like desktop) ── */
       '  .hero.hero-area .hero-content,',
       '  .hero-area .hero-content,',
       '  .hero.hero-area [class*="hero-text"],',
@@ -262,15 +268,12 @@
       '    width: 90% !important;',
       '    max-width: 90% !important;',
       '  }',
-
-      /* ── Hero headings readable on mobile ── */
       '  .hero.hero-area h1, .hero-area h1,',
       '  .hero.hero-area h2, .hero-area h2 {',
       '    font-size: clamp(1.6rem, 6vw, 2.4rem) !important;',
       '    line-height: 1.3 !important;',
       '    text-shadow: 0 2px 16px rgba(0,0,0,0.85) !important;',
       '  }',
-
       '  .hero.hero-area p, .hero-area p {',
       '    font-size: clamp(0.85rem, 3.5vw, 1rem) !important;',
       '    text-shadow: 0 1px 8px rgba(0,0,0,0.75) !important;',
@@ -301,16 +304,20 @@
   }
 
   /* ================================================================
-     3. HERO — full-screen background video + fade-in + mute button + hero text
-        video opacity = 1 (كامل الوضوح) + overlay معطّل + نص الهيرو
+     FIX 2 — HERO VIDEO: الحقن الكامل مع guard ومحاولة retry
      ================================================================ */
   function addVideoToSlide() {
     var hero = document.querySelector('.hero.hero-area') || document.querySelector('.hero-area');
+
+    /* ── Guard: لا تُضف فيديو مرتين ── */
     if (!hero || hero.querySelector('.jwk-hero-video')) return;
 
     hero.style.setProperty('background-image', 'none', 'important');
     hero.style.setProperty('background-color', '#000', 'important');
+    hero.style.setProperty('position', 'relative', 'important');
+    hero.style.setProperty('overflow', 'hidden', 'important');
 
+    /* ── <video> element ── */
     var video = document.createElement('video');
     video.className   = 'jwk-hero-video';
     video.autoplay    = true;
@@ -320,10 +327,19 @@
     video.setAttribute('playsinline', '');
     video.setAttribute('webkit-playsinline', '');
     video.setAttribute('preload', 'auto');
-    video.style.opacity    = '0';
-    video.style.transition = 'opacity 1.2s ease';
+    video.style.cssText = [
+      'position:absolute',
+      'inset:0',
+      'width:100%',
+      'height:100%',
+      'object-fit:cover',
+      'z-index:0',
+      'pointer-events:none',
+      'opacity:0',
+      'transition:opacity 1.2s ease'
+    ].join(';');
 
-    /* فيديو كامل الوضوح بدون تعتيم */
+    /* Fade in when ready */
     video.addEventListener('canplay', function () {
       setTimeout(function () { video.style.opacity = '1'; }, 100);
     });
@@ -333,12 +349,12 @@
     src.type = 'video/mp4';
     video.appendChild(src);
 
-    /* overlay معطّل تماماً */
+    /* ── Overlay (معطّل) ── */
     var overlay = document.createElement('div');
     overlay.className = 'jwk-hero-overlay';
     overlay.style.cssText = 'display:none!important';
 
-    /* ── نص Hero فوق الفيديو ── */
+    /* ── نص Hero ── */
     if (!document.getElementById('jwkHeroTextStyles')) {
       var ks = document.createElement('style');
       ks.id = 'jwkHeroTextStyles';
@@ -362,7 +378,7 @@
       hero.appendChild(heroText);
     }
 
-    /* Mute / Unmute button */
+    /* ── Mute button ── */
     var muteBtn = document.createElement('button');
     muteBtn.id  = 'jwk-mute-btn';
     muteBtn.setAttribute('aria-label', 'كتم/تشغيل الصوت');
@@ -382,13 +398,33 @@
         : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
     }
 
+    /* ── أدخِل العناصر في الهيرو ── */
     hero.insertBefore(muteBtn,  hero.firstChild);
     hero.insertBefore(overlay,  hero.firstChild);
     hero.insertBefore(video,    hero.firstChild);
-    video.play().catch(function () {});
 
+    /* ── تشغيل الفيديو مع retry ── */
+    var playAttempts = 0;
+    function tryPlay() {
+      video.play().catch(function () {
+        if (++playAttempts < 5) setTimeout(tryPlay, 500);
+      });
+    }
+    tryPlay();
+
+    /* ── أخفِ صورة الهيرو الأصلية ── */
     var imgWrap = hero.querySelector('.hero-img-wrap');
     if (imgWrap) imgWrap.style.setProperty('display', 'none', 'important');
+  }
+
+  /* ── Retry: إذا hero-area لم تُضف بعد، انتظر DOMContentLoaded ── */
+  function tryAddVideo() {
+    var hero = document.querySelector('.hero.hero-area') || document.querySelector('.hero-area');
+    if (hero) {
+      addVideoToSlide();
+    } else {
+      document.addEventListener('DOMContentLoaded', addVideoToSlide);
+    }
   }
 
   /* ================================================================
@@ -649,8 +685,9 @@
      INIT + MUTATION OBSERVER
      ================================================================ */
   function init() {
+    applyBodyPadding();   /* FIX 1 — تطبيق padding-top */
     initNavScroll();
-    addVideoToSlide();
+    tryAddVideo();        /* FIX 2 — hero video مع retry */
     buildInteractiveFeaturesSection();
     upgradeFeatureIcons();
     hideCardRatings();
@@ -678,6 +715,7 @@
       applyDarkOverrides();
       styleWhatsAppBtn();
       upgradeFeatureIcons();
+      tryAddVideo();      /* FIX 2 — guard يمنع التكرار */
     }, 200);
   }).observe(document.body, { childList: true, subtree: true });
 
