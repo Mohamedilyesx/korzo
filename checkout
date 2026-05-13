@@ -639,693 +639,2434 @@
         }
     </style>
     <style>
-        /* =========================================================
-   JAWAK TV — منصة تجار — DARK MODE COMPLETE
-   خلفية: #1a1815 | ذهبي وتدرجاته
-   نفس هوية workszox مع تكيّف لمنصة تجار
-========================================================= */
+        /* =====================================================
+   JAWAK TV — TJAR PLATFORM REDESIGN
+   jawaktv-tjar.css  |  v3.0  |  2026
+   ===================================================== */
 
-/* =========================================================
-   DARK MODE BASE
-========================================================= */
+/* === VARIABLES === */
 :root {
-  --bg-dark:       #1a1815;
-  --bg-card:       #1f1c19;
-  --bg-surface:    #242018;
-  --bg-surface-2:  #2a261f;
-  --border-gold:   rgba(218,174,73,.18);
-  --border-gold-2: rgba(218,174,73,.30);
-  --gold:          #daae49;
-  --gold-light:    #f0d080;
-  --gold-pale:     #fff3cf;
-  --gold-muted:    #c9a25e;
-  --gold-dim:      #e8dfc0;
-  --gold-dark:     #0A0800;
-  --text-main:     #f0ead8;
-  --text-sub:      #c8bfa8;
-  --text-muted:    #908778;
-  --radius-card:   22px;
-  --shadow-card:   0 14px 36px rgba(0,0,0,.45);
+  --g:    #daae49;
+  --gl:   #f0d878;
+  --gd:   #c9922a;
+  --gx:   #b88b3c;
+  --bg:   #1a1815;
+  --bg2:  #1f1c19;
+  --bg3:  #242018;
+  --bg4:  #141109;
+  --txt:  #f0ead8;
+  --txs:  #c8bfa8;
+  --txm:  #908778;
+  --bdr:  rgba(218,174,73,.18);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --bar-h: 42px;
+  --nav-h: 65px;
 }
 
-/* Force dark background on entire store */
-body,
-.xc-main,
-.main-content,
-[class*="page-wrapper"],
-[class*="layout-wrapper"],
-.xc-content,
-#main,
-.xc-storefront {
-  background-color: var(--bg-dark) !important;
-  color: var(--text-main) !important;
+
+.prevBtn-SD5kV i {
+  color: #000 !important;
 }
 
-/* =========================================================
-   DARK SURFACES — Cards, Sections
-========================================================= */
-.xc-product-card,
-.xc-card,
-[class*="card-item"],
-[class*="product-card"],
-[class*="section-card"],
-.xc-category-one__item-inner,
-[class*="category-item"],
-.xc-checkout-box,
-[class*="checkout-"],
-[class*="order-"],
-.xc-sidebar,
-[class*="sidebar-"],
-[class*="filter-"],
-.xc-breadcrumb,
-[class*="breadcrumb"],
-.xc-alert,
-[class*="alert-box"] {
-  background-color: var(--bg-card) !important;
-  border-color: var(--border-gold) !important;
-  color: var(--text-main) !important;
+
+
+/* ===تمارا وضع ليلي   === */
+
+/* الكونتينر الرئيسي */
+.tamara-summary-widget--inline-outlined:hover {
+    background-color: #c29540!important;
+}
+/* ===تقييم باللون ذهبي مع نجمة  === */
+
+.sr_rating {
+    color: #daae49 !important;
 }
 
-/* =========================================================
-   PROMO BAR TICKER — متحرك
-========================================================= */
-#jwkBar {
-  position: relative;
+.sr_rating i.la-star,
+.sr_rating .las.la-star {
+    color: #daae49 !important;
+}
+
+/* ===وضع ليلي تقييماتت  === */
+
+.rv2-list-item {
+    background: #242018;
+}
+
+.rv2-date,
+.rv2-total {
+    background-color: #daae49 !important;
+    color: #fff; /* لون النص */
+    padding: 4px 10px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.offcanvas-body {
+    background-color: transparen!important;
+}
+
+/* ===fix border === */
+.widgetArea.slider-widget-area {
+    border: transparent!important;
+}
+.widgetArea, section.widgetArea {
+    border: transparent!important;
+}
+
+/* ===dark mode  border === */
+.sign-in {
+    background: #231d15 !important;
+
+}
+
+/* === GLOBAL DARK BASE === */
+html { background-color: var(--bg) !important; }
+
+body {
+  background-color: var(--bg) !important;
+  color: var(--txt) !important;
+}
+
+/* === fix .store-isotope-list  color  === */
+
+.store-isotope-list .list {
+    color: white!important;
+}
+
+.arrow-box button {
+    color: #ffffff!important;
+}
+
+
+/* ===fix some prolbem in cart page   === */
+.la, .las {
+    color: #7b7b7b!important;
+}
+
+
+.admin .msg_details {
+    color: #fff!important;
+    background: #735d2d!important;
+}
+
+/* === checkout some fix  === */
+.coupon_promo-input .btn-copy, .coupon_promo-input .btn.btn-main {
+    border-radius: 10px !important;
+}
+.coupon_promo-input {
+    border-radius: 1rem!important;
+   background: #463b22!important;
+}
+
+.bank_details {
+    background: #463b22!important;
+}
+
+.uploader {
+    background: #242018!important;
+}
+
+.payment_tab .img img {
+    background: #e5c462!important;
+    padding: 2px!important;
+    border-radius: 10px!important;
+}
+
+/* === checkout dark mode   === */
+
+.order_left, .order_right {
+    background: #242018!important;
+    color: #f0ead3!important;
+}
+
+.order_list-content {
+    color: #ffffff!important;
+}
+.order_total li span {
+    color: #ffffff!important;
+}
+
+.order_total li.price-total {
+    background: #463b22!important;
+}
+
+.quantity-product {
+    background: #463b22!important;
+}
+
+/* ===order-review dark mode   === */
+
+.order-header {
+    background: #242018!important;
+    padding: 32px!important;
+    border-radius: 20px!important;
+}
+
+.contact-info-wrap > div {
+    background: #242018!important;
+}
+
+.rv_floating-footer {
+    background: rgb(70 59 34)!important;
+}
+
+.p-4 {
+    background: #242018!important;
+}
+.rv_item-head {
+    background: #242018!important;
+}
+
+[dir=rtl] .order-header > .rv_btn {
+        margin-right: auto;
+        background: #463b22!important;
+}
+.rating_txt {
+    background: #463b22!important;
+}
+.order-id {
+    background: #463b22!important;
+}
+
+.rv_btn {
+    background: #dfb753!important;
+    color: #000000!important;
+}
+.rv_badg_num {
+    background: transparent!important;
+    border: transparent!important;
+}
+
+/* ===wishlist dark mode   === */
+.cart-item-wrap {
+    background: #242018;
+    color: white!important;
+    border: transparent!important;
+}
+
+.cart-item-price {
+    color: #ffffff!important;
+}
+/* ===pop up cart and wishlist and user dark mode   === */
+[dir="rtl"] .custom-navbar .dropdown-contents.dropdown-left {
+    background: #463b22!important;
+}
+
+/* ===manage-account dark mode   === */
+.dash_table-wrap tbody td {
+    background: #242018!important;
+
+}
+
+.dash_btn.dash_table-btn {
+    background: #e8ca68!important;
+    color: #000000!important;
+}
+
+[dir=rtl] .dash_table-wrap thead th:first-child, [dir=ltr] .dash_table-wrap thead th:last-child, [dir=rtl] .dash_table-wrap tbody td:first-child, [dir=ltr] .dash_table-wrap tbody td:last-child {
+    background: #242018!important;
+}
+
+.manage_account-head {
+    background: #232323!important;
+}
+
+.dash_body-head span {
+    color: #ffffff!important;
+}
+
+.manage_account-row {
+    color: #ffffff!important;
+}
+
+.manage_account-img span {
+    color: #ffffff!important;
+}
+.manage_account-list li span {
+    color: #ffffff!important;
+}
+
+.manage_account-head .dash_btn {
+    color: #000000!important;
+    background: #ebcd6c!important;
+}
+.form-group label {
+    color: #ffffff!important;
+}
+
+.dash_modal-header span {
+    color: #ffffff!important;
+}
+
+.dash_btn {
+    background: #daae49;
+    color: #000000!important;
+}
+
+/* ===pop up cart and wishlist and user dark mode   === */
+.support_ticket-view .dash_body-head, .refund_chat-view .dash_body-head {
+    background: #1f1c19!important;
+}
+
+.ticket_msg-wrap .title {
+    background: #1f1c19!important;
+}
+
+.ticket_info {
+    color: #ffffff!important;
+}
+
+.ticket_msg {
+ color: #ffffff!important;
+}
+
+.mt-1 {
+    color: #ffffff!important;
+}
+.dash_modal label, .form-label {
+
+    color: #ffe8b4!important;
+}
+
+.ticket_msg-wrap .title {
+    background: #1f1c19!important;
+}
+
+.msg_area-btn 
+    background: #daae49!important;
+}
+
+.dash_body-head-title, .manage_account-title {
+    color: #ffffff!important;
+}
+
+.ticket_msg-wrap .title {
+    color: #ffffff!important;
+}
+
+
+/* ===order_details dark mode   === */
+
+.order_details {
+    background: #1f1c19!important;
+    border: 1px solid var(--br-clr)!important;
+    color: #ffffff!important;
+    border: solid 0.5px #ddb44f!important;
+}
+
+.order_head .order_date {
+    background: #715621!important;
+}
+
+.order_list-title {
+    border: transparent!important;
+}
+
+.order_list li {
+    border: 1px solid #060605!important;
+}
+
+
+  /* ── WhatsApp floating button ──
+._wa {
+    width: 50px !important;
+    height: 50px !important;
+    background-color: #2cd46b !important;
+
+}
+
+
+.cart-item-img img {
+    aspect-ratio: auto!important
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 { color: var(--txt) !important; }
+
+/* Links */
+a { color: var(--txs); text-decoration: none; transition: color .2s var(--ease); }
+a:hover { color: var(--g); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg4); }
+::-webkit-scrollbar-thumb { background: rgba(218,174,73,.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(218,174,73,.5); }
+
+/* Inputs */
+input:not([type="range"]), textarea, select {
+  background-color: var(--bg3) !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  color: var(--txt) !important;
+  border-radius: 10px !important;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: rgba(218,174,73,.5) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(218,174,73,.08) !important;
+}
+input::placeholder, textarea::placeholder { color: var(--txm) !important; }
+
+/* HR lines */
+hr {
+  border-color: rgba(218,174,73,.12) !important;
+  opacity: 1 !important;
+}
+
+/* Bootstrap overrides — background-color ONLY, never background shorthand */
+.bg-white  { background-color: var(--bg2) !important; }
+.bg-light  { background-color: var(--bg3) !important; }
+.text-dark { color: var(--txt) !important; }
+.text-muted, .text-secondary { color: var(--txm) !important; }
+.border    { border-color: var(--bdr) !important; }
+.border-top    { border-top-color: var(--bdr) !important; }
+.border-bottom { border-bottom-color: var(--bdr) !important; }
+
+/* ============================================================
+   PROMO BAR — #jwk-bar (built by JS)
+   Fixed at absolute top, z:100000
+   ============================================================ */
+.promobar, .promobar.container-fluid { display: none !important; }
+
+#jwk-bar {
+  position: fixed !important;
+  top: 0 !important; left: 0 !important; right: 0 !important;
+  height: var(--bar-h);
+  z-index: 100000 !important;
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 42px;
   overflow: hidden;
-  background: linear-gradient(135deg,#0e0901 0%,#1a1000 35%,#221400 65%,#0e0901 100%);
+  background: linear-gradient(135deg, #0e0901, #1c1200, #221400, #0e0901);
   border-bottom: 1px solid rgba(218,174,73,.22);
-  box-shadow: 0 2px 12px rgba(0,0,0,.55), inset 0 1px 0 rgba(218,174,73,.08);
-  z-index: 99999;
+  box-shadow: 0 2px 16px rgba(0,0,0,.6), inset 0 1px 0 rgba(218,174,73,.08);
   box-sizing: border-box;
-  direction: ltr;
 }
-
-#jwkBar::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(218,174,73,.55) 50%, transparent);
+#jwk-bar::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(218,174,73,.6) 50%, transparent);
   pointer-events: none;
 }
-
-#jwkMask {
-  flex: 1 1 auto;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  direction: ltr;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
-          mask-image: linear-gradient(90deg, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+#jwk-mask {
+  flex: 1; height: 100%; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
-
-#jwkTrack {
-  display: inline-flex;
-  flex-wrap: nowrap;
-  width: max-content;
-  height: 100%;
-  align-items: center;
-  white-space: nowrap;
-  will-change: transform;
-  transform: translate3d(0,0,0);
-  direction: ltr;
+#jwk-track {
+  display: inline-flex; flex-wrap: nowrap;
+  height: 100%; align-items: center;
+  white-space: nowrap; will-change: transform;
 }
-
 .jwk-item {
-  display: inline-flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 28px;
-  color: #e8dfc0;
-  font-family: 'IBM Plex Sans Arabic','Tajawal','Cairo',Arial,sans-serif;
-  font-size: 13.5px;
-  font-weight: 500;
-  letter-spacing: .01em;
-  white-space: nowrap;
-  direction: rtl;
-  flex: 0 0 auto;
-  text-shadow: 0 1px 6px rgba(0,0,0,.6);
-  transition: color .2s;
-  cursor: default;
+  display: inline-flex; align-items: center;
+  padding: 0 26px; color: #e8dfc0;
+  font-size: 13.5px; font-weight: 500; white-space: nowrap;
+  direction: rtl; transition: color .2s;
 }
-
 .jwk-item:hover { color: #f5e9aa; }
-
 .jwk-sep {
-  display: inline-flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 4px;
-  color: rgba(218,174,73,.6);
-  font-size: 8px;
-  white-space: nowrap;
-  flex: 0 0 auto;
+  display: inline-flex; align-items: center;
+  padding: 0 4px; color: rgba(218,174,73,.45); font-size: 9px;
+}
+#jwk-close {
+  flex: 0 0 38px; width: 38px; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border: none; cursor: pointer;
+  color: rgba(218,174,73,.6); font-size: 15px;
+  transition: color .2s, opacity .2s; opacity: .65;
+}
+#jwk-close:hover { color: var(--g); opacity: 1; }
+
+/* ============================================================
+   NAVBAR — fixed below promo bar, glass on scroll
+   ============================================================ */
+nav.navbar.navbar3, .custom-navbar,
+.navbar.navbar3 {
+  position: fixed !important;
+  top: var(--bar-h) !important;
+  left: 0 !important; right: 0 !important;
+  z-index: 9999 !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  transition: background-color .3s ease, backdrop-filter .3s ease,
+              box-shadow .3s ease, top .3s ease !important;
+}
+/* Bar closed → navbar snaps to top */
+body.jwk-bar-closed nav.navbar.navbar3,
+body.jwk-bar-closed .custom-navbar,
+body.jwk-bar-closed .navbar.navbar3 {
+  top: 0 !important;
+}
+/* Scrolled → dark glass */
+nav.navbar.navbar3.scrolled, .custom-navbar.scrolled,
+.navbar.navbar3.scrolled {
+  background-color: rgba(10,7,0,.93) !important;
+  backdrop-filter: blur(18px) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.4) !important;
+  border-bottom: 1px solid rgba(218,174,73,.15) !important;
+  box-shadow: 0 4px 28px rgba(0,0,0,.5) !important;
 }
 
-#jwkX {
-  flex: 0 0 auto;
-  width: 34px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0; margin: 0;
-  opacity: .55;
-  transition: opacity .2s, color .2s;
-  color: #c9a84c;
+/* Navbar text/icons */
+nav.navbar.navbar3 .navbar-nav li a,
+nav.navbar.navbar3 .nav-link,
+nav.navbar.navbar3 a,
+.custom-navbar .nav-link,
+.custom-navbar a {
+  color: #fff !important;
+  font-weight: 600;
+  transition: color .2s !important;
 }
+nav.navbar.navbar3 .navbar-nav li a:hover,
+nav.navbar.navbar3 .nav-link:hover,
+.custom-navbar .nav-link:hover,
+.custom-navbar a:hover { color: var(--g) !important; }
 
-#jwkX:hover { opacity: 1; color: #f0d080; }
+nav.navbar.navbar3 svg, nav.navbar.navbar3 i,
+.custom-navbar svg, .custom-navbar i { color: #fff !important; }
+.icon-notification { background-color: var(--g) !important; color: #000 !important; }
 
-@media (max-width: 767px) {
-  #jwkBar   { height: 38px; }
-  .jwk-item { font-size: 12.5px; padding: 0 18px; }
-}
+/* Breadcrumb */
+.breadcrumb { background-color: transparent !important; }
+.breadcrumb-item a { color: var(--txm) !important; }
+.breadcrumb-item.active { color: var(--txs) !important; }
+.breadcrumb-item + .breadcrumb-item::before { color: var(--txm) !important; }
 
-/* =========================================================
-   HERO VIDEO — تغيير الـ hero-area بالفيديو
-========================================================= */
-.xc-main-slider,
-[class*="main-slider"],
-[class*="hero-slider"],
-[class*="slide-hero"],
-.xc-hero {
+/* ============================================================
+   HERO — fullscreen video (added by JS)
+   ============================================================ */
+.hero.hero-area, .hero-area {
   position: relative !important;
   overflow: hidden !important;
-  background: none !important;
-  background-image: none !important;
+  min-height: 100vh !important;
+  background-color: #000 !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
-.jawak-hero-video-bg {
+/* Hide Tjar's static hero image */
+.hero.hero-area .hero-img-wrap { display: none !important; }
+
+.jwk-hero-video {
   position: absolute !important;
   inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
+  width: 100% !important; height: 100% !important;
   object-fit: cover !important;
   z-index: 0 !important;
   pointer-events: none !important;
-  background: #000 !important;
 }
-
-.xc-main-slider::before,
-[class*="main-slider"]::before,
-.xc-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+.jwk-hero-overlay {
+  position: absolute !important;
+  inset: 0 !important;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,.72) 0%,
-    rgba(0,0,0,.38) 24%,
-    rgba(0,0,0,.18) 52%,
-    rgba(0,0,0,.34) 100%
-  );
-  z-index: 1;
+    rgba(0,0,0,.78) 0%,
+    rgba(0,0,0,.3) 40%,
+    rgba(0,0,0,.15) 60%,
+    rgba(0,0,0,.6) 100%
+  ) !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+.hero.hero-area .container,
+.hero.hero-area .intro-excerpt {
+  position: relative !important; z-index: 2 !important;
+}
+.hero.hero-area .intro-excerpt h1,
+.hero.hero-area .intro-excerpt h2 {
+  color: #fff !important;
+  text-shadow: 0 2px 24px rgba(0,0,0,.8);
+}
+.hero.hero-area .intro-excerpt p {
+  color: #d4cbb0 !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,.6);
+}
+.hero.hero-area .intro-excerpt a,
+.hero.hero-area .btn-hero,
+.hero.hero-area button:not(#jwk-close) {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important;
+  color: #0a0800 !important; font-weight: 800 !important;
+  border-radius: 999px !important; padding: 14px 36px !important;
+  box-shadow: 0 10px 30px rgba(218,174,73,.3) !important;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease) !important;
+  text-decoration: none !important;
+}
+.hero.hero-area .intro-excerpt a:hover { transform: translateY(-3px) !important; }
+
+/* ============================================================
+   HERO bottom Splide slider (banner images below hero)
+   ============================================================ */
+.slider-widget-area {
+  background-color: var(--bg) !important;
+}
+.slider-widget-area .splide__slide { background-color: transparent !important; }
+.slider-widget-area .splide__arrows .splide__arrow {
+  background-color: rgba(26,24,21,.8) !important;
+  border: 1px solid var(--bdr) !important;
+}
+.slider-widget-area .splide__arrows .splide__arrow svg { fill: var(--g) !important; }
+
+/* ============================================================
+   PRODUCT CARDS  (.product-item.card2)
+   CRITICAL: background-color NOT background to preserve img tags
+   ============================================================ */
+/* Hide ratings */
+.product-item .rating-wrap,
+.card2 .rating-wrap,
+.d-flex.justify-content-center.align-items-center.m-0.p-0 > .rating-wrap {
+  display: none !important;
+}
+
+.product-item, .card2, .product-item.card2 {
+  background-color: var(--bg2) !important;  /* ← background-color, not background */
+  border: 1px solid rgba(218,174,73,.14) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,.3) !important;
+  transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease) !important;
+}
+.product-item:hover, .card2:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(218,174,73,.35) !important;
+  box-shadow: 0 14px 36px rgba(218,174,73,.1), 0 6px 20px rgba(0,0,0,.4) !important;
+}
+
+/* Product thumbnail - NEVER hide or filter product images */
+.product-item .product-thumbnail-wrap,
+.card2 .product-thumbnail-wrap {
+  display: block !important;
+  background-color: var(--bg3) !important;
+}
+.product-item img, .card2 img {
+  /* NO filter, NO display:none — images must show */
+  display: block !important;
+}
+
+/* Product title — h3.product-title > a.text-break */
+h3.product-title,
+h3.product-title a,
+h3.product-title a.text-break,
+.product-item .product-title,
+.product-item .product-title a,
+.card2 .product-title,
+.card2 .product-title a {
+  color: var(--txt) !important;
+  font-weight: 700 !important;
+  transition: color .2s !important;
+}
+.product-item:hover .product-title a,
+.card2:hover .product-title a { color: var(--g) !important; }
+
+/* Price */
+.product-item .product-price, .card2 .product-price,
+strong.product-price { color: var(--g) !important; font-weight: 700 !important; }
+.product-item .old-price, .card2 .old-price {
+  color: var(--txm) !important; text-decoration: line-through !important;
+}
+
+/* Cart / Wishlist buttons on cards */
+.cart_btn2-border, .cart_btn2 .cart_btn2-border {
+  background-color: transparent !important;
+  border: 1px solid rgba(218,174,73,.45) !important;
+  border-radius: 999px !important;
+  color: var(--g) !important;
+  transition: all .25s var(--ease) !important;
+}
+.cart_btn2:hover .cart_btn2-border {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border-color: transparent !important;
+  color: #0a0800 !important;
+}
+.cart_btn2-txt { color: inherit !important; }
+.cart_btn2-icon { color: inherit !important; fill: currentColor !important; }
+
+.add-to-wishlist-btn, .wish-icon {
+  background-color: rgba(26,24,21,.85) !important;
+  border: 1px solid rgba(218,174,73,.3) !important;
+  color: var(--g) !important;
+  border-radius: 50% !important;
+}
+.add-to-wishlist-btn .heart { color: var(--g) !important; }
+
+/* ============================================================
+   BRAND IMAGES — ONLY .brand-img img gets filter, NOTHING else
+   ============================================================ */
+.brand-area, .brand-area.widgetArea {
+  background-color: transparent !important;
+}
+.brand-img {
+  background: linear-gradient(135deg, var(--bg2), var(--bg3)) !important;
+  border: 1px solid rgba(218,174,73,.15) !important;
+  border-radius: 14px !important;
+  padding: 14px 22px !important;
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  transition: border-color .25s ease, box-shadow .25s ease !important;
+}
+.brand-img:hover {
+  border-color: rgba(218,174,73,.35) !important;
+  box-shadow: 0 6px 18px rgba(218,174,73,.08) !important;
+}
+/* ONLY brand-img images get the filter — NOT widgetArea images globally */
+.brand-img img {
+  filter: brightness(0) invert(1) !important;
+  opacity: .9 !important;
+  max-height: 150px !important; 
+  width: auto !important;
+  object-fit: contain !important;
+  transition: opacity .25s ease !important;
+}
+.brand-img:hover img { opacity: .9 !important; }
+
+/* ============================================================
+   FEATURES  (.four-blocks-box .single-promo)
+   Correct selectors from actual HTML
+   ============================================================ */
+.four-blocks, .promo-area {
+  background-color: var(--bg) !important;
+}
+.four-blocks-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  gap: 20px !important;
+}
+
+.four-blocks-box { height: 100%; }
+
+.four-blocks-box .single-promo,
+.promo-area .single-promo {
+  background: linear-gradient(145deg, var(--bg2), #201d19) !important;
+  border: 1px solid rgba(218,174,73,.15) !important;
+  border-radius: 20px !important;
+  padding: 28px 24px !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  display: flex !important; flex-direction: column !important; align-items: center !important;
+  text-align: center !important; position: relative; overflow: hidden;
+  transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease) !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,.2) !important;
+}
+.four-blocks-box .single-promo::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at top, rgba(218,174,73,.05), transparent 70%);
   pointer-events: none;
 }
-
-.xc-main-slider .container,
-[class*="main-slider"] .container,
-.xc-hero .container,
-.xc-main-slider [class*="slide-item"],
-[class*="main-slider"] [class*="slide-item"] {
-  position: relative !important;
-  z-index: 2 !important;
+.four-blocks-box .single-promo:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(218,174,73,.3) !important;
+  box-shadow: 0 12px 34px rgba(218,174,73,.1), 0 6px 18px rgba(0,0,0,.35) !important;
 }
 
-/* =========================================================
-   JAWAK INTERACTIVE BLOCK — كل ما تحتاجه في اشتراك واحد
-========================================================= */
+/* Icon container */
+.single-promo-icon {
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  width: 60px !important; height: 60px !important; border-radius: 16px !important;
+  background-color: rgba(218,174,73,.1) !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  margin-bottom: 18px !important; flex-shrink: 0 !important;
+  color: var(--g) !important;
+}
+.single-promo-icon i { color: var(--g) !important; font-size: 26px !important; }
+.single-promo-icon svg { stroke: var(--g) !important; width: 26px !important; height: 26px !important; }
+
+/* Feature title and description */
+.single-promo-contents-title,
+h4.single-promo-contents-title {
+  color: #fff3cf !important; font-weight: 700 !important; margin-bottom: 8px !important;
+}
+.single-promo-contents-para,
+p.single-promo-contents-para {
+  color: var(--txs) !important; font-size: 14px !important; line-height: 1.8 !important;
+}
+
+/* Section headings above features */
+.four-blocks .section-head .section-title,
+.four-blocks .section-title {
+  color: var(--txt) !important;
+}
+.four-blocks .section-head .section-sub {
+  color: var(--g) !important;
+}
+
+/* ============================================================
+   ABOUT / INTERACTIVE BLOCK (added by JS)
+   ============================================================ */
+.about-area { background-color: transparent !important; }
+.about-area .about-box { display: none !important; }
+
 .jawak-interactive-block {
-  position: relative;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 16px;
+  padding: 80px 0;
+  direction: rtl;
+  background: radial-gradient(ellipse at 50% 0%, rgba(218,174,73,.07), transparent 55%),
+              linear-gradient(180deg, #1a1815, #111009);
 }
+.jawak-section-header { text-align: center; margin-bottom: 52px; padding: 0 20px; }
+.jawak-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 18px; margin-bottom: 14px; border-radius: 999px;
+  background: linear-gradient(180deg, #1c1810, #221a12);
+  border: 1px solid rgba(218,174,73,.28);
+  color: var(--g); font-weight: 700; font-size: 13px;
+}
+.jawak-h2 {
+  color: #fff3cf !important;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem) !important;
+  font-weight: 800 !important; margin: 0 0 12px !important;
+}
+.jawak-lead { color: var(--txs); font-size: 15px; max-width: 520px; margin: 0 auto; line-height: 1.9; }
 
 .jawak-interactive-shell {
-  display: grid;
-  grid-template-columns: 460px 1fr;
-  gap: 28px;
-  align-items: stretch;
-  background: linear-gradient(180deg, #181818 0%, #111111 100%);
-  border: 1px solid rgba(218,174,73,.16);
-  border-radius: 30px;
-  padding: 24px;
-  box-shadow:
-    0 18px 44px rgba(0,0,0,.45),
-    inset 0 1px 0 rgba(255,236,184,.03);
-  overflow: hidden;
-  position: relative;
+  display: grid; grid-template-columns: 400px 1fr; gap: 28px;
+  align-items: stretch; max-width: 1180px; margin: 0 auto; padding: 24px;
+  background: linear-gradient(180deg, #1c1812, #111009);
+  border: 1px solid rgba(218,174,73,.16); border-radius: 26px;
+  box-shadow: 0 16px 40px rgba(0,0,0,.2); position: relative; overflow: hidden;
 }
-
 .jawak-interactive-shell::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at top left, rgba(218,174,73,.08), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(218,174,73,.05), transparent 24%);
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(218,174,73,.32) 50%, transparent);
   pointer-events: none;
 }
-
 .jawak-media-card {
-  position: relative;
-  border-radius: 26px;
-  overflow: hidden;
-  border: 1px solid rgba(218,174,73,.18);
-  background: linear-gradient(180deg, #15120d 0%, #0f0f0f 100%);
-  min-height: 460px;
-  box-shadow:
-    0 14px 36px rgba(0,0,0,.35),
-    inset 0 1px 0 rgba(255,236,184,.04);
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(218,174,73,.16); background-color: #0d0d0d; min-height: 420px;
 }
-
-.jawak-media-card video {
-  width: 100%;
-  height: 100%;
-  min-height: 460px;
-  object-fit: cover;
-  display: block;
-}
-
-.jawak-content-side {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-width: 0;
-}
-
+.jawak-media-card video { width: 100%; height: 100%; min-height: 420px; object-fit: cover; display: block; }
+.jawak-content-side { display: flex; flex-direction: column; justify-content: center; }
 .jawak-top-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  padding: 10px 18px;
-  margin-bottom: 14px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, #18140e 0%, #221a12 100%);
-  border: 1px solid rgba(218,174,73,.28);
-  color: #daae49;
-  box-shadow:
-    0 8px 22px rgba(0,0,0,.25),
-    inset 0 1px 0 rgba(255,236,184,.05),
-    0 0 14px rgba(218,174,73,.08);
-  font-weight: 700;
-  line-height: 1;
+  display: inline-flex; width: fit-content; padding: 8px 16px; margin-bottom: 12px;
+  border-radius: 999px; background: linear-gradient(180deg, #1c1810, #221a12);
+  border: 1px solid rgba(218,174,73,.28); color: var(--g); font-weight: 700; font-size: 13px;
 }
-
-.jawak-main-title {
-  color: #fff3cf;
-  font-size: 40px;
-  line-height: 1.25;
-  margin: 0 0 12px;
-  font-weight: 800;
-}
-
-.jawak-subtitle {
-  color: #d7cfbf;
-  font-size: 16px;
-  line-height: 2;
-  margin: 0 0 22px;
-  max-width: 58ch;
-}
-
-.jawak-tabs {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
+.jawak-main-title { color: #fff3cf !important; font-size: clamp(1.4rem, 2.5vw, 2rem) !important; font-weight: 800 !important; margin: 0 0 10px !important; }
+.jawak-subtitle { color: var(--txs); font-size: 14.5px; line-height: 1.9; margin: 0 0 18px; }
+.jawak-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
 .jawak-tab-btn {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-  min-height: 64px;
-  border-radius: 18px;
-  padding: 14px 16px;
-  background: linear-gradient(180deg, rgba(255,255,255,.02) 0%, rgba(218,174,73,.03) 100%);
-  border: 1px solid rgba(218,174,73,.14);
-  color: #ecd9a0;
-  cursor: pointer;
-  text-align: right;
-  transition: all .28s ease;
-  box-shadow: inset 0 1px 0 rgba(255,236,184,.02);
+  display: flex; align-items: center; gap: 10px;
+  min-height: 58px; border-radius: 14px; padding: 12px 14px;
+  background-color: rgba(255,255,255,.02); border: 1px solid rgba(218,174,73,.14);
+  color: #ecd9a0; cursor: pointer; text-align: right; width: 100%;
+  transition: all .25s var(--ease); font-size: 14px; font-weight: 700; font-family: inherit;
 }
-
-.jawak-tab-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(218,174,73,.28);
-  box-shadow:
-    0 10px 22px rgba(0,0,0,.18),
-    0 0 0 1px rgba(218,174,73,.04) inset;
-}
-
+.jawak-tab-btn:hover { border-color: rgba(218,174,73,.26); transform: translateY(-1px); }
 .jawak-tab-btn.active {
-  background: linear-gradient(180deg, rgba(218,174,73,.16) 0%, rgba(218,174,73,.07) 100%);
-  border-color: rgba(218,174,73,.34);
-  color: #fff3cf;
-  box-shadow:
-    0 12px 24px rgba(0,0,0,.20),
-    0 0 0 1px rgba(218,174,73,.06) inset,
-    0 0 18px rgba(218,174,73,.10);
+  background-color: rgba(218,174,73,.1); border-color: rgba(218,174,73,.36); color: #fff3cf;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12), 0 0 14px rgba(218,174,73,.07);
 }
-
-.jawak-tab-icon {
-  width: 42px;
-  height: 42px;
-  min-width: 42px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, rgba(218,174,73,.11) 0%, rgba(218,174,73,.05) 100%);
-  border: 1px solid rgba(218,174,73,.24);
-  box-shadow: inset 0 1px 0 rgba(255,236,184,.04);
-}
-
-.jawak-tab-icon svg {
-  width: 20px;
-  height: 20px;
-  stroke: #daae49;
-  fill: none;
-  stroke-width: 1.9;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.jawak-tab-label {
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
+.jawak-tab-icon { display: flex; align-items: center; justify-content: center; }
+.jawak-tab-icon svg { width: 22px; height: 22px; stroke: var(--g); fill: none; }
 .jawak-feature-view {
-  position: relative;
-  min-height: 168px;
-  border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255,255,255,.02) 0%, rgba(218,174,73,.03) 100%);
-  border: 1px solid rgba(218,174,73,.14);
-  padding: 22px 22px 18px;
-  overflow: hidden;
-  box-shadow:
-    inset 0 1px 0 rgba(255,236,184,.02),
-    0 10px 26px rgba(0,0,0,.18);
+  border-radius: 16px; background-color: rgba(255,255,255,.02);
+  border: 1px solid rgba(218,174,73,.12); padding: 18px;
 }
-
-.jawak-feature-view::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent 20%, rgba(255,228,154,.06) 50%, transparent 80%);
-  transform: translateX(-140%);
-  transition: transform .8s ease;
-  pointer-events: none;
-}
-
-.jawak-feature-view.is-animating::before {
-  transform: translateX(140%);
-}
-
-.jawak-feature-title {
-  margin: 0 0 10px;
-  color: #fff3cf;
-  font-size: 28px;
-  line-height: 1.35;
-  font-weight: 800;
-}
-
-.jawak-feature-desc {
-  margin: 0 0 18px;
-  color: #d8cfbf;
-  font-size: 15px;
-  line-height: 2;
-  max-width: 52ch;
-}
-
+.jawak-feature-view.is-animating { animation: jawakFadeUp .3s var(--ease) both; }
+@keyframes jawakFadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+.jawak-feature-title { color: #fff3cf !important; font-size: clamp(1.1rem, 2vw, 1.45rem) !important; font-weight: 800 !important; margin: 0 0 8px !important; }
+.jawak-feature-desc { color: var(--txs); font-size: 14px; line-height: 1.9; margin: 0 0 14px; }
 .jawak-buy-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 50px;
-  padding: 0 22px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, #daae49 0%, #c79b39 100%);
-  border: 1px solid rgba(255,227,150,.26);
-  color: #0A0800 !important;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 46px; padding: 0 24px; border-radius: 999px;
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl));
+  border: none; color: #0a0800 !important; font-weight: 800; font-size: 14px;
   text-decoration: none !important;
-  font-weight: 800;
-  box-shadow:
-    0 12px 26px rgba(218,174,73,.22),
-    inset 0 1px 0 rgba(255,245,214,.28);
-  transition: all .28s ease;
+  box-shadow: 0 8px 22px rgba(218,174,73,.2);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
 }
+.jawak-buy-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(218,174,73,.32); color: #0a0800 !important; }
 
-.jawak-buy-btn:hover {
-  transform: translateY(-2px);
-  color: #0A0800 !important;
-  box-shadow:
-    0 16px 30px rgba(218,174,73,.30),
-    inset 0 1px 0 rgba(255,245,214,.30);
-}
-
-/* =========================================================
-   ABOUT BOX — استبدال بالـ interactive block
-========================================================= */
-.xc-about-section,
-[class*="about-section"],
-[class*="about-area"] {
-  background-color: var(--bg-dark) !important;
-  padding: 48px 0 !important;
-}
-
-/* =========================================================
-   GLOBAL DARK OVERRIDES — منصة تجار
-========================================================= */
-
-/* Header */
-.xc-header,
-[class*="header-wrapper"],
-[class*="top-bar"],
-.xc-navbar {
-  background-color: rgba(10, 8, 0, 0.92) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-  border-bottom: 1px solid rgba(201,162,95,.16) !important;
-}
-
-/* Nav links */
-.xc-header a,
-.xc-navbar a,
-[class*="nav-link"],
-[class*="menu-item"] a {
-  color: var(--text-main) !important;
-}
-
-.xc-header a:hover,
-.xc-navbar a:hover,
-[class*="nav-link"]:hover {
-  color: var(--gold) !important;
-}
-
-/* Buttons */
-.xc-btn,
-.xc-button,
-[class*="btn-primary"],
-[class*="add-to-cart"],
-[class*="buy-now"],
-button[type="submit"],
-.btn-main {
-  background: linear-gradient(180deg, #daae49 0%, #c79b39 100%) !important;
-  color: #0A0800 !important;
-  border: none !important;
-  font-weight: 700 !important;
-}
-
-.xc-btn:hover,
-.xc-button:hover,
-[class*="btn-primary"]:hover,
-[class*="add-to-cart"]:hover {
-  background: linear-gradient(180deg, #f0d080 0%, #daae49 100%) !important;
-  color: #0A0800 !important;
-}
-
-/* Input fields */
-input, textarea, select,
-[class*="form-control"],
-[class*="input-field"],
-.xc-input {
-  background-color: var(--bg-surface) !important;
-  border: 1px solid rgba(218,174,73,.22) !important;
-  color: var(--text-main) !important;
-  border-radius: 10px !important;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: var(--text-muted) !important;
-}
-
-input:focus, textarea:focus, select:focus,
-[class*="form-control"]:focus {
-  border-color: rgba(218,174,73,.50) !important;
-  box-shadow: 0 0 0 3px rgba(218,174,73,.12) !important;
-  outline: none !important;
-}
-
-/* Product price */
-[class*="price"],
-.xc-price,
-.price-main,
-.sale-price {
-  color: var(--gold) !important;
-  font-weight: 700 !important;
-}
-
-[class*="old-price"],
-[class*="original-price"],
-.price-old {
-  color: var(--text-muted) !important;
-  text-decoration: line-through !important;
-}
-
-/* Product title */
-[class*="product-title"],
-[class*="product-name"],
-.xc-product-name {
-  color: var(--text-main) !important;
-}
-
-/* Product description */
-[class*="product-desc"],
-[class*="product-description"],
-.xc-product-desc {
-  color: var(--text-sub) !important;
-}
-
-/* Category title */
-[class*="category-title"],
-[class*="section-title"],
-.xc-section-title {
-  color: var(--gold-pale) !important;
-}
-
-/* Breadcrumbs */
-[class*="breadcrumb"] a { color: var(--text-sub) !important; }
-[class*="breadcrumb"] .active { color: var(--gold) !important; }
-
-/* Footer */
-footer,
-.xc-footer,
-[class*="footer-"] {
-  background-color: #0f0e0b !important;
-  border-top: 1px solid rgba(218,174,73,.14) !important;
-  color: var(--text-sub) !important;
-}
-
-footer a,
-.xc-footer a { color: var(--text-sub) !important; }
-footer a:hover,
-.xc-footer a:hover { color: var(--gold) !important; }
-
-/* Dividers */
-hr, [class*="divider"] {
-  border-color: rgba(218,174,73,.12) !important;
-}
-
-/* Badges & tags */
-[class*="badge"],
-[class*="tag-"],
-.xc-badge {
-  background: linear-gradient(180deg, #18140e 0%, #221a12 100%) !important;
-  border: 1px solid rgba(218,174,73,.28) !important;
-  color: var(--gold) !important;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-dark); }
-::-webkit-scrollbar-thumb {
-  background: rgba(218,174,73,.3);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover { background: rgba(218,174,73,.55); }
-
-/* Selection */
-::selection {
-  background: rgba(218,174,73,.25);
-  color: var(--gold-pale);
-}
-
-/* =========================================================
-   GOLD GLOW ANIMATION — للعناصر المميزة
-========================================================= */
-@keyframes jawakGoldGlow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(218,174,73,0); }
-  50%       { box-shadow: 0 0 22px 4px rgba(218,174,73,.18); }
-}
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 @media (max-width: 1100px) {
+  .jawak-interactive-shell { grid-template-columns: 1fr; max-width: 660px; }
+  .jawak-media-card, .jawak-media-card video { min-height: 260px; }
+}
+@media (max-width: 768px) {
+  .jawak-interactive-block { padding: 48px 0; }
+  .jawak-interactive-shell { padding: 14px; gap: 16px; }
+}
+
+/* ============================================================
+   FAQ  — Alpine.js based (NOT Bootstrap accordion)
+   Selectors from actual HTML: .faq-item > .faq-button > .faq-question / .faq-answer
+   ============================================================ */
+.faq-widget-section { background-color: transparent !important; }
+.faq-widget { max-width: 700px !important; margin: 0 auto !important; padding: 0 16px !important; }
+
+/* FAQ header icon area */
+.lina-icon-wrap { color: var(--g) !important; }
+.lina-glow {
+  position: absolute; inset: 0; border-radius: 50%;
+  box-shadow: 0 0 20px rgba(218,174,73,.3); background: rgba(218,174,73,.06);
+}
+.lina-star { color: rgba(218,174,73,.5) !important; fill: currentColor !important; }
+.lina-icon svg { stroke: var(--g) !important; }
+
+.faq-title { color: var(--txt) !important; }
+.faq-subtitle { color: var(--txm) !important; }
+
+/* FAQ list — all items equal width */
+.faq-list {
+  list-style: none !important; padding: 0 !important; margin: 0 !important;
+  display: flex !important; flex-direction: column !important; gap: 10px !important;
+}
+
+.faq-item {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.15) !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  transition: border-color .2s ease, box-shadow .2s ease !important;
+}
+.faq-item:hover {
+  border-color: rgba(218,174,73,.28) !important;
+  box-shadow: 0 4px 16px rgba(218,174,73,.06) !important;
+}
+
+/* faq-button = the clickable row */
+.faq-button {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 16px 18px !important;
+  cursor: pointer !important;
+  background-color: var(--bg2) !important;
+  border: none !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  text-align: right !important;
+  direction: rtl !important;
+  transition: background-color .2s ease !important;
+}
+.faq-button:hover { background-color: rgba(255,255,255,.02) !important; }
+.faq-button > span svg { stroke: rgba(218,174,73,.6) !important; flex-shrink: 0 !important; }
+.faq-button.open > span svg { stroke: var(--g) !important; }
+
+.faq-question {
+  color: #f0e8cc !important;
+  font-weight: 700 !important;
+  font-size: 14.5px !important;
+  display: block !important;
+  margin-bottom: 0 !important;
+  background-color: transparent !important;
+}
+.faq-button.open .faq-question,
+.faq-question.open { color: var(--g) !important; }
+
+.faq-answer {
+  color: var(--txs) !important;
+  font-size: 14px !important;
+  line-height: 1.9 !important;
+  padding: 0 18px 16px 18px !important;
+  background-color: var(--bg2) !important;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.store-section.footer-store-section, footer, .footer-area {
+  background-color: var(--bg4) !important;
+  position: relative !important;
+}
+
+ .store-section.footer-store-section, .col-lg-12 {
+        color: #ffffff;
+    }
+
+.store-section.footer-store-section::before, footer::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--g) 30%, var(--gl) 50%, var(--g) 70%, transparent);
+  box-shadow: 0 0 18px rgba(218,174,73,.28);
+}
+/* Footer section titles — gold & prominent */
+.store-section.footer-store-section h4,
+.store-section.footer-store-section h5,
+.store-section.footer-store-section h3,
+.store-section.footer-store-section .footer-widget-title,
+.store-section.footer-store-section .widget-title,
+footer h4, footer h5, footer h3,
+footer .footer-widget-title, footer .widget-title {
+  color: var(--g) !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  padding-bottom: 10px !important;
+  border-bottom: 1px solid rgba(218,174,73,.14) !important;
+  margin-bottom: 14px !important;
+}
+.store-section.footer-store-section a, footer a { color: #ffffff !important; }
+.store-section.footer-store-section a:hover, footer a:hover { color: var(--g) !important; }
+.store-section.footer-store-section p,
+.store-section.footer-store-section span,
+footer p, footer span,
+footer li { color: var(--txm) !important; }
+
+.store-section.footer-store-section p, .store-section.footer-store-section span, footer p, footer span, footer li {
+    color: #ffffff !important;
+}
+    .store-section.footer-store-section.justify-content-lg-start {
+        color: #eacc6b;
+    }
+
+/* Social icons */
+.footer-social a, .social-links a {
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  width: 38px !important; height: 38px !important; border-radius: 8px !important;
+  border: 1px solid rgba(218,174,73,.22) !important;
+  background-color: rgba(218,174,73,.04) !important;
+  color: var(--txs) !important; transition: all .25s ease !important;
+}
+.footer-social a:hover, .social-links a:hover {
+  border-color: rgba(218,174,73,.5) !important;
+  background-color: rgba(218,174,73,.1) !important;
+  color: var(--g) !important; transform: translateY(-2px) !important;
+}
+
+/* Payment icons */
+.payment-methods img, .footer-payments img {
+  filter: grayscale(1) brightness(.65) !important;
+  border: 1px solid rgba(218,174,73,.14) !important;
+  border-radius: 6px !important; padding: 4px 8px !important;
+}
+.payment-methods img:hover { filter: grayscale(0) brightness(1) !important; }
+
+/* ============================================================
+   PRODUCT PAGE —  MODE
+   ============================================================ */
+/* Splide slider on product page */
+.product-image-slide .splide,
+.splide.bg-white {
+  background-color: var(--bg2) !important;
+  border-color: var(--bdr) !important;
+}
+.splide__slide { background-color: transparent !important; }
+.splide__arrow {
+  background-color: var(--bg3) !important;
+  border: 1px solid var(--bdr) !important;
+}
+.splide__arrow svg { fill: var(--g) !important; }
+.splide__pagination__page { background-color: var(--txm) !important; }
+.splide__pagination__page.is-active { background-color: var(--g) !important; }
+
+/* Product details wrapper */
+.product-details-wrapper {
+  background-color: var(--bg2) !important;
+  border-color: var(--bdr) !important;
+}
+.product-details-wrapper .text-dark { color: var(--txt) !important; }
+
+/* Prices */
+.pr_price { color: var(--g) !important; font-weight: 800 !important; }
+.pr_old-price { color: var(--txm) !important; text-decoration: line-through !important; }
+
+/* Quantity input */
+.productQty {
+  background-color: var(--bg3) !important;
+  border: 1px solid var(--bdr) !important;
+  border-radius: 12px !important;
+}
+.productQty .substract, .productQty .plus { color: var(--g) !important; }
+.productQty .quantityInput {
+  background-color: transparent !important; border: none !important; color: var(--txt) !important;
+}
+
+/* Add to cart / Buy buttons */
+.btn-main {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important; color: #0a0800 !important; font-weight: 800 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 8px 22px rgba(218,174,73,.22) !important;
+}
+.btn-main:hover { transform: translateY(-2px) !important; }
+.btn-main-outline {
+  background-color: transparent !important;
+  border: 1px solid rgba(218,174,73,.5) !important;
+  color: var(--g) !important; border-radius: 999px !important; font-weight: 700 !important;
+}
+.btn-main-outline:hover {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border-color: transparent !important; color: #0a0800 !important;
+}
+
+
+.btn-direct-wa:hover { transform: translateY(-2px) !important; color: #0a0800 !important; }
+.btn-direct-wa svg, .btn-direct-wa i { color: #0a0800 !important; fill: #0a0800 !important; }
+
+/* Product share bar */
+.product-share {
+  background-color: var(--bg3) !important;
+  border-color: var(--bdr) !important;
+  border-radius: 14px !important;
+}
+.product-share a { color: var(--txs) !important; }
+.product-share a:hover { color: var(--g) !important; }
+
+/* Tab nav (description/reviews) */
+.nav-tabs {
+  border-color: rgba(218,174,73,.15) !important;
+  background-color: var(--bg2) !important;
+  border-radius: 999px !important; padding: 4px !important;
+}
+.nav-tabs .nav-link {
+  color: var(--txs) !important; border: none !important;
+  border-radius: 999px !important; background-color: transparent !important;
+  padding: 10px 24px !important;
+}
+.nav-tabs .nav-link.active {
+  background-color: var(--bg3) !important; color: var(--g) !important;
+  border: 1px solid rgba(218,174,73,.25) !important;
+}
+.tab-content { background-color: var(--bg) !important; }
+.tab-pane { background-color: var(--bg) !important; color: var(--txs) !important; }
+.tab-pane * { color: #ffffff !important; }
+
+.gl-star-rating--stars span {
+    color: #ffffff!important;
+}
+
+
+/* ============================================================
+   CART POPUP / MINI-CART  (white → dark)
+   ============================================================ */
+/* Dropdown menus (account, cart, etc.) */
+.dropdown-menu {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.18) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,.5) !important;
+}
+.dropdown-item { color: var(--txs) !important; }
+.dropdown-item:hover {
+  background-color: rgba(218,174,73,.08) !important; color: var(--g) !important;
+}
+.dropdown-divider { border-color: rgba(218,174,73,.12) !important; }
+
+/* Bootstrap Offcanvas (mobile nav / cart) */
+.offcanvas, .offcanvas-end, .offcanvas-start, .offcanvas-top, .offcanvas-bottom {
+  background-color: var(--bg2) !important;
+  border-color: rgba(218,174,73,.14) !important;
+}
+.offcanvas-header {
+  background-color: var(--bg3) !important;
+  border-bottom: 1px solid rgba(218,174,73,.12) !important;
+}
+.offcanvas-title { color: var(--txt) !important; font-weight: 700 !important; }
+.btn-close { filter: brightness(0) invert(1) !important; opacity: .6 !important; }
+.btn-close:hover { opacity: 1 !important; }
+
+/* Cart specific inside offcanvas */
+.offcanvas .nav-link { color: var(--txs) !important; }
+.offcanvas .navbar-nav .nav-link { color: var(--txt) !important; }
+
+/* Custom Tjar cart popup / remove-cart-popup */
+[class*="cart-popup"],
+[id*="cart-popup"],
+[class*="remove-cart"],
+[id*="remove-cart"],
+.cart-drop, .cart-dropdown,
+.cart-popup-wrap, .cart-popup-modal,
+.mini-cart, .mini_cart_item {
+  background-color: var(--bg2) !important;
+  border-color: rgba(218,174,73,.14) !important;
+  border-radius: 16px !important;
+}
+/* Sweetalert / modal popups */
+.swal2-popup, .swal2-modal {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  border-radius: 20px !important;
+}
+.swal2-title { color: var(--txt) !important; }
+.swal2-html-container { color: var(--txs) !important; }
+.swal2-confirm {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  color: #0a0800 !important; font-weight: 800 !important; border-radius: 999px !important;
+}
+
+/* Generic popup/modal */
+.modal-content {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.18) !important;
+  border-radius: 18px !important;
+}
+.modal-header {
+  background-color: var(--bg3) !important;
+  border-bottom: 1px solid rgba(218,174,73,.12) !important;
+}
+.modal-title { color: var(--txt) !important; }
+.modal-footer {
+  background-color: var(--bg3) !important;
+  border-top: 1px solid rgba(218,174,73,.12) !important;
+}
+.modal-body { background-color: var(--bg2) !important; color: var(--txs) !important; }
+
+/* Popup user profile widget (white box image_1778639436195) */
+.user-info, .profile-popup, .profile-drop, .account-popup,
+[class*="account-drop"], [class*="user-drop"],
+[class*="profile-drop"] {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.16) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,.5) !important;
+}
+.user-info *, .profile-popup * { color: var(--txs) !important; }
+.user-info h5, .user-info h6, .profile-popup h5, .profile-popup h6 { color: var(--txt) !important; }
+.user-info img, .profile-popup img {
+  border: 2px solid rgba(218,174,73,.3) !important; border-radius: 50% !important;
+}
+.user-info .btn, .profile-popup .btn {
+  border-color: rgba(218,174,73,.3) !important; color: var(--g) !important;
+  border-radius: 999px !important;
+}
+
+/* ============================================================
+   CART PAGE
+   ============================================================ */
+.page-cart, .cart-page, [class*="cart-section"] {
+  background-color: var(--bg) !important;
+}
+/* Cart items — ensure images show normally, just dark card bg */
+.page-cart .card, .cart-page .card,
+[class*="cart-section"] .card {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.12) !important;
+  border-radius: 16px !important;
+}
+/* Cart product image — ensure proper sizing */
+.page-cart .card img, .cart-page .card img {
+  border-radius: 12px !important;
+  object-fit: contain !important;
+  max-height: 90px !important;
+  width: auto !important;
+}
+.page-cart .text-dark, .cart-page .text-dark { color: var(--txt) !important; }
+.page-cart h1, .page-cart h2, .page-cart h3, .page-cart h4,
+.cart-page h1, .cart-page h2, .cart-page h3, .cart-page h4 { color: var(--txt) !important; }
+.cart-total-box, .order-summary {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.14) !important;
+  border-radius: 16px !important;
+}
+
+/* Cart quantity toggle */
+.cart-qty-toggle {
+  background-color: var(--bg3) !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  border-radius: 999px !important;
+}
+
+/* Cart proceed button */
+.cart-checkout-btn, .btn-checkout,
+[class*="checkout-btn"] {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important; color: #0a0800 !important;
+  font-weight: 800 !important; border-radius: 999px !important;
+  box-shadow: 0 8px 22px rgba(218,174,73,.22) !important;
+}
+
+/* ============================================================
+   CHECKOUT PAGE — Full Dark Gold Theme
+   Real classes from /shop/checkout HTML source confirmed.
+   ============================================================ */
+
+/* ── Page background ── */
+body.checkout_page,
+.checkout_page body,
+.checkout_page .checkout {
+  background-color: var(--bg) !important;
+}
+.checkout {
+  background-color: var(--bg) !important;
+}
+
+/* ── Main cards: checkout_head / checkout_cart / checkout_details ── */
+.checkout_head,
+.checkout_cart,
+.checkout_details {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.14) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,.35) !important;
+}
+
+/* ── Typography ── */
+.checkout_page h1, .checkout_page h2,
+.checkout_page h3, .checkout_page h4,
+.checkout_page h5, .checkout_page h6,
+.checkout_cart h4, .checkout_cart h5,
+.checkout_details h4, .checkout_details h5,
+.checkout_head h4, .checkout_head h5 {
+  color: var(--txt) !important;
+}
+.checkout_page .text-dark,
+.checkout_page .fw-500,
+.checkout_page .fw-600 { color: var(--txt) !important; }
+.checkout_page .text-muted,
+.checkout_page .rsf-16.text-muted { color: var(--txm) !important; }
+.checkout_page .text-danger { color: #e57373 !important; }
+
+/* ── Back-to-cart button ── */
+.back_cart,
+.checkout_head .back_cart {
+  background-color: rgba(218,174,73,.1) !important;
+  color: var(--g) !important;
+  border: 1px solid rgba(218,174,73,.25) !important;
+  border-radius: 999px !important;
+}
+.back_cart:hover {
+  background-color: rgba(218,174,73,.2) !important;
+  color: #f0d878 !important;
+}
+.back_cart i { color: inherit !important; }
+
+/* ── Order summary items strip ── */
+.checkout_cart-items {
+  border-color: rgba(218,174,73,.15) !important;
+}
+.checkout_cart-items .col,
+.checkout_cart-items span { color: var(--txs) !important; }
+
+/* ── Total row ── */
+.checkout_cart-total { color: var(--g) !important; }
+.checkout_cart-total h5 { color: var(--g) !important; }
+.checkout_cart-total span { color: var(--g) !important; }
+
+/* ── Coupon promo section ── */
+.coupon_promo-card {
+  background-color: var(--bg3) !important;
+  border: 1px solid rgba(218,174,73,.18) !important;
+  border-radius: 12px !important;
+  padding: 16px !important;
+}
+.coupon_promo-title { color: var(--txs) !important; }
+.coupon_promo-icon svg path { stroke: var(--g) !important; fill: var(--g) !important; }
+.coupon_promo-input .form-control {
+  background-color: var(--bg) !important;
+  border-color: rgba(218,174,73,.2) !important;
+  color: var(--txt) !important;
+}
+.coupon_promo-input .form-control::placeholder { color: rgba(218,174,73,.4) !important; }
+/* Apply button */
+.coupon_promo-input .btn-copy,
+.coupon_promo-input .btn.btn-main {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important;
+  color: #0a0800 !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}
+
+/* ── Step head icon circles ── */
+.step_head-icon {
+  background-color: rgba(218,174,73,.15) !important;
+  border: 1.5px solid rgba(218,174,73,.35) !important;
+  color: var(--g) !important;
+}
+/* Completed step (green → gold) */
+.step_head-icon:not(.bg-dark) {
+  background: linear-gradient(135deg, #b88b3c, #daae49) !important;
+  border-color: transparent !important;
+  color: #0a0700 !important;
+}
+/* Inactive step (bg-dark class) */
+.step_head-icon.bg-dark {
+  background-color: rgba(218,174,73,.12) !important;
+  border-color: rgba(218,174,73,.2) !important;
+  color: var(--txm) !important;
+}
+
+/* ── Step edit icon (large gold circle) ── */
+.step_edit-icon {
+  background: linear-gradient(135deg, var(--gx), var(--g)) !important;
+  border-color: var(--gx) !important;
+  color: #0a0700 !important;
+  box-shadow: inset 0 0 0 3px var(--bg2), 0 0 0 1px var(--gx) !important;
+}
+
+/* ── Step body (inner card) ── */
+.step_body {
+  background-color: var(--bg) !important;
+  border: 1px solid rgba(218,174,73,.1) !important;
+  border-radius: 16px !important;
+}
+.step_edit-body {
+  background-color: transparent !important;
+}
+
+/* ── hr divider ── */
+.hr_line, .checkout_page hr {
+  border-color: rgba(218,174,73,.14) !important;
+  opacity: 1 !important;
+}
+
+/* ── btn-light-primary (edit / select buttons) ── */
+.btn-light-primary {
+  color: var(--g) !important;
+}
+.btn-light-primary::before {
+  background: var(--g) !important;
+  opacity: .12 !important;
+}
+.btn-light-primary:hover::before { opacity: .22 !important; }
+
+/* ── btn-border-main ── */
+.btn-border-main {
+  border-color: var(--g) !important;
+  color: var(--g) !important;
+  background: none !important;
+}
+
+/* ── Saved address / shipping method cards ── */
+.saved_address,
+.new_address-bar,
+.edit_address-wrap,
+.address_form-wrap {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.16) !important;
+}
+.saved_address-text, .saved_address label { color: var(--txt) !important; }
+.new_address-bar label i { color: var(--g) !important; }
+
+/* ── Shipping card ── */
+.shipping_card {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.16) !important;
+}
+.shipping_card:hover { border-color: rgba(218,174,73,.4) !important; }
+.shipping_price {
+  background-color: rgba(218,174,73,.1) !important;
+  border-color: rgba(218,174,73,.2) !important;
+  color: var(--g) !important;
+}
+
+/* ── Payment method cards ── */
+.payment_tab,
+.payment_tab-wrap .payment_tab {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.16) !important;
+  box-shadow: none !important;
+}
+.payment_tab:hover { border-color: rgba(218,174,73,.4) !important; }
+.payment_name { color: var(--txt) !important; }
+
+/* ── Forms: inputs, selects, textareas ── */
+.checkout .form-control,
+.checkout .form-select,
+.checkout textarea,
+.checkout_page .form-control,
+.checkout_page .form-select {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.18) !important;
+  color: var(--txt) !important;
+}
+.checkout .form-control::placeholder,
+.checkout_page .form-control::placeholder { color: rgba(218,174,73,.4) !important; }
+.checkout .form-control:focus,
+.checkout .form-select:focus,
+.checkout_page .form-control:focus {
+  border-color: rgba(218,174,73,.5) !important;
+  box-shadow: 0 0 0 3px rgba(218,174,73,.1) !important;
+  background-color: var(--bg3) !important;
+}
+
+/* ── Input group text ── */
+.checkout .input-group-text,
+.checkout_page .input-group-text {
+  background-color: var(--bg) !important;
+  border-color: rgba(218,174,73,.18) !important;
+  color: var(--txm) !important;
+}
+.checkout .input-wrap i.icon,
+.checkout_page .input-wrap i.icon { color: var(--txm) !important; }
+
+/* ── Labels ── */
+.checkout .form-label,
+.checkout_page .form-label { color: var(--txs) !important; }
+
+/* ── Custom radio buttons ── */
+.custom_radio { box-shadow: 0 0 0 1.5px rgba(218,174,73,.3) !important; }
+.custom_radio:hover { box-shadow: 0 0 0 1.5px var(--g), inset 0 0 1.5rem -1rem var(--g) !important; }
+.custom_radio:checked {
+  box-shadow: 0 0 0 1.5px var(--g) !important;
+  background-color: var(--g) !important;
+  border: 5px solid var(--bg2) !important;
+}
+
+/* ── Checkboxes ── */
+.checkout_page .form-check-input,
+.checkout .form-check-input {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.3) !important;
+}
+.checkout_page .form-check-input:checked {
+  background-color: var(--g) !important;
+  border-color: var(--g) !important;
+}
+
+/* ── Spinner (loading) ── */
+.checkout_page .spinner-border {
+  color: var(--g) !important;
+  border-color: rgba(218,174,73,.3) !important;
+  border-top-color: var(--g) !important;
+}
+
+/* ── Login modal (guest checkout) ── */
+.login_modal, .checkout_page .modal-content {
+  background-color: var(--bg2) !important;
+  border-color: rgba(218,174,73,.2) !important;
+}
+
+/* ── Select2 on checkout ── */
+.checkout_page .select2-container--default .select2-selection--single {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.18) !important;
+  color: var(--txt) !important;
+}
+.checkout_page .select2-selection__rendered { color: var(--txt) !important; }
+
+/* ── Checkout submit / place order button ── */
+.checkout .btn-lg.btn-main,
+.checkout_page .btn-lg.btn-main,
+.checkout .submit-btn {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important;
+  color: #0a0700 !important;
+  font-weight: 800 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 22px rgba(218,174,73,.25) !important;
+}
+.checkout .btn-lg.btn-main:hover,
+.checkout_page .btn-lg.btn-main:hover { transform: translateY(-2px) !important; }
+
+/* ── Guest login modal (phone/email/OTP screens) ── */
+.checkout_page .modal-content,
+.checkout_page .login_modal .modal-content {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.18) !important;
+  border-radius: 20px !important;
+}
+/* Back-home arrow inside modal */
+.login_back-home {
+  color: rgba(218,174,73,.5) !important;
+}
+.login_back-home:hover { color: var(--g) !important; }
+
+/* Phone/Email input screen */
+.inputForm--screen,
+.inputNameForm {
+  background-color: transparent !important;
+}
+.account-form {
+  background-color: transparent !important;
+}
+.form-title { color: var(--txt) !important; }
+.form-sub   { color: var(--txm) !important; }
+
+/* Toggle: "تسجيل الدخول بالبريد / الجوال" text buttons */
+.btn-text {
+  color: var(--g) !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+}
+.btn-text:hover { color: #f0d878 !important; }
+
+/* Submit button in guest form */
+.submit-btn {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important;
+  color: #0a0700 !important;
+  font-weight: 800 !important;
+  border-radius: 10px !important;
+  padding: 13px 20px !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 6px 20px rgba(218,174,73,.22) !important;
+}
+
+/* ── OTP verification screen ── */
+.OTPForm--screen { background-color: transparent !important; }
+
+/* OTP boxes */
+.otp-input {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.25) !important;
+  color: var(--txt) !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  border-radius: 10px !important;
+  width: 52px !important;
+  height: 56px !important;
+}
+.otp-input:focus {
+  border-color: var(--g) !important;
+  box-shadow: 0 0 0 3px rgba(218,174,73,.15) !important;
+  background-color: var(--bg3) !important;
+}
+
+/* "Change number" button */
+.change_numb {
+  color: var(--g) !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+.change_numb i { color: inherit !important; }
+.change_numb:hover { color: #f0d878 !important; }
+
+/* OTP timer text */
+.OTPForm--screen .text-muted { color: var(--txm) !important; }
+
+/* ── Payment method tabs (lazy-loaded) ── */
+.payment_tab {
+  background-color: var(--bg3) !important;
+  border: 1px solid rgba(218,174,73,.16) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  transition: border-color .2s ease !important;
+}
+.payment_tab:hover { border-color: rgba(218,174,73,.4) !important; }
+.payment_tab.active,
+.payment_tab[aria-selected="true"] {
+  border-color: var(--g) !important;
+  background-color: rgba(218,174,73,.06) !important;
+}
+.payment_name { color: var(--txt) !important; font-weight: 500 !important; }
+.payment_tab .img img { filter: brightness(.85) !important; }
+
+/* ── Shipping method cards (lazy-loaded) ── */
+.shipping_card {
+  background-color: var(--bg3) !important;
+  border: 1px solid rgba(218,174,73,.16) !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  transition: border-color .2s ease !important;
+}
+.shipping_card:hover { border-color: rgba(218,174,73,.4) !important; }
+.shipping_info { color: var(--txt) !important; }
+.shipping_price {
+  background-color: rgba(218,174,73,.1) !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  color: var(--g) !important;
+  border-radius: 8px !important;
+}
+
+/* ── Saved address / new address cards (lazy-loaded) ── */
+.saved_address,
+.new_address-bar {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.16) !important;
+  border-radius: 12px !important;
+}
+.saved_address:hover,
+.new_address-bar:hover { border-color: rgba(218,174,73,.35) !important; }
+.saved_address-text { color: var(--txt) !important; }
+.new_address-bar label i { color: var(--g) !important; }
+
+/* Address / form wraps */
+.edit_address-wrap,
+.address_form-wrap {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.16) !important;
+  border-radius: 20px !important;
+}
+
+/* ── Error messages ── */
+.checkout_page .text-danger,
+[class*="error__"] { color: #e07070 !important; }
+
+/* ── ch-border variable override for dark mode ── */
+.checkout_page { --ch-border: rgba(218,174,73,.2) !important; }
+
+/* ============================================================
+   PAGE HEADERS — CATEGORY & INNER PAGES
+   ============================================================ */
+.page-header, .breadcrumb-area, .inner-banner,
+.page-title-area, .category-page-banner {
+  background-color: var(--bg) !important;
+  border-bottom: 1px solid rgba(218,174,73,.1) !important;
+  padding-top: calc(var(--bar-h) + var(--nav-h) + 16px) !important;
+  margin-top: 0 !important;
+}
+.page-header h1, .page-header h2,
+.breadcrumb-area h1, .breadcrumb-area h2 { color: var(--txt) !important; }
+
+/* ============================================================
+   SECTIONS — general dark backgrounds
+   ============================================================ */
+.widgetArea, section.widgetArea {
+  background-color: transparent !important;
+}
+.product-cat-slider-area, .product-type-area {
+  background-color: var(--bg) !important;
+}
+.section-head .section-title { color: var(--txt) !important; }
+.section-head .section-sub { color: var(--g) !important; }
+
+/* Remove white section backgrounds */
+.py-md-5, .py-5 { background-color: transparent !important; }
+section { background-color: transparent !important; }
+.container { background-color: transparent !important; }
+
+/* ============================================================
+   GLOBAL BUTTONS
+   ============================================================ */
+.btn-primary, [class*="btn-primary"] {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important; color: #0a0800 !important;
+  font-weight: 800 !important; border-radius: 999px !important;
+}
+.btn-primary:hover { transform: translateY(-2px) !important; }
+.btn-outline-secondary {
+  border-color: rgba(218,174,73,.35) !important; color: var(--g) !important;
+}
+
+/* Toast notifications */
+.toast, .toastr {
+  background-color: var(--bg3) !important;
+  border: 1px solid var(--bdr) !important;
+  color: var(--txt) !important; border-radius: 12px !important;
+}
+.toast-success { border-color: rgba(218,174,73,.3) !important; }
+
+/* Select2 */
+.select2-container--default .select2-selection--single {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.2) !important;
+}
+.select2-dropdown {
+  background-color: var(--bg2) !important;
+  border-color: rgba(218,174,73,.2) !important;
+}
+.select2-container--default .select2-results__option { color: var(--txs) !important; }
+.select2-container--default .select2-results__option--highlighted {
+  background-color: rgba(218,174,73,.1) !important; color: var(--g) !important;
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE FIRST
+   Tjar bottom nav bar height ≈ 60px — everything must respect it.
+   ============================================================ */
+
+/* ── Tablet & Mobile — Navbar dark background ──────── */
+/* On tablet/mobile Tjar forces gold background — override to dark */
+@media (max-width: 991px) {
+
+  /* Navbar: always dark on mobile/tablet (never gold) */
+  nav.navbar.navbar3, .custom-navbar, .navbar.navbar3 {
+    background-color: rgba(12, 9, 0, 0.97) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: 1px solid rgba(218,174,73,.14) !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,.5) !important;
+  }
+  /* Scrolled = same dark on mobile */
+  nav.navbar.navbar3.scrolled, .custom-navbar.scrolled {
+    background-color: rgba(8, 6, 0, 0.99) !important;
+  }
+
+  /* Hamburger toggle button */
+  .navbar-toggler {
+    border: 1px solid rgba(218,174,73,.35) !important;
+    border-radius: 8px !important;
+    padding: 6px 10px !important;
+    background-color: transparent !important;
+  }
+  .navbar-toggler:focus { box-shadow: 0 0 0 2px rgba(218,174,73,.2) !important; }
+  /* Hamburger bars icon */
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28218%2C174%2C73%2C1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    width: 20px !important; height: 20px !important;
+  }
+  /* Fallback: any <i> or <span> inside toggler */
+  .navbar-toggler i, .navbar-toggler span.icon,
+  .nav_icon, [class*="nav-icon"], [class*="nav_icon"] {
+    color: var(--g) !important;
+    stroke: var(--g) !important;
+  }
+  /* nav_icon used in Tjar mobile menu button */
+  .nav_icon svg, .nav_icon i { color: var(--g) !important; stroke: var(--g) !important; fill: var(--g) !important; }
+
+  /* Search icon / bar on mobile */
+  .navbar-input input, .searchbar-suggetions input {
+    background-color: rgba(218,174,73,.08) !important;
+    border: 1px solid rgba(218,174,73,.2) !important;
+    color: #fff !important;
+  }
+  .navbar-input input::placeholder, .searchbar-suggetions input::placeholder {
+    color: rgba(218,174,73,.5) !important;
+  }
+  .navbar-input svg, .searchbar-suggetions svg,
+  .navbar-input i, .searchbar-suggetions i {
+    color: var(--g) !important; stroke: var(--g) !important;
+  }
+
+  /* All nav icons (cart, wishlist, account, search) */
+  nav.navbar.navbar3 .icon-track-navbar svg,
+  nav.navbar.navbar3 .icon-track-navbar i,
+  .custom-navbar .icon-track-navbar svg,
+  .custom-navbar .icon-track-navbar i {
+    color: var(--g) !important;
+    stroke: var(--g) !important;
+  }
+  /* Cart count badge */
+  .icon-notification {
+    background-color: var(--g) !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+  }
+
+  /* Logo */
+  nav.navbar.navbar3 .navbar-brand img,
+  .custom-navbar .navbar-brand img {
+    filter: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Interactive block */
   .jawak-interactive-shell {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    max-width: 660px !important;
   }
   .jawak-media-card,
-  .jawak-media-card video {
-    min-height: 360px;
+  .jawak-media-card video { min-height: 260px !important; }
+
+  /* Features */
+  .four-blocks-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
   }
 }
 
+/* ── Mobile (≤ 767px) ────────────────────── */
 @media (max-width: 767px) {
+
+  /* Variables — smaller promo bar on mobile */
+  :root {
+    --bar-h: 36px;
+    --nav-h: 56px;
+  }
+
+  /* ── Promo bar ── */
+  #jwk-bar { height: var(--bar-h) !important; }
+  .jwk-item { font-size: 12px !important; padding: 0 14px !important; }
+  .jwk-sep  { padding: 0 3px !important; font-size: 8px !important; }
+  #jwk-close { width: 32px !important; font-size: 13px !important; }
+
+  /* ── Navbar ── */
+  nav.navbar.navbar3, .custom-navbar, .navbar.navbar3 {
+    top: var(--bar-h) !important;
+  }
+  body.jwk-bar-closed nav.navbar.navbar3,
+  body.jwk-bar-closed .custom-navbar { top: 0 !important; }
+
+  /* ── Hero ── */
+  .hero.hero-area {
+    min-height: 100svh !important;
+    min-height: 100vh !important;
+  }
+  .hero.hero-area .intro-excerpt h1,
+  .hero.hero-area .intro-excerpt h2 {
+    font-size: clamp(1.5rem, 7vw, 2.2rem) !important;
+  }
+
+  /* ── Brand logos ── */
+  .brand-img {
+    padding: 10px 12px !important;
+    border-radius: 10px !important;
+  }
+  .brand-img img {
+    max-height: 150x !important;
+  }
+
+  /* ── Splide (brand + product sliders) ── */
+  .splide__arrow { width: 32px !important; height: 32px !important; }
+
+  /* ── Product cards ── */
+  .product-item, .card2 {
+    border-radius: 12px !important;
+  }
+
+  /* ── Features grid ── */
+  .four-blocks-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .four-blocks-box .single-promo {
+    padding: 16px 12px !important;
+    border-radius: 14px !important;
+  }
+  .single-promo-icon {
+    width: 46px !important; height: 46px !important;
+    border-radius: 12px !important;
+    margin-bottom: 12px !important;
+  }
+  .single-promo-icon i { font-size: 20px !important; }
+  .single-promo-icon svg { width: 20px !important; height: 20px !important; }
+  .single-promo-contents-title { font-size: 14px !important; }
+  .single-promo-contents-para  { font-size: 12.5px !important; }
+
+  /* ── Interactive block ── */
+  .jawak-interactive-block { padding: 40px 0 !important; }
+  .jawak-section-header { margin-bottom: 30px !important; padding: 0 12px !important; }
   .jawak-interactive-shell {
-    padding: 16px;
-    border-radius: 22px;
-    gap: 18px;
+    grid-template-columns: 1fr !important;
+    padding: 14px !important; gap: 14px !important;
+    border-radius: 18px !important;
+    margin: 0 12px !important;
   }
-  .jawak-media-card {
-    min-height: 260px;
-    border-radius: 18px;
+  .jawak-media-card, .jawak-media-card video {
+    min-height: 200px !important;
+    border-radius: 14px !important;
   }
-  .jawak-media-card video {
-    min-height: 260px;
+  .jawak-tabs { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+  .jawak-tab-btn { min-height: 50px !important; font-size: 13px !important; padding: 10px 10px !important; }
+  .jawak-feature-view { padding: 14px !important; }
+
+  /* ── FAQ ── */
+  .faq-widget { padding: 0 12px !important; }
+  .faq-button { padding: 14px 14px !important; }
+  .faq-question { font-size: 13.5px !important; }
+  .faq-answer { font-size: 13px !important; padding: 0 14px 14px !important; }
+
+  /* ── Footer ── */
+  .store-section.footer-store-section {
+    /* Tjar's bottom nav is ~60px tall on mobile — add padding */
+    padding-bottom: 70px !important;
   }
-  .jawak-main-title {
-    font-size: 28px;
+
+  /* ── Cart / Checkout pages ── */
+  .page-cart .card, .cart-page .card {
+    margin-bottom: 12px !important;
   }
-  .jawak-subtitle {
-    font-size: 14px;
-    line-height: 1.9;
+  .page-cart .card img, .cart-page .card img {
+    max-height: 70px !important;
   }
-  .jawak-tabs {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+
+
+  /* ── WhatsApp floating button on phone   ──
+@media (max-width: 992px) {
+    ._wa {
+        bottom: 90px!important;
+        right: 12px!important;
+    }
+}
+
+   
+  /* ── Tjar mobile bottom nav ─
+     Ensure it stays on top and dark             */
+  .navbar-bottom, .bottom-navbar, .mobile-navbar,
+  [class*="bottom-nav"], [class*="bottom_nav"],
+  .layout-footer-nav, .app-bottom-nav {
+    background-color: var(--bg2) !important;
+    border-top: 1px solid rgba(218,174,73,.14) !important;
+    z-index: 10000 !important;
   }
-  .jawak-tab-btn {
-    min-height: 58px;
-    padding: 12px;
-    border-radius: 16px;
+  .navbar-bottom a, .bottom-navbar a,
+  [class*="bottom-nav"] a { color: var(--txm) !important; }
+  .navbar-bottom a.active, .bottom-navbar a.active,
+  [class*="bottom-nav"] a.active { color: var(--g) !important; }
+  .navbar-bottom svg, .bottom-navbar svg,
+  [class*="bottom-nav"] svg { stroke: currentColor !important; }
+
+  /* Page header on inner pages (mobile) */
+  .page-header, .breadcrumb-area, .inner-banner {
+    padding-top: calc(var(--bar-h) + var(--nav-h) + 12px) !important;
   }
-  .jawak-tab-label {
-    font-size: 13px;
+
+  /* Offcanvas menu (mobile nav drawer) */
+  .offcanvas { width: 85vw !important; max-width: 320px !important; }
+
+  /* General container padding */
+  .container { padding-left: 14px !important; padding-right: 14px !important; }
+
+  /* Section spacing */
+  section { margin-bottom: 0 !important; }
+}
+
+/* ── Small mobile (≤ 480px) ─────────────── */
+@media (max-width: 480px) {
+
+  /* Features: single column on very small screens */
+  .four-blocks-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
+  .four-blocks-box .single-promo {
+    flex-direction: row !important; align-items: flex-start !important;
+    text-align: right !important; gap: 14px !important;
+    padding: 16px 14px !important;
   }
-  .jawak-feature-title {
-    font-size: 22px;
+  .single-promo-icon { margin-bottom: 0 !important; flex-shrink: 0 !important; }
+
+  /* Hero text */
+  .hero.hero-area .intro-excerpt h1,
+  .hero.hero-area .intro-excerpt h2 { font-size: clamp(1.3rem, 6vw, 1.8rem) !important; }
+
+  /* Brand logos */
+  .brand-img { padding: 8px 10px !important; }
+  .brand-img img { max-height: 50px !important; }
+
+  /* Interactive tabs: 2-col still ok at 480 */
+  .jawak-tabs { grid-template-columns: 1fr 1fr !important; }
+  .jawak-tab-btn { font-size: 12px !important; padding: 8px 8px !important; min-height: 44px !important; }
+
+  /* Promo bar: tighter */
+  .jwk-item { font-size: 11.5px !important; padding: 0 10px !important; }
+}
+
+/* ── Landscape mobile (height ≤ 500px) ───── */
+@media (max-height: 500px) and (max-width: 900px) {
+  .hero.hero-area { min-height: 100vw !important; }
+  #jwk-bar { height: 30px !important; }
+  :root { --bar-h: 30px; }
+  .jwk-item { font-size: 11px !important; }
+}
+
+/* ============================================================
+   TJAR MOBILE BOTTOM NAVIGATION — Dark Gold Theme
+   Classes confirmed from real HTML: .mobile-nav, .mobile-nav-item,
+   .mobile-nav-link, .mobile-nav-icon, .mobile-nav-title, .icon-count
+   ============================================================ */
+
+/* Container */
+div.mobile-nav:not(.opacity-0) {
+  background-color: #231c06 !important;
+  border-top: 1px solid rgba(218,174,73,.28) !important;
+  box-shadow: 0 -4px 24px rgba(0,0,0,.6) !important;
+}
+
+/* Each nav item */
+div.mobile-nav:not(.opacity-0) .mobile-nav-item {
+  position: relative !important;
+  flex: 1 1 0 !important;
+}
+
+/* Link wrapper */
+div.mobile-nav:not(.opacity-0) .mobile-nav-link {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  padding: 8px 4px !important;
+  color: rgba(218,174,73,.55) !important;
+  text-decoration: none !important;
+  transition: color .2s ease !important;
+  position: relative !important;
+}
+
+/* Hover & active */
+div.mobile-nav:not(.opacity-0) .mobile-nav-link:hover,
+div.mobile-nav:not(.opacity-0) .mobile-nav-link.active,
+div.mobile-nav:not(.opacity-0) .mobile-nav-link[class*="active"],
+div.mobile-nav:not(.opacity-0) .mobile-nav-item.active .mobile-nav-link {
+  color: #daae49 !important;
+}
+
+/* Gold top-indicator bar on active */
+div.mobile-nav:not(.opacity-0) .mobile-nav-link.active::before,
+div.mobile-nav:not(.opacity-0) .mobile-nav-item.active .mobile-nav-link::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important; left: 20% !important; right: 20% !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, #b88b3c, #daae49, #f0d878) !important;
+  border-radius: 0 0 4px 4px !important;
+}
+
+/* Icons */
+div.mobile-nav:not(.opacity-0) .mobile-nav-icon {
+  font-size: 22px !important;
+  line-height: 1 !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+div.mobile-nav:not(.opacity-0) .mobile-nav-icon i {
+  font-size: 22px !important;
+  color: inherit !important;
+}
+
+/* Labels */
+div.mobile-nav:not(.opacity-0) .mobile-nav-title {
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  color: inherit !important;
+  white-space: nowrap !important;
+  font-family: 'Cairo', 'Tajawal', sans-serif !important;
+}
+
+/* Badge (cart / wishlist count) */
+div.mobile-nav:not(.opacity-0) .icon-count,
+div.mobile-nav:not(.opacity-0) [class*="icon-count"],
+div.mobile-nav:not(.opacity-0) .badge,
+div.mobile-nav:not(.opacity-0) [x-text*="cart"],
+div.mobile-nav:not(.opacity-0) [wishlistCount] {
+  position: absolute !important;
+  top: -6px !important; right: -8px !important;
+  min-width: 17px !important; height: 17px !important;
+  background: linear-gradient(135deg, #b88b3c, #daae49) !important;
+  color: #0a0700 !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  border-radius: 999px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 3px !important;
+  border: 1.5px solid #0d0a00 !important;
+  line-height: 1 !important;
+}
+
+/* Home icon center highlight pill */
+div.mobile-nav:not(.opacity-0) .mobile-nav-item:nth-child(3) .mobile-nav-link,
+div.mobile-nav:not(.opacity-0) .mobile-nav-item.center-nav .mobile-nav-link {
+  color: #daae49 !important;
+}
+div.mobile-nav:not(.opacity-0) .mobile-nav-item:nth-child(3) .mobile-nav-icon i,
+div.mobile-nav:not(.opacity-0) .mobile-nav-item.center-nav .mobile-nav-icon i {
+  font-size: 26px !important;
+  filter: drop-shadow(0 0 6px rgba(218,174,73,.45)) !important;
+}
+
+/* ============================================================
+   USER DASHBOARD — /user-home — Dark Gold Theme
+   Classes confirmed from real HTML source.
+   External CSS: user-dashboard.css (overridden here)
+   ============================================================ */
+
+/* ── Page & section wrapper ── */
+.dash_section {
+  background-color: var(--bg) !important;
+  min-height: 100vh !important;
+}
+.dash_container { background-color: transparent !important; }
+
+/* ── Main head card (cover + welcome + menu) ── */
+.dash_head {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.14) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 6px 32px rgba(0,0,0,.4) !important;
+  overflow: hidden !important;
+}
+
+/* ── Cover / banner area ── */
+.dash_user-cover {
+  background-color: var(--bg3) !important;
+  border-bottom: 1px solid rgba(218,174,73,.12) !important;
+  position: relative !important;
+}
+/* Decorative inner cover — subtle gold tint */
+.dash_inner-cover {
+  background-image: none !important;
+  background: linear-gradient(135deg,
+    rgba(184,139,60,.08) 0%,
+    rgba(218,174,73,.05) 50%,
+    rgba(10,8,0,.2) 100%) !important;
+  border-bottom: 1px solid rgba(218,174,73,.1) !important;
+}
+/* Decorative background */
+.dash_user-bg {
+  background: radial-gradient(ellipse at 60% 50%,
+    rgba(218,174,73,.06) 0%,
+    transparent 70%) !important;
+}
+/* Shadow circle decoration */
+.shadow_circle i {
+  background: rgba(218,174,73,.05) !important;
+}
+
+/* ── Profile image ring ── */
+.dash_user-img {
+  border: 3px solid rgba(218,174,73,.4) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 4px var(--bg2), 0 0 20px rgba(218,174,73,.15) !important;
+}
+.dash_user-img img {
+  border-radius: 50% !important;
+}
+
+/* ── Logout button ── */
+.dash_logout, .btn_2d.danger.dash_logout {
+  background-color: rgba(220,53,69,.1) !important;
+  border: 1px solid rgba(220,53,69,.25) !important;
+  color: #e07070 !important;
+  border-radius: 999px !important;
+}
+.dash_logout svg { fill: #e07070 !important; }
+.dash_logout:hover {
+  background-color: rgba(220,53,69,.2) !important;
+  border-color: rgba(220,53,69,.4) !important;
+}
+
+/* ── Welcome text ── */
+.dash_welcome {
+  background-color: transparent !important;
+  text-align: center !important;
+}
+.dash_welcome h2 {
+  color: var(--txt) !important;
+  font-size: clamp(1.2rem, 3vw, 1.6rem) !important;
+}
+.dash_welcome h2 .emoji { font-style: normal !important; }
+.dash_welcome span {
+  color: var(--txm) !important;
+  font-size: 14px !important;
+}
+
+/* ── Tabs menu wrapper ── */
+.dash_menu-wrap {
+  background-color: transparent !important;
+  border-top: 1px solid rgba(218,174,73,.1) !important;
+  position: relative !important;
+}
+
+/* ── Tab list (horizontal scroll) ── */
+.dash_menu-list {
+  background-color: transparent !important;
+  list-style: none !important;
+  display: flex !important;
+  gap: 4px !important;
+  padding: 8px 12px !important;
+  overflow-x: auto !important;
+  scrollbar-width: none !important;
+}
+.dash_menu-list::-webkit-scrollbar { display: none !important; }
+
+/* ── Each tab item ── */
+.dash_menu-list li {
+  flex-shrink: 0 !important;
+}
+.dash_menu-list li a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 8px 14px !important;
+  border-radius: 999px !important;
+  color: var(--txm) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+  transition: all .2s ease !important;
+  border: 1px solid transparent !important;
+}
+.dash_menu-list li a:hover {
+  color: var(--g) !important;
+  background-color: rgba(218,174,73,.08) !important;
+  border-color: rgba(218,174,73,.18) !important;
+}
+
+/* ── Active tab ── */
+.dash_menu-list li.active a,
+.dash_menu-list li a.active {
+  color: #0a0700 !important;
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border-color: transparent !important;
+  font-weight: 700 !important;
+  box-shadow: 0 3px 12px rgba(218,174,73,.25) !important;
+}
+
+/* ── Tab SVG icons ── */
+.dash_menu-list li a svg,
+.dash_menu-list li a .default_icon,
+.dash_menu-list li a .activ_icon {
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0 !important;
+}
+/* Normal tab: icon muted gold */
+.dash_menu-list li:not(.active) a svg,
+.dash_menu-list li:not(.active) a .default_icon {
+  fill: var(--txm) !important;
+  color: var(--txm) !important;
+}
+/* Active tab: icon dark (on gold bg) */
+.dash_menu-list li.active a svg,
+.dash_menu-list li.active a .activ_icon {
+  fill: #0a0700 !important;
+  color: #0a0700 !important;
+}
+/* Show/hide logic: default shows default_icon, active shows activ_icon */
+.dash_menu-list li:not(.active) .activ_icon { display: none !important; }
+.dash_menu-list li.active .default_icon { display: none !important; }
+.dash_menu-list li.active .activ_icon { display: inline-block !important; }
+
+/* ── Scroll arrows ── */
+.dash_menu-arrow {
+  background-color: rgba(218,174,73,.1) !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  border-radius: 50% !important;
+  width: 32px !important; height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+  transition: background .2s !important;
+}
+.dash_menu-arrow:hover {
+  background-color: rgba(218,174,73,.2) !important;
+}
+/* Override hardcoded fill="#1E1E1E" on SVG */
+.dash_menu-arrow svg { fill: var(--g) !important; }
+.dash_menu-arrow svg path { fill: var(--g) !important; }
+.dash_menu-arrow.disabled { opacity: .3 !important; pointer-events: none !important; }
+
+/* ── hr divider in head ── */
+.dash_head .hr_line,
+.dash_head hr {
+  border-color: rgba(218,174,73,.12) !important;
+  opacity: 1 !important;
+}
+
+/* ── Dashboard body ── */
+.dash_body {
+  background-color: transparent !important;
+}
+
+/* ── Overview cards container ── */
+.dash_overview-wrap {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+  gap: 16px !important;
+}
+
+/* ── Each stat card ── */
+.dash_overview-card {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.14) !important;
+  border-radius: 20px !important;
+  padding: 24px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,.25) !important;
+}
+.dash_overview-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(218,174,73,.35) !important;
+  box-shadow: 0 8px 28px rgba(218,174,73,.1) !important;
+  text-decoration: none !important;
+}
+
+/* ── Icon area in stat card ── */
+.dash_overview-icon {
+  width: 56px !important; height: 56px !important;
+  border-radius: 16px !important;
+  background: linear-gradient(135deg, rgba(184,139,60,.15), rgba(218,174,73,.1)) !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+/* The decorative <span> inside icon */
+.dash_overview-icon > span {
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  background: radial-gradient(circle at 30% 30%, rgba(218,174,73,.12), transparent) !important;
+}
+/* SVG icon */
+.dash_overview-icon svg {
+  width: 26px !important; height: 26px !important;
+  fill: var(--g) !important;
+  color: var(--g) !important;
+  position: relative !important;
+  z-index: 1 !important;
+  filter: drop-shadow(0 0 6px rgba(218,174,73,.3)) !important;
+}
+
+/* ── Stat number ── */
+.dash_overview-heading {
+  color: var(--g) !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+.dash_overview-heading sar,
+.dash_overview-heading sar::before {
+  font-size: .85em !important;
+  color: var(--txm) !important;
+}
+
+/* ── Stat label ── */
+.dash_overview-btn {
+  color: var(--txs) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+/* ── Other dashboard sub-pages (orders, downloads, etc.) ── */
+.dash_body .card,
+.dash_body .bg-white,
+.dash_body [class*="order-card"],
+.dash_body [class*="ticket-card"] {
+  background-color: var(--bg2) !important;
+  border-color: rgba(218,174,73,.14) !important;
+  color: var(--txt) !important;
+}
+.dash_body table {
+  background-color: transparent !important;
+}
+.dash_body thead th {
+  background-color: var(--bg3) !important;
+  color: var(--g) !important;
+  border-color: rgba(218,174,73,.14) !important;
+}
+.dash_body tbody tr {
+  border-color: rgba(218,174,73,.08) !important;
+}
+.dash_body tbody tr:hover {
+  background-color: rgba(218,174,73,.04) !important;
+}
+.dash_body td, .dash_body th {
+  color: var(--txs) !important;
+  border-color: rgba(218,174,73,.1) !important;
+}
+.dash_body .badge { font-weight: 600 !important; }
+
+/* Status badges in orders */
+.dash_body .badge-success, .dash_body .bg-success { background-color: rgba(34,197,94,.15) !important; color: #4ade80 !important; }
+.dash_body .badge-warning, .dash_body .bg-warning { background-color: rgba(218,174,73,.15) !important; color: var(--g) !important; }
+.dash_body .badge-danger,  .dash_body .bg-danger  { background-color: rgba(220,53,69,.15) !important; color: #e07070 !important; }
+.dash_body .badge-info,    .dash_body .bg-info    { background-color: rgba(99,179,237,.15) !important; color: #7ec8e3 !important; }
+
+/* Pagination */
+.dash_body .page-item .page-link {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.15) !important;
+  color: var(--txs) !important;
+}
+.dash_body .page-item.active .page-link {
+  background: linear-gradient(135deg, var(--gx), var(--g)) !important;
+  border-color: transparent !important;
+  color: #0a0700 !important;
+}
+
+/* ── Mobile: stack cards 2-col ── */
+@media (max-width: 767px) {
+  .dash_overview-wrap {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
   }
+  .dash_overview-card { padding: 18px 12px !important; }
+  .dash_overview-heading { font-size: 1.2rem !important; }
+  .dash_overview-icon { width: 46px !important; height: 46px !important; }
+  .dash_overview-icon svg { width: 22px !important; height: 22px !important; }
 }
 	</style>
         <style>
@@ -1355,7 +3096,7 @@ hr, [class*="divider"] {
     
 <script src="/rappasoft/laravel-livewire-tables/core.min.js"  ></script> <script src="/rappasoft/laravel-livewire-tables/thirdparty.min.js"  ></script></head>
 <body x-data="{'isModalOpen': false}" x-on:keydown.escape="isModalOpen=false" class="checkout_page">
-    <div wire:snapshot="{&quot;data&quot;:{&quot;allDigital&quot;:true,&quot;shippingAddressId&quot;:null,&quot;shippingMethodId&quot;:null,&quot;paymentGateway&quot;:null,&quot;notes&quot;:null,&quot;orderId&quot;:1,&quot;user&quot;:[null,{&quot;class&quot;:&quot;App\\Models\\User&quot;,&quot;key&quot;:1,&quot;s&quot;:&quot;mdl&quot;}],&quot;currency&quot;:&quot;&lt;sar&gt;&lt;\/sar&gt;&quot;,&quot;isAuthenticated&quot;:true,&quot;showNotes&quot;:false,&quot;codFees&quot;:1,&quot;codFeesLimit&quot;:1,&quot;totalTax&quot;:14.85,&quot;totalItems&quot;:0,&quot;totalShipping&quot;:0,&quot;coupon&quot;:null,&quot;couponCode&quot;:&quot;&quot;,&quot;totalCouponDiscount&quot;:0,&quot;subtotal&quot;:99,&quot;total&quot;:0,&quot;checkoutLoading&quot;:false,&quot;shippingAddresses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;shippingMethods&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;cart&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;currencyNote&quot;:false},&quot;memo&quot;:{&quot;id&quot;:&quot;BnsNTNE4g41k6uZrgGwH&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:{&quot;kpPETvC&quot;:[&quot;div&quot;,&quot;au9R7fMYArB8T7RNZz4Q&quot;],&quot;97eeaZx&quot;:[&quot;div&quot;,&quot;8a9i48OsoMbjgFPcXYI7&quot;],&quot;tpHgouV&quot;:[&quot;div&quot;,&quot;2ul8buQaxyT6wwUP0NJu&quot;],&quot;hU419pM&quot;:[&quot;div&quot;,&quot;8Ni2Q78ublHbEYUjDfSM&quot;],&quot;TqpNdr0&quot;:[&quot;div&quot;,&quot;ZUZBRHgmFdup837Mqgt1&quot;]},&quot;scripts&quot;:[&quot;19293550-0&quot;],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;e8625ac82821fdd8bf00b1bab291b942ace2348aeba381bea6a7bc1e198be0b9&quot;}" wire:effects="{&quot;scripts&quot;:{&quot;19293550-0&quot;:&quot;&lt;script&gt;\n\n    document.addEventListener(&#039;tester&#039;, function (evt) {\n        evt.detail.submit()\n            .then(response =&gt; console.log(response))\n    })\n\n    Alpine.data(&#039;checkout&#039;, () =&gt; ({\n\n        \/\/ collapse instances\n        collapseShippingAddress: null,\n        collapseShippingAddressParent: null,\n        collapseShippingMethod: null,\n        collapseShippingMethodParent: null,\n        collapsePayment: null,\n        collapsePaymentParent: null,\n\n        \/\/ Etc.\n        showNotes: $wire.entangle(&#039;showNotes&#039;),\n        notes: $wire.entangle(&#039;notes&#039;),\n        currency: $wire.entangle(&#039;currency&#039;),\n        isAuthenticated: $wire.entangle(&#039;isAuthenticated&#039;),\n        shippingAddresses: $wire.entangle(&#039;shippingAddresses&#039;),\n        shippingMethods: $wire.entangle(&#039;shippingMethods&#039;),\n        checkoutLoading: $wire.entangle(&#039;checkoutLoading&#039;),\n        allDigital: $wire.entangle(&#039;allDigital&#039;),\n        codFees: $wire.entangle(&#039;codFees&#039;),\n        codFeesLimit: $wire.entangle(&#039;codFeesLimit&#039;),\n\n        \/\/ Order Headers\n        paymentGateway: $wire.entangle(&#039;paymentGateway&#039;),\n        shippingAddressId: $wire.entangle(&#039;shippingAddressId&#039;),\n        shippingMethodId: $wire.entangle(&#039;shippingMethodId&#039;),\n        totalShipping: $wire.entangle(&#039;totalShipping&#039;),\n        total: $wire.entangle(&#039;total&#039;),\n        subtotal: $wire.entangle(&#039;subtotal&#039;),\n        totalTax: $wire.entangle(&#039;totalTax&#039;),\n        orderId: $wire.entangle(&#039;orderId&#039;),\n        couponCode: $wire.entangle(&#039;couponCode&#039;),\n        coupon: $wire.entangle(&#039;coupon&#039;),\n        totalCouponDiscount: $wire.entangle(&#039;totalCouponDiscount&#039;),\n\n        paymentGatewayTab: null,\n\n        requiredDeclaration: false,\n        enableReCaptcha: false,\n\n        \/\/ Methods\n        get displayCodFees() {\n            return this.paymentGateway === &#039;cash-on-delivery&#039; &amp;&amp; (this.subtotal &gt;= this.codFeesLimit)\n        },\n        get codFeesComputed() {\n            return `${this.codFees} ${this.currency}`\n        },\n        get hasShippingAddress() {\n            return this.shippingAddressId !== null &amp;&amp; this.shippingAddressId !== &#039;&#039;\n        },\n\n        get hasCoupon() {\n            return this.coupon !== null &amp;&amp; this.coupon !== &#039;&#039;\n        },\n\n        get couponDiscountValue() {\n            if (this.coupon === null || this.coupon === &#039;&#039;)\n                return 0;\n            if (this.coupon.discount_type === &#039;percentage&#039;) {\n                value = this.totalCouponDiscount\n                return parseFloat(value).toFixed(2)\n            } else {\n                value = parseFloat(this.coupon.discount).toFixed(2)\n            }\n            return value\n        },\n\n        get couponText() {\n            if (this.coupon === null || this.coupon === &#039;&#039;)\n                return &#039;&#039;;\n\n            let type = this.coupon.discount_type == &#039;percentage&#039; ? this.coupon.discount + &#039;%&#039; : this.coupon.discount + this.currency\n\n            return `${type} (-${this.couponDiscountValue}${this.currency})`\n        },\n\n        get hasShippingMethod() {\n            return this.shippingMethodId !== null &amp;&amp; this.shippingMethodId !== &#039;&#039;\n        },\n\n        get hasOrderId() {\n            return this.orderId != null &amp;&amp; this.orderId != &#039;&#039;\n        },\n\n        get shippingText() {\n            return this.totalShipping == 0 ? `\u0645\u062c\u0627\u0646\u0627\u064b` : parseFloat(this.totalShipping, 2) + &#039; &lt;sar&gt;&lt;\/sar&gt;&#039;\n        },\n\n        get canSelectPayment() {\n            return (this.shippingMethodId != null &amp;&amp; this.shippingAddressId != null) || this.allDigital\n        },\n\n        get canCheckout() {\n            return this.shippingMethodId != null &amp;&amp; this.shippingAddressId != null &amp;&amp; this.paymentGateway != null\n        },\n\n        get taxText() {\n            return parseFloat(this.totalTax, 2) + &#039; &lt;sar&gt;&lt;\/sar&gt;&#039;\n        },\n\n        get grandTotalText() {\n            let grandTotal = (parseFloat(this.subtotal) - parseFloat(this.coupon !== null ? this.couponDiscountValue : 0)) + (parseFloat(this.totalShipping))\n            if (this.paymentGateway === &#039;cash-on-delivery&#039; &amp;&amp; this.subtotal &gt;= this.codFeesLimit){\n                grandTotal += parseFloat(this.codFees)\n            }\n            grandTotal = (grandTotal &lt; 0) ? 0 : grandTotal\n            return grandTotal.toFixed(2) + &#039; &lt;sar&gt;&lt;\/sar&gt;&#039;\n        },\n\n        get selectedShippingAddressText() {\n            var index = this.shippingAddresses.map(e =&gt; String(e.id)).indexOf(String(this.shippingAddressId))\n            if (index &gt;= 0) {\n                return  `${this.shippingAddresses[index].address}, ${this.shippingAddresses[index].cities?.formatted_name}, ${this.shippingAddresses[index].country?.formatted_name}`\n            } else {\n                return &#039;&#039;\n            }\n        },\n\n        get selectedShippingMethodText() {\n            var index = this.shippingMethods.map(e =&gt; String(e.id)).indexOf(String(this.shippingMethodId))\n            if (index &gt;= 0) {\n                return this.shippingMethods[index].name\n            } else {\n                return &#039;&#039;\n            }\n        },\n\n        setShippingCost(cost = 0, shipping_id = &#039;&#039;) {\n            this.totalShipping = cost\n            $wire.dispatch(&#039;updateShippingCost:set-shippingCost&#039;, { cost: cost, shipping_id: shipping_id})\n            $wire.on(&#039;updateShippingCost&#039;, (val) =&gt; {\n                this.totalShipping = val[0][&#039;cost&#039;] ?? 0\n            })\n        },\n\n        loadingCallback(val) {\n            this.checkoutLoading = val[0] ?? false\n        },\n\n        checkDeclaration(){\n            const xthis = this;\n            if(this.requiredDeclaration){\n                if(!$(&#039;input[name=\&quot;declaration_order_checkbox\&quot;]&#039;).is(&#039;:checked&#039;)){\n                    $(&#039;html, body&#039;).animate({\n                        scrollTop: $(\&quot;#declaration_order_section\&quot;).offset().top\n                    },0);\n                    $(&#039;#declaration_order_section label&#039;).css(&#039;color&#039;,&#039;red&#039;);\n                    $(&#039;input[name=\&quot;declaration_order_checkbox\&quot;]&#039;).change(function(){\n                        xthis._spm(this.paymentGatewayTab);\n                        $(&#039;#declaration_order_section label&#039;).css(&#039;color&#039;,&#039;green&#039;);\n                        $(this).attr(&#039;disabled&#039;,true);\n                    });\n                    return false;\n                }\n            }\n            return true;\n        },\n\n        _spm(paymentMethod) {\n            if (!this.checkDeclaration()) {\n                return;\n            }\n\n            if (this.paymentGatewayTab !== paymentMethod) {\n                this.paymentGatewayTab = paymentMethod;\n                $dispatch(&#039;checkout:create-order&#039;);\n            }\n        },\n        inactivityTime() {\n            var t;\n            window.onload = resetTimer;\n            document.onmousemove = resetTimer;\n            document.onkeypress = resetTimer;\n            function resetTimer() {\n                clearTimeout(t);\n                t = setTimeout(function(){\n                    window.location.reload();\n                }, 600000);\n            }\n        },\n\n        reCapatchaCallback() {\n\n            if (!this.enableReCaptcha) {\n                return;\n            }\n\n            if (typeof grecaptcha === &#039;undefined&#039;) {\n                return;\n            }\n\n            grecaptcha.ready(function() {\n                grecaptcha.execute(&#039;6LfQfPgqAAAAAGRJl163BgTPsQjU9PysTUcNEjPf&#039;, { action: &#039;submit&#039; }).then(function(token) {\n                    window.___fraudGuardianToken = token;\n                });\n            });\n        },\n\n        init() {\n            var loginEl = document.getElementById(&#039;loginModal&#039;)\n            var loginModal = new bootstrap.Modal(loginEl, {\n                keyboard: false\n            })\n            if (!this.isAuthenticated)\n                loginModal.toggle()\n\n            this.collapseShippingAddress = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_address-edit&#039;))\n            this.collapseShippingAddressParent = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_address-view&#039;))\n            this.collapseShippingMethod = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_shipping-edit&#039;))\n            this.collapseShippingMethodParent = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_shipping-view&#039;))\n            this.collapsePayment = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_payment-edit&#039;))\n            this.collapsePaymentParent = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_payment-view&#039;))\n\n            this.$watch(&#039;shippingAddressId&#039;, val =&gt; {\n                if (val) {\n                    setTimeout(() =&gt; {\n                        $wire.dispatch(&#039;shipping-methods:init&#039;, {\n                            id: val,\n                            coupon: this.coupon\n                        })\n\n                        $wire.dispatch(&#039;coupon-field:set-shippingId&#039;, {\n                            id: val\n                        });\n\n                        this.shippingMethodId = null\n                        this.totalShipping = 0\n                        this.collapseShippingAddressParent.show()\n                        this.collapseShippingMethodParent.hide()\n                        this.collapseShippingMethod.show()\n                    }, 350)\n                }\n            })\n\n            this.$watch(&#039;shippingMethodId&#039;, val =&gt; {\n                if (val) {\n\n                    this.collapseShippingMethodParent.show()\n                    this.collapseShippingMethod.hide()\n\n                    this.collapsePayment.show()\n                    this.collapsePaymentParent.hide()\n\n                    $wire.dispatch(&#039;payment:init-city&#039;, {\n                        shippingAddressId: this.shippingAddressId\n                    });\n                    $wire.dispatch(&#039;checkout:create-order&#039;)\n                } else {\n                    this.collapseShippingMethodParent.show()\n                    this.collapseShippingMethod.hide()\n                    this.collapsePayment.hide()\n                    this.collapsePaymentParent.show()\n                }\n            })\n\n            this.$watch(&#039;paymentGateway&#039;, val =&gt; {\n\n                $wire.dispatch(&#039;checkout:create-order&#039;)\n\n                if (!this.checkDeclaration()) {\n                    return;\n                }\n\n                if (val) {\n                    if (this.orderId != null) {\n                        $wire.dispatch(&#039;order:update-gateway&#039;)\n                    }\n                } else {\n                    this.collapsePayment.hide()\n                    this.collapsePaymentParent.show()\n                    $wire.dispatch(&#039;checkout:clear-embedded&#039;)\n                }\n            })\n\n            $wire.on(&#039;checkout:set-coupon&#039;, (val) =&gt; {\n                if (&#039;coupon&#039; in val &amp;&amp; &#039;couponCode&#039; in val &amp;&amp; &#039;totalCouponDiscount&#039; in val) {\n                    this.couponCode = val.couponCode\n                    this.totalCouponDiscount = val.totalCouponDiscount\n                    this.coupon = _.isEmpty(val.coupon) ? null : val.coupon\n                }\n\n                if (&#039;shippingId&#039; in val &amp;&amp; val.shippingId != null) {\n                    $wire.dispatch(&#039;shipping-methods:init&#039;, {\n                        id: val.shippingId,\n                        coupon: this.coupon\n                    })\n                }\n\n                if (this.orderId != null &amp;&amp; this.paymentGateway != null) {\n                    $wire.dispatch(&#039;checkout:create-order&#039;)\n                }\n            })\n\n\n\n            $wire.on(&#039;checkout:loading&#039;, this.loadingCallback)\n\n            $wire.on(&#039;form:update-shipping&#039;, val =&gt; {\n                this.shippingAddressId = val[0] ?? null;\n                new bootstrap.Collapse(document.getElementById(&#039;new_address-bar&#039;), {toggle: true})\n            })\n\n            $wire.on(&#039;shipping-address:set&#039;, val =&gt; {\n                this.shippingAddresses = val[0] ?? []\n            })\n\n            $wire.on(&#039;shipping-methods:set&#039;, val =&gt; {\n                this.shippingMethods = val[0] ?? []\n            })\n\n            if (this.allDigital) {\n                setTimeout(() =&gt; {\n                    this.collapsePayment.show()\n                    this.collapsePaymentParent.hide()\n                }, 500)\n            } else {\n                setTimeout(() =&gt; {\n                    this.collapseShippingMethodParent.show()\n                    this.collapseShippingMethod.hide()\n\n                    document.getElementById(&#039;step_shipping-edit&#039;).addEventListener(&#039;show.bs.collapse&#039;, () =&gt; {\n                        this.paymentGateway = null\n                        this.collapseShippingAddress.hide()\n                        this.collapseShippingAddressParent.show()\n                        this.collapsePayment.hide()\n                        this.collapsePaymentParent.show()\n                    })\n\n                    document.getElementById(&#039;step_address-edit&#039;).addEventListener(&#039;show.bs.collapse&#039;, () =&gt; {\n                        this.shippingMethodId = null\n                        this.collapseShippingMethodParent.show()\n                        this.collapseShippingMethod.hide()\n                        this.collapsePayment.hide()\n                        this.collapsePaymentParent.show()\n\n                        let savedAddress = document.querySelectorAll(&#039;.save_address-wrap&#039;);\n                        savedAddress.forEach((el) =&gt; {\n                            el.querySelector(&#039;.collapse&#039;).classList.add(&#039;show&#039;);\n                        });\n\n                        document.getElementById(&#039;new_address-bar&#039;).classList.add(&#039;show&#039;);\n                    })\n                }, 500)\n            }\n\n            this.inactivityTime();\n            this.reCapatchaCallback();\n        },\n    }))\n&lt;\/script&gt;\n    &quot;},&quot;listeners&quot;:[&quot;checkout:create-order&quot;,&quot;order:update-gateway&quot;]}" wire:id="BnsNTNE4g41k6uZrgGwH" class="checkout" x-data="checkout">
+    <div wire:snapshot="{&quot;data&quot;:{&quot;allDigital&quot;:true,&quot;shippingAddressId&quot;:null,&quot;shippingMethodId&quot;:null,&quot;paymentGateway&quot;:null,&quot;notes&quot;:null,&quot;orderId&quot;:2,&quot;user&quot;:[null,{&quot;class&quot;:&quot;App\\Models\\User&quot;,&quot;key&quot;:1,&quot;s&quot;:&quot;mdl&quot;}],&quot;currency&quot;:&quot;&lt;sar&gt;&lt;\/sar&gt;&quot;,&quot;isAuthenticated&quot;:true,&quot;showNotes&quot;:false,&quot;codFees&quot;:1,&quot;codFeesLimit&quot;:1,&quot;totalTax&quot;:22.35,&quot;totalItems&quot;:0,&quot;totalShipping&quot;:0,&quot;coupon&quot;:null,&quot;couponCode&quot;:&quot;&quot;,&quot;totalCouponDiscount&quot;:0,&quot;subtotal&quot;:149,&quot;total&quot;:0,&quot;checkoutLoading&quot;:false,&quot;shippingAddresses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;shippingMethods&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;cart&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;currencyNote&quot;:false},&quot;memo&quot;:{&quot;id&quot;:&quot;cZgBEk7JBcUCoaq0R2PX&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:{&quot;kpPETvC&quot;:[&quot;div&quot;,&quot;b2UafmOBNH5qrYZUDQw1&quot;],&quot;97eeaZx&quot;:[&quot;div&quot;,&quot;ILzKjcDxASPoik2q9xMU&quot;],&quot;tpHgouV&quot;:[&quot;div&quot;,&quot;KMypSaAqnqIOnmBzAZ9s&quot;],&quot;hU419pM&quot;:[&quot;div&quot;,&quot;EofLHxyxAz2FPL8Im6nf&quot;],&quot;TqpNdr0&quot;:[&quot;div&quot;,&quot;PmBu2IBYhJzHcG1g4P0g&quot;]},&quot;scripts&quot;:[&quot;19293550-0&quot;],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;dec99ee3ae4da77359e4d8660a87a2c254fc3054c4f8cf5fef2e1a50bd828e2d&quot;}" wire:effects="{&quot;scripts&quot;:{&quot;19293550-0&quot;:&quot;&lt;script&gt;\n\n    document.addEventListener(&#039;tester&#039;, function (evt) {\n        evt.detail.submit()\n            .then(response =&gt; console.log(response))\n    })\n\n    Alpine.data(&#039;checkout&#039;, () =&gt; ({\n\n        \/\/ collapse instances\n        collapseShippingAddress: null,\n        collapseShippingAddressParent: null,\n        collapseShippingMethod: null,\n        collapseShippingMethodParent: null,\n        collapsePayment: null,\n        collapsePaymentParent: null,\n\n        \/\/ Etc.\n        showNotes: $wire.entangle(&#039;showNotes&#039;),\n        notes: $wire.entangle(&#039;notes&#039;),\n        currency: $wire.entangle(&#039;currency&#039;),\n        isAuthenticated: $wire.entangle(&#039;isAuthenticated&#039;),\n        shippingAddresses: $wire.entangle(&#039;shippingAddresses&#039;),\n        shippingMethods: $wire.entangle(&#039;shippingMethods&#039;),\n        checkoutLoading: $wire.entangle(&#039;checkoutLoading&#039;),\n        allDigital: $wire.entangle(&#039;allDigital&#039;),\n        codFees: $wire.entangle(&#039;codFees&#039;),\n        codFeesLimit: $wire.entangle(&#039;codFeesLimit&#039;),\n\n        \/\/ Order Headers\n        paymentGateway: $wire.entangle(&#039;paymentGateway&#039;),\n        shippingAddressId: $wire.entangle(&#039;shippingAddressId&#039;),\n        shippingMethodId: $wire.entangle(&#039;shippingMethodId&#039;),\n        totalShipping: $wire.entangle(&#039;totalShipping&#039;),\n        total: $wire.entangle(&#039;total&#039;),\n        subtotal: $wire.entangle(&#039;subtotal&#039;),\n        totalTax: $wire.entangle(&#039;totalTax&#039;),\n        orderId: $wire.entangle(&#039;orderId&#039;),\n        couponCode: $wire.entangle(&#039;couponCode&#039;),\n        coupon: $wire.entangle(&#039;coupon&#039;),\n        totalCouponDiscount: $wire.entangle(&#039;totalCouponDiscount&#039;),\n\n        paymentGatewayTab: null,\n\n        requiredDeclaration: false,\n        enableReCaptcha: false,\n\n        \/\/ Methods\n        get displayCodFees() {\n            return this.paymentGateway === &#039;cash-on-delivery&#039; &amp;&amp; (this.subtotal &gt;= this.codFeesLimit)\n        },\n        get codFeesComputed() {\n            return `${this.codFees} ${this.currency}`\n        },\n        get hasShippingAddress() {\n            return this.shippingAddressId !== null &amp;&amp; this.shippingAddressId !== &#039;&#039;\n        },\n\n        get hasCoupon() {\n            return this.coupon !== null &amp;&amp; this.coupon !== &#039;&#039;\n        },\n\n        get couponDiscountValue() {\n            if (this.coupon === null || this.coupon === &#039;&#039;)\n                return 0;\n            if (this.coupon.discount_type === &#039;percentage&#039;) {\n                value = this.totalCouponDiscount\n                return parseFloat(value).toFixed(2)\n            } else {\n                value = parseFloat(this.coupon.discount).toFixed(2)\n            }\n            return value\n        },\n\n        get couponText() {\n            if (this.coupon === null || this.coupon === &#039;&#039;)\n                return &#039;&#039;;\n\n            let type = this.coupon.discount_type == &#039;percentage&#039; ? this.coupon.discount + &#039;%&#039; : this.coupon.discount + this.currency\n\n            return `${type} (-${this.couponDiscountValue}${this.currency})`\n        },\n\n        get hasShippingMethod() {\n            return this.shippingMethodId !== null &amp;&amp; this.shippingMethodId !== &#039;&#039;\n        },\n\n        get hasOrderId() {\n            return this.orderId != null &amp;&amp; this.orderId != &#039;&#039;\n        },\n\n        get shippingText() {\n            return this.totalShipping == 0 ? `\u0645\u062c\u0627\u0646\u0627\u064b` : parseFloat(this.totalShipping, 2) + &#039; &lt;sar&gt;&lt;\/sar&gt;&#039;\n        },\n\n        get canSelectPayment() {\n            return (this.shippingMethodId != null &amp;&amp; this.shippingAddressId != null) || this.allDigital\n        },\n\n        get canCheckout() {\n            return this.shippingMethodId != null &amp;&amp; this.shippingAddressId != null &amp;&amp; this.paymentGateway != null\n        },\n\n        get taxText() {\n            return parseFloat(this.totalTax, 2) + &#039; &lt;sar&gt;&lt;\/sar&gt;&#039;\n        },\n\n        get grandTotalText() {\n            let grandTotal = (parseFloat(this.subtotal) - parseFloat(this.coupon !== null ? this.couponDiscountValue : 0)) + (parseFloat(this.totalShipping))\n            if (this.paymentGateway === &#039;cash-on-delivery&#039; &amp;&amp; this.subtotal &gt;= this.codFeesLimit){\n                grandTotal += parseFloat(this.codFees)\n            }\n            grandTotal = (grandTotal &lt; 0) ? 0 : grandTotal\n            return grandTotal.toFixed(2) + &#039; &lt;sar&gt;&lt;\/sar&gt;&#039;\n        },\n\n        get selectedShippingAddressText() {\n            var index = this.shippingAddresses.map(e =&gt; String(e.id)).indexOf(String(this.shippingAddressId))\n            if (index &gt;= 0) {\n                return  `${this.shippingAddresses[index].address}, ${this.shippingAddresses[index].cities?.formatted_name}, ${this.shippingAddresses[index].country?.formatted_name}`\n            } else {\n                return &#039;&#039;\n            }\n        },\n\n        get selectedShippingMethodText() {\n            var index = this.shippingMethods.map(e =&gt; String(e.id)).indexOf(String(this.shippingMethodId))\n            if (index &gt;= 0) {\n                return this.shippingMethods[index].name\n            } else {\n                return &#039;&#039;\n            }\n        },\n\n        setShippingCost(cost = 0, shipping_id = &#039;&#039;) {\n            this.totalShipping = cost\n            $wire.dispatch(&#039;updateShippingCost:set-shippingCost&#039;, { cost: cost, shipping_id: shipping_id})\n            $wire.on(&#039;updateShippingCost&#039;, (val) =&gt; {\n                this.totalShipping = val[0][&#039;cost&#039;] ?? 0\n            })\n        },\n\n        loadingCallback(val) {\n            this.checkoutLoading = val[0] ?? false\n        },\n\n        checkDeclaration(){\n            const xthis = this;\n            if(this.requiredDeclaration){\n                if(!$(&#039;input[name=\&quot;declaration_order_checkbox\&quot;]&#039;).is(&#039;:checked&#039;)){\n                    $(&#039;html, body&#039;).animate({\n                        scrollTop: $(\&quot;#declaration_order_section\&quot;).offset().top\n                    },0);\n                    $(&#039;#declaration_order_section label&#039;).css(&#039;color&#039;,&#039;red&#039;);\n                    $(&#039;input[name=\&quot;declaration_order_checkbox\&quot;]&#039;).change(function(){\n                        xthis._spm(this.paymentGatewayTab);\n                        $(&#039;#declaration_order_section label&#039;).css(&#039;color&#039;,&#039;green&#039;);\n                        $(this).attr(&#039;disabled&#039;,true);\n                    });\n                    return false;\n                }\n            }\n            return true;\n        },\n\n        _spm(paymentMethod) {\n            if (!this.checkDeclaration()) {\n                return;\n            }\n\n            if (this.paymentGatewayTab !== paymentMethod) {\n                this.paymentGatewayTab = paymentMethod;\n                $dispatch(&#039;checkout:create-order&#039;);\n            }\n        },\n        inactivityTime() {\n            var t;\n            window.onload = resetTimer;\n            document.onmousemove = resetTimer;\n            document.onkeypress = resetTimer;\n            function resetTimer() {\n                clearTimeout(t);\n                t = setTimeout(function(){\n                    window.location.reload();\n                }, 600000);\n            }\n        },\n\n        reCapatchaCallback() {\n\n            if (!this.enableReCaptcha) {\n                return;\n            }\n\n            if (typeof grecaptcha === &#039;undefined&#039;) {\n                return;\n            }\n\n            grecaptcha.ready(function() {\n                grecaptcha.execute(&#039;6LfQfPgqAAAAAGRJl163BgTPsQjU9PysTUcNEjPf&#039;, { action: &#039;submit&#039; }).then(function(token) {\n                    window.___fraudGuardianToken = token;\n                });\n            });\n        },\n\n        init() {\n            var loginEl = document.getElementById(&#039;loginModal&#039;)\n            var loginModal = new bootstrap.Modal(loginEl, {\n                keyboard: false\n            })\n            if (!this.isAuthenticated)\n                loginModal.toggle()\n\n            this.collapseShippingAddress = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_address-edit&#039;))\n            this.collapseShippingAddressParent = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_address-view&#039;))\n            this.collapseShippingMethod = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_shipping-edit&#039;))\n            this.collapseShippingMethodParent = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_shipping-view&#039;))\n            this.collapsePayment = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_payment-edit&#039;))\n            this.collapsePaymentParent = bootstrap.Collapse.getOrCreateInstance(document.getElementById(&#039;step_payment-view&#039;))\n\n            this.$watch(&#039;shippingAddressId&#039;, val =&gt; {\n                if (val) {\n                    setTimeout(() =&gt; {\n                        $wire.dispatch(&#039;shipping-methods:init&#039;, {\n                            id: val,\n                            coupon: this.coupon\n                        })\n\n                        $wire.dispatch(&#039;coupon-field:set-shippingId&#039;, {\n                            id: val\n                        });\n\n                        this.shippingMethodId = null\n                        this.totalShipping = 0\n                        this.collapseShippingAddressParent.show()\n                        this.collapseShippingMethodParent.hide()\n                        this.collapseShippingMethod.show()\n                    }, 350)\n                }\n            })\n\n            this.$watch(&#039;shippingMethodId&#039;, val =&gt; {\n                if (val) {\n\n                    this.collapseShippingMethodParent.show()\n                    this.collapseShippingMethod.hide()\n\n                    this.collapsePayment.show()\n                    this.collapsePaymentParent.hide()\n\n                    $wire.dispatch(&#039;payment:init-city&#039;, {\n                        shippingAddressId: this.shippingAddressId\n                    });\n                    $wire.dispatch(&#039;checkout:create-order&#039;)\n                } else {\n                    this.collapseShippingMethodParent.show()\n                    this.collapseShippingMethod.hide()\n                    this.collapsePayment.hide()\n                    this.collapsePaymentParent.show()\n                }\n            })\n\n            this.$watch(&#039;paymentGateway&#039;, val =&gt; {\n\n                $wire.dispatch(&#039;checkout:create-order&#039;)\n\n                if (!this.checkDeclaration()) {\n                    return;\n                }\n\n                if (val) {\n                    if (this.orderId != null) {\n                        $wire.dispatch(&#039;order:update-gateway&#039;)\n                    }\n                } else {\n                    this.collapsePayment.hide()\n                    this.collapsePaymentParent.show()\n                    $wire.dispatch(&#039;checkout:clear-embedded&#039;)\n                }\n            })\n\n            $wire.on(&#039;checkout:set-coupon&#039;, (val) =&gt; {\n                if (&#039;coupon&#039; in val &amp;&amp; &#039;couponCode&#039; in val &amp;&amp; &#039;totalCouponDiscount&#039; in val) {\n                    this.couponCode = val.couponCode\n                    this.totalCouponDiscount = val.totalCouponDiscount\n                    this.coupon = _.isEmpty(val.coupon) ? null : val.coupon\n                }\n\n                if (&#039;shippingId&#039; in val &amp;&amp; val.shippingId != null) {\n                    $wire.dispatch(&#039;shipping-methods:init&#039;, {\n                        id: val.shippingId,\n                        coupon: this.coupon\n                    })\n                }\n\n                if (this.orderId != null &amp;&amp; this.paymentGateway != null) {\n                    $wire.dispatch(&#039;checkout:create-order&#039;)\n                }\n            })\n\n\n\n            $wire.on(&#039;checkout:loading&#039;, this.loadingCallback)\n\n            $wire.on(&#039;form:update-shipping&#039;, val =&gt; {\n                this.shippingAddressId = val[0] ?? null;\n                new bootstrap.Collapse(document.getElementById(&#039;new_address-bar&#039;), {toggle: true})\n            })\n\n            $wire.on(&#039;shipping-address:set&#039;, val =&gt; {\n                this.shippingAddresses = val[0] ?? []\n            })\n\n            $wire.on(&#039;shipping-methods:set&#039;, val =&gt; {\n                this.shippingMethods = val[0] ?? []\n            })\n\n            if (this.allDigital) {\n                setTimeout(() =&gt; {\n                    this.collapsePayment.show()\n                    this.collapsePaymentParent.hide()\n                }, 500)\n            } else {\n                setTimeout(() =&gt; {\n                    this.collapseShippingMethodParent.show()\n                    this.collapseShippingMethod.hide()\n\n                    document.getElementById(&#039;step_shipping-edit&#039;).addEventListener(&#039;show.bs.collapse&#039;, () =&gt; {\n                        this.paymentGateway = null\n                        this.collapseShippingAddress.hide()\n                        this.collapseShippingAddressParent.show()\n                        this.collapsePayment.hide()\n                        this.collapsePaymentParent.show()\n                    })\n\n                    document.getElementById(&#039;step_address-edit&#039;).addEventListener(&#039;show.bs.collapse&#039;, () =&gt; {\n                        this.shippingMethodId = null\n                        this.collapseShippingMethodParent.show()\n                        this.collapseShippingMethod.hide()\n                        this.collapsePayment.hide()\n                        this.collapsePaymentParent.show()\n\n                        let savedAddress = document.querySelectorAll(&#039;.save_address-wrap&#039;);\n                        savedAddress.forEach((el) =&gt; {\n                            el.querySelector(&#039;.collapse&#039;).classList.add(&#039;show&#039;);\n                        });\n\n                        document.getElementById(&#039;new_address-bar&#039;).classList.add(&#039;show&#039;);\n                    })\n                }, 500)\n            }\n\n            this.inactivityTime();\n            this.reCapatchaCallback();\n        },\n    }))\n&lt;\/script&gt;\n    &quot;},&quot;listeners&quot;:[&quot;checkout:create-order&quot;,&quot;order:update-gateway&quot;]}" wire:id="cZgBEk7JBcUCoaq0R2PX" class="checkout" x-data="checkout">
     <div class="container">
         <div class="modal login_modal" data-bs-backdrop="static" data-bs-keyboard="false" id="loginModal" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
@@ -1608,11 +3349,11 @@ hr, [class*="divider"] {
                         <div class="checkout_cart-items border-top border-bottom py-4">
                 <div class="d-flex gap-2">
                     <span class="col fw-500">ملخص السلة</span>
-                    <span>84.15 <sar></sar></span>
+                    <span>126.65 <sar></sar></span>
                 </div>
                                     <div class="d-flex gap-2">
                         <span class="col fw-500">ضريبة القيمة المضافة (15%)</span>
-                        <span>14.85 <sar></sar></span>
+                        <span>22.35 <sar></sar></span>
                     </div>
                                 <template x-if="hasShippingMethod">
                     <div class="d-flex gap-2">
@@ -1644,7 +3385,7 @@ hr, [class*="divider"] {
 
             
 
-            <div wire:snapshot="{&quot;data&quot;:{&quot;couponCode&quot;:&quot;&quot;,&quot;coupon&quot;:null,&quot;totalCouponDiscount&quot;:0,&quot;shippingCost&quot;:0,&quot;shipping_id&quot;:null},&quot;memo&quot;:{&quot;id&quot;:&quot;au9R7fMYArB8T7RNZz4Q&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.coupon-field&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;cce02af4ae0f3caf21c4d755e6ade8e0cde433d1e0e658003827ac1dbe9d5e11&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;checkout:remove-coupon&quot;,&quot;coupon-field:set-shippingId&quot;]}" wire:id="au9R7fMYArB8T7RNZz4Q" class="coupon_promo-card">
+            <div wire:snapshot="{&quot;data&quot;:{&quot;couponCode&quot;:&quot;&quot;,&quot;coupon&quot;:null,&quot;totalCouponDiscount&quot;:0,&quot;shippingCost&quot;:0,&quot;shipping_id&quot;:null},&quot;memo&quot;:{&quot;id&quot;:&quot;b2UafmOBNH5qrYZUDQw1&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.coupon-field&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;5bc13a0e2c3ec5b9c0e59895594bcd7c427e5d45bd38d84c3d777adf7e32c013&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;checkout:remove-coupon&quot;,&quot;coupon-field:set-shippingId&quot;]}" wire:id="b2UafmOBNH5qrYZUDQw1" class="coupon_promo-card">
     <div class="coupon_promo-content col">
         <h6 class="coupon_promo-title rsf-16 m-0">
             هل لديك كود خصم؟
@@ -1739,7 +3480,7 @@ hr, [class*="divider"] {
                                 <div class="step_edit-body">
 
                                     
-                                        <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;8a9i48OsoMbjgFPcXYI7&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.shipping-address-list&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;lazyLoaded&quot;:false,&quot;lazyIsolated&quot;:true,&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;e1029afeb624c87b6e51e8e9478c221a3d5591db4f6cd08a52a4f29c66381cd2&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;shipping-address:refresh&quot;]}" wire:id="8a9i48OsoMbjgFPcXYI7" x-intersect="$wire.__lazyLoad(&#039;eyJkYXRhIjp7ImZvck1vdW50IjpbW10seyJzIjoiYXJyIn1dfSwibWVtbyI6eyJpZCI6Ild1NTBROHJtSUx5ZFRBNEEyb2tsIiwibmFtZSI6Il9fbW91bnRQYXJhbXNDb250YWluZXIifSwiY2hlY2tzdW0iOiJkY2FkZTM1NDIyMTEzNmUwNWY0MDVmYjA2ZThhMzZlYzU3NzBlY2M1MDlhMzRhOWEwMGRmNjQ5OTlmOTYxMDU5In0=&#039;)" class="text-center my-2">
+                                        <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;ILzKjcDxASPoik2q9xMU&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.shipping-address-list&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;lazyLoaded&quot;:false,&quot;lazyIsolated&quot;:true,&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;4cc997d08febb8b2262aa33eac68df5639b89a23a75c6b794cd19d7bb5d951dd&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;shipping-address:refresh&quot;]}" wire:id="ILzKjcDxASPoik2q9xMU" x-intersect="$wire.__lazyLoad(&#039;eyJkYXRhIjp7ImZvck1vdW50IjpbW10seyJzIjoiYXJyIn1dfSwibWVtbyI6eyJpZCI6Inh1UDM0UVlhUEszZ3Vuakh3bkJ6IiwibmFtZSI6Il9fbW91bnRQYXJhbXNDb250YWluZXIifSwiY2hlY2tzdW0iOiJkZmFkNTg1Y2RmNTcxNzZiM2FhYjA0YzRlZTY3MzA4MThhMmIyZTVkMDEwMWEzZTZkYTc4MGExMjJmNmJjNjE5In0=&#039;)" class="text-center my-2">
         <div class="spinner-border text-dark" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
@@ -1771,7 +3512,7 @@ hr, [class*="divider"] {
                                         
                                         <div id="addressadd" class="accordion-collapse collapse fade"
                                              data-bs-parent="#new_address">
-                                                <div wire:snapshot="{&quot;data&quot;:{&quot;mapInit&quot;:false,&quot;latitude&quot;:null,&quot;longitude&quot;:null,&quot;defaultCities&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;editing&quot;:false,&quot;id&quot;:null,&quot;countries&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;newShippingForm&quot;:[{&quot;shippingAddress&quot;:null,&quot;country_id&quot;:&quot;&quot;,&quot;state_id&quot;:&quot;&quot;,&quot;city_id&quot;:&quot;&quot;,&quot;zip_code&quot;:&quot;&quot;,&quot;short_address&quot;:&quot;&quot;,&quot;address&quot;:&quot;&quot;},{&quot;class&quot;:&quot;App\\Livewire\\Tenant\\Frontend\\Forms\\NewShippingAddress&quot;,&quot;s&quot;:&quot;form&quot;}],&quot;shippingAddress&quot;:null,&quot;isSingleCountry&quot;:false,&quot;states&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;cities&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;2ul8buQaxyT6wwUP0NJu&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.new-shipping-address&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;lazyLoaded&quot;:false,&quot;lazyIsolated&quot;:true,&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;f86127c2f644c01ff2b2b1e38907f425e4a27d0ed58057fbc3c1885455964166&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;address-form:set-city&quot;,&quot;address-form:set-country&quot;,&quot;address-form:set-full&quot;,&quot;address-form:set-country-address&quot;,&quot;address-form:set-address&quot;,&quot;address-form:set-state&quot;]}" wire:id="2ul8buQaxyT6wwUP0NJu" x-intersect="$wire.__lazyLoad(&#039;eyJkYXRhIjp7ImZvck1vdW50IjpbW10seyJzIjoiYXJyIn1dfSwibWVtbyI6eyJpZCI6IndJS0VlbWpsRUk2WU9nMTV6dGZaIiwibmFtZSI6Il9fbW91bnRQYXJhbXNDb250YWluZXIifSwiY2hlY2tzdW0iOiI5MmMzMGVlNDQ0ZDEwODI5ZGQ5YjNiZDdiNzVmMWYxNDA3Njk2ZTZjZTNlM2M3ZTBkZTQxYmYzZmNlODQzYjkxIn0=&#039;)" class="text-center my-2">
+                                                <div wire:snapshot="{&quot;data&quot;:{&quot;mapInit&quot;:false,&quot;latitude&quot;:null,&quot;longitude&quot;:null,&quot;defaultCities&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;editing&quot;:false,&quot;id&quot;:null,&quot;countries&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;newShippingForm&quot;:[{&quot;shippingAddress&quot;:null,&quot;country_id&quot;:&quot;&quot;,&quot;state_id&quot;:&quot;&quot;,&quot;city_id&quot;:&quot;&quot;,&quot;zip_code&quot;:&quot;&quot;,&quot;short_address&quot;:&quot;&quot;,&quot;address&quot;:&quot;&quot;},{&quot;class&quot;:&quot;App\\Livewire\\Tenant\\Frontend\\Forms\\NewShippingAddress&quot;,&quot;s&quot;:&quot;form&quot;}],&quot;shippingAddress&quot;:null,&quot;isSingleCountry&quot;:false,&quot;states&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;cities&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;KMypSaAqnqIOnmBzAZ9s&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.new-shipping-address&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;lazyLoaded&quot;:false,&quot;lazyIsolated&quot;:true,&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;5f089664cd8c604b135d43dba407780e5711f22c5eb661f5397dd94c7a2aae08&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;address-form:set-city&quot;,&quot;address-form:set-country&quot;,&quot;address-form:set-full&quot;,&quot;address-form:set-country-address&quot;,&quot;address-form:set-address&quot;,&quot;address-form:set-state&quot;]}" wire:id="KMypSaAqnqIOnmBzAZ9s" x-intersect="$wire.__lazyLoad(&#039;eyJkYXRhIjp7ImZvck1vdW50IjpbW10seyJzIjoiYXJyIn1dfSwibWVtbyI6eyJpZCI6IlV4Nm5lNkN6ejNjUHJxZ2tLckN5IiwibmFtZSI6Il9fbW91bnRQYXJhbXNDb250YWluZXIifSwiY2hlY2tzdW0iOiI0ODlhZTA1ZDBmZmYzYzQ2MjUzOWJmYWE5ZWMwMjA3ZTM2YjQwZGZkN2NjMTg2NjUxMjEyODUxNGI0M2E0NGQ4In0=&#039;)" class="text-center my-2">
         <div class="spinner-border text-dark" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
@@ -1850,7 +3591,7 @@ hr, [class*="divider"] {
 
                                 <div class="step_edit-body">
                                     
-                                    <div wire:snapshot="{&quot;data&quot;:{&quot;shippingMethods&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;8Ni2Q78ublHbEYUjDfSM&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.shipping-method-list&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;b60899123d4cfcacc2ff135c3a1c3d9f1cbd04bc96c4e76c09a3ce021329fc72&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;shipping-methods:init&quot;,&quot;updateShippingCost:set-shippingCost&quot;]}" wire:id="8Ni2Q78ublHbEYUjDfSM" class="row gy-4">
+                                    <div wire:snapshot="{&quot;data&quot;:{&quot;shippingMethods&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;EofLHxyxAz2FPL8Im6nf&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.shipping-method-list&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;c0600d6a07593a2850ea2ee703a759a99c61ec41c72e1bf977b5dd90466323d8&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;shipping-methods:init&quot;,&quot;updateShippingCost:set-shippingCost&quot;]}" wire:id="EofLHxyxAz2FPL8Im6nf" class="row gy-4">
     <div wire:loading.class.remove="d-none" class="d-none">
         <div class="col-12">
             <div class="text-center">
@@ -1931,7 +3672,7 @@ hr, [class*="divider"] {
                                 <hr class="hr_line mt-3 mb-4">
 
                                 <div class="step_edit-body">
-                                        <div wire:snapshot="{&quot;data&quot;:{&quot;paymentMethods&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;renderEmbeddedCode&quot;:null,&quot;___fraudGuardianToken&quot;:null,&quot;allIsDigital&quot;:&quot;1&quot;,&quot;selectedCityId&quot;:null},&quot;memo&quot;:{&quot;id&quot;:&quot;ZUZBRHgmFdup837Mqgt1&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.payment-method-list&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;lazyLoaded&quot;:false,&quot;lazyIsolated&quot;:true,&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;daaa932a09ad69a1bbf1de3b4981e33e8b6cb18c146ad69e1955a54548e7ae09&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;payment:init-city&quot;,&quot;checkout:load-payment-embedded&quot;,&quot;checkout:clear-embedded&quot;]}" wire:id="ZUZBRHgmFdup837Mqgt1" x-intersect="$wire.__lazyLoad(&#039;eyJkYXRhIjp7ImZvck1vdW50IjpbeyJhbGxJc0RpZ2l0YWwiOiIxIn0seyJzIjoiYXJyIn1dfSwibWVtbyI6eyJpZCI6IjNKVWRTRTR2b1RZUUF5R3dBZk5mIiwibmFtZSI6Il9fbW91bnRQYXJhbXNDb250YWluZXIifSwiY2hlY2tzdW0iOiI2NGI2NWQ4MjI2NzU0MWM0Y2MxYjc5OTQ3MWY3MDk5YTg5YzA5ZGU4ODJiNjZlMjk4OGE5NGRjYzBmNzViZTE2In0=&#039;)" class="text-center my-2">
+                                        <div wire:snapshot="{&quot;data&quot;:{&quot;paymentMethods&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;renderEmbeddedCode&quot;:null,&quot;___fraudGuardianToken&quot;:null,&quot;allIsDigital&quot;:&quot;1&quot;,&quot;selectedCityId&quot;:null},&quot;memo&quot;:{&quot;id&quot;:&quot;PmBu2IBYhJzHcG1g4P0g&quot;,&quot;name&quot;:&quot;tenant.frontend.checkout-components.payment-method-list&quot;,&quot;path&quot;:&quot;shop\/checkout&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;lazyLoaded&quot;:false,&quot;lazyIsolated&quot;:true,&quot;errors&quot;:[],&quot;locale&quot;:&quot;ar&quot;},&quot;checksum&quot;:&quot;4af179135fa2b4529e6f03534fa5c2fdf10e5f0a892719a9cb190d0b36a843fe&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;payment:init-city&quot;,&quot;checkout:load-payment-embedded&quot;,&quot;checkout:clear-embedded&quot;]}" wire:id="PmBu2IBYhJzHcG1g4P0g" x-intersect="$wire.__lazyLoad(&#039;eyJkYXRhIjp7ImZvck1vdW50IjpbeyJhbGxJc0RpZ2l0YWwiOiIxIn0seyJzIjoiYXJyIn1dfSwibWVtbyI6eyJpZCI6IjN2ZUhnTkllenlzYkNxbWMxRHM5IiwibmFtZSI6Il9fbW91bnRQYXJhbXNDb250YWluZXIifSwiY2hlY2tzdW0iOiJjNGFlMGVmZjNjYmFkZDNkMmQyZmY0YzMwNTc5NDA1ZmYwNzJhZDA5N2UzMzM1ZjNmNzliNTBmYjVkN2U4ZmVjIn0=&#039;)" class="text-center my-2">
         <div class="spinner-border text-dark" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
@@ -1971,7 +3712,7 @@ hr, [class*="divider"] {
             initializeTelInput : null,
             isSaudi: true,
             enableMultiCountryLogin: false,
-            enableEmailLogin: false,
+            enableEmailLogin: true,
             currentTab: tabs.inputForm,
             signInUsing: '' ? signInTypes[1] : signInTypes[0],
             metadata: {
