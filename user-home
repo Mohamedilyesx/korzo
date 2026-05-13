@@ -12,7 +12,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="icon" href="https://cdn.tjar.sa/media-uploader/sxtdr/avIB8zYWAVJpbe9AlQSVR6APjlnCZ8QrSUSymLuV.png" type="image/png">
 	<title>
-        			    لوحة التحكم
+        			    قائمة الطلبات
 			-
 			متجر جوك TV
 		    </title>
@@ -309,693 +309,2434 @@
     </style>
 	
 	<style id="__css">
-    /* =========================================================
-   JAWAK TV — منصة تجار — DARK MODE COMPLETE
-   خلفية: #1a1815 | ذهبي وتدرجاته
-   نفس هوية workszox مع تكيّف لمنصة تجار
-========================================================= */
+    /* =====================================================
+   JAWAK TV — TJAR PLATFORM REDESIGN
+   jawaktv-tjar.css  |  v3.0  |  2026
+   ===================================================== */
 
-/* =========================================================
-   DARK MODE BASE
-========================================================= */
+/* === VARIABLES === */
 :root {
-  --bg-dark:       #1a1815;
-  --bg-card:       #1f1c19;
-  --bg-surface:    #242018;
-  --bg-surface-2:  #2a261f;
-  --border-gold:   rgba(218,174,73,.18);
-  --border-gold-2: rgba(218,174,73,.30);
-  --gold:          #daae49;
-  --gold-light:    #f0d080;
-  --gold-pale:     #fff3cf;
-  --gold-muted:    #c9a25e;
-  --gold-dim:      #e8dfc0;
-  --gold-dark:     #0A0800;
-  --text-main:     #f0ead8;
-  --text-sub:      #c8bfa8;
-  --text-muted:    #908778;
-  --radius-card:   22px;
-  --shadow-card:   0 14px 36px rgba(0,0,0,.45);
+  --g:    #daae49;
+  --gl:   #f0d878;
+  --gd:   #c9922a;
+  --gx:   #b88b3c;
+  --bg:   #1a1815;
+  --bg2:  #1f1c19;
+  --bg3:  #242018;
+  --bg4:  #141109;
+  --txt:  #f0ead8;
+  --txs:  #c8bfa8;
+  --txm:  #908778;
+  --bdr:  rgba(218,174,73,.18);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --bar-h: 42px;
+  --nav-h: 65px;
 }
 
-/* Force dark background on entire store */
-body,
-.xc-main,
-.main-content,
-[class*="page-wrapper"],
-[class*="layout-wrapper"],
-.xc-content,
-#main,
-.xc-storefront {
-  background-color: var(--bg-dark) !important;
-  color: var(--text-main) !important;
+
+.prevBtn-SD5kV i {
+  color: #000 !important;
 }
 
-/* =========================================================
-   DARK SURFACES — Cards, Sections
-========================================================= */
-.xc-product-card,
-.xc-card,
-[class*="card-item"],
-[class*="product-card"],
-[class*="section-card"],
-.xc-category-one__item-inner,
-[class*="category-item"],
-.xc-checkout-box,
-[class*="checkout-"],
-[class*="order-"],
-.xc-sidebar,
-[class*="sidebar-"],
-[class*="filter-"],
-.xc-breadcrumb,
-[class*="breadcrumb"],
-.xc-alert,
-[class*="alert-box"] {
-  background-color: var(--bg-card) !important;
-  border-color: var(--border-gold) !important;
-  color: var(--text-main) !important;
+
+
+/* ===تمارا وضع ليلي   === */
+
+/* الكونتينر الرئيسي */
+.tamara-summary-widget--inline-outlined:hover {
+    background-color: #c29540!important;
+}
+/* ===تقييم باللون ذهبي مع نجمة  === */
+
+.sr_rating {
+    color: #daae49 !important;
 }
 
-/* =========================================================
-   PROMO BAR TICKER — متحرك
-========================================================= */
-#jwkBar {
-  position: relative;
+.sr_rating i.la-star,
+.sr_rating .las.la-star {
+    color: #daae49 !important;
+}
+
+/* ===وضع ليلي تقييماتت  === */
+
+.rv2-list-item {
+    background: #242018;
+}
+
+.rv2-date,
+.rv2-total {
+    background-color: #daae49 !important;
+    color: #fff; /* لون النص */
+    padding: 4px 10px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.offcanvas-body {
+    background-color: transparen!important;
+}
+
+/* ===fix border === */
+.widgetArea.slider-widget-area {
+    border: transparent!important;
+}
+.widgetArea, section.widgetArea {
+    border: transparent!important;
+}
+
+/* ===dark mode  border === */
+.sign-in {
+    background: #231d15 !important;
+
+}
+
+/* === GLOBAL DARK BASE === */
+html { background-color: var(--bg) !important; }
+
+body {
+  background-color: var(--bg) !important;
+  color: var(--txt) !important;
+}
+
+/* === fix .store-isotope-list  color  === */
+
+.store-isotope-list .list {
+    color: white!important;
+}
+
+.arrow-box button {
+    color: #ffffff!important;
+}
+
+
+/* ===fix some prolbem in cart page   === */
+.la, .las {
+    color: #7b7b7b!important;
+}
+
+
+.admin .msg_details {
+    color: #fff!important;
+    background: #735d2d!important;
+}
+
+/* === checkout some fix  === */
+.coupon_promo-input .btn-copy, .coupon_promo-input .btn.btn-main {
+    border-radius: 10px !important;
+}
+.coupon_promo-input {
+    border-radius: 1rem!important;
+   background: #463b22!important;
+}
+
+.bank_details {
+    background: #463b22!important;
+}
+
+.uploader {
+    background: #242018!important;
+}
+
+.payment_tab .img img {
+    background: #e5c462!important;
+    padding: 2px!important;
+    border-radius: 10px!important;
+}
+
+/* === checkout dark mode   === */
+
+.order_left, .order_right {
+    background: #242018!important;
+    color: #f0ead3!important;
+}
+
+.order_list-content {
+    color: #ffffff!important;
+}
+.order_total li span {
+    color: #ffffff!important;
+}
+
+.order_total li.price-total {
+    background: #463b22!important;
+}
+
+.quantity-product {
+    background: #463b22!important;
+}
+
+/* ===order-review dark mode   === */
+
+.order-header {
+    background: #242018!important;
+    padding: 32px!important;
+    border-radius: 20px!important;
+}
+
+.contact-info-wrap > div {
+    background: #242018!important;
+}
+
+.rv_floating-footer {
+    background: rgb(70 59 34)!important;
+}
+
+.p-4 {
+    background: #242018!important;
+}
+.rv_item-head {
+    background: #242018!important;
+}
+
+[dir=rtl] .order-header > .rv_btn {
+        margin-right: auto;
+        background: #463b22!important;
+}
+.rating_txt {
+    background: #463b22!important;
+}
+.order-id {
+    background: #463b22!important;
+}
+
+.rv_btn {
+    background: #dfb753!important;
+    color: #000000!important;
+}
+.rv_badg_num {
+    background: transparent!important;
+    border: transparent!important;
+}
+
+/* ===wishlist dark mode   === */
+.cart-item-wrap {
+    background: #242018;
+    color: white!important;
+    border: transparent!important;
+}
+
+.cart-item-price {
+    color: #ffffff!important;
+}
+/* ===pop up cart and wishlist and user dark mode   === */
+[dir="rtl"] .custom-navbar .dropdown-contents.dropdown-left {
+    background: #463b22!important;
+}
+
+/* ===manage-account dark mode   === */
+.dash_table-wrap tbody td {
+    background: #242018!important;
+
+}
+
+.dash_btn.dash_table-btn {
+    background: #e8ca68!important;
+    color: #000000!important;
+}
+
+[dir=rtl] .dash_table-wrap thead th:first-child, [dir=ltr] .dash_table-wrap thead th:last-child, [dir=rtl] .dash_table-wrap tbody td:first-child, [dir=ltr] .dash_table-wrap tbody td:last-child {
+    background: #242018!important;
+}
+
+.manage_account-head {
+    background: #232323!important;
+}
+
+.dash_body-head span {
+    color: #ffffff!important;
+}
+
+.manage_account-row {
+    color: #ffffff!important;
+}
+
+.manage_account-img span {
+    color: #ffffff!important;
+}
+.manage_account-list li span {
+    color: #ffffff!important;
+}
+
+.manage_account-head .dash_btn {
+    color: #000000!important;
+    background: #ebcd6c!important;
+}
+.form-group label {
+    color: #ffffff!important;
+}
+
+.dash_modal-header span {
+    color: #ffffff!important;
+}
+
+.dash_btn {
+    background: #daae49;
+    color: #000000!important;
+}
+
+/* ===pop up cart and wishlist and user dark mode   === */
+.support_ticket-view .dash_body-head, .refund_chat-view .dash_body-head {
+    background: #1f1c19!important;
+}
+
+.ticket_msg-wrap .title {
+    background: #1f1c19!important;
+}
+
+.ticket_info {
+    color: #ffffff!important;
+}
+
+.ticket_msg {
+ color: #ffffff!important;
+}
+
+.mt-1 {
+    color: #ffffff!important;
+}
+.dash_modal label, .form-label {
+
+    color: #ffe8b4!important;
+}
+
+.ticket_msg-wrap .title {
+    background: #1f1c19!important;
+}
+
+.msg_area-btn 
+    background: #daae49!important;
+}
+
+.dash_body-head-title, .manage_account-title {
+    color: #ffffff!important;
+}
+
+.ticket_msg-wrap .title {
+    color: #ffffff!important;
+}
+
+
+/* ===order_details dark mode   === */
+
+.order_details {
+    background: #1f1c19!important;
+    border: 1px solid var(--br-clr)!important;
+    color: #ffffff!important;
+    border: solid 0.5px #ddb44f!important;
+}
+
+.order_head .order_date {
+    background: #715621!important;
+}
+
+.order_list-title {
+    border: transparent!important;
+}
+
+.order_list li {
+    border: 1px solid #060605!important;
+}
+
+
+  /* ── WhatsApp floating button ──
+._wa {
+    width: 50px !important;
+    height: 50px !important;
+    background-color: #2cd46b !important;
+
+}
+
+
+.cart-item-img img {
+    aspect-ratio: auto!important
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 { color: var(--txt) !important; }
+
+/* Links */
+a { color: var(--txs); text-decoration: none; transition: color .2s var(--ease); }
+a:hover { color: var(--g); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg4); }
+::-webkit-scrollbar-thumb { background: rgba(218,174,73,.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(218,174,73,.5); }
+
+/* Inputs */
+input:not([type="range"]), textarea, select {
+  background-color: var(--bg3) !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  color: var(--txt) !important;
+  border-radius: 10px !important;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: rgba(218,174,73,.5) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(218,174,73,.08) !important;
+}
+input::placeholder, textarea::placeholder { color: var(--txm) !important; }
+
+/* HR lines */
+hr {
+  border-color: rgba(218,174,73,.12) !important;
+  opacity: 1 !important;
+}
+
+/* Bootstrap overrides — background-color ONLY, never background shorthand */
+.bg-white  { background-color: var(--bg2) !important; }
+.bg-light  { background-color: var(--bg3) !important; }
+.text-dark { color: var(--txt) !important; }
+.text-muted, .text-secondary { color: var(--txm) !important; }
+.border    { border-color: var(--bdr) !important; }
+.border-top    { border-top-color: var(--bdr) !important; }
+.border-bottom { border-bottom-color: var(--bdr) !important; }
+
+/* ============================================================
+   PROMO BAR — #jwk-bar (built by JS)
+   Fixed at absolute top, z:100000
+   ============================================================ */
+.promobar, .promobar.container-fluid { display: none !important; }
+
+#jwk-bar {
+  position: fixed !important;
+  top: 0 !important; left: 0 !important; right: 0 !important;
+  height: var(--bar-h);
+  z-index: 100000 !important;
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 42px;
   overflow: hidden;
-  background: linear-gradient(135deg,#0e0901 0%,#1a1000 35%,#221400 65%,#0e0901 100%);
+  background: linear-gradient(135deg, #0e0901, #1c1200, #221400, #0e0901);
   border-bottom: 1px solid rgba(218,174,73,.22);
-  box-shadow: 0 2px 12px rgba(0,0,0,.55), inset 0 1px 0 rgba(218,174,73,.08);
-  z-index: 99999;
+  box-shadow: 0 2px 16px rgba(0,0,0,.6), inset 0 1px 0 rgba(218,174,73,.08);
   box-sizing: border-box;
-  direction: ltr;
 }
-
-#jwkBar::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(218,174,73,.55) 50%, transparent);
+#jwk-bar::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(218,174,73,.6) 50%, transparent);
   pointer-events: none;
 }
-
-#jwkMask {
-  flex: 1 1 auto;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  direction: ltr;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
-          mask-image: linear-gradient(90deg, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+#jwk-mask {
+  flex: 1; height: 100%; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
-
-#jwkTrack {
-  display: inline-flex;
-  flex-wrap: nowrap;
-  width: max-content;
-  height: 100%;
-  align-items: center;
-  white-space: nowrap;
-  will-change: transform;
-  transform: translate3d(0,0,0);
-  direction: ltr;
+#jwk-track {
+  display: inline-flex; flex-wrap: nowrap;
+  height: 100%; align-items: center;
+  white-space: nowrap; will-change: transform;
 }
-
 .jwk-item {
-  display: inline-flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 28px;
-  color: #e8dfc0;
-  font-family: 'IBM Plex Sans Arabic','Tajawal','Cairo',Arial,sans-serif;
-  font-size: 13.5px;
-  font-weight: 500;
-  letter-spacing: .01em;
-  white-space: nowrap;
-  direction: rtl;
-  flex: 0 0 auto;
-  text-shadow: 0 1px 6px rgba(0,0,0,.6);
-  transition: color .2s;
-  cursor: default;
+  display: inline-flex; align-items: center;
+  padding: 0 26px; color: #e8dfc0;
+  font-size: 13.5px; font-weight: 500; white-space: nowrap;
+  direction: rtl; transition: color .2s;
 }
-
 .jwk-item:hover { color: #f5e9aa; }
-
 .jwk-sep {
-  display: inline-flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 4px;
-  color: rgba(218,174,73,.6);
-  font-size: 8px;
-  white-space: nowrap;
-  flex: 0 0 auto;
+  display: inline-flex; align-items: center;
+  padding: 0 4px; color: rgba(218,174,73,.45); font-size: 9px;
+}
+#jwk-close {
+  flex: 0 0 38px; width: 38px; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border: none; cursor: pointer;
+  color: rgba(218,174,73,.6); font-size: 15px;
+  transition: color .2s, opacity .2s; opacity: .65;
+}
+#jwk-close:hover { color: var(--g); opacity: 1; }
+
+/* ============================================================
+   NAVBAR — fixed below promo bar, glass on scroll
+   ============================================================ */
+nav.navbar.navbar3, .custom-navbar,
+.navbar.navbar3 {
+  position: fixed !important;
+  top: var(--bar-h) !important;
+  left: 0 !important; right: 0 !important;
+  z-index: 9999 !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  transition: background-color .3s ease, backdrop-filter .3s ease,
+              box-shadow .3s ease, top .3s ease !important;
+}
+/* Bar closed → navbar snaps to top */
+body.jwk-bar-closed nav.navbar.navbar3,
+body.jwk-bar-closed .custom-navbar,
+body.jwk-bar-closed .navbar.navbar3 {
+  top: 0 !important;
+}
+/* Scrolled → dark glass */
+nav.navbar.navbar3.scrolled, .custom-navbar.scrolled,
+.navbar.navbar3.scrolled {
+  background-color: rgba(10,7,0,.93) !important;
+  backdrop-filter: blur(18px) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.4) !important;
+  border-bottom: 1px solid rgba(218,174,73,.15) !important;
+  box-shadow: 0 4px 28px rgba(0,0,0,.5) !important;
 }
 
-#jwkX {
-  flex: 0 0 auto;
-  width: 34px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0; margin: 0;
-  opacity: .55;
-  transition: opacity .2s, color .2s;
-  color: #c9a84c;
+/* Navbar text/icons */
+nav.navbar.navbar3 .navbar-nav li a,
+nav.navbar.navbar3 .nav-link,
+nav.navbar.navbar3 a,
+.custom-navbar .nav-link,
+.custom-navbar a {
+  color: #fff !important;
+  font-weight: 600;
+  transition: color .2s !important;
 }
+nav.navbar.navbar3 .navbar-nav li a:hover,
+nav.navbar.navbar3 .nav-link:hover,
+.custom-navbar .nav-link:hover,
+.custom-navbar a:hover { color: var(--g) !important; }
 
-#jwkX:hover { opacity: 1; color: #f0d080; }
+nav.navbar.navbar3 svg, nav.navbar.navbar3 i,
+.custom-navbar svg, .custom-navbar i { color: #fff !important; }
+.icon-notification { background-color: var(--g) !important; color: #000 !important; }
 
-@media (max-width: 767px) {
-  #jwkBar   { height: 38px; }
-  .jwk-item { font-size: 12.5px; padding: 0 18px; }
-}
+/* Breadcrumb */
+.breadcrumb { background-color: transparent !important; }
+.breadcrumb-item a { color: var(--txm) !important; }
+.breadcrumb-item.active { color: var(--txs) !important; }
+.breadcrumb-item + .breadcrumb-item::before { color: var(--txm) !important; }
 
-/* =========================================================
-   HERO VIDEO — تغيير الـ hero-area بالفيديو
-========================================================= */
-.xc-main-slider,
-[class*="main-slider"],
-[class*="hero-slider"],
-[class*="slide-hero"],
-.xc-hero {
+/* ============================================================
+   HERO — fullscreen video (added by JS)
+   ============================================================ */
+.hero.hero-area, .hero-area {
   position: relative !important;
   overflow: hidden !important;
-  background: none !important;
-  background-image: none !important;
+  min-height: 100vh !important;
+  background-color: #000 !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
-.jawak-hero-video-bg {
+/* Hide Tjar's static hero image */
+.hero.hero-area .hero-img-wrap { display: none !important; }
+
+.jwk-hero-video {
   position: absolute !important;
   inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
+  width: 100% !important; height: 100% !important;
   object-fit: cover !important;
   z-index: 0 !important;
   pointer-events: none !important;
-  background: #000 !important;
 }
-
-.xc-main-slider::before,
-[class*="main-slider"]::before,
-.xc-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+.jwk-hero-overlay {
+  position: absolute !important;
+  inset: 0 !important;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,.72) 0%,
-    rgba(0,0,0,.38) 24%,
-    rgba(0,0,0,.18) 52%,
-    rgba(0,0,0,.34) 100%
-  );
-  z-index: 1;
+    rgba(0,0,0,.78) 0%,
+    rgba(0,0,0,.3) 40%,
+    rgba(0,0,0,.15) 60%,
+    rgba(0,0,0,.6) 100%
+  ) !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+.hero.hero-area .container,
+.hero.hero-area .intro-excerpt {
+  position: relative !important; z-index: 2 !important;
+}
+.hero.hero-area .intro-excerpt h1,
+.hero.hero-area .intro-excerpt h2 {
+  color: #fff !important;
+  text-shadow: 0 2px 24px rgba(0,0,0,.8);
+}
+.hero.hero-area .intro-excerpt p {
+  color: #d4cbb0 !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,.6);
+}
+.hero.hero-area .intro-excerpt a,
+.hero.hero-area .btn-hero,
+.hero.hero-area button:not(#jwk-close) {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important;
+  color: #0a0800 !important; font-weight: 800 !important;
+  border-radius: 999px !important; padding: 14px 36px !important;
+  box-shadow: 0 10px 30px rgba(218,174,73,.3) !important;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease) !important;
+  text-decoration: none !important;
+}
+.hero.hero-area .intro-excerpt a:hover { transform: translateY(-3px) !important; }
+
+/* ============================================================
+   HERO bottom Splide slider (banner images below hero)
+   ============================================================ */
+.slider-widget-area {
+  background-color: var(--bg) !important;
+}
+.slider-widget-area .splide__slide { background-color: transparent !important; }
+.slider-widget-area .splide__arrows .splide__arrow {
+  background-color: rgba(26,24,21,.8) !important;
+  border: 1px solid var(--bdr) !important;
+}
+.slider-widget-area .splide__arrows .splide__arrow svg { fill: var(--g) !important; }
+
+/* ============================================================
+   PRODUCT CARDS  (.product-item.card2)
+   CRITICAL: background-color NOT background to preserve img tags
+   ============================================================ */
+/* Hide ratings */
+.product-item .rating-wrap,
+.card2 .rating-wrap,
+.d-flex.justify-content-center.align-items-center.m-0.p-0 > .rating-wrap {
+  display: none !important;
+}
+
+.product-item, .card2, .product-item.card2 {
+  background-color: var(--bg2) !important;  /* ← background-color, not background */
+  border: 1px solid rgba(218,174,73,.14) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,.3) !important;
+  transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease) !important;
+}
+.product-item:hover, .card2:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(218,174,73,.35) !important;
+  box-shadow: 0 14px 36px rgba(218,174,73,.1), 0 6px 20px rgba(0,0,0,.4) !important;
+}
+
+/* Product thumbnail - NEVER hide or filter product images */
+.product-item .product-thumbnail-wrap,
+.card2 .product-thumbnail-wrap {
+  display: block !important;
+  background-color: var(--bg3) !important;
+}
+.product-item img, .card2 img {
+  /* NO filter, NO display:none — images must show */
+  display: block !important;
+}
+
+/* Product title — h3.product-title > a.text-break */
+h3.product-title,
+h3.product-title a,
+h3.product-title a.text-break,
+.product-item .product-title,
+.product-item .product-title a,
+.card2 .product-title,
+.card2 .product-title a {
+  color: var(--txt) !important;
+  font-weight: 700 !important;
+  transition: color .2s !important;
+}
+.product-item:hover .product-title a,
+.card2:hover .product-title a { color: var(--g) !important; }
+
+/* Price */
+.product-item .product-price, .card2 .product-price,
+strong.product-price { color: var(--g) !important; font-weight: 700 !important; }
+.product-item .old-price, .card2 .old-price {
+  color: var(--txm) !important; text-decoration: line-through !important;
+}
+
+/* Cart / Wishlist buttons on cards */
+.cart_btn2-border, .cart_btn2 .cart_btn2-border {
+  background-color: transparent !important;
+  border: 1px solid rgba(218,174,73,.45) !important;
+  border-radius: 999px !important;
+  color: var(--g) !important;
+  transition: all .25s var(--ease) !important;
+}
+.cart_btn2:hover .cart_btn2-border {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border-color: transparent !important;
+  color: #0a0800 !important;
+}
+.cart_btn2-txt { color: inherit !important; }
+.cart_btn2-icon { color: inherit !important; fill: currentColor !important; }
+
+.add-to-wishlist-btn, .wish-icon {
+  background-color: rgba(26,24,21,.85) !important;
+  border: 1px solid rgba(218,174,73,.3) !important;
+  color: var(--g) !important;
+  border-radius: 50% !important;
+}
+.add-to-wishlist-btn .heart { color: var(--g) !important; }
+
+/* ============================================================
+   BRAND IMAGES — ONLY .brand-img img gets filter, NOTHING else
+   ============================================================ */
+.brand-area, .brand-area.widgetArea {
+  background-color: transparent !important;
+}
+.brand-img {
+  background: linear-gradient(135deg, var(--bg2), var(--bg3)) !important;
+  border: 1px solid rgba(218,174,73,.15) !important;
+  border-radius: 14px !important;
+  padding: 14px 22px !important;
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  transition: border-color .25s ease, box-shadow .25s ease !important;
+}
+.brand-img:hover {
+  border-color: rgba(218,174,73,.35) !important;
+  box-shadow: 0 6px 18px rgba(218,174,73,.08) !important;
+}
+/* ONLY brand-img images get the filter — NOT widgetArea images globally */
+.brand-img img {
+  filter: brightness(0) invert(1) !important;
+  opacity: .9 !important;
+  max-height: 150px !important; 
+  width: auto !important;
+  object-fit: contain !important;
+  transition: opacity .25s ease !important;
+}
+.brand-img:hover img { opacity: .9 !important; }
+
+/* ============================================================
+   FEATURES  (.four-blocks-box .single-promo)
+   Correct selectors from actual HTML
+   ============================================================ */
+.four-blocks, .promo-area {
+  background-color: var(--bg) !important;
+}
+.four-blocks-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  gap: 20px !important;
+}
+
+.four-blocks-box { height: 100%; }
+
+.four-blocks-box .single-promo,
+.promo-area .single-promo {
+  background: linear-gradient(145deg, var(--bg2), #201d19) !important;
+  border: 1px solid rgba(218,174,73,.15) !important;
+  border-radius: 20px !important;
+  padding: 28px 24px !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  display: flex !important; flex-direction: column !important; align-items: center !important;
+  text-align: center !important; position: relative; overflow: hidden;
+  transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease) !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,.2) !important;
+}
+.four-blocks-box .single-promo::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at top, rgba(218,174,73,.05), transparent 70%);
   pointer-events: none;
 }
-
-.xc-main-slider .container,
-[class*="main-slider"] .container,
-.xc-hero .container,
-.xc-main-slider [class*="slide-item"],
-[class*="main-slider"] [class*="slide-item"] {
-  position: relative !important;
-  z-index: 2 !important;
+.four-blocks-box .single-promo:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(218,174,73,.3) !important;
+  box-shadow: 0 12px 34px rgba(218,174,73,.1), 0 6px 18px rgba(0,0,0,.35) !important;
 }
 
-/* =========================================================
-   JAWAK INTERACTIVE BLOCK — كل ما تحتاجه في اشتراك واحد
-========================================================= */
+/* Icon container */
+.single-promo-icon {
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  width: 60px !important; height: 60px !important; border-radius: 16px !important;
+  background-color: rgba(218,174,73,.1) !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  margin-bottom: 18px !important; flex-shrink: 0 !important;
+  color: var(--g) !important;
+}
+.single-promo-icon i { color: var(--g) !important; font-size: 26px !important; }
+.single-promo-icon svg { stroke: var(--g) !important; width: 26px !important; height: 26px !important; }
+
+/* Feature title and description */
+.single-promo-contents-title,
+h4.single-promo-contents-title {
+  color: #fff3cf !important; font-weight: 700 !important; margin-bottom: 8px !important;
+}
+.single-promo-contents-para,
+p.single-promo-contents-para {
+  color: var(--txs) !important; font-size: 14px !important; line-height: 1.8 !important;
+}
+
+/* Section headings above features */
+.four-blocks .section-head .section-title,
+.four-blocks .section-title {
+  color: var(--txt) !important;
+}
+.four-blocks .section-head .section-sub {
+  color: var(--g) !important;
+}
+
+/* ============================================================
+   ABOUT / INTERACTIVE BLOCK (added by JS)
+   ============================================================ */
+.about-area { background-color: transparent !important; }
+.about-area .about-box { display: none !important; }
+
 .jawak-interactive-block {
-  position: relative;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 16px;
+  padding: 80px 0;
+  direction: rtl;
+  background: radial-gradient(ellipse at 50% 0%, rgba(218,174,73,.07), transparent 55%),
+              linear-gradient(180deg, #1a1815, #111009);
 }
+.jawak-section-header { text-align: center; margin-bottom: 52px; padding: 0 20px; }
+.jawak-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 18px; margin-bottom: 14px; border-radius: 999px;
+  background: linear-gradient(180deg, #1c1810, #221a12);
+  border: 1px solid rgba(218,174,73,.28);
+  color: var(--g); font-weight: 700; font-size: 13px;
+}
+.jawak-h2 {
+  color: #fff3cf !important;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem) !important;
+  font-weight: 800 !important; margin: 0 0 12px !important;
+}
+.jawak-lead { color: var(--txs); font-size: 15px; max-width: 520px; margin: 0 auto; line-height: 1.9; }
 
 .jawak-interactive-shell {
-  display: grid;
-  grid-template-columns: 460px 1fr;
-  gap: 28px;
-  align-items: stretch;
-  background: linear-gradient(180deg, #181818 0%, #111111 100%);
-  border: 1px solid rgba(218,174,73,.16);
-  border-radius: 30px;
-  padding: 24px;
-  box-shadow:
-    0 18px 44px rgba(0,0,0,.45),
-    inset 0 1px 0 rgba(255,236,184,.03);
-  overflow: hidden;
-  position: relative;
+  display: grid; grid-template-columns: 400px 1fr; gap: 28px;
+  align-items: stretch; max-width: 1180px; margin: 0 auto; padding: 24px;
+  background: linear-gradient(180deg, #1c1812, #111009);
+  border: 1px solid rgba(218,174,73,.16); border-radius: 26px;
+  box-shadow: 0 16px 40px rgba(0,0,0,.2); position: relative; overflow: hidden;
 }
-
 .jawak-interactive-shell::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at top left, rgba(218,174,73,.08), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(218,174,73,.05), transparent 24%);
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(218,174,73,.32) 50%, transparent);
   pointer-events: none;
 }
-
 .jawak-media-card {
-  position: relative;
-  border-radius: 26px;
-  overflow: hidden;
-  border: 1px solid rgba(218,174,73,.18);
-  background: linear-gradient(180deg, #15120d 0%, #0f0f0f 100%);
-  min-height: 460px;
-  box-shadow:
-    0 14px 36px rgba(0,0,0,.35),
-    inset 0 1px 0 rgba(255,236,184,.04);
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(218,174,73,.16); background-color: #0d0d0d; min-height: 420px;
 }
-
-.jawak-media-card video {
-  width: 100%;
-  height: 100%;
-  min-height: 460px;
-  object-fit: cover;
-  display: block;
-}
-
-.jawak-content-side {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-width: 0;
-}
-
+.jawak-media-card video { width: 100%; height: 100%; min-height: 420px; object-fit: cover; display: block; }
+.jawak-content-side { display: flex; flex-direction: column; justify-content: center; }
 .jawak-top-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  padding: 10px 18px;
-  margin-bottom: 14px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, #18140e 0%, #221a12 100%);
-  border: 1px solid rgba(218,174,73,.28);
-  color: #daae49;
-  box-shadow:
-    0 8px 22px rgba(0,0,0,.25),
-    inset 0 1px 0 rgba(255,236,184,.05),
-    0 0 14px rgba(218,174,73,.08);
-  font-weight: 700;
-  line-height: 1;
+  display: inline-flex; width: fit-content; padding: 8px 16px; margin-bottom: 12px;
+  border-radius: 999px; background: linear-gradient(180deg, #1c1810, #221a12);
+  border: 1px solid rgba(218,174,73,.28); color: var(--g); font-weight: 700; font-size: 13px;
 }
-
-.jawak-main-title {
-  color: #fff3cf;
-  font-size: 40px;
-  line-height: 1.25;
-  margin: 0 0 12px;
-  font-weight: 800;
-}
-
-.jawak-subtitle {
-  color: #d7cfbf;
-  font-size: 16px;
-  line-height: 2;
-  margin: 0 0 22px;
-  max-width: 58ch;
-}
-
-.jawak-tabs {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
+.jawak-main-title { color: #fff3cf !important; font-size: clamp(1.4rem, 2.5vw, 2rem) !important; font-weight: 800 !important; margin: 0 0 10px !important; }
+.jawak-subtitle { color: var(--txs); font-size: 14.5px; line-height: 1.9; margin: 0 0 18px; }
+.jawak-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
 .jawak-tab-btn {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-  min-height: 64px;
-  border-radius: 18px;
-  padding: 14px 16px;
-  background: linear-gradient(180deg, rgba(255,255,255,.02) 0%, rgba(218,174,73,.03) 100%);
-  border: 1px solid rgba(218,174,73,.14);
-  color: #ecd9a0;
-  cursor: pointer;
-  text-align: right;
-  transition: all .28s ease;
-  box-shadow: inset 0 1px 0 rgba(255,236,184,.02);
+  display: flex; align-items: center; gap: 10px;
+  min-height: 58px; border-radius: 14px; padding: 12px 14px;
+  background-color: rgba(255,255,255,.02); border: 1px solid rgba(218,174,73,.14);
+  color: #ecd9a0; cursor: pointer; text-align: right; width: 100%;
+  transition: all .25s var(--ease); font-size: 14px; font-weight: 700; font-family: inherit;
 }
-
-.jawak-tab-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(218,174,73,.28);
-  box-shadow:
-    0 10px 22px rgba(0,0,0,.18),
-    0 0 0 1px rgba(218,174,73,.04) inset;
-}
-
+.jawak-tab-btn:hover { border-color: rgba(218,174,73,.26); transform: translateY(-1px); }
 .jawak-tab-btn.active {
-  background: linear-gradient(180deg, rgba(218,174,73,.16) 0%, rgba(218,174,73,.07) 100%);
-  border-color: rgba(218,174,73,.34);
-  color: #fff3cf;
-  box-shadow:
-    0 12px 24px rgba(0,0,0,.20),
-    0 0 0 1px rgba(218,174,73,.06) inset,
-    0 0 18px rgba(218,174,73,.10);
+  background-color: rgba(218,174,73,.1); border-color: rgba(218,174,73,.36); color: #fff3cf;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12), 0 0 14px rgba(218,174,73,.07);
 }
-
-.jawak-tab-icon {
-  width: 42px;
-  height: 42px;
-  min-width: 42px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, rgba(218,174,73,.11) 0%, rgba(218,174,73,.05) 100%);
-  border: 1px solid rgba(218,174,73,.24);
-  box-shadow: inset 0 1px 0 rgba(255,236,184,.04);
-}
-
-.jawak-tab-icon svg {
-  width: 20px;
-  height: 20px;
-  stroke: #daae49;
-  fill: none;
-  stroke-width: 1.9;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.jawak-tab-label {
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
+.jawak-tab-icon { display: flex; align-items: center; justify-content: center; }
+.jawak-tab-icon svg { width: 22px; height: 22px; stroke: var(--g); fill: none; }
 .jawak-feature-view {
-  position: relative;
-  min-height: 168px;
-  border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255,255,255,.02) 0%, rgba(218,174,73,.03) 100%);
-  border: 1px solid rgba(218,174,73,.14);
-  padding: 22px 22px 18px;
-  overflow: hidden;
-  box-shadow:
-    inset 0 1px 0 rgba(255,236,184,.02),
-    0 10px 26px rgba(0,0,0,.18);
+  border-radius: 16px; background-color: rgba(255,255,255,.02);
+  border: 1px solid rgba(218,174,73,.12); padding: 18px;
 }
-
-.jawak-feature-view::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent 20%, rgba(255,228,154,.06) 50%, transparent 80%);
-  transform: translateX(-140%);
-  transition: transform .8s ease;
-  pointer-events: none;
-}
-
-.jawak-feature-view.is-animating::before {
-  transform: translateX(140%);
-}
-
-.jawak-feature-title {
-  margin: 0 0 10px;
-  color: #fff3cf;
-  font-size: 28px;
-  line-height: 1.35;
-  font-weight: 800;
-}
-
-.jawak-feature-desc {
-  margin: 0 0 18px;
-  color: #d8cfbf;
-  font-size: 15px;
-  line-height: 2;
-  max-width: 52ch;
-}
-
+.jawak-feature-view.is-animating { animation: jawakFadeUp .3s var(--ease) both; }
+@keyframes jawakFadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+.jawak-feature-title { color: #fff3cf !important; font-size: clamp(1.1rem, 2vw, 1.45rem) !important; font-weight: 800 !important; margin: 0 0 8px !important; }
+.jawak-feature-desc { color: var(--txs); font-size: 14px; line-height: 1.9; margin: 0 0 14px; }
 .jawak-buy-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 50px;
-  padding: 0 22px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, #daae49 0%, #c79b39 100%);
-  border: 1px solid rgba(255,227,150,.26);
-  color: #0A0800 !important;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 46px; padding: 0 24px; border-radius: 999px;
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl));
+  border: none; color: #0a0800 !important; font-weight: 800; font-size: 14px;
   text-decoration: none !important;
-  font-weight: 800;
-  box-shadow:
-    0 12px 26px rgba(218,174,73,.22),
-    inset 0 1px 0 rgba(255,245,214,.28);
-  transition: all .28s ease;
+  box-shadow: 0 8px 22px rgba(218,174,73,.2);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
 }
+.jawak-buy-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(218,174,73,.32); color: #0a0800 !important; }
 
-.jawak-buy-btn:hover {
-  transform: translateY(-2px);
-  color: #0A0800 !important;
-  box-shadow:
-    0 16px 30px rgba(218,174,73,.30),
-    inset 0 1px 0 rgba(255,245,214,.30);
-}
-
-/* =========================================================
-   ABOUT BOX — استبدال بالـ interactive block
-========================================================= */
-.xc-about-section,
-[class*="about-section"],
-[class*="about-area"] {
-  background-color: var(--bg-dark) !important;
-  padding: 48px 0 !important;
-}
-
-/* =========================================================
-   GLOBAL DARK OVERRIDES — منصة تجار
-========================================================= */
-
-/* Header */
-.xc-header,
-[class*="header-wrapper"],
-[class*="top-bar"],
-.xc-navbar {
-  background-color: rgba(10, 8, 0, 0.92) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-  border-bottom: 1px solid rgba(201,162,95,.16) !important;
-}
-
-/* Nav links */
-.xc-header a,
-.xc-navbar a,
-[class*="nav-link"],
-[class*="menu-item"] a {
-  color: var(--text-main) !important;
-}
-
-.xc-header a:hover,
-.xc-navbar a:hover,
-[class*="nav-link"]:hover {
-  color: var(--gold) !important;
-}
-
-/* Buttons */
-.xc-btn,
-.xc-button,
-[class*="btn-primary"],
-[class*="add-to-cart"],
-[class*="buy-now"],
-button[type="submit"],
-.btn-main {
-  background: linear-gradient(180deg, #daae49 0%, #c79b39 100%) !important;
-  color: #0A0800 !important;
-  border: none !important;
-  font-weight: 700 !important;
-}
-
-.xc-btn:hover,
-.xc-button:hover,
-[class*="btn-primary"]:hover,
-[class*="add-to-cart"]:hover {
-  background: linear-gradient(180deg, #f0d080 0%, #daae49 100%) !important;
-  color: #0A0800 !important;
-}
-
-/* Input fields */
-input, textarea, select,
-[class*="form-control"],
-[class*="input-field"],
-.xc-input {
-  background-color: var(--bg-surface) !important;
-  border: 1px solid rgba(218,174,73,.22) !important;
-  color: var(--text-main) !important;
-  border-radius: 10px !important;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: var(--text-muted) !important;
-}
-
-input:focus, textarea:focus, select:focus,
-[class*="form-control"]:focus {
-  border-color: rgba(218,174,73,.50) !important;
-  box-shadow: 0 0 0 3px rgba(218,174,73,.12) !important;
-  outline: none !important;
-}
-
-/* Product price */
-[class*="price"],
-.xc-price,
-.price-main,
-.sale-price {
-  color: var(--gold) !important;
-  font-weight: 700 !important;
-}
-
-[class*="old-price"],
-[class*="original-price"],
-.price-old {
-  color: var(--text-muted) !important;
-  text-decoration: line-through !important;
-}
-
-/* Product title */
-[class*="product-title"],
-[class*="product-name"],
-.xc-product-name {
-  color: var(--text-main) !important;
-}
-
-/* Product description */
-[class*="product-desc"],
-[class*="product-description"],
-.xc-product-desc {
-  color: var(--text-sub) !important;
-}
-
-/* Category title */
-[class*="category-title"],
-[class*="section-title"],
-.xc-section-title {
-  color: var(--gold-pale) !important;
-}
-
-/* Breadcrumbs */
-[class*="breadcrumb"] a { color: var(--text-sub) !important; }
-[class*="breadcrumb"] .active { color: var(--gold) !important; }
-
-/* Footer */
-footer,
-.xc-footer,
-[class*="footer-"] {
-  background-color: #0f0e0b !important;
-  border-top: 1px solid rgba(218,174,73,.14) !important;
-  color: var(--text-sub) !important;
-}
-
-footer a,
-.xc-footer a { color: var(--text-sub) !important; }
-footer a:hover,
-.xc-footer a:hover { color: var(--gold) !important; }
-
-/* Dividers */
-hr, [class*="divider"] {
-  border-color: rgba(218,174,73,.12) !important;
-}
-
-/* Badges & tags */
-[class*="badge"],
-[class*="tag-"],
-.xc-badge {
-  background: linear-gradient(180deg, #18140e 0%, #221a12 100%) !important;
-  border: 1px solid rgba(218,174,73,.28) !important;
-  color: var(--gold) !important;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-dark); }
-::-webkit-scrollbar-thumb {
-  background: rgba(218,174,73,.3);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover { background: rgba(218,174,73,.55); }
-
-/* Selection */
-::selection {
-  background: rgba(218,174,73,.25);
-  color: var(--gold-pale);
-}
-
-/* =========================================================
-   GOLD GLOW ANIMATION — للعناصر المميزة
-========================================================= */
-@keyframes jawakGoldGlow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(218,174,73,0); }
-  50%       { box-shadow: 0 0 22px 4px rgba(218,174,73,.18); }
-}
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 @media (max-width: 1100px) {
+  .jawak-interactive-shell { grid-template-columns: 1fr; max-width: 660px; }
+  .jawak-media-card, .jawak-media-card video { min-height: 260px; }
+}
+@media (max-width: 768px) {
+  .jawak-interactive-block { padding: 48px 0; }
+  .jawak-interactive-shell { padding: 14px; gap: 16px; }
+}
+
+/* ============================================================
+   FAQ  — Alpine.js based (NOT Bootstrap accordion)
+   Selectors from actual HTML: .faq-item > .faq-button > .faq-question / .faq-answer
+   ============================================================ */
+.faq-widget-section { background-color: transparent !important; }
+.faq-widget { max-width: 700px !important; margin: 0 auto !important; padding: 0 16px !important; }
+
+/* FAQ header icon area */
+.lina-icon-wrap { color: var(--g) !important; }
+.lina-glow {
+  position: absolute; inset: 0; border-radius: 50%;
+  box-shadow: 0 0 20px rgba(218,174,73,.3); background: rgba(218,174,73,.06);
+}
+.lina-star { color: rgba(218,174,73,.5) !important; fill: currentColor !important; }
+.lina-icon svg { stroke: var(--g) !important; }
+
+.faq-title { color: var(--txt) !important; }
+.faq-subtitle { color: var(--txm) !important; }
+
+/* FAQ list — all items equal width */
+.faq-list {
+  list-style: none !important; padding: 0 !important; margin: 0 !important;
+  display: flex !important; flex-direction: column !important; gap: 10px !important;
+}
+
+.faq-item {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.15) !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  transition: border-color .2s ease, box-shadow .2s ease !important;
+}
+.faq-item:hover {
+  border-color: rgba(218,174,73,.28) !important;
+  box-shadow: 0 4px 16px rgba(218,174,73,.06) !important;
+}
+
+/* faq-button = the clickable row */
+.faq-button {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 16px 18px !important;
+  cursor: pointer !important;
+  background-color: var(--bg2) !important;
+  border: none !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  text-align: right !important;
+  direction: rtl !important;
+  transition: background-color .2s ease !important;
+}
+.faq-button:hover { background-color: rgba(255,255,255,.02) !important; }
+.faq-button > span svg { stroke: rgba(218,174,73,.6) !important; flex-shrink: 0 !important; }
+.faq-button.open > span svg { stroke: var(--g) !important; }
+
+.faq-question {
+  color: #f0e8cc !important;
+  font-weight: 700 !important;
+  font-size: 14.5px !important;
+  display: block !important;
+  margin-bottom: 0 !important;
+  background-color: transparent !important;
+}
+.faq-button.open .faq-question,
+.faq-question.open { color: var(--g) !important; }
+
+.faq-answer {
+  color: var(--txs) !important;
+  font-size: 14px !important;
+  line-height: 1.9 !important;
+  padding: 0 18px 16px 18px !important;
+  background-color: var(--bg2) !important;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.store-section.footer-store-section, footer, .footer-area {
+  background-color: var(--bg4) !important;
+  position: relative !important;
+}
+
+ .store-section.footer-store-section, .col-lg-12 {
+        color: #ffffff;
+    }
+
+.store-section.footer-store-section::before, footer::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--g) 30%, var(--gl) 50%, var(--g) 70%, transparent);
+  box-shadow: 0 0 18px rgba(218,174,73,.28);
+}
+/* Footer section titles — gold & prominent */
+.store-section.footer-store-section h4,
+.store-section.footer-store-section h5,
+.store-section.footer-store-section h3,
+.store-section.footer-store-section .footer-widget-title,
+.store-section.footer-store-section .widget-title,
+footer h4, footer h5, footer h3,
+footer .footer-widget-title, footer .widget-title {
+  color: var(--g) !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  padding-bottom: 10px !important;
+  border-bottom: 1px solid rgba(218,174,73,.14) !important;
+  margin-bottom: 14px !important;
+}
+.store-section.footer-store-section a, footer a { color: #ffffff !important; }
+.store-section.footer-store-section a:hover, footer a:hover { color: var(--g) !important; }
+.store-section.footer-store-section p,
+.store-section.footer-store-section span,
+footer p, footer span,
+footer li { color: var(--txm) !important; }
+
+.store-section.footer-store-section p, .store-section.footer-store-section span, footer p, footer span, footer li {
+    color: #ffffff !important;
+}
+    .store-section.footer-store-section.justify-content-lg-start {
+        color: #eacc6b;
+    }
+
+/* Social icons */
+.footer-social a, .social-links a {
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  width: 38px !important; height: 38px !important; border-radius: 8px !important;
+  border: 1px solid rgba(218,174,73,.22) !important;
+  background-color: rgba(218,174,73,.04) !important;
+  color: var(--txs) !important; transition: all .25s ease !important;
+}
+.footer-social a:hover, .social-links a:hover {
+  border-color: rgba(218,174,73,.5) !important;
+  background-color: rgba(218,174,73,.1) !important;
+  color: var(--g) !important; transform: translateY(-2px) !important;
+}
+
+/* Payment icons */
+.payment-methods img, .footer-payments img {
+  filter: grayscale(1) brightness(.65) !important;
+  border: 1px solid rgba(218,174,73,.14) !important;
+  border-radius: 6px !important; padding: 4px 8px !important;
+}
+.payment-methods img:hover { filter: grayscale(0) brightness(1) !important; }
+
+/* ============================================================
+   PRODUCT PAGE —  MODE
+   ============================================================ */
+/* Splide slider on product page */
+.product-image-slide .splide,
+.splide.bg-white {
+  background-color: var(--bg2) !important;
+  border-color: var(--bdr) !important;
+}
+.splide__slide { background-color: transparent !important; }
+.splide__arrow {
+  background-color: var(--bg3) !important;
+  border: 1px solid var(--bdr) !important;
+}
+.splide__arrow svg { fill: var(--g) !important; }
+.splide__pagination__page { background-color: var(--txm) !important; }
+.splide__pagination__page.is-active { background-color: var(--g) !important; }
+
+/* Product details wrapper */
+.product-details-wrapper {
+  background-color: var(--bg2) !important;
+  border-color: var(--bdr) !important;
+}
+.product-details-wrapper .text-dark { color: var(--txt) !important; }
+
+/* Prices */
+.pr_price { color: var(--g) !important; font-weight: 800 !important; }
+.pr_old-price { color: var(--txm) !important; text-decoration: line-through !important; }
+
+/* Quantity input */
+.productQty {
+  background-color: var(--bg3) !important;
+  border: 1px solid var(--bdr) !important;
+  border-radius: 12px !important;
+}
+.productQty .substract, .productQty .plus { color: var(--g) !important; }
+.productQty .quantityInput {
+  background-color: transparent !important; border: none !important; color: var(--txt) !important;
+}
+
+/* Add to cart / Buy buttons */
+.btn-main {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important; color: #0a0800 !important; font-weight: 800 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 8px 22px rgba(218,174,73,.22) !important;
+}
+.btn-main:hover { transform: translateY(-2px) !important; }
+.btn-main-outline {
+  background-color: transparent !important;
+  border: 1px solid rgba(218,174,73,.5) !important;
+  color: var(--g) !important; border-radius: 999px !important; font-weight: 700 !important;
+}
+.btn-main-outline:hover {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border-color: transparent !important; color: #0a0800 !important;
+}
+
+
+.btn-direct-wa:hover { transform: translateY(-2px) !important; color: #0a0800 !important; }
+.btn-direct-wa svg, .btn-direct-wa i { color: #0a0800 !important; fill: #0a0800 !important; }
+
+/* Product share bar */
+.product-share {
+  background-color: var(--bg3) !important;
+  border-color: var(--bdr) !important;
+  border-radius: 14px !important;
+}
+.product-share a { color: var(--txs) !important; }
+.product-share a:hover { color: var(--g) !important; }
+
+/* Tab nav (description/reviews) */
+.nav-tabs {
+  border-color: rgba(218,174,73,.15) !important;
+  background-color: var(--bg2) !important;
+  border-radius: 999px !important; padding: 4px !important;
+}
+.nav-tabs .nav-link {
+  color: var(--txs) !important; border: none !important;
+  border-radius: 999px !important; background-color: transparent !important;
+  padding: 10px 24px !important;
+}
+.nav-tabs .nav-link.active {
+  background-color: var(--bg3) !important; color: var(--g) !important;
+  border: 1px solid rgba(218,174,73,.25) !important;
+}
+.tab-content { background-color: var(--bg) !important; }
+.tab-pane { background-color: var(--bg) !important; color: var(--txs) !important; }
+.tab-pane * { color: #ffffff !important; }
+
+.gl-star-rating--stars span {
+    color: #ffffff!important;
+}
+
+
+/* ============================================================
+   CART POPUP / MINI-CART  (white → dark)
+   ============================================================ */
+/* Dropdown menus (account, cart, etc.) */
+.dropdown-menu {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.18) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,.5) !important;
+}
+.dropdown-item { color: var(--txs) !important; }
+.dropdown-item:hover {
+  background-color: rgba(218,174,73,.08) !important; color: var(--g) !important;
+}
+.dropdown-divider { border-color: rgba(218,174,73,.12) !important; }
+
+/* Bootstrap Offcanvas (mobile nav / cart) */
+.offcanvas, .offcanvas-end, .offcanvas-start, .offcanvas-top, .offcanvas-bottom {
+  background-color: var(--bg2) !important;
+  border-color: rgba(218,174,73,.14) !important;
+}
+.offcanvas-header {
+  background-color: var(--bg3) !important;
+  border-bottom: 1px solid rgba(218,174,73,.12) !important;
+}
+.offcanvas-title { color: var(--txt) !important; font-weight: 700 !important; }
+.btn-close { filter: brightness(0) invert(1) !important; opacity: .6 !important; }
+.btn-close:hover { opacity: 1 !important; }
+
+/* Cart specific inside offcanvas */
+.offcanvas .nav-link { color: var(--txs) !important; }
+.offcanvas .navbar-nav .nav-link { color: var(--txt) !important; }
+
+/* Custom Tjar cart popup / remove-cart-popup */
+[class*="cart-popup"],
+[id*="cart-popup"],
+[class*="remove-cart"],
+[id*="remove-cart"],
+.cart-drop, .cart-dropdown,
+.cart-popup-wrap, .cart-popup-modal,
+.mini-cart, .mini_cart_item {
+  background-color: var(--bg2) !important;
+  border-color: rgba(218,174,73,.14) !important;
+  border-radius: 16px !important;
+}
+/* Sweetalert / modal popups */
+.swal2-popup, .swal2-modal {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  border-radius: 20px !important;
+}
+.swal2-title { color: var(--txt) !important; }
+.swal2-html-container { color: var(--txs) !important; }
+.swal2-confirm {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  color: #0a0800 !important; font-weight: 800 !important; border-radius: 999px !important;
+}
+
+/* Generic popup/modal */
+.modal-content {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.18) !important;
+  border-radius: 18px !important;
+}
+.modal-header {
+  background-color: var(--bg3) !important;
+  border-bottom: 1px solid rgba(218,174,73,.12) !important;
+}
+.modal-title { color: var(--txt) !important; }
+.modal-footer {
+  background-color: var(--bg3) !important;
+  border-top: 1px solid rgba(218,174,73,.12) !important;
+}
+.modal-body { background-color: var(--bg2) !important; color: var(--txs) !important; }
+
+/* Popup user profile widget (white box image_1778639436195) */
+.user-info, .profile-popup, .profile-drop, .account-popup,
+[class*="account-drop"], [class*="user-drop"],
+[class*="profile-drop"] {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.16) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,.5) !important;
+}
+.user-info *, .profile-popup * { color: var(--txs) !important; }
+.user-info h5, .user-info h6, .profile-popup h5, .profile-popup h6 { color: var(--txt) !important; }
+.user-info img, .profile-popup img {
+  border: 2px solid rgba(218,174,73,.3) !important; border-radius: 50% !important;
+}
+.user-info .btn, .profile-popup .btn {
+  border-color: rgba(218,174,73,.3) !important; color: var(--g) !important;
+  border-radius: 999px !important;
+}
+
+/* ============================================================
+   CART PAGE
+   ============================================================ */
+.page-cart, .cart-page, [class*="cart-section"] {
+  background-color: var(--bg) !important;
+}
+/* Cart items — ensure images show normally, just dark card bg */
+.page-cart .card, .cart-page .card,
+[class*="cart-section"] .card {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.12) !important;
+  border-radius: 16px !important;
+}
+/* Cart product image — ensure proper sizing */
+.page-cart .card img, .cart-page .card img {
+  border-radius: 12px !important;
+  object-fit: contain !important;
+  max-height: 90px !important;
+  width: auto !important;
+}
+.page-cart .text-dark, .cart-page .text-dark { color: var(--txt) !important; }
+.page-cart h1, .page-cart h2, .page-cart h3, .page-cart h4,
+.cart-page h1, .cart-page h2, .cart-page h3, .cart-page h4 { color: var(--txt) !important; }
+.cart-total-box, .order-summary {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.14) !important;
+  border-radius: 16px !important;
+}
+
+/* Cart quantity toggle */
+.cart-qty-toggle {
+  background-color: var(--bg3) !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  border-radius: 999px !important;
+}
+
+/* Cart proceed button */
+.cart-checkout-btn, .btn-checkout,
+[class*="checkout-btn"] {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important; color: #0a0800 !important;
+  font-weight: 800 !important; border-radius: 999px !important;
+  box-shadow: 0 8px 22px rgba(218,174,73,.22) !important;
+}
+
+/* ============================================================
+   CHECKOUT PAGE — Full Dark Gold Theme
+   Real classes from /shop/checkout HTML source confirmed.
+   ============================================================ */
+
+/* ── Page background ── */
+body.checkout_page,
+.checkout_page body,
+.checkout_page .checkout {
+  background-color: var(--bg) !important;
+}
+.checkout {
+  background-color: var(--bg) !important;
+}
+
+/* ── Main cards: checkout_head / checkout_cart / checkout_details ── */
+.checkout_head,
+.checkout_cart,
+.checkout_details {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.14) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,.35) !important;
+}
+
+/* ── Typography ── */
+.checkout_page h1, .checkout_page h2,
+.checkout_page h3, .checkout_page h4,
+.checkout_page h5, .checkout_page h6,
+.checkout_cart h4, .checkout_cart h5,
+.checkout_details h4, .checkout_details h5,
+.checkout_head h4, .checkout_head h5 {
+  color: var(--txt) !important;
+}
+.checkout_page .text-dark,
+.checkout_page .fw-500,
+.checkout_page .fw-600 { color: var(--txt) !important; }
+.checkout_page .text-muted,
+.checkout_page .rsf-16.text-muted { color: var(--txm) !important; }
+.checkout_page .text-danger { color: #e57373 !important; }
+
+/* ── Back-to-cart button ── */
+.back_cart,
+.checkout_head .back_cart {
+  background-color: rgba(218,174,73,.1) !important;
+  color: var(--g) !important;
+  border: 1px solid rgba(218,174,73,.25) !important;
+  border-radius: 999px !important;
+}
+.back_cart:hover {
+  background-color: rgba(218,174,73,.2) !important;
+  color: #f0d878 !important;
+}
+.back_cart i { color: inherit !important; }
+
+/* ── Order summary items strip ── */
+.checkout_cart-items {
+  border-color: rgba(218,174,73,.15) !important;
+}
+.checkout_cart-items .col,
+.checkout_cart-items span { color: var(--txs) !important; }
+
+/* ── Total row ── */
+.checkout_cart-total { color: var(--g) !important; }
+.checkout_cart-total h5 { color: var(--g) !important; }
+.checkout_cart-total span { color: var(--g) !important; }
+
+/* ── Coupon promo section ── */
+.coupon_promo-card {
+  background-color: var(--bg3) !important;
+  border: 1px solid rgba(218,174,73,.18) !important;
+  border-radius: 12px !important;
+  padding: 16px !important;
+}
+.coupon_promo-title { color: var(--txs) !important; }
+.coupon_promo-icon svg path { stroke: var(--g) !important; fill: var(--g) !important; }
+.coupon_promo-input .form-control {
+  background-color: var(--bg) !important;
+  border-color: rgba(218,174,73,.2) !important;
+  color: var(--txt) !important;
+}
+.coupon_promo-input .form-control::placeholder { color: rgba(218,174,73,.4) !important; }
+/* Apply button */
+.coupon_promo-input .btn-copy,
+.coupon_promo-input .btn.btn-main {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important;
+  color: #0a0800 !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}
+
+/* ── Step head icon circles ── */
+.step_head-icon {
+  background-color: rgba(218,174,73,.15) !important;
+  border: 1.5px solid rgba(218,174,73,.35) !important;
+  color: var(--g) !important;
+}
+/* Completed step (green → gold) */
+.step_head-icon:not(.bg-dark) {
+  background: linear-gradient(135deg, #b88b3c, #daae49) !important;
+  border-color: transparent !important;
+  color: #0a0700 !important;
+}
+/* Inactive step (bg-dark class) */
+.step_head-icon.bg-dark {
+  background-color: rgba(218,174,73,.12) !important;
+  border-color: rgba(218,174,73,.2) !important;
+  color: var(--txm) !important;
+}
+
+/* ── Step edit icon (large gold circle) ── */
+.step_edit-icon {
+  background: linear-gradient(135deg, var(--gx), var(--g)) !important;
+  border-color: var(--gx) !important;
+  color: #0a0700 !important;
+  box-shadow: inset 0 0 0 3px var(--bg2), 0 0 0 1px var(--gx) !important;
+}
+
+/* ── Step body (inner card) ── */
+.step_body {
+  background-color: var(--bg) !important;
+  border: 1px solid rgba(218,174,73,.1) !important;
+  border-radius: 16px !important;
+}
+.step_edit-body {
+  background-color: transparent !important;
+}
+
+/* ── hr divider ── */
+.hr_line, .checkout_page hr {
+  border-color: rgba(218,174,73,.14) !important;
+  opacity: 1 !important;
+}
+
+/* ── btn-light-primary (edit / select buttons) ── */
+.btn-light-primary {
+  color: var(--g) !important;
+}
+.btn-light-primary::before {
+  background: var(--g) !important;
+  opacity: .12 !important;
+}
+.btn-light-primary:hover::before { opacity: .22 !important; }
+
+/* ── btn-border-main ── */
+.btn-border-main {
+  border-color: var(--g) !important;
+  color: var(--g) !important;
+  background: none !important;
+}
+
+/* ── Saved address / shipping method cards ── */
+.saved_address,
+.new_address-bar,
+.edit_address-wrap,
+.address_form-wrap {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.16) !important;
+}
+.saved_address-text, .saved_address label { color: var(--txt) !important; }
+.new_address-bar label i { color: var(--g) !important; }
+
+/* ── Shipping card ── */
+.shipping_card {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.16) !important;
+}
+.shipping_card:hover { border-color: rgba(218,174,73,.4) !important; }
+.shipping_price {
+  background-color: rgba(218,174,73,.1) !important;
+  border-color: rgba(218,174,73,.2) !important;
+  color: var(--g) !important;
+}
+
+/* ── Payment method cards ── */
+.payment_tab,
+.payment_tab-wrap .payment_tab {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.16) !important;
+  box-shadow: none !important;
+}
+.payment_tab:hover { border-color: rgba(218,174,73,.4) !important; }
+.payment_name { color: var(--txt) !important; }
+
+/* ── Forms: inputs, selects, textareas ── */
+.checkout .form-control,
+.checkout .form-select,
+.checkout textarea,
+.checkout_page .form-control,
+.checkout_page .form-select {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.18) !important;
+  color: var(--txt) !important;
+}
+.checkout .form-control::placeholder,
+.checkout_page .form-control::placeholder { color: rgba(218,174,73,.4) !important; }
+.checkout .form-control:focus,
+.checkout .form-select:focus,
+.checkout_page .form-control:focus {
+  border-color: rgba(218,174,73,.5) !important;
+  box-shadow: 0 0 0 3px rgba(218,174,73,.1) !important;
+  background-color: var(--bg3) !important;
+}
+
+/* ── Input group text ── */
+.checkout .input-group-text,
+.checkout_page .input-group-text {
+  background-color: var(--bg) !important;
+  border-color: rgba(218,174,73,.18) !important;
+  color: var(--txm) !important;
+}
+.checkout .input-wrap i.icon,
+.checkout_page .input-wrap i.icon { color: var(--txm) !important; }
+
+/* ── Labels ── */
+.checkout .form-label,
+.checkout_page .form-label { color: var(--txs) !important; }
+
+/* ── Custom radio buttons ── */
+.custom_radio { box-shadow: 0 0 0 1.5px rgba(218,174,73,.3) !important; }
+.custom_radio:hover { box-shadow: 0 0 0 1.5px var(--g), inset 0 0 1.5rem -1rem var(--g) !important; }
+.custom_radio:checked {
+  box-shadow: 0 0 0 1.5px var(--g) !important;
+  background-color: var(--g) !important;
+  border: 5px solid var(--bg2) !important;
+}
+
+/* ── Checkboxes ── */
+.checkout_page .form-check-input,
+.checkout .form-check-input {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.3) !important;
+}
+.checkout_page .form-check-input:checked {
+  background-color: var(--g) !important;
+  border-color: var(--g) !important;
+}
+
+/* ── Spinner (loading) ── */
+.checkout_page .spinner-border {
+  color: var(--g) !important;
+  border-color: rgba(218,174,73,.3) !important;
+  border-top-color: var(--g) !important;
+}
+
+/* ── Login modal (guest checkout) ── */
+.login_modal, .checkout_page .modal-content {
+  background-color: var(--bg2) !important;
+  border-color: rgba(218,174,73,.2) !important;
+}
+
+/* ── Select2 on checkout ── */
+.checkout_page .select2-container--default .select2-selection--single {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.18) !important;
+  color: var(--txt) !important;
+}
+.checkout_page .select2-selection__rendered { color: var(--txt) !important; }
+
+/* ── Checkout submit / place order button ── */
+.checkout .btn-lg.btn-main,
+.checkout_page .btn-lg.btn-main,
+.checkout .submit-btn {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important;
+  color: #0a0700 !important;
+  font-weight: 800 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 22px rgba(218,174,73,.25) !important;
+}
+.checkout .btn-lg.btn-main:hover,
+.checkout_page .btn-lg.btn-main:hover { transform: translateY(-2px) !important; }
+
+/* ── Guest login modal (phone/email/OTP screens) ── */
+.checkout_page .modal-content,
+.checkout_page .login_modal .modal-content {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.18) !important;
+  border-radius: 20px !important;
+}
+/* Back-home arrow inside modal */
+.login_back-home {
+  color: rgba(218,174,73,.5) !important;
+}
+.login_back-home:hover { color: var(--g) !important; }
+
+/* Phone/Email input screen */
+.inputForm--screen,
+.inputNameForm {
+  background-color: transparent !important;
+}
+.account-form {
+  background-color: transparent !important;
+}
+.form-title { color: var(--txt) !important; }
+.form-sub   { color: var(--txm) !important; }
+
+/* Toggle: "تسجيل الدخول بالبريد / الجوال" text buttons */
+.btn-text {
+  color: var(--g) !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+}
+.btn-text:hover { color: #f0d878 !important; }
+
+/* Submit button in guest form */
+.submit-btn {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important;
+  color: #0a0700 !important;
+  font-weight: 800 !important;
+  border-radius: 10px !important;
+  padding: 13px 20px !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 6px 20px rgba(218,174,73,.22) !important;
+}
+
+/* ── OTP verification screen ── */
+.OTPForm--screen { background-color: transparent !important; }
+
+/* OTP boxes */
+.otp-input {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.25) !important;
+  color: var(--txt) !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  border-radius: 10px !important;
+  width: 52px !important;
+  height: 56px !important;
+}
+.otp-input:focus {
+  border-color: var(--g) !important;
+  box-shadow: 0 0 0 3px rgba(218,174,73,.15) !important;
+  background-color: var(--bg3) !important;
+}
+
+/* "Change number" button */
+.change_numb {
+  color: var(--g) !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+.change_numb i { color: inherit !important; }
+.change_numb:hover { color: #f0d878 !important; }
+
+/* OTP timer text */
+.OTPForm--screen .text-muted { color: var(--txm) !important; }
+
+/* ── Payment method tabs (lazy-loaded) ── */
+.payment_tab {
+  background-color: var(--bg3) !important;
+  border: 1px solid rgba(218,174,73,.16) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  transition: border-color .2s ease !important;
+}
+.payment_tab:hover { border-color: rgba(218,174,73,.4) !important; }
+.payment_tab.active,
+.payment_tab[aria-selected="true"] {
+  border-color: var(--g) !important;
+  background-color: rgba(218,174,73,.06) !important;
+}
+.payment_name { color: var(--txt) !important; font-weight: 500 !important; }
+.payment_tab .img img { filter: brightness(.85) !important; }
+
+/* ── Shipping method cards (lazy-loaded) ── */
+.shipping_card {
+  background-color: var(--bg3) !important;
+  border: 1px solid rgba(218,174,73,.16) !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  transition: border-color .2s ease !important;
+}
+.shipping_card:hover { border-color: rgba(218,174,73,.4) !important; }
+.shipping_info { color: var(--txt) !important; }
+.shipping_price {
+  background-color: rgba(218,174,73,.1) !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  color: var(--g) !important;
+  border-radius: 8px !important;
+}
+
+/* ── Saved address / new address cards (lazy-loaded) ── */
+.saved_address,
+.new_address-bar {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.16) !important;
+  border-radius: 12px !important;
+}
+.saved_address:hover,
+.new_address-bar:hover { border-color: rgba(218,174,73,.35) !important; }
+.saved_address-text { color: var(--txt) !important; }
+.new_address-bar label i { color: var(--g) !important; }
+
+/* Address / form wraps */
+.edit_address-wrap,
+.address_form-wrap {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.16) !important;
+  border-radius: 20px !important;
+}
+
+/* ── Error messages ── */
+.checkout_page .text-danger,
+[class*="error__"] { color: #e07070 !important; }
+
+/* ── ch-border variable override for dark mode ── */
+.checkout_page { --ch-border: rgba(218,174,73,.2) !important; }
+
+/* ============================================================
+   PAGE HEADERS — CATEGORY & INNER PAGES
+   ============================================================ */
+.page-header, .breadcrumb-area, .inner-banner,
+.page-title-area, .category-page-banner {
+  background-color: var(--bg) !important;
+  border-bottom: 1px solid rgba(218,174,73,.1) !important;
+  padding-top: calc(var(--bar-h) + var(--nav-h) + 16px) !important;
+  margin-top: 0 !important;
+}
+.page-header h1, .page-header h2,
+.breadcrumb-area h1, .breadcrumb-area h2 { color: var(--txt) !important; }
+
+/* ============================================================
+   SECTIONS — general dark backgrounds
+   ============================================================ */
+.widgetArea, section.widgetArea {
+  background-color: transparent !important;
+}
+.product-cat-slider-area, .product-type-area {
+  background-color: var(--bg) !important;
+}
+.section-head .section-title { color: var(--txt) !important; }
+.section-head .section-sub { color: var(--g) !important; }
+
+/* Remove white section backgrounds */
+.py-md-5, .py-5 { background-color: transparent !important; }
+section { background-color: transparent !important; }
+.container { background-color: transparent !important; }
+
+/* ============================================================
+   GLOBAL BUTTONS
+   ============================================================ */
+.btn-primary, [class*="btn-primary"] {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important; color: #0a0800 !important;
+  font-weight: 800 !important; border-radius: 999px !important;
+}
+.btn-primary:hover { transform: translateY(-2px) !important; }
+.btn-outline-secondary {
+  border-color: rgba(218,174,73,.35) !important; color: var(--g) !important;
+}
+
+/* Toast notifications */
+.toast, .toastr {
+  background-color: var(--bg3) !important;
+  border: 1px solid var(--bdr) !important;
+  color: var(--txt) !important; border-radius: 12px !important;
+}
+.toast-success { border-color: rgba(218,174,73,.3) !important; }
+
+/* Select2 */
+.select2-container--default .select2-selection--single {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.2) !important;
+}
+.select2-dropdown {
+  background-color: var(--bg2) !important;
+  border-color: rgba(218,174,73,.2) !important;
+}
+.select2-container--default .select2-results__option { color: var(--txs) !important; }
+.select2-container--default .select2-results__option--highlighted {
+  background-color: rgba(218,174,73,.1) !important; color: var(--g) !important;
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE FIRST
+   Tjar bottom nav bar height ≈ 60px — everything must respect it.
+   ============================================================ */
+
+/* ── Tablet & Mobile — Navbar dark background ──────── */
+/* On tablet/mobile Tjar forces gold background — override to dark */
+@media (max-width: 991px) {
+
+  /* Navbar: always dark on mobile/tablet (never gold) */
+  nav.navbar.navbar3, .custom-navbar, .navbar.navbar3 {
+    background-color: rgba(12, 9, 0, 0.97) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: 1px solid rgba(218,174,73,.14) !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,.5) !important;
+  }
+  /* Scrolled = same dark on mobile */
+  nav.navbar.navbar3.scrolled, .custom-navbar.scrolled {
+    background-color: rgba(8, 6, 0, 0.99) !important;
+  }
+
+  /* Hamburger toggle button */
+  .navbar-toggler {
+    border: 1px solid rgba(218,174,73,.35) !important;
+    border-radius: 8px !important;
+    padding: 6px 10px !important;
+    background-color: transparent !important;
+  }
+  .navbar-toggler:focus { box-shadow: 0 0 0 2px rgba(218,174,73,.2) !important; }
+  /* Hamburger bars icon */
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28218%2C174%2C73%2C1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    width: 20px !important; height: 20px !important;
+  }
+  /* Fallback: any <i> or <span> inside toggler */
+  .navbar-toggler i, .navbar-toggler span.icon,
+  .nav_icon, [class*="nav-icon"], [class*="nav_icon"] {
+    color: var(--g) !important;
+    stroke: var(--g) !important;
+  }
+  /* nav_icon used in Tjar mobile menu button */
+  .nav_icon svg, .nav_icon i { color: var(--g) !important; stroke: var(--g) !important; fill: var(--g) !important; }
+
+  /* Search icon / bar on mobile */
+  .navbar-input input, .searchbar-suggetions input {
+    background-color: rgba(218,174,73,.08) !important;
+    border: 1px solid rgba(218,174,73,.2) !important;
+    color: #fff !important;
+  }
+  .navbar-input input::placeholder, .searchbar-suggetions input::placeholder {
+    color: rgba(218,174,73,.5) !important;
+  }
+  .navbar-input svg, .searchbar-suggetions svg,
+  .navbar-input i, .searchbar-suggetions i {
+    color: var(--g) !important; stroke: var(--g) !important;
+  }
+
+  /* All nav icons (cart, wishlist, account, search) */
+  nav.navbar.navbar3 .icon-track-navbar svg,
+  nav.navbar.navbar3 .icon-track-navbar i,
+  .custom-navbar .icon-track-navbar svg,
+  .custom-navbar .icon-track-navbar i {
+    color: var(--g) !important;
+    stroke: var(--g) !important;
+  }
+  /* Cart count badge */
+  .icon-notification {
+    background-color: var(--g) !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+  }
+
+  /* Logo */
+  nav.navbar.navbar3 .navbar-brand img,
+  .custom-navbar .navbar-brand img {
+    filter: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Interactive block */
   .jawak-interactive-shell {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    max-width: 660px !important;
   }
   .jawak-media-card,
-  .jawak-media-card video {
-    min-height: 360px;
+  .jawak-media-card video { min-height: 260px !important; }
+
+  /* Features */
+  .four-blocks-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
   }
 }
 
+/* ── Mobile (≤ 767px) ────────────────────── */
 @media (max-width: 767px) {
+
+  /* Variables — smaller promo bar on mobile */
+  :root {
+    --bar-h: 36px;
+    --nav-h: 56px;
+  }
+
+  /* ── Promo bar ── */
+  #jwk-bar { height: var(--bar-h) !important; }
+  .jwk-item { font-size: 12px !important; padding: 0 14px !important; }
+  .jwk-sep  { padding: 0 3px !important; font-size: 8px !important; }
+  #jwk-close { width: 32px !important; font-size: 13px !important; }
+
+  /* ── Navbar ── */
+  nav.navbar.navbar3, .custom-navbar, .navbar.navbar3 {
+    top: var(--bar-h) !important;
+  }
+  body.jwk-bar-closed nav.navbar.navbar3,
+  body.jwk-bar-closed .custom-navbar { top: 0 !important; }
+
+  /* ── Hero ── */
+  .hero.hero-area {
+    min-height: 100svh !important;
+    min-height: 100vh !important;
+  }
+  .hero.hero-area .intro-excerpt h1,
+  .hero.hero-area .intro-excerpt h2 {
+    font-size: clamp(1.5rem, 7vw, 2.2rem) !important;
+  }
+
+  /* ── Brand logos ── */
+  .brand-img {
+    padding: 10px 12px !important;
+    border-radius: 10px !important;
+  }
+  .brand-img img {
+    max-height: 150x !important;
+  }
+
+  /* ── Splide (brand + product sliders) ── */
+  .splide__arrow { width: 32px !important; height: 32px !important; }
+
+  /* ── Product cards ── */
+  .product-item, .card2 {
+    border-radius: 12px !important;
+  }
+
+  /* ── Features grid ── */
+  .four-blocks-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .four-blocks-box .single-promo {
+    padding: 16px 12px !important;
+    border-radius: 14px !important;
+  }
+  .single-promo-icon {
+    width: 46px !important; height: 46px !important;
+    border-radius: 12px !important;
+    margin-bottom: 12px !important;
+  }
+  .single-promo-icon i { font-size: 20px !important; }
+  .single-promo-icon svg { width: 20px !important; height: 20px !important; }
+  .single-promo-contents-title { font-size: 14px !important; }
+  .single-promo-contents-para  { font-size: 12.5px !important; }
+
+  /* ── Interactive block ── */
+  .jawak-interactive-block { padding: 40px 0 !important; }
+  .jawak-section-header { margin-bottom: 30px !important; padding: 0 12px !important; }
   .jawak-interactive-shell {
-    padding: 16px;
-    border-radius: 22px;
-    gap: 18px;
+    grid-template-columns: 1fr !important;
+    padding: 14px !important; gap: 14px !important;
+    border-radius: 18px !important;
+    margin: 0 12px !important;
   }
-  .jawak-media-card {
-    min-height: 260px;
-    border-radius: 18px;
+  .jawak-media-card, .jawak-media-card video {
+    min-height: 200px !important;
+    border-radius: 14px !important;
   }
-  .jawak-media-card video {
-    min-height: 260px;
+  .jawak-tabs { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+  .jawak-tab-btn { min-height: 50px !important; font-size: 13px !important; padding: 10px 10px !important; }
+  .jawak-feature-view { padding: 14px !important; }
+
+  /* ── FAQ ── */
+  .faq-widget { padding: 0 12px !important; }
+  .faq-button { padding: 14px 14px !important; }
+  .faq-question { font-size: 13.5px !important; }
+  .faq-answer { font-size: 13px !important; padding: 0 14px 14px !important; }
+
+  /* ── Footer ── */
+  .store-section.footer-store-section {
+    /* Tjar's bottom nav is ~60px tall on mobile — add padding */
+    padding-bottom: 70px !important;
   }
-  .jawak-main-title {
-    font-size: 28px;
+
+  /* ── Cart / Checkout pages ── */
+  .page-cart .card, .cart-page .card {
+    margin-bottom: 12px !important;
   }
-  .jawak-subtitle {
-    font-size: 14px;
-    line-height: 1.9;
+  .page-cart .card img, .cart-page .card img {
+    max-height: 70px !important;
   }
-  .jawak-tabs {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+
+
+  /* ── WhatsApp floating button on phone   ──
+@media (max-width: 992px) {
+    ._wa {
+        bottom: 90px!important;
+        right: 12px!important;
+    }
+}
+
+   
+  /* ── Tjar mobile bottom nav ─
+     Ensure it stays on top and dark             */
+  .navbar-bottom, .bottom-navbar, .mobile-navbar,
+  [class*="bottom-nav"], [class*="bottom_nav"],
+  .layout-footer-nav, .app-bottom-nav {
+    background-color: var(--bg2) !important;
+    border-top: 1px solid rgba(218,174,73,.14) !important;
+    z-index: 10000 !important;
   }
-  .jawak-tab-btn {
-    min-height: 58px;
-    padding: 12px;
-    border-radius: 16px;
+  .navbar-bottom a, .bottom-navbar a,
+  [class*="bottom-nav"] a { color: var(--txm) !important; }
+  .navbar-bottom a.active, .bottom-navbar a.active,
+  [class*="bottom-nav"] a.active { color: var(--g) !important; }
+  .navbar-bottom svg, .bottom-navbar svg,
+  [class*="bottom-nav"] svg { stroke: currentColor !important; }
+
+  /* Page header on inner pages (mobile) */
+  .page-header, .breadcrumb-area, .inner-banner {
+    padding-top: calc(var(--bar-h) + var(--nav-h) + 12px) !important;
   }
-  .jawak-tab-label {
-    font-size: 13px;
+
+  /* Offcanvas menu (mobile nav drawer) */
+  .offcanvas { width: 85vw !important; max-width: 320px !important; }
+
+  /* General container padding */
+  .container { padding-left: 14px !important; padding-right: 14px !important; }
+
+  /* Section spacing */
+  section { margin-bottom: 0 !important; }
+}
+
+/* ── Small mobile (≤ 480px) ─────────────── */
+@media (max-width: 480px) {
+
+  /* Features: single column on very small screens */
+  .four-blocks-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
+  .four-blocks-box .single-promo {
+    flex-direction: row !important; align-items: flex-start !important;
+    text-align: right !important; gap: 14px !important;
+    padding: 16px 14px !important;
   }
-  .jawak-feature-title {
-    font-size: 22px;
+  .single-promo-icon { margin-bottom: 0 !important; flex-shrink: 0 !important; }
+
+  /* Hero text */
+  .hero.hero-area .intro-excerpt h1,
+  .hero.hero-area .intro-excerpt h2 { font-size: clamp(1.3rem, 6vw, 1.8rem) !important; }
+
+  /* Brand logos */
+  .brand-img { padding: 8px 10px !important; }
+  .brand-img img { max-height: 50px !important; }
+
+  /* Interactive tabs: 2-col still ok at 480 */
+  .jawak-tabs { grid-template-columns: 1fr 1fr !important; }
+  .jawak-tab-btn { font-size: 12px !important; padding: 8px 8px !important; min-height: 44px !important; }
+
+  /* Promo bar: tighter */
+  .jwk-item { font-size: 11.5px !important; padding: 0 10px !important; }
+}
+
+/* ── Landscape mobile (height ≤ 500px) ───── */
+@media (max-height: 500px) and (max-width: 900px) {
+  .hero.hero-area { min-height: 100vw !important; }
+  #jwk-bar { height: 30px !important; }
+  :root { --bar-h: 30px; }
+  .jwk-item { font-size: 11px !important; }
+}
+
+/* ============================================================
+   TJAR MOBILE BOTTOM NAVIGATION — Dark Gold Theme
+   Classes confirmed from real HTML: .mobile-nav, .mobile-nav-item,
+   .mobile-nav-link, .mobile-nav-icon, .mobile-nav-title, .icon-count
+   ============================================================ */
+
+/* Container */
+div.mobile-nav:not(.opacity-0) {
+  background-color: #231c06 !important;
+  border-top: 1px solid rgba(218,174,73,.28) !important;
+  box-shadow: 0 -4px 24px rgba(0,0,0,.6) !important;
+}
+
+/* Each nav item */
+div.mobile-nav:not(.opacity-0) .mobile-nav-item {
+  position: relative !important;
+  flex: 1 1 0 !important;
+}
+
+/* Link wrapper */
+div.mobile-nav:not(.opacity-0) .mobile-nav-link {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  padding: 8px 4px !important;
+  color: rgba(218,174,73,.55) !important;
+  text-decoration: none !important;
+  transition: color .2s ease !important;
+  position: relative !important;
+}
+
+/* Hover & active */
+div.mobile-nav:not(.opacity-0) .mobile-nav-link:hover,
+div.mobile-nav:not(.opacity-0) .mobile-nav-link.active,
+div.mobile-nav:not(.opacity-0) .mobile-nav-link[class*="active"],
+div.mobile-nav:not(.opacity-0) .mobile-nav-item.active .mobile-nav-link {
+  color: #daae49 !important;
+}
+
+/* Gold top-indicator bar on active */
+div.mobile-nav:not(.opacity-0) .mobile-nav-link.active::before,
+div.mobile-nav:not(.opacity-0) .mobile-nav-item.active .mobile-nav-link::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important; left: 20% !important; right: 20% !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, #b88b3c, #daae49, #f0d878) !important;
+  border-radius: 0 0 4px 4px !important;
+}
+
+/* Icons */
+div.mobile-nav:not(.opacity-0) .mobile-nav-icon {
+  font-size: 22px !important;
+  line-height: 1 !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+div.mobile-nav:not(.opacity-0) .mobile-nav-icon i {
+  font-size: 22px !important;
+  color: inherit !important;
+}
+
+/* Labels */
+div.mobile-nav:not(.opacity-0) .mobile-nav-title {
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  color: inherit !important;
+  white-space: nowrap !important;
+  font-family: 'Cairo', 'Tajawal', sans-serif !important;
+}
+
+/* Badge (cart / wishlist count) */
+div.mobile-nav:not(.opacity-0) .icon-count,
+div.mobile-nav:not(.opacity-0) [class*="icon-count"],
+div.mobile-nav:not(.opacity-0) .badge,
+div.mobile-nav:not(.opacity-0) [x-text*="cart"],
+div.mobile-nav:not(.opacity-0) [wishlistCount] {
+  position: absolute !important;
+  top: -6px !important; right: -8px !important;
+  min-width: 17px !important; height: 17px !important;
+  background: linear-gradient(135deg, #b88b3c, #daae49) !important;
+  color: #0a0700 !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  border-radius: 999px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 3px !important;
+  border: 1.5px solid #0d0a00 !important;
+  line-height: 1 !important;
+}
+
+/* Home icon center highlight pill */
+div.mobile-nav:not(.opacity-0) .mobile-nav-item:nth-child(3) .mobile-nav-link,
+div.mobile-nav:not(.opacity-0) .mobile-nav-item.center-nav .mobile-nav-link {
+  color: #daae49 !important;
+}
+div.mobile-nav:not(.opacity-0) .mobile-nav-item:nth-child(3) .mobile-nav-icon i,
+div.mobile-nav:not(.opacity-0) .mobile-nav-item.center-nav .mobile-nav-icon i {
+  font-size: 26px !important;
+  filter: drop-shadow(0 0 6px rgba(218,174,73,.45)) !important;
+}
+
+/* ============================================================
+   USER DASHBOARD — /user-home — Dark Gold Theme
+   Classes confirmed from real HTML source.
+   External CSS: user-dashboard.css (overridden here)
+   ============================================================ */
+
+/* ── Page & section wrapper ── */
+.dash_section {
+  background-color: var(--bg) !important;
+  min-height: 100vh !important;
+}
+.dash_container { background-color: transparent !important; }
+
+/* ── Main head card (cover + welcome + menu) ── */
+.dash_head {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.14) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 6px 32px rgba(0,0,0,.4) !important;
+  overflow: hidden !important;
+}
+
+/* ── Cover / banner area ── */
+.dash_user-cover {
+  background-color: var(--bg3) !important;
+  border-bottom: 1px solid rgba(218,174,73,.12) !important;
+  position: relative !important;
+}
+/* Decorative inner cover — subtle gold tint */
+.dash_inner-cover {
+  background-image: none !important;
+  background: linear-gradient(135deg,
+    rgba(184,139,60,.08) 0%,
+    rgba(218,174,73,.05) 50%,
+    rgba(10,8,0,.2) 100%) !important;
+  border-bottom: 1px solid rgba(218,174,73,.1) !important;
+}
+/* Decorative background */
+.dash_user-bg {
+  background: radial-gradient(ellipse at 60% 50%,
+    rgba(218,174,73,.06) 0%,
+    transparent 70%) !important;
+}
+/* Shadow circle decoration */
+.shadow_circle i {
+  background: rgba(218,174,73,.05) !important;
+}
+
+/* ── Profile image ring ── */
+.dash_user-img {
+  border: 3px solid rgba(218,174,73,.4) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 4px var(--bg2), 0 0 20px rgba(218,174,73,.15) !important;
+}
+.dash_user-img img {
+  border-radius: 50% !important;
+}
+
+/* ── Logout button ── */
+.dash_logout, .btn_2d.danger.dash_logout {
+  background-color: rgba(220,53,69,.1) !important;
+  border: 1px solid rgba(220,53,69,.25) !important;
+  color: #e07070 !important;
+  border-radius: 999px !important;
+}
+.dash_logout svg { fill: #e07070 !important; }
+.dash_logout:hover {
+  background-color: rgba(220,53,69,.2) !important;
+  border-color: rgba(220,53,69,.4) !important;
+}
+
+/* ── Welcome text ── */
+.dash_welcome {
+  background-color: transparent !important;
+  text-align: center !important;
+}
+.dash_welcome h2 {
+  color: var(--txt) !important;
+  font-size: clamp(1.2rem, 3vw, 1.6rem) !important;
+}
+.dash_welcome h2 .emoji { font-style: normal !important; }
+.dash_welcome span {
+  color: var(--txm) !important;
+  font-size: 14px !important;
+}
+
+/* ── Tabs menu wrapper ── */
+.dash_menu-wrap {
+  background-color: transparent !important;
+  border-top: 1px solid rgba(218,174,73,.1) !important;
+  position: relative !important;
+}
+
+/* ── Tab list (horizontal scroll) ── */
+.dash_menu-list {
+  background-color: transparent !important;
+  list-style: none !important;
+  display: flex !important;
+  gap: 4px !important;
+  padding: 8px 12px !important;
+  overflow-x: auto !important;
+  scrollbar-width: none !important;
+}
+.dash_menu-list::-webkit-scrollbar { display: none !important; }
+
+/* ── Each tab item ── */
+.dash_menu-list li {
+  flex-shrink: 0 !important;
+}
+.dash_menu-list li a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 8px 14px !important;
+  border-radius: 999px !important;
+  color: var(--txm) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+  transition: all .2s ease !important;
+  border: 1px solid transparent !important;
+}
+.dash_menu-list li a:hover {
+  color: var(--g) !important;
+  background-color: rgba(218,174,73,.08) !important;
+  border-color: rgba(218,174,73,.18) !important;
+}
+
+/* ── Active tab ── */
+.dash_menu-list li.active a,
+.dash_menu-list li a.active {
+  color: #0a0700 !important;
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border-color: transparent !important;
+  font-weight: 700 !important;
+  box-shadow: 0 3px 12px rgba(218,174,73,.25) !important;
+}
+
+/* ── Tab SVG icons ── */
+.dash_menu-list li a svg,
+.dash_menu-list li a .default_icon,
+.dash_menu-list li a .activ_icon {
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0 !important;
+}
+/* Normal tab: icon muted gold */
+.dash_menu-list li:not(.active) a svg,
+.dash_menu-list li:not(.active) a .default_icon {
+  fill: var(--txm) !important;
+  color: var(--txm) !important;
+}
+/* Active tab: icon dark (on gold bg) */
+.dash_menu-list li.active a svg,
+.dash_menu-list li.active a .activ_icon {
+  fill: #0a0700 !important;
+  color: #0a0700 !important;
+}
+/* Show/hide logic: default shows default_icon, active shows activ_icon */
+.dash_menu-list li:not(.active) .activ_icon { display: none !important; }
+.dash_menu-list li.active .default_icon { display: none !important; }
+.dash_menu-list li.active .activ_icon { display: inline-block !important; }
+
+/* ── Scroll arrows ── */
+.dash_menu-arrow {
+  background-color: rgba(218,174,73,.1) !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  border-radius: 50% !important;
+  width: 32px !important; height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+  transition: background .2s !important;
+}
+.dash_menu-arrow:hover {
+  background-color: rgba(218,174,73,.2) !important;
+}
+/* Override hardcoded fill="#1E1E1E" on SVG */
+.dash_menu-arrow svg { fill: var(--g) !important; }
+.dash_menu-arrow svg path { fill: var(--g) !important; }
+.dash_menu-arrow.disabled { opacity: .3 !important; pointer-events: none !important; }
+
+/* ── hr divider in head ── */
+.dash_head .hr_line,
+.dash_head hr {
+  border-color: rgba(218,174,73,.12) !important;
+  opacity: 1 !important;
+}
+
+/* ── Dashboard body ── */
+.dash_body {
+  background-color: transparent !important;
+}
+
+/* ── Overview cards container ── */
+.dash_overview-wrap {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+  gap: 16px !important;
+}
+
+/* ── Each stat card ── */
+.dash_overview-card {
+  background-color: var(--bg2) !important;
+  border: 1px solid rgba(218,174,73,.14) !important;
+  border-radius: 20px !important;
+  padding: 24px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,.25) !important;
+}
+.dash_overview-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(218,174,73,.35) !important;
+  box-shadow: 0 8px 28px rgba(218,174,73,.1) !important;
+  text-decoration: none !important;
+}
+
+/* ── Icon area in stat card ── */
+.dash_overview-icon {
+  width: 56px !important; height: 56px !important;
+  border-radius: 16px !important;
+  background: linear-gradient(135deg, rgba(184,139,60,.15), rgba(218,174,73,.1)) !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+/* The decorative <span> inside icon */
+.dash_overview-icon > span {
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  background: radial-gradient(circle at 30% 30%, rgba(218,174,73,.12), transparent) !important;
+}
+/* SVG icon */
+.dash_overview-icon svg {
+  width: 26px !important; height: 26px !important;
+  fill: var(--g) !important;
+  color: var(--g) !important;
+  position: relative !important;
+  z-index: 1 !important;
+  filter: drop-shadow(0 0 6px rgba(218,174,73,.3)) !important;
+}
+
+/* ── Stat number ── */
+.dash_overview-heading {
+  color: var(--g) !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+.dash_overview-heading sar,
+.dash_overview-heading sar::before {
+  font-size: .85em !important;
+  color: var(--txm) !important;
+}
+
+/* ── Stat label ── */
+.dash_overview-btn {
+  color: var(--txs) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+/* ── Other dashboard sub-pages (orders, downloads, etc.) ── */
+.dash_body .card,
+.dash_body .bg-white,
+.dash_body [class*="order-card"],
+.dash_body [class*="ticket-card"] {
+  background-color: var(--bg2) !important;
+  border-color: rgba(218,174,73,.14) !important;
+  color: var(--txt) !important;
+}
+.dash_body table {
+  background-color: transparent !important;
+}
+.dash_body thead th {
+  background-color: var(--bg3) !important;
+  color: var(--g) !important;
+  border-color: rgba(218,174,73,.14) !important;
+}
+.dash_body tbody tr {
+  border-color: rgba(218,174,73,.08) !important;
+}
+.dash_body tbody tr:hover {
+  background-color: rgba(218,174,73,.04) !important;
+}
+.dash_body td, .dash_body th {
+  color: var(--txs) !important;
+  border-color: rgba(218,174,73,.1) !important;
+}
+.dash_body .badge { font-weight: 600 !important; }
+
+/* Status badges in orders */
+.dash_body .badge-success, .dash_body .bg-success { background-color: rgba(34,197,94,.15) !important; color: #4ade80 !important; }
+.dash_body .badge-warning, .dash_body .bg-warning { background-color: rgba(218,174,73,.15) !important; color: var(--g) !important; }
+.dash_body .badge-danger,  .dash_body .bg-danger  { background-color: rgba(220,53,69,.15) !important; color: #e07070 !important; }
+.dash_body .badge-info,    .dash_body .bg-info    { background-color: rgba(99,179,237,.15) !important; color: #7ec8e3 !important; }
+
+/* Pagination */
+.dash_body .page-item .page-link {
+  background-color: var(--bg3) !important;
+  border-color: rgba(218,174,73,.15) !important;
+  color: var(--txs) !important;
+}
+.dash_body .page-item.active .page-link {
+  background: linear-gradient(135deg, var(--gx), var(--g)) !important;
+  border-color: transparent !important;
+  color: #0a0700 !important;
+}
+
+/* ── Mobile: stack cards 2-col ── */
+@media (max-width: 767px) {
+  .dash_overview-wrap {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
   }
+  .dash_overview-card { padding: 18px 12px !important; }
+  .dash_overview-heading { font-size: 1.2rem !important; }
+  .dash_overview-icon { width: 46px !important; height: 46px !important; }
+  .dash_overview-icon svg { width: 22px !important; height: 22px !important; }
 }
 	</style>
 
@@ -1252,7 +2993,7 @@ hr, [class*="divider"] {
             <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://jawaktv.com/assets/img/no-image.jpg" class="lazy " alt="No image"/>
             <div>
                 <h6>محمد القحطاني</h6>
-                <small class="text-primary"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="56373e3b37323133383763636316313b373f3a7835393b">[email&#160;protected]</a></small>
+                <small class="text-primary"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d8b9b0b5b9bcbfbdb6b9ededed98bfb5b9b1b4f6bbb7b5">[email&#160;protected]</a></small>
             </div>
         </div>
         <ul class="d-flex flex-column gap-2 py-4 text-dark">
@@ -1409,7 +3150,7 @@ hr, [class*="divider"] {
             <div class="dash_menu-wrap">
                 <span class="dash_menu-arrow dash_menu-left-arrow"><svg width="18" viewBox="0 0 18 18" fill="#1E1E1E" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M.666 9.001a8.333 8.333 0 1 1 16.667 0 8.333 8.333 0 1 1-16.667 0m9.756-1.91a.833.833 0 0 0-1.178-1.179l-2.5 2.5a.833.833 0 0 0 0 1.178l2.5 2.5a.833.833 0 0 0 1.178-1.178L8.51 9.002z"/></svg></span>
                 <ul class="dash_menu-list">
-                    <li class=" active ">
+                    <li class="">
                         <a href="https://jawaktv.com/user-home">
                             <svg class="activ_icon" viewBox="0 0 20 20" fill-rule="evenodd" xmlns="http://www.w3.org/2000/svg"><path d="M.52 5.823C0 6.77 0 7.915 0 10.203v1.522c0 3.9 0 5.851 1.172 7.063S4.229 20 8 20h4c3.771 0 5.657 0 6.828-1.212S20 15.626 20 11.725v-1.521c0-2.289 0-3.433-.52-4.381-.518-.949-1.467-1.537-3.364-2.715l-2-1.241C12.111.622 11.108 0 10 0S7.89.622 5.884 1.867l-2 1.241C1.987 4.286 1.038 4.874.519 5.823m6.927 7.575a.75.75 0 1 0-.894 1.204A5.77 5.77 0 0 0 10 15.75a5.77 5.77 0 0 0 3.447-1.148.75.75 0 1 0-.894-1.204A4.27 4.27 0 0 1 10 14.25a4.27 4.27 0 0 1-2.553-.852"/></svg>
                             <svg class="default_icon" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M8.447 14.398a.75.75 0 1 0-.894 1.204A5.77 5.77 0 0 0 11 16.75a5.77 5.77 0 0 0 3.447-1.148.75.75 0 1 0-.894-1.204A4.27 4.27 0 0 1 11 15.25a4.27 4.27 0 0 1-2.553-.852M11 .25c-.708 0-1.351.203-2.05.542-.674.328-1.454.812-2.427 1.416L4.456 3.491c-.92.572-1.659 1.03-2.227 1.465-.589.45-1.041.91-1.368 1.507C.535 7.058.39 7.692.318 8.44.25 9.167.25 10.054.25 11.167v1.613c0 1.904 0 3.407.153 4.582.156 1.205.486 2.178 1.23 2.947.747.773 1.697 1.119 2.875 1.282 1.14.159 2.598.159 4.434.159h4.116c1.836 0 3.294 0 4.434-.159 1.177-.163 2.128-.509 2.876-1.282.743-.769 1.073-1.742 1.23-2.947.152-1.175.152-2.678.152-4.582v-1.613c0-1.113 0-2-.068-2.726-.07-.75-.217-1.383-.543-1.978-.327-.597-.78-1.056-1.368-1.507-.568-.436-1.306-.893-2.227-1.465l-2.067-1.283c-.973-.604-1.753-1.088-2.428-1.416C12.352.452 11.71.25 11 .25M7.28 3.504c1.015-.63 1.73-1.072 2.327-1.363.581-.283.993-.391 1.393-.391s.812.108 1.393.391c.598.29 1.312.733 2.327 1.363l2 1.241c.961.597 1.636 1.016 2.14 1.402.489.375.77.684.963 1.036.193.353.306.766.365 1.398.061.648.062 1.465.062 2.623v1.521c0 1.97-.002 3.376-.14 4.443-.136 1.048-.393 1.656-.82 2.099-.425.439-1.003.7-2.004.839-1.026.142-2.379.144-4.286.144H9c-1.908 0-3.26-.002-4.286-.144-1.001-.14-1.579-.4-2.003-.84-.428-.442-.685-1.05-.82-2.098-.14-1.067-.141-2.472-.141-4.443v-1.521c0-1.158 0-1.975.062-2.623.059-.632.172-1.045.365-1.398.193-.352.474-.661.964-1.036.503-.386 1.178-.805 2.139-1.402z"/></svg>
@@ -1417,7 +3158,7 @@ hr, [class*="divider"] {
                         </a>
                     </li>
 
-                    <li class="">
+                    <li class=" active ">
                         <a href="https://jawaktv.com/user-home/order-list">
                             <svg class="activ_icon" viewBox="0 0 24 24" fill-rule="evenodd" xmlns="http://www.w3.org/2000/svg"><path d="m2.755 14.716.517 1.932c.604 2.255.907 3.383 1.592 4.114a4 4 0 0 0 2.01 1.16c.976.228 2.104-.074 4.36-.678 2.254-.604 3.382-.906 4.113-1.591q.091-.086.176-.176a9 9 0 0 1-1.014-.15c-.696-.138-1.523-.36-2.501-.622l-.107-.029-.025-.006c-1.064-.286-1.953-.524-2.663-.78-.747-.27-1.425-.603-2.002-1.143a5.5 5.5 0 0 1-1.596-2.765c-.18-.769-.128-1.523.012-2.304.134-.749.374-1.647.662-2.722l.535-1.994.018-.07c-1.92.517-2.931.823-3.605 1.454a4 4 0 0 0-1.161 2.012c-.228.975.074 2.103.679 4.358"/><path d="m20.83 10.715-.518 1.932c-.605 2.255-.907 3.383-1.592 4.114a4 4 0 0 1-2.01 1.161q-.145.034-.295.052c-.915.113-2.032-.186-4.064-.73-2.255-.605-3.383-.907-4.114-1.592a4 4 0 0 1-1.161-2.011c-.228-.976.074-2.103.679-4.358l.517-1.932.244-.905c.455-1.666.761-2.583 1.348-3.21a4 4 0 0 1 2.01-1.16c.976-.228 2.104.074 4.36.679 2.254.604 3.382.906 4.113 1.59a4 4 0 0 1 1.161 2.012c.228.976-.075 2.103-.679 4.358m-9.778-.91a.75.75 0 0 1 .919-.53l4.83 1.295a.75.75 0 1 1-.389 1.448l-4.83-1.294a.75.75 0 0 1-.53-.918m-.776 2.898a.75.75 0 0 1 .918-.53l2.898.777a.75.75 0 1 1-.388 1.448l-2.898-.776a.75.75 0 0 1-.53-.919"/></svg>
                             <svg class="default_icon" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><path d="m15.394 1.021.066.018c1.1.295 1.971.528 2.656.776.701.253 1.273.542 1.744.983a4.75 4.75 0 0 1 1.378 2.389c.147.628.112 1.268-.02 2.001-.127.718-.36 1.589-.655 2.688l-.536 1.999c-.294 1.099-.528 1.97-.775 2.656-.254.7-.543 1.272-.984 1.743a4.75 4.75 0 0 1-2.302 1.358 4.75 4.75 0 0 1-1.106 1.567c-.471.441-1.043.73-1.744.984-.685.248-1.556.481-2.655.776l-.067.018c-1.1.294-1.97.527-2.688.656-.734.131-1.373.166-2.002.02a4.75 4.75 0 0 1-2.388-1.38c-.44-.47-.73-1.042-.984-1.743-.247-.685-.48-1.556-.775-2.656l-.536-1.998c-.294-1.1-.528-1.97-.656-2.688-.131-.733-.166-1.373-.02-2.002a4.75 4.75 0 0 1 1.38-2.388c.47-.44 1.042-.73 1.743-.984.685-.247 1.556-.48 2.655-.775l.034-.01.751-.2c.392-1.399.736-2.388 1.408-3.105A4.75 4.75 0 0 1 10.704.345c.629-.146 1.268-.111 2.002.02.717.128 1.588.362 2.688.656M6.455 6.503c-1.093.293-1.876.505-2.478.722-.61.22-.967.424-1.227.668a3.25 3.25 0 0 0-.944 1.634c-.08.347-.079.76.036 1.397.115.647.332 1.457.637 2.597l.518 1.932c.305 1.14.523 1.95.746 2.567.22.61.424.968.668 1.228a3.25 3.25 0 0 0 1.634.944c.347.08.76.078 1.397-.036.647-.115 1.457-.332 2.597-.637 1.14-.306 1.95-.523 2.568-.747.609-.22.967-.424 1.227-.667q.207-.195.376-.419a10 10 0 0 1-.554-.095c-.672-.134-1.48-.35-2.475-.617l-.058-.015c-1.099-.295-1.97-.528-2.655-.776-.701-.253-1.273-.542-1.744-.983a4.75 4.75 0 0 1-1.379-2.389c-.146-.628-.111-1.268.02-2.001.128-.718.362-1.589.656-2.688zm5.987-4.661c-.638-.115-1.05-.117-1.397-.036a3.25 3.25 0 0 0-1.634.944c-.436.465-.705 1.185-1.171 2.893l-.243.902-.518 1.932c-.305 1.14-.522 1.95-.637 2.597-.115.637-.117 1.05-.036 1.397a3.25 3.25 0 0 0 .944 1.634c.26.244.618.447 1.227.668.618.223 1.428.44 2.568.746 1.025.275 1.785.478 2.403.6.615.123 1.033.153 1.375.111q.112-.015.216-.038a3.25 3.25 0 0 0 1.634-.944c.244-.26.448-.618.668-1.227.223-.618.44-1.428.746-2.568l.518-1.932c.305-1.14.522-1.95.637-2.597.114-.637.117-1.05.036-1.397a3.25 3.25 0 0 0-.944-1.634c-.26-.244-.618-.447-1.227-.668-.619-.223-1.428-.44-2.568-.746-1.14-.305-1.95-.522-2.597-.637"/></svg>
@@ -1468,54 +3209,121 @@ hr, [class*="divider"] {
         </div>
 
         <div class="d-flex flex-column gap-4">
-                                        <div class="dash_body dashboard">
-        <div class="dash_overview-wrap">
-            <div class="col">
-                <a href="https://jawaktv.com/user-home/order-list" class="dash_overview-card">
-                    <div class="dash_overview-icon">
-                        <span></span>
-                        <svg viewBox="0 0 32 32" fill-rule="evenodd" xmlns="http://www.w3.org/2000/svg"><path d="M20.441.882a1.25 1.25 0 0 1 1.677.559l3.669 7.337c2.255.173 3.67.616 4.583 1.745 1.501 1.857.902 4.65-.295 10.239l-.714 3.333c-.812 3.788-1.218 5.682-2.593 6.793C25.393 32 23.456 32 19.583 32h-7.165c-3.874 0-5.81 0-7.186-1.112-1.375-1.111-1.78-3.005-2.592-6.793l-.715-3.333C.728 15.174.13 12.38 1.63 10.523c.913-1.13 2.328-1.572 4.583-1.745l3.669-7.337a1.25 1.25 0 1 1 2.236 1.118L9.06 8.675q1.206-.01 2.643-.008h8.594c.96 0 1.838 0 2.643.008L19.882 2.56a1.25 1.25 0 0 1 .559-1.677M8.083 17c0-.69.56-1.25 1.25-1.25h13.334a1.25 1.25 0 0 1 0 2.5H9.333c-.69 0-1.25-.56-1.25-1.25m4.584 3.75a1.25 1.25 0 0 0 0 2.5h6.666a1.25 1.25 0 1 0 0-2.5z"/></svg>
-                    </div>
+                                        <style>
+        .order_card{
+            padding: 6px;
+            gap: 4px;
+            color: var(--sub-clr);
+            background: #EBEBEB;
+            border: 1px solid var(--br-clr);
+            border-radius: 20px;
+            margin-bottom: 16px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .order_card_heade{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px 4px;
+            padding: 6px 8px;
+        }
+        .order_card_heade .dash_stat-badge{
+            border-radius: 6px !important;
+            font-size: 12px;
+        }
+        .order_card_body,.order_card_foot{
+            background: #FFF;
+            padding: 16px;
+            border: 1px solid var(--br-clr);
+            border-radius: 16px;
+        }
+        .order_card_foot .dash_btn{
+            background:#F4F4F4;
+            padding: 8px;
+            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px -1px rgba(11, 11, 11, 0.08), 0px 2px 4px 0px rgba(11, 11, 11, 0.04);
+        }
+        @media(max-width:576px){
+            .dash_container.gap-5{gap:24px!important;}
+            .order_table{
+                background:none;
+                border: none;
+                padding: 0;
+            }
+            .dash_table-order thead, .dash_table-order tbody tr td:not(:last-child){display:none!important}
+            .dash_table-order .order_action{background:none;padding:0!important;border:none;}
+            .dash_table-order tr:last-child .order_card{margin:0;}
+        }
+    </style>
+    <div class="dash_body order_table">
+                    <div class="dash_table-wrap">
+                <table class="table dash_table-order table-borderless align-middle">
+                    <thead>
+                        <tr>
+                            <th>رقم الطلب</th>
+                            <th>التاريخ</th>
+                            <th>حالة الطلب</th>
+                            <th>حالة الدفع</th>
+                            <th>المبلغ</th>
+                            <th class="nowrap"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                                    <tr>
+                                <td class="order-numb">260001</td>
+                                <td class="date">13 May, 2026</td>
+                                <td class="order_stat">
+                                    <span class="dash_stat-badge stat-pending rounded-pill">قيد الانتظار</span>
+                                </td>
+                                <td class="payment_stat">
+                                    <span class="dash_stat-badge stat-Pending rounded-pill">قيد الانتظار</span>
+                                </td>
+                                <td class="order_amount">119.00 <sar></sar></td>
+                                <td class="order_action">
+                                    <a href="https://jawaktv.com/user-home/order-list/1" class="dash_btn dash_table-btn d-none d-sm-inline-flex">
+                                        <i class="view_eye"></i> عرض
+                                    </a>
 
-                    <h3 class="dash_overview-heading"> 0 </h3>
-                    <span class="dash_overview-btn">إجمالي الطلبات</span>
-                </a>
-            </div>
-            <div class="col">
-                <a href="https://jawaktv.com/user-home/order-list" class="dash_overview-card">
-                    <div class="dash_overview-icon">
-                        <span></span>
-                        <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.667 33.417c-3.043 0-5.775-.602-7.804-1.55a1.25 1.25 0 0 0-1.058 2.266c2.412 1.126 5.514 1.784 8.862 1.784s6.45-.658 8.862-1.784c2.03-.948 4.762-1.55 7.805-1.55 3.042 0 5.774.602 7.804 1.55a1.25 1.25 0 1 0 1.058-2.266c-2.412-1.126-5.515-1.784-8.862-1.784s-6.45.658-8.863 1.785c-2.03.948-4.761 1.549-7.804 1.549M26.334.083c-3.348 0-6.45.658-8.863 1.784-2.03.948-4.761 1.55-7.804 1.55a21.2 21.2 0 0 1-4.721-.515C2.736 2.396.083 3.912.083 6.523v18.129c0 1.15-.002 2.08.445 3.019.267.56.808 1.24 1.295 1.625.813.643 1.556.813 2.467 1.021l.098.022a23.8 23.8 0 0 0 5.279.578c3.347 0 6.45-.658 8.862-1.785 2.03-.948 4.762-1.549 7.805-1.549 1.686 0 3.283.185 4.72.514 2.211.507 4.863-1.008 4.863-3.62V6.347c.001-1.15.002-2.08-.445-3.018a5.2 5.2 0 0 0-1.294-1.625C33.364 1.061 32.62.891 31.71.683L31.613.66a23.8 23.8 0 0 0-5.28-.577m-17.5 17.084a1.667 1.667 0 1 0-3.334 0v.015a1.667 1.667 0 1 0 3.333 0zm20-5.013c.92 0 1.666.746 1.666 1.666v.015a1.667 1.667 0 0 1-3.333 0v-.015c0-.92.746-1.666 1.666-1.666M18 20.5a5 5 0 1 0 0-10 5 5 0 0 0 0 10"/></svg>
-                    </div>
+                                    <div class="order_card d-flex flex-column d-sm-none">
+                                        <div class="order_card_heade">
+                                            <span>13 May, 2026</span>
+                                            <div class="d-flex flex-wrap gap-1">
+                                                <span class="dash_stat-badge d-flex gap-1 stat-Pending rounded-pill">
+                                                    <svg width="1em" viewBox="0 0 22 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M12.548.25c1.839 0 3.283 0 4.421.129 1.163.131 2.105.405 2.888 1.023q.353.279.65.612c.666.747.964 1.653 1.105 2.764.017.128.025.192.01.248a.3.3 0 0 1-.178.202c-.054.022-.121.022-.256.022H.812c-.135 0-.202 0-.256-.022a.3.3 0 0 1-.178-.202c-.015-.056-.007-.12.01-.248.141-1.111.439-2.017 1.105-2.764q.297-.333.65-.612C2.926.784 3.868.51 5.03.38 6.169.25 7.613.25 9.452.25zm9.202 8.803c0 1.724 0 3.09-.138 4.17-.141 1.11-.439 2.016-1.105 2.763a5 5 0 0 1-.65.612c-.783.619-1.725.892-2.888 1.024-1.138.128-2.582.128-4.422.128H9.452c-1.839 0-3.283 0-4.421-.128-1.163-.132-2.105-.405-2.888-1.024a5 5 0 0 1-.65-.612C.827 15.24.529 14.333.388 13.222.25 12.142.25 10.777.25 9.052v-.105q-.001-.862.005-1.61c.003-.275.004-.413.092-.5s.227-.087.504-.087H21.15c.277 0 .416 0 .504.087s.09.225.092.5q.006.748.005 1.61zM9.25 13a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75m5.25-.75a.75.75 0 0 0 0 1.5H18a.75.75 0 0 0 0-1.5z"/></svg>
+                                                    قيد الانتظار
+                                                </span>
+                                                <span class="dash_stat-badge d-flex gap-1 stat-pending rounded-pill">
+                                                    <svg width="1em" viewBox="0 0 20 19" fill="currentColor" fill-rule="evenodd" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M12.665.33a.75.75 0 0 1 1.006.335l2.201 4.402c1.353.104 2.202.37 2.75 1.047.9 1.114.541 2.79-.177 6.143l-.429 2c-.487 2.273-.73 3.409-1.555 4.076S14.474 19 12.15 19h-4.3c-2.324 0-3.486 0-4.31-.667-.826-.667-1.07-1.803-1.556-4.076l-.429-2C.837 8.904.477 7.227 1.378 6.114c.548-.678 1.397-.943 2.75-1.047L6.329.665a.75.75 0 1 1 1.342.67l-1.835 3.67Q6.559 5 7.422 5h5.156q.863-.001 1.586.005l-1.835-3.67A.75.75 0 0 1 12.665.33M5.25 10A.75.75 0 0 1 6 9.25h8a.75.75 0 0 1 0 1.5H6a.75.75 0 0 1-.75-.75M8 12.25a.75.75 0 0 0 0 1.5h4a.75.75 0 0 0 0-1.5z"></path>
+                                                    </svg>
+                                                    قيد الانتظار
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="order_card_body flex-stack gap-2">
+                                            <div>
+                                                رقم الطلب <br>
+                                                <strong style="color:var(--main-clr);font-size:16px;">#260001</strong>
+                                            </div>
 
-                    <h3 class="dash_overview-heading"> 0.00 <sar></sar> </h3>
-                    <span class="dash_overview-btn">المشتريات الإجمالية</span>
-                </a>
+                                            <span style="font-size:16px;">119.00 <sar></sar></span>
+                                        </div>
+                                        <div class="order_card_foot">
+                                            <a href="https://jawaktv.com/user-home/order-list/1" class="dash_btn dash_table-btn w-100">
+                                                <i class="view_eye"></i> عرض
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                                            </tbody>
+                </table>
             </div>
-            <div class="col">
-                <a href="https://jawaktv.com/request-refund/product" class="dash_overview-card">
-                    <div class="dash_overview-icon">
-                        <span></span>
-                        <svg viewBox="0 0 36 40" xmlns="http://www.w3.org/2000/svg"><path d="M22.385.61a1.625 1.625 0 0 1 2.202.67l.973 1.823.04.074c.294.552.576 1.081.747 1.506.089.221.2.535.231.886.035.376-.01.948-.43 1.457-.437.532-1.017.668-1.373.7a3.4 3.4 0 0 1-.913-.065c-.467-.089-1.07-.269-1.718-.462l-.079-.023A14.2 14.2 0 0 0 18 6.587C10.316 6.587 4.17 12.638 4.17 20c0 2.436.669 4.718 1.839 6.687.46.774.207 1.776-.564 2.237a1.624 1.624 0 0 1-2.231-.566A16.3 16.3 0 0 1 .917 20C.917 10.744 8.612 3.323 18 3.323q1.378.002 2.698.207l.872-1.863c.192-.44.389-.828.815-1.057m8.171 10.466a1.624 1.624 0 0 1 2.23.566A16.3 16.3 0 0 1 35.083 20c0 9.256-7.694 16.677-17.083 16.677q-1.274 0-2.5-.178l-1.07 1.834c-.175.388-.389.829-.815 1.057a1.624 1.624 0 0 1-2.202-.669l-1.012-1.898c-.295-.552-.577-1.081-.748-1.506a3.2 3.2 0 0 1-.231-.885c-.035-.377.01-.95.43-1.458.437-.532 1.018-.668 1.373-.7.344-.03.672.019.913.065.467.09 1.07.269 1.719.462l.078.023c1.283.383 2.648.589 4.065.589 7.684 0 13.83-6.051 13.83-13.413 0-2.436-.669-4.718-1.839-6.687a1.635 1.635 0 0 1 .565-2.237"/></svg>
-                    </div>
-
-                    <h3 class="dash_overview-heading"> 0 </h3>
-                    <span class="dash_overview-btn">استرداد المنتج</span>
-                </a>
+            <div class="dash_table-pagination">
+                
             </div>
-            <div class="col">
-                <a href="https://jawaktv.com/user-home/support-tickets" class="dash_overview-card">
-                    <div class="dash_overview-icon">
-                        <span></span>
-                        <svg viewBox="0 0 34 28" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.66.667h6.68c6.296 0 9.445 0 11.401 1.952 1.465 1.462 1.833 3.59 1.925 7.205.012.464-.368.834-.817.951A3.336 3.336 0 0 0 30.358 14a3.336 3.336 0 0 0 2.49 3.225c.45.117.83.488.818.951-.092 3.615-.46 5.743-1.925 7.205-1.956 1.952-5.105 1.952-11.402 1.952H13.66c-6.297 0-9.445 0-11.401-1.952C.794 23.919.426 21.79.334 18.176c-.012-.463.368-.834.817-.951A3.336 3.336 0 0 0 3.641 14a3.336 3.336 0 0 0-2.49-3.225c-.45-.117-.83-.487-.817-.95.092-3.615.46-5.744 1.925-7.206C4.215.667 7.363.667 13.66.667m4.93 10.331-.164-.294C17.792 9.568 17.474 9 17 9s-.792.568-1.426 1.704l-.164.294c-.18.323-.27.485-.411.591s-.316.146-.666.225l-.319.072c-1.232.278-1.848.418-1.995.888-.146.47.274.96 1.114 1.941l.217.254c.239.278.358.418.412.59s.035.358 0 .73l-.033.338c-.127 1.308-.19 1.962.193 2.253.383.29.96.026 2.114-.504l.298-.138c.328-.15.492-.226.666-.226s.338.076.665.226l.299.138c1.154.53 1.73.795 2.114.504.384-.29.32-.945.193-2.253l-.033-.338c-.036-.372-.054-.558 0-.73s.173-.312.412-.59l.217-.254c.84-.98 1.26-1.47 1.113-1.941-.146-.47-.762-.61-1.994-.888l-.32-.072c-.35-.079-.524-.119-.665-.225-.14-.107-.23-.268-.41-.59"/></svg>
-                    </div>
-
-                    <h3 class="dash_overview-heading"> 0 </h3>
-                    <span class="dash_overview-btn">تذاكر الدعم</span>
-                </a>
             </div>
-        </div>
-    </div>
         </div>
     </div>
 </div>
@@ -1673,9 +3481,9 @@ hr, [class*="divider"] {
                                             <div class="footer-widget-3 col-lg-3 col-sm-6">
                             <h5 class="footer-title">اتصل بنا</h5>
                             <div class="contact-menu d-flex flex-column gap-lg-3 gap-2">
-                                                                    <a class="contact-links" href="/cdn-cgi/l/email-protection#2b414a5c4a405f5d584a6b4c464a424705484446">
+                                                                    <a class="contact-links" href="/cdn-cgi/l/email-protection#3a505b4d5b514e4c495b7a5d575b535614595557">
                                         <i class="bi bi-envelope-at rsf-18"></i>
-                                        <span class="__cf_email__" data-cfemail="f69c9781979d82808597b6919b979f9ad895999b">[email&#160;protected]</span>
+                                        <span class="__cf_email__" data-cfemail="82e8e3f5e3e9f6f4f1e3c2e5efe3ebeeace1edef">[email&#160;protected]</span>
                                     </a>
                                                                                                     <a class="contact-links"
                                         href="tel:+966533884393">
@@ -1846,398 +3654,588 @@ hr, [class*="divider"] {
 
 <script src="https://jawaktv.com/assets/tenant/frontend/js/digital-shop-common.js"></script>
 <script>
-    /* =========================================================
-   JAWAK TV — منصة تجار — CUSTOM SCRIPTS
-   1) Dark Mode Force
-   2) شريط متحرك (Ticker)
-   3) فيديو Hero
-   4) قسم "كل ما تحتاجه في اشتراك واحد" في about-box
-========================================================= */
+    /* =====================================================
+   JAWAK TV — TJAR PLATFORM REDESIGN
+   jawaktv-tjar.js  |  v3.0  |  2026
+   ===================================================== */
 
-/* =========================================================
-   1) DARK MODE — تطبيق الخلفية الداكنة فوراً
-========================================================= */
 (function () {
-  "use strict";
-  var style = document.createElement("style");
-  style.textContent =
-    "html,body{background-color:#1a1815!important;color:#f0ead8!important}" +
-    "*{color-scheme:dark}";
-  document.head.appendChild(style);
-})();
+  'use strict';
 
-/* =========================================================
-   2) PROMO BAR TICKER — شريط متحرك
-========================================================= */
-(function () {
-  "use strict";
+  /* Prevent white flash */
+  document.documentElement.style.backgroundColor = '#1a1815';
 
-  if (window.__JWK_BAR_LOADED__) return;
-  window.__JWK_BAR_LOADED__ = true;
+  /* ── CONFIG ──────────────────────────────────────── */
+  var HERO_VIDEO  = 'https://green-camel-228650.hostingersite.com/wp-content/uploads/2026/05/0227-copy.mp4';
+  var ABOUT_VIDEO = 'https://green-camel-228650.hostingersite.com/wp-content/uploads/2026/04/0203-copy-1-copy-copy-11.mp4';
+  var IS_MOBILE   = window.innerWidth <= 767;
+  var BAR_H       = IS_MOBILE ? 36 : 42; /* sync with CSS --bar-h */
+  var NAV_H       = IS_MOBILE ? 56 : 65;
+  /* Tjar's bottom navigation bar height on mobile */
+  var BOTTOM_NAV_H = 64;
 
-  var MESSAGES = [
-    "أكثر من 150,000 فيلم ومسلسل — كل شيء في اشتراك واحد",
-    "جودة 4K و8K بثبات تام — شاهد بلا تقطيع",
-    "مونديال 2026 — عيشه بأعلى جودة مع Jawak TV",
-    "يعمل على جميع أجهزتك — تلفاز، جوال، Apple TV",
-    "تفعيل فوري خلال دقيقة — دعم فني على مدار الساعة",
-    "عروض حصرية على الاشتراكات السنوية — لا تفوّتها",
-    "أكثر من 20,000 قناة عالمية — رياضة، أفلام، أنمي",
-    "وداعاً للتقطيع — أهلاً بالثبات الذي تستحقه",
-    "اشتراك واحد يكفي العائلة كلها — أجهزة غير محدودة",
-    "صورة نقية وصوت احترافي — تجربة المشاهدة الحقيقية",
-    "تحميل فوري بلا تأخير — لأن وقتك أغلى من الانتظار",
-    "محتوى حصري لا تجده في أي منصة أخرى",
-    "الخيار الأول لمحبي الرياضة في الوطن العربي",
-    "الدوريات الأوروبية والعالمية والعربية — كلها في مكان واحد",
-    "أفلام، مسلسلات، رياضة — منصة واحدة للجميع"
+  /* ================================================================
+     1. PROMO BAR — seamless marquee, fixed at z:100000
+     ================================================================ */
+  function buildPromoBar() {
+    if (document.getElementById('jwk-bar')) return;
+
+    var messages = [
+      '🔴 بث مباشر الآن · مباريات اليوم على جواك تي في',
+      '🎬 آلاف الأفلام والمسلسلات · بجودة 4K',
+      '📺 أكثر من 5000 قناة عربية وعالمية',
+      '⚡ اشتراك فوري · تفعيل لحظي · دعم 24 ساعة',
+      '🏆 دوري أبطال أوروبا · الدوري السعودي · يورو · فورمولا 1',
+      '🎮 بدون تقطع · بدون إعلانات · بدون تأخير'
+    ];
+
+    var bar   = document.createElement('div');
+    bar.id    = 'jwk-bar';
+
+    var mask  = document.createElement('div');
+    mask.id   = 'jwk-mask';
+
+    var track = document.createElement('div');
+    track.id  = 'jwk-track';
+
+    /* Build one set of messages as a DocumentFragment */
+    function buildSet() {
+      var frag = document.createDocumentFragment();
+      messages.forEach(function (msg) {
+        var item = document.createElement('span');
+        item.className   = 'jwk-item';
+        item.textContent = msg;
+        frag.appendChild(item);
+
+        var sep = document.createElement('span');
+        sep.className   = 'jwk-sep';
+        sep.textContent = '⬥';
+        frag.appendChild(sep);
+      });
+      return frag;
+    }
+
+    /* 3 copies for a seamless infinite loop */
+    track.appendChild(buildSet());
+    track.appendChild(buildSet());
+    track.appendChild(buildSet());
+
+    mask.appendChild(track);
+
+    /* Close button */
+    var closeBtn = document.createElement('button');
+    closeBtn.id  = 'jwk-close';
+    closeBtn.setAttribute('aria-label', 'إغلاق الشريط');
+    closeBtn.innerHTML = '&#10005;';
+
+    closeBtn.addEventListener('click', function () {
+      cancelAnimationFrame(rafId);
+      bar.style.transition = 'height .28s ease, opacity .28s ease';
+      bar.style.overflow   = 'hidden';
+      bar.style.opacity    = '0';
+      bar.style.height     = '0';
+
+      setTimeout(function () {
+        if (bar.parentNode) bar.parentNode.removeChild(bar);
+        document.body.classList.add('jwk-bar-closed');
+
+        /* Move navbar to top now that bar is gone */
+        var nav = document.querySelector('nav.navbar.navbar3, .custom-navbar, .navbar.navbar3');
+        if (nav) nav.style.setProperty('top', '0px', 'important');
+      }, 300);
+    });
+
+    bar.appendChild(mask);
+    bar.appendChild(closeBtn);
+
+    /* Insert as very first element in body */
+    document.body.insertBefore(bar, document.body.firstChild);
+
+    /* ── Seamless RAF marquee ──
+       We track offset in pixels. When offset >= 1/3 of total track width,
+       reset to 0 — visually seamless because all 3 copies are identical. */
+    var offset  = 0;
+    var speed   = 0.55;
+    var paused  = false;
+    var rafId;
+    var oneSetW = 0;
+
+    mask.addEventListener('mouseenter', function () { paused = true; });
+    mask.addEventListener('mouseleave', function () { paused = false; });
+
+    function animate() {
+      if (!paused) {
+        offset += speed;
+        /* oneSetW is measured after first paint */
+        if (oneSetW > 0 && offset >= oneSetW) {
+          offset = 0; /* seamless reset */
+        }
+        track.style.transform = 'translate3d(-' + offset + 'px,0,0)';
+      }
+      rafId = requestAnimationFrame(animate);
+    }
+
+    /* Measure + start after DOM paints */
+    setTimeout(function () {
+      oneSetW = track.scrollWidth / 3;
+      animate();
+    }, 120);
+  }
+
+  /* ================================================================
+     2. NAVBAR — transparent base, glass on scroll
+     ================================================================ */
+  function initNavScroll() {
+    var nav = document.querySelector('nav.navbar.navbar3, .custom-navbar, .navbar.navbar3');
+    if (!nav) return;
+
+    function update() {
+      if (window.scrollY > 8) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+  }
+
+  /* ================================================================
+     3. HERO — full-screen background video
+        Selector: .hero.hero-area (from actual Tjar HTML)
+     ================================================================ */
+  function addVideoToSlide() {
+    var hero = document.querySelector('.hero.hero-area')
+            || document.querySelector('.hero-area');
+    if (!hero) return;
+    if (hero.querySelector('.jwk-hero-video')) return;
+
+    /* Kill static background */
+    hero.style.setProperty('background-image', 'none', 'important');
+    hero.style.setProperty('background-color', '#000', 'important');
+
+    /* Video element */
+    var video = document.createElement('video');
+    video.className   = 'jwk-hero-video';
+    video.autoplay    = true;
+    video.muted       = true;
+    video.loop        = true;
+    video.playsInline = true;
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    video.setAttribute('preload', 'auto');
+
+    var src  = document.createElement('source');
+    src.src  = HERO_VIDEO;
+    src.type = 'video/mp4';
+    video.appendChild(src);
+
+    /* Overlay */
+    var overlay = document.createElement('div');
+    overlay.className = 'jwk-hero-overlay';
+
+    /* Prepend both before existing hero content */
+    hero.insertBefore(overlay, hero.firstChild);
+    hero.insertBefore(video,   hero.firstChild);
+
+    video.play().catch(function () {});
+
+    /* Hide Tjar's static hero image wrapper */
+    var imgWrap = hero.querySelector('.hero-img-wrap');
+    if (imgWrap) imgWrap.style.setProperty('display', 'none', 'important');
+  }
+
+  /* ================================================================
+     4. INTERACTIVE FEATURES BLOCK
+        Replaces .about-box (hidden) by appending to .about-area
+        Selector: .about-area, .about-box (from actual HTML)
+     ================================================================ */
+  var FEATURES = [
+    {
+      key:   'movies',
+      label: 'أفلام',
+      title: 'مكتبة أفلام ضخمة',
+      desc:  'أكثر من 150,000 فيلم بجودة HD و4K، من أحدث الإصدارات إلى كلاسيكيات السينما العالمية — كل ما تريد مشاهدته في مكان واحد.',
+      icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M10 9l6 3-6 3V9z"/></svg>'
+    },
+    {
+      key:   'series',
+      label: 'مسلسلات',
+      title: 'آلاف المسلسلات بلا انقطاع',
+      desc:  'تابع أشهر المسلسلات العربية والعالمية والتركية بمحتوى متجدد يومياً، مع دعم التشغيل المستمر بين الحلقات.',
+      icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7l-9.5 5.5L3 7"/><rect x="2" y="3" width="20" height="14" rx="2"/></svg>'
+    },
+    {
+      key:   'sports',
+      label: 'رياضة',
+      title: 'تغطية رياضية مباشرة',
+      desc:  'شاهد مباريات كرة القدم والدوريات العالمية بجودة عالية واستقرار ممتاز وقت الذروة — دون تقطع أو تأخير.',
+      icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>'
+    },
+    {
+      key:   'anime',
+      label: 'أنمي',
+      title: 'عالم الأنمي بلا حدود',
+      desc:  'استمتع بمئات المسلسلات والأفلام الأنمي مدبلجة ومترجمة، من كلاسيكيات الثمانينات حتى أحدث إصدارات الموسم.',
+      icon:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/></svg>'
+    }
   ];
 
-  var SEPARATOR = "◆";
-  var SPEED = 0.6;
+  function buildInteractiveFeaturesSection() {
+    var area = document.querySelector('.about-area');
+    if (!area) return;
+    if (area.querySelector('.jawak-interactive-block')) return;
 
-  function injectBarStyles() {
-    if (document.getElementById("jwkBarStyles")) return;
-    var style = document.createElement("style");
-    style.id = "jwkBarStyles";
-    style.textContent = [
-      "#jwkBar {",
-      "  position:relative; display:flex; align-items:center;",
-      "  width:100%; height:42px; overflow:hidden;",
-      "  background:linear-gradient(135deg,#0e0901 0%,#1a1000 35%,#221400 65%,#0e0901 100%);",
-      "  border-bottom:1px solid rgba(218,174,73,.22);",
-      "  box-shadow:0 2px 12px rgba(0,0,0,.55),inset 0 1px 0 rgba(218,174,73,.08);",
-      "  z-index:99999; box-sizing:border-box; direction:ltr;",
-      "}",
-      "#jwkBar::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;",
-      "  background:linear-gradient(90deg,transparent,rgba(218,174,73,.55) 50%,transparent);pointer-events:none;}",
-      "#jwkMask{flex:1 1 auto;height:100%;overflow:hidden;position:relative;direction:ltr;",
-      "  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 3.5%,#000 96.5%,transparent 100%);",
-      "          mask-image:linear-gradient(90deg,transparent 0%,#000 3.5%,#000 96.5%,transparent 100%);}",
-      "#jwkTrack{display:inline-flex;flex-wrap:nowrap;width:max-content;height:100%;align-items:center;",
-      "  white-space:nowrap;will-change:transform;transform:translate3d(0,0,0);direction:ltr;}",
-      ".jwk-item{display:inline-flex;align-items:center;height:100%;padding:0 28px;color:#e8dfc0;",
-      "  font-family:'IBM Plex Sans Arabic','Tajawal','Cairo',Arial,sans-serif;",
-      "  font-size:13.5px;font-weight:500;letter-spacing:.01em;white-space:nowrap;direction:rtl;",
-      "  flex:0 0 auto;text-shadow:0 1px 6px rgba(0,0,0,.6);transition:color .2s;cursor:default;}",
-      ".jwk-item:hover{color:#f5e9aa;}",
-      ".jwk-sep{display:inline-flex;align-items:center;height:100%;padding:0 4px;",
-      "  color:rgba(218,174,73,.6);font-size:8px;white-space:nowrap;flex:0 0 auto;}",
-      "#jwkX{flex:0 0 auto;width:34px;height:100%;display:flex;align-items:center;",
-      "  justify-content:center;background:transparent;border:none;cursor:pointer;",
-      "  padding:0;margin:0;opacity:.55;transition:opacity .2s,color .2s;color:#c9a84c;}",
-      "#jwkX:hover{opacity:1;color:#f0d080;}",
-      "@media(max-width:767px){#jwkBar{height:38px;}.jwk-item{font-size:12.5px;padding:0 18px;}}"
-    ].join("\n");
-    document.head.appendChild(style);
-  }
+    /* Hide the original about-box */
+    var box = area.querySelector('.about-box');
+    if (box) box.style.setProperty('display', 'none', 'important');
 
-  function buildOneCopy() {
-    var html = "";
-    for (var i = 0; i < MESSAGES.length; i++) {
-      html += '<span class="jwk-item">' + MESSAGES[i] + "</span>";
-      html += '<span class="jwk-sep">' + SEPARATOR + "</span>";
-    }
-    return html;
-  }
-
-  function buildBar() {
-    if (document.getElementById("jwkBar")) return;
-
-    var bar      = document.createElement("div"); bar.id = "jwkBar";
-    var closeBtn = document.createElement("button");
-    closeBtn.id  = "jwkX"; closeBtn.type = "button";
-    closeBtn.setAttribute("aria-label", "إغلاق الشريط");
-    closeBtn.innerHTML =
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"' +
-      ' stroke-width="2.5" stroke-linecap="round" width="11" height="11">' +
-      '<line x1="18" y1="6" x2="6" y2="18"/>' +
-      '<line x1="6" y1="6" x2="18" y2="18"/></svg>';
-
-    var mask  = document.createElement("div"); mask.id  = "jwkMask";
-    var track = document.createElement("div"); track.id = "jwkTrack";
-    mask.appendChild(track);
-    bar.appendChild(closeBtn);
-    bar.appendChild(mask);
-
-    /* Insert before header or body */
-    var inserted = false;
-    var anchors  = [".xc-header","header","#header","body > div:first-child"];
-    for (var a = 0; a < anchors.length; a++) {
-      var el = document.querySelector(anchors[a]);
-      if (el) { el.insertBefore(bar, el.firstChild); inserted = true; break; }
-    }
-    if (!inserted) document.body.insertBefore(bar, document.body.firstChild);
-
-    var pos = 0, paused = false, raf = null, singleW = 0;
-    var oneCopy = buildOneCopy();
-
-    function fillTrack() {
-      track.innerHTML = oneCopy;
-      singleW = track.scrollWidth;
-      if (singleW === 0) return false;
-      var vw     = mask.clientWidth || window.innerWidth;
-      var copies = Math.max(3, Math.ceil(vw / singleW) + 2);
-      var html   = "";
-      for (var c = 0; c < copies; c++) html += oneCopy;
-      track.innerHTML = html;
-      return true;
-    }
-
-    function tick() {
-      if (!paused && singleW > 0) {
-        pos -= SPEED;
-        if (pos <= -singleW) pos += singleW;
-        track.style.transform = "translate3d(" + pos + "px,0,0)";
-      }
-      raf = requestAnimationFrame(tick);
-    }
-
-    function startWhenReady() {
-      if (!fillTrack()) { setTimeout(startWhenReady, 50); return; }
-      raf = requestAnimationFrame(tick);
-    }
-
-    bar.addEventListener("mouseenter", function () { paused = true;  });
-    bar.addEventListener("mouseleave", function () { paused = false; });
-
-    closeBtn.addEventListener("click", function () {
-      if (raf) cancelAnimationFrame(raf);
-      bar.style.transition = "height .25s ease, opacity .25s ease";
-      bar.style.height = "0"; bar.style.opacity = "0";
-      setTimeout(function () { if (bar.parentNode) bar.parentNode.removeChild(bar); }, 280);
-    });
-
-    var resizeTimer = null;
-    window.addEventListener("resize", function () {
-      if (resizeTimer) clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function () {
-        var old = singleW;
-        if (fillTrack() && old > 0) {
-          pos = pos % singleW;
-          if (pos > 0) pos -= singleW;
-        }
-      }, 150);
-    });
-
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(function () {
-        var old = singleW;
-        if (fillTrack() && old > 0) {
-          pos = pos % singleW;
-          if (pos > 0) pos -= singleW;
-        }
-      });
-    }
-
-    startWhenReady();
-  }
-
-  function initBar() { injectBarStyles(); buildBar(); }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initBar);
-  } else {
-    initBar();
-  }
-})();
-
-/* =========================================================
-   3 & 4) MAIN INIT — Hero Video + About Box Interactive Block
-========================================================= */
-document.addEventListener("DOMContentLoaded", function () {
-  "use strict";
-
-  /* -----------------------------------------------------------
-     3) HERO VIDEO
-     يبحث عن أول slider/hero في منصة تجار ويضيف الفيديو كخلفية
-  ----------------------------------------------------------- */
-  function addHeroVideo() {
-    /* محاولة إيجاد الـ hero/slider بأكثر من selector */
-    var heroSelectors = [
-      ".xc-main-slider",
-      "[class*='main-slider']",
-      ".xc-hero",
-      "[class*='hero-slider']",
-      "[class*='slider-section'] > div:first-child",
-      ".xc-section-slider"
-    ];
-
-    var hero = null;
-    for (var i = 0; i < heroSelectors.length; i++) {
-      hero = document.querySelector(heroSelectors[i]);
-      if (hero) break;
-    }
-
-    if (!hero) return;
-    if (hero.querySelector(".jawak-hero-video-bg")) return;
-
-    /* إزالة الخلفيات الموجودة */
-    hero.style.setProperty("background-image", "none", "important");
-    hero.style.setProperty("background", "none", "important");
-    hero.style.position = "relative";
-    hero.style.overflow = "hidden";
-
-    var video = document.createElement("video");
-    video.className = "jawak-hero-video-bg";
-    video.autoplay  = true;
-    video.muted     = true;
-    video.loop      = true;
-    video.playsInline = true;
-    video.setAttribute("autoplay", "");
-    video.setAttribute("muted", "");
-    video.setAttribute("loop", "");
-    video.setAttribute("playsinline", "");
-    video.setAttribute("preload", "auto");
-
-    /* نفس فيديو jawaktv.com */
-    var source = document.createElement("source");
-    source.src  = "https://green-camel-228650.hostingersite.com/wp-content/uploads/2026/05/0227-copy5.mp4";
-    source.type = "video/mp4";
-
-    video.appendChild(source);
-    hero.insertBefore(video, hero.firstChild);
-
-    /* Overlay gradient */
-    var overlay = document.createElement("div");
-    overlay.style.cssText =
-      "position:absolute;inset:0;" +
-      "background:linear-gradient(to bottom,rgba(0,0,0,.72) 0%,rgba(0,0,0,.38) 24%,rgba(0,0,0,.18) 52%,rgba(0,0,0,.34) 100%);" +
-      "z-index:1;pointer-events:none;";
-    hero.appendChild(overlay);
-
-    /* Make sure content is above video */
-    hero.querySelectorAll(":scope > *:not(.jawak-hero-video-bg):not(div[style*='z-index:1'])").forEach(function(el){
-      if (el !== overlay) el.style.position = "relative", el.style.zIndex = "2";
-    });
-  }
-
-  /* -----------------------------------------------------------
-     4) ABOUT BOX → "كل ما تحتاجه في اشتراك واحد"
-     يستبدل محتوى about-box بالـ interactive block
-  ----------------------------------------------------------- */
-  function buildInteractiveBlock() {
-    var aboutBox = document.querySelector(".xc-about-section, [class*='about-area'], [class*='about-section']");
-    if (!aboutBox) return;
-    if (aboutBox.querySelector(".jawak-interactive-block")) return;
-
-    var features = [
-      {
-        key: "sports",
-        label: "الرياضة",
-        title: "الرياضة بدون حدود",
-        desc: "جميع الدوريات والبطولات العالمية بجودة 4K — الدوري الإنجليزي، الإسباني، الفرنسي، دوري أبطال أوروبا، وكأس العالم 2026 مباشرة.",
-        icon: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 2C8 5 8 10 12 12s8 7 4 10M12 2c4 3 4 8 0 10s-8 7-4 10M2 9h20M2 15h20" stroke="currentColor" stroke-width="1.8"/></svg>'
-      },
-      {
-        key: "movies",
-        label: "الأفلام",
-        title: "أكثر من 150,000 فيلم",
-        desc: "أكثر من 150,000 فيلم بجودة HD و4K، من أحدث الإصدارات إلى كلاسيكيات السينما العالمية — كل ما تريد مشاهدته في مكان واحد.",
-        icon: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2.18" stroke="currentColor" stroke-width="1.8"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M17 7h5M2 17h5M17 17h5" stroke="currentColor" stroke-width="1.8"/></svg>'
-      },
-      {
-        key: "series",
-        label: "المسلسلات",
-        title: "مسلسلات بلا حدود",
-        desc: "آلاف المسلسلات العربية والأجنبية والتركية والكورية، مع تحديث يومي لأحدث الحلقات — ابدأ مشاهدتك الآن.",
-        icon: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
-      },
-      {
-        key: "channels",
-        label: "القنوات",
-        title: "20,000+ قناة مباشرة",
-        desc: "أكثر من 20,000 قناة عالمية وعربية وإخبارية ورياضية بث مباشر — لا فواصل، لا تأخير، صورة نقية.",
-        icon: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-      },
-      {
-        key: "quality",
-        label: "الجودة",
-        title: "8K وثبات تام",
-        desc: "تقنية بث متطورة تضمن جودة حتى 8K بدون تقطيع — حتى في أوقات الذروة. تجربة المشاهدة الحقيقية التي تستحقها.",
-        icon: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>'
-      },
-      {
-        key: "anime",
-        label: "أنمي",
-        title: "عالم الأنمي بلا حدود",
-        desc: "استمتع بمئات المسلسلات والأفلام الأنمي من كلاسيكيات الثمانينات حتى أحدث إصدارات الموسم الجاري، مدبلجة ومترجمة.",
-        icon: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2c-1 2.5-.5 4.5 1 6-2-.5-3.5-2-4-4C7 6 6 9 7 11.5 5.5 11 4.5 9.5 4 8c-.5 2.5.5 5 2.5 6.5C5 16 4.5 18 5 19.5 6.5 22 9.5 22 12 22s5.5 0 7-2.5c.5-1.5 0-3.5-1.5-5C19.5 13 20.5 10.5 20 8c-.5 1.5-1.5 3-3 3.5C18 9 18 6 16 4c-.5 2-2 3.5-4 4 1.5-1.5 2-3.5 1-5C13 3 12.5 2.5 12 2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 16c1 1.5 5 1.5 6 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
-      }
-    ];
-
-    /* Build HTML */
-    var tabsHTML = "";
-    features.forEach(function (f, i) {
-      tabsHTML +=
-        '<button type="button" class="jawak-tab-btn' + (i === 0 ? " active" : "") + '"' +
-        ' role="tab" aria-selected="' + (i === 0 ? "true" : "false") + '"' +
-        ' data-idx="' + i + '">' +
-        '<span class="jawak-tab-icon">' + f.icon + '</span>' +
-        '<span class="jawak-tab-label">' + f.label + '</span>' +
-        '</button>';
-    });
-
-    aboutBox.innerHTML =
-      '<div class="jawak-interactive-block">' +
+    var block = document.createElement('div');
+    block.className = 'jawak-interactive-block';
+    block.setAttribute('dir', 'rtl');
+    block.innerHTML =
+      '<div class="container">' +
+        '<div class="jawak-section-header">' +
+          '<span class="jawak-pill">لماذا جواك تي في؟</span>' +
+          '<h2 class="jawak-h2">كل ما تحتاجه في اشتراك واحد</h2>' +
+          '<p class="jawak-lead">اختر القسم الذي يهمك لتتعرف على أبرز مميزات اشتراك Jawak TV، ثم انتقل مباشرة لصفحة الشراء.</p>' +
+        '</div>' +
         '<div class="jawak-interactive-shell">' +
           '<div class="jawak-media-card">' +
             '<video autoplay muted loop playsinline preload="auto">' +
-              '<source src="https://green-camel-228650.hostingersite.com/wp-content/uploads/2026/04/0203-copy-1-copy-copy-11.mp4" type="video/mp4">' +
+              '<source src="' + ABOUT_VIDEO + '" type="video/mp4">' +
             '</video>' +
           '</div>' +
           '<div class="jawak-content-side">' +
-            '<div class="jawak-top-badge">تجربة أقوى. محتوى أكثر</div>' +
-            '<h2 class="jawak-main-title">كل ما تحتاجه في اشتراك واحد</h2>' +
-            '<p class="jawak-subtitle">اختر القسم الذي يهمك لتتعرف على أبرز مميزات اشتراك Jawak TV، ثم انتقل مباشرة لصفحة الشراء.</p>' +
-            '<div class="jawak-tabs" role="tablist" aria-label="مميزات الاشتراك">' + tabsHTML + '</div>' +
-            '<div class="jawak-feature-view" id="jawak-feature-view">' +
-              '<h3 class="jawak-feature-title"></h3>' +
+            '<span class="jawak-top-badge">تجربة أقوى · محتوى أكثر</span>' +
+            '<h3 class="jawak-main-title">لماذا تختار جواك TV؟</h3>' +
+            '<p class="jawak-subtitle">اختر القسم الذي يهمك لتتعرف على أبرز المميزات.</p>' +
+            '<div class="jawak-tabs" role="tablist"></div>' +
+            '<div class="jawak-feature-view">' +
+              '<h4 class="jawak-feature-title"></h4>' +
               '<p class="jawak-feature-desc"></p>' +
-              '<a class="jawak-buy-btn" href="/products/" rel="noopener noreferrer">شراء الآن' +
-              '<svg viewBox="0 0 24 24" fill="none" width="18" height="18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>' +
+              '<a class="jawak-buy-btn" href="/products">تسوق الآن ←</a>' +
             '</div>' +
           '</div>' +
         '</div>' +
       '</div>';
 
-    var titleEl     = aboutBox.querySelector(".jawak-feature-title");
-    var descEl      = aboutBox.querySelector(".jawak-feature-desc");
-    var featureView = aboutBox.querySelector(".jawak-feature-view");
+    area.appendChild(block);
 
-    function renderFeature(idx) {
-      var f = features[idx];
+    /* Play about video */
+    var vid = block.querySelector('video');
+    if (vid) vid.play().catch(function () {});
+
+    var tabsEl      = block.querySelector('.jawak-tabs');
+    var titleEl     = block.querySelector('.jawak-feature-title');
+    var descEl      = block.querySelector('.jawak-feature-desc');
+    var featureView = block.querySelector('.jawak-feature-view');
+
+    function renderFeature(index) {
+      var f = FEATURES[index];
       if (!f) return;
       titleEl.textContent = f.title;
       descEl.textContent  = f.desc;
-      featureView.classList.remove("is-animating");
-      void featureView.offsetWidth;
-      featureView.classList.add("is-animating");
-      aboutBox.querySelectorAll(".jawak-tab-btn").forEach(function (btn, i) {
-        btn.classList.toggle("active", i === idx);
-        btn.setAttribute("aria-selected", i === idx ? "true" : "false");
+      featureView.classList.remove('is-animating');
+      void featureView.offsetWidth; /* reflow to restart animation */
+      featureView.classList.add('is-animating');
+      tabsEl.querySelectorAll('.jawak-tab-btn').forEach(function (btn, i) {
+        btn.classList.toggle('active', i === index);
+        btn.setAttribute('aria-selected', String(i === index));
       });
     }
 
-    aboutBox.querySelectorAll(".jawak-tab-btn").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        renderFeature(parseInt(btn.getAttribute("data-idx"), 10));
-      });
+    FEATURES.forEach(function (f, i) {
+      var btn      = document.createElement('button');
+      btn.type     = 'button';
+      btn.className = 'jawak-tab-btn' + (i === 0 ? ' active' : '');
+      btn.setAttribute('role', 'tab');
+      btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+      btn.innerHTML =
+        '<span class="jawak-tab-icon">' + f.icon + '</span>' +
+        '<span class="jawak-tab-label">' + f.label + '</span>';
+      btn.addEventListener('click', function () { renderFeature(i); });
+      tabsEl.appendChild(btn);
     });
 
     renderFeature(0);
   }
 
-  /* Run both functions */
-  addHeroVideo();
-  buildInteractiveBlock();
+  /* ================================================================
+     5. FEATURE ICONS — inject SVG into .single-promo-icon
+        Correct selector: .single-promo-icon > i.las
+     ================================================================ */
+  var PROMO_SVGS = [
+    /* clock */
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+    /* grid */
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="9" height="9"/><rect x="13" y="2" width="9" height="9"/><rect x="13" y="13" width="9" height="9"/><rect x="2" y="13" width="9" height="9"/></svg>',
+    /* tv */
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+    /* headset */
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>'
+  ];
 
-  /* Retry after 800ms in case the DOM was not fully ready */
-  setTimeout(function () {
-    addHeroVideo();
-    buildInteractiveBlock();
-  }, 800);
-});
+  function upgradeFeatureIcons() {
+    var icons = document.querySelectorAll('.single-promo-icon');
+    icons.forEach(function (iconBox, i) {
+      if (iconBox.dataset.jwkIcon) return;
+      iconBox.dataset.jwkIcon = '1';
+
+      /* Remove FontAwesome <i> */
+      var faIcon = iconBox.querySelector('i');
+      if (faIcon) faIcon.style.setProperty('display', 'none', 'important');
+
+      /* Inject SVG */
+      var svgWrap = document.createElement('span');
+      svgWrap.innerHTML = PROMO_SVGS[i % PROMO_SVGS.length];
+      iconBox.appendChild(svgWrap);
+    });
+  }
+
+  /* ================================================================
+     6. HIDE RATINGS on product cards
+        Correct selectors from actual HTML
+     ================================================================ */
+  function hideCardRatings() {
+    document.querySelectorAll('.rating-wrap').forEach(function (el) {
+      /* Only hide in product card context, not on product detail page */
+      var card = el.closest('.product-item, .card2');
+      if (card) el.style.setProperty('display', 'none', 'important');
+    });
+
+    /* Also hide the container div for the rating */
+    document.querySelectorAll(
+      '.product-item .d-flex.justify-content-center.align-items-center.m-0.p-0,' +
+      '.card2 .d-flex.justify-content-center.align-items-center.m-0.p-0'
+    ).forEach(function (el) {
+      el.style.setProperty('display', 'none', 'important');
+    });
+  }
+
+  /* ================================================================
+     7. DARK MODE — bg-white / bg-light / text-dark overrides
+        Uses background-COLOR (not background shorthand) to preserve
+        any background-image properties on elements.
+        IMPORTANT: NEVER touch product images.
+     ================================================================ */
+  function applyDarkOverrides() {
+    /* background-color overrides — safe, won't affect background-image */
+    document.querySelectorAll('.bg-white:not(.product-thumbnail-wrap):not(.product-item):not(.card2)').forEach(function (el) {
+      el.style.setProperty('background-color', '#1f1c19', 'important');
+    });
+    document.querySelectorAll('.bg-light:not(.product-thumbnail-wrap):not(.product-item):not(.card2)').forEach(function (el) {
+      el.style.setProperty('background-color', '#242018', 'important');
+    });
+    document.querySelectorAll('.text-dark').forEach(function (el) {
+      el.style.setProperty('color', '#f0ead8', 'important');
+    });
+    document.querySelectorAll('.text-muted').forEach(function (el) {
+      el.style.setProperty('color', '#908778', 'important');
+    });
+
+    /* Product details page */
+    document.querySelectorAll('.product-details-wrapper').forEach(function (el) {
+      el.style.setProperty('background-color', '#1f1c19', 'important');
+      el.style.setProperty('border-color', 'rgba(218,174,73,.18)', 'important');
+    });
+    document.querySelectorAll('.product-image-slide .splide').forEach(function (el) {
+      el.classList.remove('bg-white');
+      el.style.setProperty('background-color', '#1f1c19', 'important');
+    });
+  }
+
+  /* ================================================================
+     8. PRODUCT CARD TITLES — ensure readable gold/light color
+        h3.product-title > a.text-break
+     ================================================================ */
+  function fixProductTitles() {
+    document.querySelectorAll('h3.product-title a, h3.product-title').forEach(function (el) {
+      if (el.dataset.jwkTitle) return;
+      el.dataset.jwkTitle = '1';
+      el.style.setProperty('color', '#f0ead8', 'important');
+    });
+  }
+
+  /* ================================================================
+     9. BRAND IMAGES — style dark cards, bigger logos
+        ONLY .brand-img img gets the filter — NOT any other widgetArea images
+     ================================================================ */
+  function styleBrandImages() {
+    document.querySelectorAll('.brand-img').forEach(function (el) {
+      if (el.dataset.jwkBrand) return;
+      el.dataset.jwkBrand = '1';
+
+      el.style.setProperty('background', 'linear-gradient(135deg,#1f1c19,#242018)', 'important');
+      el.style.setProperty('border', '1px solid rgba(218,174,73,.15)', 'important');
+      el.style.setProperty('border-radius', '14px', 'important');
+      el.style.setProperty('padding', '14px 22px', 'important');
+      el.style.setProperty('display', 'flex', 'important');
+      el.style.setProperty('align-items', 'center', 'important');
+      el.style.setProperty('justify-content', 'center', 'important');
+
+      var img = el.querySelector('img');
+      if (img) {
+        /* Only brand logos get the filter */
+        img.style.setProperty('filter', 'brightness(0) invert(1)', 'important');
+        img.style.setProperty('opacity', '0.55', 'important');
+        img.style.setProperty('max-height', '72px', 'important');
+        img.style.setProperty('width', 'auto', 'important');
+        img.style.setProperty('object-fit', 'contain', 'important');
+        img.style.setProperty('transition', 'opacity .25s ease', 'important');
+
+        el.addEventListener('mouseenter', function () { img.style.opacity = '0.9'; });
+        el.addEventListener('mouseleave', function () { img.style.opacity = '0.55'; });
+      }
+    });
+  }
+
+  /* ================================================================
+     10. WHATSAPP FLOATING BUTTON — gold instead of green
+         On mobile: push above Tjar's bottom nav bar
+     ================================================================ */
+  function styleWhatsAppBtn() {
+    var selectors = [
+      '.whatsapp_float', '.whatsapp-float', '#whatsapp_float',
+      '#whatsapp-float', '.wa-chat-btn', '[class*="whatsapp_float"]',
+      '[class*="wa-float"]', '[class*="whatsapp-btn"]'
+    ].join(',');
+
+    document.querySelectorAll(selectors).forEach(function (el) {
+      if (el.dataset.jwkWa) return;
+      el.dataset.jwkWa = '1';
+
+      /* Gold gradient */
+      el.style.setProperty('background', 'linear-gradient(135deg,#b88b3c,#daae49,#f0d878)', 'important');
+      el.style.setProperty('border-color', 'transparent', 'important');
+      el.style.setProperty('box-shadow', '0 6px 22px rgba(218,174,73,.35)', 'important');
+      el.style.setProperty('transition', 'transform .25s ease, box-shadow .25s ease', 'important');
+
+      /* Mobile: push above Tjar bottom nav */
+      if (IS_MOBILE) {
+        el.style.setProperty('bottom', (BOTTOM_NAV_H + 14) + 'px', 'important');
+        el.style.setProperty('right', '14px', 'important');
+        el.style.setProperty('z-index', '9998', 'important');
+      }
+
+      /* Recolor inner icons to dark (for contrast on gold) */
+      el.querySelectorAll('svg, i').forEach(function (icon) {
+        icon.style.setProperty('color', '#0a0800', 'important');
+        icon.style.setProperty('fill', '#0a0800', 'important');
+        icon.style.setProperty('stroke', '#0a0800', 'important');
+      });
+    });
+  }
+
+  /* ================================================================
+     11. FIX CATEGORY PAGE HEADER OVERLAP
+         Category pages show a header under the fixed navbar.
+         Add padding-top to prevent overlap.
+     ================================================================ */
+  function fixPageHeaderOffset() {
+    var offset = BAR_H + 65 + 16; /* promobar + navbar + gap */
+
+    ['.page-header', '.breadcrumb-area', '.inner-banner',
+     '.page-title-area', '.category-page-banner'].forEach(function (sel) {
+      var el = document.querySelector(sel);
+      if (el && !el.dataset.jwkOffset) {
+        el.dataset.jwkOffset = '1';
+        el.style.setProperty('background-color', '#1a1815', 'important');
+        el.style.setProperty('padding-top', offset + 'px', 'important');
+      }
+    });
+  }
+
+   
+/* ================================================================
+   TAMARA WIDGET FIX — GOLD THEME + NO HOVER BUG
+   ================================================================ */
+function fixTamaraWidget() {
+
+  const box = document.querySelector('.tamara-summary-widget--inline-outlined');
+  if (!box) return;
+
+  function applyStyles() {
+
+    // تثبيت الخلفية
+    box.style.setProperty('background-color', '#1f1c19', 'important');
+    box.style.setProperty('border', '1px solid #daae49', 'important');
+    box.style.setProperty('box-shadow', 'none', 'important');
+
+    // إصلاح النصوص الداخلية
+    box.querySelectorAll('*').forEach(function (el) {
+      el.style.setProperty('color', '#daae49', 'important');
+      el.style.setProperty('background-color', 'transparent', 'important');
+      el.style.setProperty('opacity', '1', 'important');
+      el.style.setProperty('filter', 'none', 'important');
+      el.style.setProperty('mix-blend-mode', 'normal', 'important');
+      el.style.setProperty('-webkit-text-fill-color', '#daae49', 'important');
+    });
+  }
+
+  // أول تطبيق
+  applyStyles();
+
+  // عند المرور
+  box.addEventListener('mouseenter', applyStyles);
+  box.addEventListener('mouseleave', applyStyles);
+
+  // Tamara تعيد بناء نفسها → لازم مراقبة
+  const observer = new MutationObserver(applyStyles);
+  observer.observe(box, {
+    childList: true,
+    subtree: true,
+    attributes: true
+  });
+
+}
+
+/* تشغيل بعد تحميل الصفحة (نفس أسلوب مشروعك) */
+setTimeout(fixTamaraWidget, 1500);
+   
+  /* ================================================================
+     INIT + MUTATION OBSERVER
+     ================================================================ */
+  function init() {
+    buildPromoBar();
+    initNavScroll();
+    addVideoToSlide();
+    buildInteractiveFeaturesSection();
+    upgradeFeatureIcons();
+    hideCardRatings();
+    applyDarkOverrides();
+    fixProductTitles();
+    styleBrandImages();
+    styleWhatsAppBtn();
+    fixPageHeaderOffset();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  /* MutationObserver — re-run on Tjar's dynamic content additions */
+  var moDebounce;
+  var observer = new MutationObserver(function (mutations) {
+    var hasNew = mutations.some(function (m) { return m.addedNodes.length > 0; });
+    if (!hasNew) return;
+    clearTimeout(moDebounce);
+    moDebounce = setTimeout(function () {
+      /* Only lightweight calls in observer — no heavy DOM rewrites */
+      hideCardRatings();
+      fixProductTitles();
+      styleBrandImages();
+      applyDarkOverrides();
+      styleWhatsAppBtn();
+      upgradeFeatureIcons();
+    }, 200);
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+
+})();
 </script>
 
 <script>
@@ -4049,7 +6047,51 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 </script>
 
+<style>
+            ._wa{
+                width: 60px;
+                height: 60px;
+                background-color: #118c7e;
+                border-radius: 50%;
+                position: fixed;
+                bottom: 15px;
+                right: 20px;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 24px;
+                transition: all 0.3s ease;
+                z-index: 1000000;
+            }
+            ._wa:hover {
+                transform: scale(1.1);
+                color:white;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+                z-index: 10000001111;
+            }
 
+            @media(max-width:992px){
+                ._wa{
+                    bottom: 75px;
+                    right: 12px;
+                }
+                ._wa.bottom_hide{
+                    bottom: 15px;
+                }
+                .widget-visible iframe[style*="bottom:20px"] {
+                    translate: 12px -55px !important;
+                }
+            }
+
+        </style>
+
+        <div>
+            <a target="_blank" href="https://wa.me/966533884393" class="_wa tbadge " aria-label="whatsapp">
+                <svg width="30" height="30" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 308 308" xml:space="preserve"><path d="M227.904 176.981c-.6-.288-23.054-11.345-27.044-12.781-1.629-.585-3.374-1.156-5.23-1.156-3.032 0-5.579 1.511-7.563 4.479-2.243 3.334-9.033 11.271-11.131 13.642-.274.313-.648.687-.872.687-.201 0-3.676-1.431-4.728-1.888-24.087-10.463-42.37-35.624-44.877-39.867-.358-.61-.373-.887-.376-.887.088-.323.898-1.135 1.316-1.554 1.223-1.21 2.548-2.805 3.83-4.348a141 141 0 0 1 1.812-2.153c1.86-2.164 2.688-3.844 3.648-5.79l.503-1.011c2.344-4.657.342-8.587-.305-9.856-.531-1.062-10.012-23.944-11.02-26.348-2.424-5.801-5.627-8.502-10.078-8.502-.413 0 0 0-1.732.073-2.109.089-13.594 1.601-18.672 4.802C90 87.918 80.89 98.74 80.89 117.772c0 17.129 10.87 33.302 15.537 39.453.116.155.329.47.638.922 17.873 26.102 40.154 45.446 62.741 54.469 21.745 8.686 32.042 9.69 37.896 9.69h.001c2.46 0 4.429-.193 6.166-.364l1.102-.105c7.512-.666 24.02-9.22 27.775-19.655 2.958-8.219 3.738-17.199 1.77-20.458-1.348-2.216-3.671-3.331-6.612-4.743"/><path d="M156.734 0C73.318 0 5.454 67.354 5.454 150.143c0 26.777 7.166 52.988 20.741 75.928L.212 302.716a3.998 3.998 0 0 0 4.999 5.096l79.92-25.396c21.87 11.685 46.588 17.853 71.604 17.853C240.143 300.27 308 232.923 308 150.143 308 67.354 240.143 0 156.734 0m0 268.994c-23.539 0-46.338-6.797-65.936-19.657a4 4 0 0 0-3.406-.467l-40.035 12.726 12.924-38.129a4 4 0 0 0-.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677 0-65.543 53.754-118.867 119.826-118.867 66.064 0 119.812 53.324 119.812 118.867.001 65.535-53.746 118.851-119.811 118.851"/></svg>
+            </a>
+        </div>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"d8cbba8f8306499b87bf83a7bb83917a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 
