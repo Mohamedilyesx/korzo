@@ -1,6 +1,6 @@
 /* =====================================================
    JAWAK TV — TJAR PLATFORM REDESIGN
-   jawaktv-tjar.js  |  v3.2  |  2026
+   jawaktv-tjar.js  |  v3.3  |  2026
    ===================================================== */
 
 /* ================================================================
@@ -167,7 +167,6 @@
       bar.style.height = "0"; bar.style.opacity = "0";
       setTimeout(function () {
         if (bar.parentNode) bar.parentNode.removeChild(bar);
-        /* Move navbar to top when bar is closed */
         document.body.classList.add('jwk-bar-closed');
         var nav = document.querySelector('nav.navbar.navbar3, .custom-navbar, .navbar.navbar3');
         if (nav) nav.style.setProperty('top', '0px', 'important');
@@ -227,6 +226,61 @@
   var BOTTOM_NAV_H = 64;
 
   /* ================================================================
+     HERO MOBILE CSS — injected once
+     الإصلاحات:
+     1. ارتفاع الهيرو 70vh في الهاتف
+     2. إخفاء زر الصوت في الهاتف
+     3. توسيط نص الهيرو في الهاتف
+     ================================================================ */
+  (function injectHeroMobileStyles() {
+    if (document.getElementById('jwkHeroMobileStyles')) return;
+    var s = document.createElement('style');
+    s.id = 'jwkHeroMobileStyles';
+    s.textContent = [
+      /* ── Hero height on mobile ── */
+      '@media (max-width: 767px) {',
+      '  .hero.hero-area, .hero-area {',
+      '    min-height: 70vh !important;',
+      '    max-height: 70vh !important;',
+      '  }',
+
+      /* ── Hide mute button on mobile ── */
+      '  #jwk-mute-btn { display: none !important; }',
+
+      /* ── Center hero text block on mobile (like desktop) ── */
+      '  .hero.hero-area .hero-content,',
+      '  .hero-area .hero-content,',
+      '  .hero.hero-area [class*="hero-text"],',
+      '  .hero-area [class*="hero-text"],',
+      '  .hero.hero-area .hero__content,',
+      '  .hero-area .hero__content {',
+      '    position: absolute !important;',
+      '    top: 50% !important;',
+      '    right: 5% !important;',
+      '    transform: translateY(-50%) !important;',
+      '    text-align: right !important;',
+      '    width: 90% !important;',
+      '    max-width: 90% !important;',
+      '  }',
+
+      /* ── Hero headings readable on mobile ── */
+      '  .hero.hero-area h1, .hero-area h1,',
+      '  .hero.hero-area h2, .hero-area h2 {',
+      '    font-size: clamp(1.6rem, 6vw, 2.4rem) !important;',
+      '    line-height: 1.3 !important;',
+      '    text-shadow: 0 2px 16px rgba(0,0,0,0.85) !important;',
+      '  }',
+
+      '  .hero.hero-area p, .hero-area p {',
+      '    font-size: clamp(0.85rem, 3.5vw, 1rem) !important;',
+      '    text-shadow: 0 1px 8px rgba(0,0,0,0.75) !important;',
+      '  }',
+      '}'
+    ].join('\n');
+    document.head.appendChild(s);
+  })();
+
+  /* ================================================================
      2. NAVBAR — transparent base, glass on scroll
      ================================================================ */
   function initNavScroll() {
@@ -248,6 +302,7 @@
 
   /* ================================================================
      3. HERO — full-screen background video + fade-in + mute button
+        video opacity رُفع إلى 0.78 (كان 0.55 مظلم جداً)
      ================================================================ */
   function addVideoToSlide() {
     var hero = document.querySelector('.hero.hero-area') || document.querySelector('.hero-area');
@@ -267,8 +322,10 @@
     video.setAttribute('preload', 'auto');
     video.style.opacity    = '0';
     video.style.transition = 'opacity 1.2s ease';
+
+    /* ✅ رُفع من 0.55 → 0.78 لمنع الإظلام الزائد */
     video.addEventListener('canplay', function () {
-      setTimeout(function () { video.style.opacity = '0.55'; }, 100);
+      setTimeout(function () { video.style.opacity = '0.78'; }, 100);
     });
 
     var src  = document.createElement('source');
@@ -279,7 +336,7 @@
     var overlay = document.createElement('div');
     overlay.className = 'jwk-hero-overlay';
 
-    /* Mute / Unmute button */
+    /* Mute / Unmute button — مخفي تلقائياً على الهاتف بواسطة CSS */
     var muteBtn = document.createElement('button');
     muteBtn.id  = 'jwk-mute-btn';
     muteBtn.setAttribute('aria-label', 'كتم/تشغيل الصوت');
