@@ -1720,11 +1720,9 @@ section { background-color: transparent !important; }
 
   /* Navbar: always dark on mobile/tablet (never gold) */
   nav.navbar.navbar3, .custom-navbar, .navbar.navbar3 {
-    background-color: rgba(12, 9, 0, 0.97) !important;
+    background-color: transparent!important;
     backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
     border-bottom: 1px solid rgba(218,174,73,.14) !important;
-    box-shadow: 0 2px 16px rgba(0,0,0,.5) !important;
   }
   /* Scrolled = same dark on mobile */
   nav.navbar.navbar3.scrolled, .custom-navbar.scrolled {
