@@ -1,6 +1,6 @@
 /* =====================================================
    JAWAK TV — TJAR PLATFORM REDESIGN
-   jawaktv-tjar.js  |  v3.3  |  2026
+   jawaktv-tjar.js  |  v3.4  |  2026
    ===================================================== */
 
 /* ================================================================
@@ -301,8 +301,8 @@
   }
 
   /* ================================================================
-     3. HERO — full-screen background video + fade-in + mute button
-        video opacity رُفع إلى 0.78 (كان 0.55 مظلم جداً)
+     3. HERO — full-screen background video + fade-in + mute button + hero text
+        video opacity = 1 (كامل الوضوح) + overlay معطّل + نص الهيرو
      ================================================================ */
   function addVideoToSlide() {
     var hero = document.querySelector('.hero.hero-area') || document.querySelector('.hero-area');
@@ -323,9 +323,9 @@
     video.style.opacity    = '0';
     video.style.transition = 'opacity 1.2s ease';
 
-    /* ✅ رُفع من 0.55 → 0.78 لمنع الإظلام الزائد */
+    /* فيديو كامل الوضوح بدون تعتيم */
     video.addEventListener('canplay', function () {
-      setTimeout(function () { video.style.opacity = '0.78'; }, 100);
+      setTimeout(function () { video.style.opacity = '1'; }, 100);
     });
 
     var src  = document.createElement('source');
@@ -333,10 +333,36 @@
     src.type = 'video/mp4';
     video.appendChild(src);
 
+    /* overlay معطّل تماماً */
     var overlay = document.createElement('div');
     overlay.className = 'jwk-hero-overlay';
+    overlay.style.cssText = 'display:none!important';
 
-    /* Mute / Unmute button — مخفي تلقائياً على الهاتف بواسطة CSS */
+    /* ── نص Hero فوق الفيديو ── */
+    if (!document.getElementById('jwkHeroTextStyles')) {
+      var ks = document.createElement('style');
+      ks.id = 'jwkHeroTextStyles';
+      ks.textContent =
+        '@keyframes jwkHeroFadeUp{from{opacity:0;transform:translateX(-50%) translateY(30px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}' +
+        '@media(max-width:767px){#jwk-hero-text{bottom:8%!important}#jwk-hero-text a{padding:12px 32px!important;font-size:14px!important}}';
+      document.head.appendChild(ks);
+    }
+    if (!document.getElementById('jwk-hero-text')) {
+      var heroText = document.createElement('div');
+      heroText.id = 'jwk-hero-text';
+      heroText.setAttribute('dir', 'rtl');
+      heroText.style.cssText = 'position:absolute;bottom:12%;left:50%;transform:translateX(-50%);z-index:10;text-align:center;width:90%;max-width:720px;animation:jwkHeroFadeUp 1s cubic-bezier(0.16,1,0.3,1) both;pointer-events:none';
+      heroText.innerHTML =
+        '<p style="font-size:13px;font-weight:700;color:rgba(218,174,73,0.9);letter-spacing:0.18em;text-transform:uppercase;margin:0 0 8px;text-shadow:0 2px 10px rgba(0,0,0,0.5)">كل الترفيه في مكان واحد</p>' +
+        '<h1 style="font-size:clamp(2rem,6vw,4.2rem);font-weight:900;color:#fff;line-height:1.1;margin:0 0 12px;text-shadow:0 4px 24px rgba(0,0,0,0.4)">' +
+          'جـــوك <span style="background:linear-gradient(135deg,#c9922a,#daae49,#f0d878);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">TV</span>' +
+        '</h1>' +
+        '<p style="font-size:clamp(1rem,2.5vw,1.3rem);color:rgba(240,234,216,0.92);margin:0 0 28px;text-shadow:0 2px 12px rgba(0,0,0,0.5);font-weight:500">أفلام · مسلسلات · مباريات بلا حدود</p>' +
+        '<a href="/products" style="pointer-events:auto;display:inline-flex;align-items:center;padding:14px 48px;background:linear-gradient(135deg,#b88b3c,#daae49,#f0d878);color:#0a0800!important;font-weight:900;font-size:15px;border-radius:999px;text-decoration:none;box-shadow:0 10px 30px rgba(218,174,73,0.4),0 4px 12px rgba(0,0,0,0.4);letter-spacing:0.02em;transition:transform .25s ease,box-shadow .25s ease" onmouseover="this.style.transform=\'translateY(-3px) scale(1.03)\';this.style.boxShadow=\'0 18px 40px rgba(218,174,73,0.55)\'" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'0 10px 30px rgba(218,174,73,0.4),0 4px 12px rgba(0,0,0,0.4)\'">تسوق الآن</a>';
+      hero.appendChild(heroText);
+    }
+
+    /* Mute / Unmute button */
     var muteBtn = document.createElement('button');
     muteBtn.id  = 'jwk-mute-btn';
     muteBtn.setAttribute('aria-label', 'كتم/تشغيل الصوت');
