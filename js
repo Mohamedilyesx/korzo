@@ -10,7 +10,7 @@
   document.documentElement.style.backgroundColor = '#1a1815';
 
   /* ── CONFIG ──────────────────────────────────────── */
-  var HERO_VIDEO  = 'https://green-camel-228650.hostingersite.com/wp-content/uploads/2026/05/0227-copy5.mp4';
+  var HERO_VIDEO  = 'https://green-camel-228650.hostingersite.com/wp-content/uploads/2026/05/0227-copy.mp4';
   var ABOUT_VIDEO = 'https://green-camel-228650.hostingersite.com/wp-content/uploads/2026/04/0203-copy-1-copy-copy-11.mp4';
   var IS_MOBILE   = window.innerWidth <= 767;
   var BAR_H       = IS_MOBILE ? 36 : 42; /* sync with CSS --bar-h */
@@ -490,6 +490,53 @@
     });
   }
 
+   
+/* ================================================================
+   TAMARA WIDGET FIX — GOLD THEME + NO HOVER BUG
+   ================================================================ */
+function fixTamaraWidget() {
+
+  const box = document.querySelector('.tamara-summary-widget--inline-outlined');
+  if (!box) return;
+
+  function applyStyles() {
+
+    // تثبيت الخلفية
+    box.style.setProperty('background-color', '#1f1c19', 'important');
+    box.style.setProperty('border', '1px solid #daae49', 'important');
+    box.style.setProperty('box-shadow', 'none', 'important');
+
+    // إصلاح النصوص الداخلية
+    box.querySelectorAll('*').forEach(function (el) {
+      el.style.setProperty('color', '#daae49', 'important');
+      el.style.setProperty('background-color', 'transparent', 'important');
+      el.style.setProperty('opacity', '1', 'important');
+      el.style.setProperty('filter', 'none', 'important');
+      el.style.setProperty('mix-blend-mode', 'normal', 'important');
+      el.style.setProperty('-webkit-text-fill-color', '#daae49', 'important');
+    });
+  }
+
+  // أول تطبيق
+  applyStyles();
+
+  // عند المرور
+  box.addEventListener('mouseenter', applyStyles);
+  box.addEventListener('mouseleave', applyStyles);
+
+  // Tamara تعيد بناء نفسها → لازم مراقبة
+  const observer = new MutationObserver(applyStyles);
+  observer.observe(box, {
+    childList: true,
+    subtree: true,
+    attributes: true
+  });
+
+}
+
+/* تشغيل بعد تحميل الصفحة (نفس أسلوب مشروعك) */
+setTimeout(fixTamaraWidget, 1500);
+   
   /* ================================================================
      INIT + MUTATION OBSERVER
      ================================================================ */
