@@ -1,6 +1,6 @@
 /* =====================================================
    JAWAK TV — TJAR PLATFORM REDESIGN
-   jawaktv-tjar.js  |  v3.0  |  2026
+   jawaktv-tjar.js  |  v3.1  |  2026
    ===================================================== */
 
 (function () {
@@ -13,9 +13,8 @@
   var HERO_VIDEO  = 'https://green-camel-228650.hostingersite.com/wp-content/uploads/2026/05/0227-copy.mp4';
   var ABOUT_VIDEO = 'https://green-camel-228650.hostingersite.com/wp-content/uploads/2026/04/0203-copy-1-copy-copy-11.mp4';
   var IS_MOBILE   = window.innerWidth <= 767;
-  var BAR_H       = IS_MOBILE ? 36 : 42; /* sync with CSS --bar-h */
+  var BAR_H       = IS_MOBILE ? 36 : 42;
   var NAV_H       = IS_MOBILE ? 56 : 65;
-  /* Tjar's bottom navigation bar height on mobile */
   var BOTTOM_NAV_H = 64;
 
   /* ================================================================
@@ -42,7 +41,6 @@
     var track = document.createElement('div');
     track.id  = 'jwk-track';
 
-    /* Build one set of messages as a DocumentFragment */
     function buildSet() {
       var frag = document.createDocumentFragment();
       messages.forEach(function (msg) {
@@ -83,7 +81,6 @@
         if (bar.parentNode) bar.parentNode.removeChild(bar);
         document.body.classList.add('jwk-bar-closed');
 
-        /* Move navbar to top now that bar is gone */
         var nav = document.querySelector('nav.navbar.navbar3, .custom-navbar, .navbar.navbar3');
         if (nav) nav.style.setProperty('top', '0px', 'important');
       }, 300);
@@ -92,12 +89,8 @@
     bar.appendChild(mask);
     bar.appendChild(closeBtn);
 
-    /* Insert as very first element in body */
     document.body.insertBefore(bar, document.body.firstChild);
 
-    /* ── Seamless RAF marquee ──
-       We track offset in pixels. When offset >= 1/3 of total track width,
-       reset to 0 — visually seamless because all 3 copies are identical. */
     var offset  = 0;
     var speed   = 0.55;
     var paused  = false;
@@ -110,16 +103,14 @@
     function animate() {
       if (!paused) {
         offset += speed;
-        /* oneSetW is measured after first paint */
         if (oneSetW > 0 && offset >= oneSetW) {
-          offset = 0; /* seamless reset */
+          offset = 0;
         }
         track.style.transform = 'translate3d(-' + offset + 'px,0,0)';
       }
       rafId = requestAnimationFrame(animate);
     }
 
-    /* Measure + start after DOM paints */
     setTimeout(function () {
       oneSetW = track.scrollWidth / 3;
       animate();
@@ -128,10 +119,18 @@
 
   /* ================================================================
      2. NAVBAR — transparent base, glass on scroll
+        Enhanced: padding-top to push content below fixed bars
      ================================================================ */
   function initNavScroll() {
     var nav = document.querySelector('nav.navbar.navbar3, .custom-navbar, .navbar.navbar3');
     if (!nav) return;
+
+    /* Push the navbar directly below the promo bar */
+    nav.style.setProperty('position', 'fixed', 'important');
+    nav.style.setProperty('top', BAR_H + 'px', 'important');
+    nav.style.setProperty('left', '0', 'important');
+    nav.style.setProperty('right', '0', 'important');
+    nav.style.setProperty('z-index', '9999', 'important');
 
     function update() {
       if (window.scrollY > 8) {
@@ -142,11 +141,19 @@
     }
     update();
     window.addEventListener('scroll', update, { passive: true });
+
+    /* Ensure hero/body content has correct top-padding to clear fixed bars */
+    var totalOffset = BAR_H + NAV_H;
+    var hero = document.querySelector('.hero.hero-area, .hero-area');
+    if (hero && !hero.dataset.jwkPadded) {
+      hero.dataset.jwkPadded = '1';
+      /* Hero is fullscreen — no top padding needed, it starts behind bars */
+    }
   }
 
   /* ================================================================
      3. HERO — full-screen background video
-        Selector: .hero.hero-area (from actual Tjar HTML)
+        Enhanced: volume control button, fade-in animation
      ================================================================ */
   function addVideoToSlide() {
     var hero = document.querySelector('.hero.hero-area')
@@ -154,11 +161,10 @@
     if (!hero) return;
     if (hero.querySelector('.jwk-hero-video')) return;
 
-    /* Kill static background */
     hero.style.setProperty('background-image', 'none', 'important');
     hero.style.setProperty('background-color', '#000', 'important');
 
-    /* Video element */
+    /* ── Video element ── */
     var video = document.createElement('video');
     video.className   = 'jwk-hero-video';
     video.autoplay    = true;
@@ -169,30 +175,74 @@
     video.setAttribute('webkit-playsinline', '');
     video.setAttribute('preload', 'auto');
 
+    /* Fade-in after loaded */
+    video.style.opacity = '0';
+    video.style.transition = 'opacity 1.2s ease';
+    video.addEventListener('canplay', function () {
+      setTimeout(function () { video.style.opacity = '0.55'; }, 100);
+    });
+
     var src  = document.createElement('source');
     src.src  = HERO_VIDEO;
     src.type = 'video/mp4';
     video.appendChild(src);
 
-    /* Overlay */
+    /* ── Gradient overlay ── */
     var overlay = document.createElement('div');
     overlay.className = 'jwk-hero-overlay';
 
-    /* Prepend both before existing hero content */
-    hero.insertBefore(overlay, hero.firstChild);
-    hero.insertBefore(video,   hero.firstChild);
+    /* ── Mute/Unmute button ── */
+    var muteBtn = document.createElement('button');
+    muteBtn.id = 'jwk-mute-btn';
+    muteBtn.setAttribute('aria-label', 'كتم/تشغيل الصوت');
+    muteBtn.innerHTML = getMuteIcon(true);
+    muteBtn.style.cssText = [
+      'position:absolute',
+      'bottom:28px',
+      'left:28px',
+      'z-index:10',
+      'width:42px',
+      'height:42px',
+      'border-radius:50%',
+      'border:1px solid rgba(218,174,73,.4)',
+      'background:rgba(10,7,0,.55)',
+      'backdrop-filter:blur(8px)',
+      'color:#daae49',
+      'font-size:16px',
+      'display:flex',
+      'align-items:center',
+      'justify-content:center',
+      'cursor:pointer',
+      'transition:background .2s,border-color .2s'
+    ].join(';');
+
+    var isMuted = true;
+    muteBtn.addEventListener('click', function () {
+      isMuted = !isMuted;
+      video.muted = isMuted;
+      muteBtn.innerHTML = getMuteIcon(isMuted);
+    });
+
+    function getMuteIcon(muted) {
+      if (muted) {
+        return '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>';
+      }
+      return '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
+    }
+
+    /* Prepend before existing hero content */
+    hero.insertBefore(muteBtn,  hero.firstChild);
+    hero.insertBefore(overlay,  hero.firstChild);
+    hero.insertBefore(video,    hero.firstChild);
 
     video.play().catch(function () {});
 
-    /* Hide Tjar's static hero image wrapper */
     var imgWrap = hero.querySelector('.hero-img-wrap');
     if (imgWrap) imgWrap.style.setProperty('display', 'none', 'important');
   }
 
   /* ================================================================
      4. INTERACTIVE FEATURES BLOCK
-        Replaces .about-box (hidden) by appending to .about-area
-        Selector: .about-area, .about-box (from actual HTML)
      ================================================================ */
   var FEATURES = [
     {
@@ -230,7 +280,6 @@
     if (!area) return;
     if (area.querySelector('.jawak-interactive-block')) return;
 
-    /* Hide the original about-box */
     var box = area.querySelector('.about-box');
     if (box) box.style.setProperty('display', 'none', 'important');
 
@@ -266,7 +315,6 @@
 
     area.appendChild(block);
 
-    /* Play about video */
     var vid = block.querySelector('video');
     if (vid) vid.play().catch(function () {});
 
@@ -281,7 +329,7 @@
       titleEl.textContent = f.title;
       descEl.textContent  = f.desc;
       featureView.classList.remove('is-animating');
-      void featureView.offsetWidth; /* reflow to restart animation */
+      void featureView.offsetWidth;
       featureView.classList.add('is-animating');
       tabsEl.querySelectorAll('.jawak-tab-btn').forEach(function (btn, i) {
         btn.classList.toggle('active', i === index);
@@ -306,17 +354,12 @@
   }
 
   /* ================================================================
-     5. FEATURE ICONS — inject SVG into .single-promo-icon
-        Correct selector: .single-promo-icon > i.las
+     5. FEATURE ICONS
      ================================================================ */
   var PROMO_SVGS = [
-    /* clock */
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
-    /* grid */
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="9" height="9"/><rect x="13" y="2" width="9" height="9"/><rect x="13" y="13" width="9" height="9"/><rect x="2" y="13" width="9" height="9"/></svg>',
-    /* tv */
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
-    /* headset */
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>'
   ];
 
@@ -326,11 +369,9 @@
       if (iconBox.dataset.jwkIcon) return;
       iconBox.dataset.jwkIcon = '1';
 
-      /* Remove FontAwesome <i> */
       var faIcon = iconBox.querySelector('i');
       if (faIcon) faIcon.style.setProperty('display', 'none', 'important');
 
-      /* Inject SVG */
       var svgWrap = document.createElement('span');
       svgWrap.innerHTML = PROMO_SVGS[i % PROMO_SVGS.length];
       iconBox.appendChild(svgWrap);
@@ -339,16 +380,13 @@
 
   /* ================================================================
      6. HIDE RATINGS on product cards
-        Correct selectors from actual HTML
      ================================================================ */
   function hideCardRatings() {
     document.querySelectorAll('.rating-wrap').forEach(function (el) {
-      /* Only hide in product card context, not on product detail page */
       var card = el.closest('.product-item, .card2');
       if (card) el.style.setProperty('display', 'none', 'important');
     });
 
-    /* Also hide the container div for the rating */
     document.querySelectorAll(
       '.product-item .d-flex.justify-content-center.align-items-center.m-0.p-0,' +
       '.card2 .d-flex.justify-content-center.align-items-center.m-0.p-0'
@@ -358,13 +396,9 @@
   }
 
   /* ================================================================
-     7. DARK MODE — bg-white / bg-light / text-dark overrides
-        Uses background-COLOR (not background shorthand) to preserve
-        any background-image properties on elements.
-        IMPORTANT: NEVER touch product images.
+     7. DARK MODE overrides
      ================================================================ */
   function applyDarkOverrides() {
-    /* background-color overrides — safe, won't affect background-image */
     document.querySelectorAll('.bg-white:not(.product-thumbnail-wrap):not(.product-item):not(.card2)').forEach(function (el) {
       el.style.setProperty('background-color', '#1f1c19', 'important');
     });
@@ -378,7 +412,6 @@
       el.style.setProperty('color', '#908778', 'important');
     });
 
-    /* Product details page */
     document.querySelectorAll('.product-details-wrapper').forEach(function (el) {
       el.style.setProperty('background-color', '#1f1c19', 'important');
       el.style.setProperty('border-color', 'rgba(218,174,73,.18)', 'important');
@@ -390,8 +423,7 @@
   }
 
   /* ================================================================
-     8. PRODUCT CARD TITLES — ensure readable gold/light color
-        h3.product-title > a.text-break
+     8. PRODUCT CARD TITLES
      ================================================================ */
   function fixProductTitles() {
     document.querySelectorAll('h3.product-title a, h3.product-title').forEach(function (el) {
@@ -402,8 +434,7 @@
   }
 
   /* ================================================================
-     9. BRAND IMAGES — style dark cards, bigger logos
-        ONLY .brand-img img gets the filter — NOT any other widgetArea images
+     9. BRAND IMAGES
      ================================================================ */
   function styleBrandImages() {
     document.querySelectorAll('.brand-img').forEach(function (el) {
@@ -420,7 +451,6 @@
 
       var img = el.querySelector('img');
       if (img) {
-        /* Only brand logos get the filter */
         img.style.setProperty('filter', 'brightness(0) invert(1)', 'important');
         img.style.setProperty('opacity', '0.55', 'important');
         img.style.setProperty('max-height', '72px', 'important');
@@ -435,8 +465,7 @@
   }
 
   /* ================================================================
-     10. WHATSAPP FLOATING BUTTON — gold instead of green
-         On mobile: push above Tjar's bottom nav bar
+     10. WHATSAPP FLOATING BUTTON
      ================================================================ */
   function styleWhatsAppBtn() {
     var selectors = [
@@ -449,20 +478,17 @@
       if (el.dataset.jwkWa) return;
       el.dataset.jwkWa = '1';
 
-      /* Gold gradient */
       el.style.setProperty('background', 'linear-gradient(135deg,#b88b3c,#daae49,#f0d878)', 'important');
       el.style.setProperty('border-color', 'transparent', 'important');
       el.style.setProperty('box-shadow', '0 6px 22px rgba(218,174,73,.35)', 'important');
       el.style.setProperty('transition', 'transform .25s ease, box-shadow .25s ease', 'important');
 
-      /* Mobile: push above Tjar bottom nav */
       if (IS_MOBILE) {
         el.style.setProperty('bottom', (BOTTOM_NAV_H + 14) + 'px', 'important');
         el.style.setProperty('right', '14px', 'important');
         el.style.setProperty('z-index', '9998', 'important');
       }
 
-      /* Recolor inner icons to dark (for contrast on gold) */
       el.querySelectorAll('svg, i').forEach(function (icon) {
         icon.style.setProperty('color', '#0a0800', 'important');
         icon.style.setProperty('fill', '#0a0800', 'important');
@@ -473,11 +499,9 @@
 
   /* ================================================================
      11. FIX CATEGORY PAGE HEADER OVERLAP
-         Category pages show a header under the fixed navbar.
-         Add padding-top to prevent overlap.
      ================================================================ */
   function fixPageHeaderOffset() {
-    var offset = BAR_H + 65 + 16; /* promobar + navbar + gap */
+    var offset = BAR_H + 65 + 16;
 
     ['.page-header', '.breadcrumb-area', '.inner-banner',
      '.page-title-area', '.category-page-banner'].forEach(function (sel) {
@@ -490,53 +514,38 @@
     });
   }
 
-   
-/* ================================================================
-   TAMARA WIDGET FIX — GOLD THEME + NO HOVER BUG
-   ================================================================ */
-function fixTamaraWidget() {
+  /* ================================================================
+     12. TAMARA WIDGET FIX
+     ================================================================ */
+  function fixTamaraWidget() {
+    var box = document.querySelector('.tamara-summary-widget--inline-outlined');
+    if (!box) return;
 
-  const box = document.querySelector('.tamara-summary-widget--inline-outlined');
-  if (!box) return;
+    function applyStyles() {
+      box.style.setProperty('background-color', '#1f1c19', 'important');
+      box.style.setProperty('border', '1px solid #daae49', 'important');
+      box.style.setProperty('box-shadow', 'none', 'important');
 
-  function applyStyles() {
+      box.querySelectorAll('*').forEach(function (el) {
+        el.style.setProperty('color', '#daae49', 'important');
+        el.style.setProperty('background-color', 'transparent', 'important');
+        el.style.setProperty('opacity', '1', 'important');
+        el.style.setProperty('filter', 'none', 'important');
+        el.style.setProperty('mix-blend-mode', 'normal', 'important');
+        el.style.setProperty('-webkit-text-fill-color', '#daae49', 'important');
+      });
+    }
 
-    // تثبيت الخلفية
-    box.style.setProperty('background-color', '#1f1c19', 'important');
-    box.style.setProperty('border', '1px solid #daae49', 'important');
-    box.style.setProperty('box-shadow', 'none', 'important');
+    applyStyles();
+    box.addEventListener('mouseenter', applyStyles);
+    box.addEventListener('mouseleave', applyStyles);
 
-    // إصلاح النصوص الداخلية
-    box.querySelectorAll('*').forEach(function (el) {
-      el.style.setProperty('color', '#daae49', 'important');
-      el.style.setProperty('background-color', 'transparent', 'important');
-      el.style.setProperty('opacity', '1', 'important');
-      el.style.setProperty('filter', 'none', 'important');
-      el.style.setProperty('mix-blend-mode', 'normal', 'important');
-      el.style.setProperty('-webkit-text-fill-color', '#daae49', 'important');
-    });
+    var observer = new MutationObserver(applyStyles);
+    observer.observe(box, { childList: true, subtree: true, attributes: true });
   }
 
-  // أول تطبيق
-  applyStyles();
+  setTimeout(fixTamaraWidget, 1500);
 
-  // عند المرور
-  box.addEventListener('mouseenter', applyStyles);
-  box.addEventListener('mouseleave', applyStyles);
-
-  // Tamara تعيد بناء نفسها → لازم مراقبة
-  const observer = new MutationObserver(applyStyles);
-  observer.observe(box, {
-    childList: true,
-    subtree: true,
-    attributes: true
-  });
-
-}
-
-/* تشغيل بعد تحميل الصفحة (نفس أسلوب مشروعك) */
-setTimeout(fixTamaraWidget, 1500);
-   
   /* ================================================================
      INIT + MUTATION OBSERVER
      ================================================================ */
@@ -560,14 +569,12 @@ setTimeout(fixTamaraWidget, 1500);
     init();
   }
 
-  /* MutationObserver — re-run on Tjar's dynamic content additions */
   var moDebounce;
   var observer = new MutationObserver(function (mutations) {
     var hasNew = mutations.some(function (m) { return m.addedNodes.length > 0; });
     if (!hasNew) return;
     clearTimeout(moDebounce);
     moDebounce = setTimeout(function () {
-      /* Only lightweight calls in observer — no heavy DOM rewrites */
       hideCardRatings();
       fixProductTitles();
       styleBrandImages();
