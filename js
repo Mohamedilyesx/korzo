@@ -1,10 +1,10 @@
 /* =====================================================
    JAWAK TV — TJAR PLATFORM REDESIGN
-   jawaktv-tjar.js  |  v3.5  |  2026
+   jawaktv-tjar.js  |  v3.6  |  2026
    ===================================================== */
 
 /* ================================================================
-   1. PROMO BAR — النسخة المحسّنة (resize + fonts.ready + dynamic copies)
+   1. PROMO BAR
    ================================================================ */
 (function () {
   "use strict";
@@ -168,7 +168,6 @@
       setTimeout(function () {
         if (bar.parentNode) bar.parentNode.removeChild(bar);
         document.body.classList.add('jwk-bar-closed');
-        /* ── FIX 1: update body padding when bar closes ── */
         var IS_MOB = window.innerWidth <= 767;
         var navH   = IS_MOB ? 56 : 65;
         document.body.style.setProperty('padding-top', navH + 'px', 'important');
@@ -219,7 +218,6 @@
 (function () {
   'use strict';
 
-  /* Prevent white flash */
   document.documentElement.style.backgroundColor = '#1a1815';
 
   var HERO_VIDEO  = 'https://green-camel-228650.hostingersite.com/wp-content/uploads/2026/05/0227-copy.mp4';
@@ -229,20 +227,14 @@
   var NAV_H       = IS_MOBILE ? 56 : 65;
   var BOTTOM_NAV_H = 64;
 
-  /* ================================================================
-     FIX 1 — body padding-top يحسب الشريط + الناف بار
-     يُطبَّق فوراً ويُعاد تطبيقه عند DOMContentLoaded
-     ================================================================ */
+  /* ── body padding ── */
   function applyBodyPadding() {
-    var totalPad = BAR_H + NAV_H;
-    document.body.style.setProperty('padding-top', totalPad + 'px', 'important');
+    document.body.style.setProperty('padding-top', (BAR_H + NAV_H) + 'px', 'important');
   }
   applyBodyPadding();
   document.addEventListener('DOMContentLoaded', applyBodyPadding);
 
-  /* ================================================================
-     HERO MOBILE CSS — injected once
-     ================================================================ */
+  /* ── Hero mobile styles ── */
   (function injectHeroMobileStyles() {
     if (document.getElementById('jwkHeroMobileStyles')) return;
     var s = document.createElement('style');
@@ -283,41 +275,37 @@
     document.head.appendChild(s);
   })();
 
-  /* ================================================================
-     2. NAVBAR — transparent base, glass on scroll
-     ================================================================ */
+  /* ── Navbar scroll ── */
   function initNavScroll() {
     var nav = document.querySelector('nav.navbar.navbar3, .custom-navbar, .navbar.navbar3');
     if (!nav) return;
-
     nav.style.setProperty('position', 'fixed', 'important');
     nav.style.setProperty('top', BAR_H + 'px', 'important');
     nav.style.setProperty('left', '0', 'important');
     nav.style.setProperty('right', '0', 'important');
     nav.style.setProperty('z-index', '9999', 'important');
-
-    function update() {
-      nav.classList.toggle('scrolled', window.scrollY > 8);
-    }
+    function update() { nav.classList.toggle('scrolled', window.scrollY > 8); }
     update();
     window.addEventListener('scroll', update, { passive: true });
   }
 
   /* ================================================================
-     FIX 2 — HERO VIDEO: الحقن الكامل مع guard ومحاولة retry
+     FIX A — HERO VIDEO + ظل علوي وسفلي
      ================================================================ */
+  var _videoInjected = false;
+
   function addVideoToSlide() {
     var hero = document.querySelector('.hero.hero-area') || document.querySelector('.hero-area');
-
-    /* ── Guard: لا تُضف فيديو مرتين ── */
     if (!hero || hero.querySelector('.jwk-hero-video')) return;
+
+    _videoInjected = true;
 
     hero.style.setProperty('background-image', 'none', 'important');
     hero.style.setProperty('background-color', '#000', 'important');
     hero.style.setProperty('position', 'relative', 'important');
     hero.style.setProperty('overflow', 'hidden', 'important');
 
-    /* ── <video> element ── */
+    /* ── الفيديو ── */
     var video = document.createElement('video');
     video.className   = 'jwk-hero-video';
     video.autoplay    = true;
@@ -327,32 +315,37 @@
     video.setAttribute('playsinline', '');
     video.setAttribute('webkit-playsinline', '');
     video.setAttribute('preload', 'auto');
-    video.style.cssText = [
-      'position:absolute',
-      'inset:0',
-      'width:100%',
-      'height:100%',
-      'object-fit:cover',
-      'z-index:0',
-      'pointer-events:none',
-      'opacity:0',
-      'transition:opacity 1.2s ease'
-    ].join(';');
-
-    /* Fade in when ready */
+    video.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;opacity:0;transition:opacity 1.2s ease';
     video.addEventListener('canplay', function () {
       setTimeout(function () { video.style.opacity = '1'; }, 100);
     });
-
-    var src  = document.createElement('source');
+    var src = document.createElement('source');
     src.src  = HERO_VIDEO;
     src.type = 'video/mp4';
     video.appendChild(src);
 
-    /* ── Overlay (معطّل) ── */
+    /* ================================================================
+       FIX A1 — Overlay: ظل خفيف فوق + ظل خفيف تحت
+       بدلاً من display:none — الآن مفعّل بتدرجين منفصلين
+       ================================================================ */
     var overlay = document.createElement('div');
     overlay.className = 'jwk-hero-overlay';
-    overlay.style.cssText = 'display:none!important';
+    overlay.style.cssText = [
+      'position:absolute',
+      'inset:0',
+      'z-index:1',
+      'pointer-events:none',
+      /* ظل علوي خفيف (يحمي النص من الأعلى) + ظل سفلي خفيف (يذيب الحافة) */
+      'background:linear-gradient(' +
+        'to bottom,' +
+        'rgba(0,0,0,0.45) 0%,' +
+        'rgba(0,0,0,0.10) 20%,' +
+        'rgba(0,0,0,0.00) 40%,' +
+        'rgba(0,0,0,0.00) 60%,' +
+        'rgba(0,0,0,0.18) 80%,' +
+        'rgba(0,0,0,0.72) 100%' +
+      ')'
+    ].join(';');
 
     /* ── نص Hero ── */
     if (!document.getElementById('jwkHeroTextStyles')) {
@@ -384,26 +377,22 @@
     muteBtn.setAttribute('aria-label', 'كتم/تشغيل الصوت');
     muteBtn.innerHTML = getMuteIcon(true);
     muteBtn.style.cssText = 'position:absolute;bottom:28px;left:28px;z-index:10;width:42px;height:42px;border-radius:50%;border:1px solid rgba(218,174,73,.4);background:rgba(10,7,0,.55);backdrop-filter:blur(8px);color:#daae49;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,border-color .2s';
-
     var isMuted = true;
     muteBtn.addEventListener('click', function () {
       isMuted = !isMuted;
       video.muted = isMuted;
       muteBtn.innerHTML = getMuteIcon(isMuted);
     });
-
     function getMuteIcon(muted) {
       return muted
         ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>'
         : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
     }
 
-    /* ── أدخِل العناصر في الهيرو ── */
     hero.insertBefore(muteBtn,  hero.firstChild);
     hero.insertBefore(overlay,  hero.firstChild);
     hero.insertBefore(video,    hero.firstChild);
 
-    /* ── تشغيل الفيديو مع retry ── */
     var playAttempts = 0;
     function tryPlay() {
       video.play().catch(function () {
@@ -412,24 +401,17 @@
     }
     tryPlay();
 
-    /* ── أخفِ صورة الهيرو الأصلية ── */
     var imgWrap = hero.querySelector('.hero-img-wrap');
     if (imgWrap) imgWrap.style.setProperty('display', 'none', 'important');
   }
 
-  /* ── Retry: إذا hero-area لم تُضف بعد، انتظر DOMContentLoaded ── */
   function tryAddVideo() {
     var hero = document.querySelector('.hero.hero-area') || document.querySelector('.hero-area');
-    if (hero) {
-      addVideoToSlide();
-    } else {
-      document.addEventListener('DOMContentLoaded', addVideoToSlide);
-    }
+    if (hero) { addVideoToSlide(); }
+    else { document.addEventListener('DOMContentLoaded', addVideoToSlide); }
   }
 
-  /* ================================================================
-     4. INTERACTIVE FEATURES BLOCK
-     ================================================================ */
+  /* ── Interactive Features ── */
   var FEATURES = [
     { key:'movies', label:'أفلام',    title:'مكتبة أفلام ضخمة',         desc:'أكثر من 150,000 فيلم بجودة HD و4K، من أحدث الإصدارات إلى كلاسيكيات السينما العالمية — كل ما تريد مشاهدته في مكان واحد.', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M10 9l6 3-6 3V9z"/></svg>' },
     { key:'series', label:'مسلسلات', title:'آلاف المسلسلات بلا انقطاع', desc:'تابع أشهر المسلسلات العربية والعالمية والتركية بمحتوى متجدد يومياً، مع دعم التشغيل المستمر بين الحلقات.',               icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7l-9.5 5.5L3 7"/><rect x="2" y="3" width="20" height="14" rx="2"/></svg>' },
@@ -440,10 +422,8 @@
   function buildInteractiveFeaturesSection() {
     var area = document.querySelector('.about-area');
     if (!area || area.querySelector('.jawak-interactive-block')) return;
-
     var box = area.querySelector('.about-box');
     if (box) box.style.setProperty('display', 'none', 'important');
-
     var block = document.createElement('div');
     block.className = 'jawak-interactive-block';
     block.setAttribute('dir', 'rtl');
@@ -469,17 +449,13 @@
           '</div>' +
         '</div>' +
       '</div>';
-
     area.appendChild(block);
-
     var vid = block.querySelector('video');
     if (vid) vid.play().catch(function () {});
-
     var tabsEl      = block.querySelector('.jawak-tabs');
     var titleEl     = block.querySelector('.jawak-feature-title');
     var descEl      = block.querySelector('.jawak-feature-desc');
     var featureView = block.querySelector('.jawak-feature-view');
-
     function renderFeature(index) {
       var f = FEATURES[index]; if (!f) return;
       titleEl.textContent = f.title;
@@ -492,7 +468,6 @@
         btn.setAttribute('aria-selected', String(i === index));
       });
     }
-
     FEATURES.forEach(function (f, i) {
       var btn = document.createElement('button');
       btn.type = 'button';
@@ -506,16 +481,13 @@
     renderFeature(0);
   }
 
-  /* ================================================================
-     5. FEATURE ICONS
-     ================================================================ */
+  /* ── Feature Icons ── */
   var PROMO_SVGS = [
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="9" height="9"/><rect x="13" y="2" width="9" height="9"/><rect x="13" y="13" width="9" height="9"/><rect x="2" y="13" width="9" height="9"/></svg>',
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>'
   ];
-
   function upgradeFeatureIcons() {
     document.querySelectorAll('.single-promo-icon').forEach(function (iconBox, i) {
       if (iconBox.dataset.jwkIcon) return;
@@ -528,9 +500,7 @@
     });
   }
 
-  /* ================================================================
-     6. HIDE RATINGS
-     ================================================================ */
+  /* ── Hide Ratings ── */
   function hideCardRatings() {
     document.querySelectorAll('.rating-wrap').forEach(function (el) {
       if (el.closest('.product-item, .card2')) el.style.setProperty('display', 'none', 'important');
@@ -541,9 +511,7 @@
     ).forEach(function (el) { el.style.setProperty('display', 'none', 'important'); });
   }
 
-  /* ================================================================
-     7. DARK MODE
-     ================================================================ */
+  /* ── Dark Mode ── */
   function applyDarkOverrides() {
     document.querySelectorAll('.bg-white:not(.product-thumbnail-wrap):not(.product-item):not(.card2)').forEach(function (el) {
       el.style.setProperty('background-color', '#1f1c19', 'important');
@@ -563,9 +531,7 @@
     });
   }
 
-  /* ================================================================
-     8. PRODUCT TITLES
-     ================================================================ */
+  /* ── Product Titles ── */
   function fixProductTitles() {
     document.querySelectorAll('h3.product-title a, h3.product-title').forEach(function (el) {
       if (el.dataset.jwkTitle) return;
@@ -575,7 +541,9 @@
   }
 
   /* ================================================================
-     9. BRAND IMAGES
+     FIX B — Brand Images: أكبر حجماً
+     max-height رُفع من 72px → 100px
+     min-width أُضيف 80px لمنع التقلّص الزائد
      ================================================================ */
   function styleBrandImages() {
     document.querySelectorAll('.brand-img').forEach(function (el) {
@@ -584,27 +552,32 @@
       el.style.setProperty('background', 'linear-gradient(135deg,#1f1c19,#242018)', 'important');
       el.style.setProperty('border', '1px solid rgba(218,174,73,.15)', 'important');
       el.style.setProperty('border-radius', '14px', 'important');
-      el.style.setProperty('padding', '14px 22px', 'important');
+      el.style.setProperty('padding', '18px 28px', 'important');
       el.style.setProperty('display', 'flex', 'important');
       el.style.setProperty('align-items', 'center', 'important');
       el.style.setProperty('justify-content', 'center', 'important');
       var img = el.querySelector('img');
       if (img) {
         img.style.setProperty('filter', 'brightness(0) invert(1)', 'important');
-        img.style.setProperty('opacity', '0.55', 'important');
-        img.style.setProperty('max-height', '72px', 'important');
+        img.style.setProperty('opacity', '0.6', 'important');
+        img.style.setProperty('max-height', '100px', 'important');  /* كان 72px → الآن 100px */
+        img.style.setProperty('min-width', '80px', 'important');    /* جديد: يمنع التقلص */
         img.style.setProperty('width', 'auto', 'important');
         img.style.setProperty('object-fit', 'contain', 'important');
-        img.style.setProperty('transition', 'opacity .25s ease', 'important');
-        el.addEventListener('mouseenter', function () { img.style.opacity = '0.9'; });
-        el.addEventListener('mouseleave', function () { img.style.opacity = '0.55'; });
+        img.style.setProperty('transition', 'opacity .25s ease, transform .25s ease', 'important');
+        el.addEventListener('mouseenter', function () {
+          img.style.opacity   = '0.95';
+          img.style.transform = 'scale(1.06)';
+        });
+        el.addEventListener('mouseleave', function () {
+          img.style.opacity   = '0.6';
+          img.style.transform = 'scale(1)';
+        });
       }
     });
   }
 
-  /* ================================================================
-     10. WHATSAPP BUTTON
-     ================================================================ */
+  /* ── WhatsApp ── */
   function styleWhatsAppBtn() {
     var sel = '.whatsapp_float,.whatsapp-float,#whatsapp_float,#whatsapp-float,.wa-chat-btn,[class*="whatsapp_float"],[class*="wa-float"],[class*="whatsapp-btn"]';
     document.querySelectorAll(sel).forEach(function (el) {
@@ -626,9 +599,7 @@
     });
   }
 
-  /* ================================================================
-     11. PAGE HEADER OFFSET
-     ================================================================ */
+  /* ── Page Header Offset ── */
   function fixPageHeaderOffset() {
     var offset = BAR_H + 65 + 16;
     ['.page-header','.breadcrumb-area','.inner-banner','.page-title-area','.category-page-banner'].forEach(function (sel) {
@@ -641,9 +612,7 @@
     });
   }
 
-  /* ================================================================
-     12. TAMARA WIDGET
-     ================================================================ */
+  /* ── Tamara Widget ── */
   function fixTamaraWidget() {
     var box = document.querySelector('.tamara-summary-widget--inline-outlined');
     if (!box) return;
@@ -667,9 +636,7 @@
   }
   setTimeout(fixTamaraWidget, 1500);
 
-  /* ================================================================
-     13. HIDE CATEGORY IMAGES (specific category IDs)
-     ================================================================ */
+  /* ── Hide Category Images ── */
   document.addEventListener('DOMContentLoaded', function () {
     var hiddenCategories = ['1537771','1534130','1534129','1537773','1534131'];
     var path = window.location.pathname;
@@ -682,12 +649,12 @@
   });
 
   /* ================================================================
-     INIT + MUTATION OBSERVER
+     INIT
      ================================================================ */
   function init() {
-    applyBodyPadding();   /* FIX 1 — تطبيق padding-top */
+    applyBodyPadding();
     initNavScroll();
-    tryAddVideo();        /* FIX 2 — hero video مع retry */
+    tryAddVideo();
     buildInteractiveFeaturesSection();
     upgradeFeatureIcons();
     hideCardRatings();
@@ -704,8 +671,11 @@
     init();
   }
 
+  /* ================================================================
+     FIX C — MutationObserver: يوقف tryAddVideo بعد نجاح الحقن
+     ================================================================ */
   var moDebounce;
-  new MutationObserver(function (mutations) {
+  var _mo = new MutationObserver(function (mutations) {
     if (!mutations.some(function (m) { return m.addedNodes.length > 0; })) return;
     clearTimeout(moDebounce);
     moDebounce = setTimeout(function () {
@@ -715,8 +685,10 @@
       applyDarkOverrides();
       styleWhatsAppBtn();
       upgradeFeatureIcons();
-      tryAddVideo();      /* FIX 2 — guard يمنع التكرار */
+      /* يحاول مرة واحدة فقط إذا لم يُحقن بعد */
+      if (!_videoInjected) tryAddVideo();
     }, 200);
-  }).observe(document.body, { childList: true, subtree: true });
+  });
+  _mo.observe(document.body, { childList: true, subtree: true });
 
 })();
