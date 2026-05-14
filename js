@@ -169,7 +169,7 @@
         if (bar.parentNode) bar.parentNode.removeChild(bar);
         document.body.classList.add('jwk-bar-closed');
         var IS_MOB = window.innerWidth <= 767;
-        var navH   = IS_MOB ? 56 : 65;
+        var navH   = IS_MOB ? 56 : 120;
         document.body.style.setProperty('padding-top', navH + 'px', 'important');
         var nav = document.querySelector('nav.navbar.navbar3, .custom-navbar, .navbar.navbar3');
         if (nav) nav.style.setProperty('top', '0px', 'important');
@@ -224,7 +224,7 @@
   var ABOUT_VIDEO = 'https://green-camel-228650.hostingersite.com/wp-content/uploads/2026/04/0203-copy-1-copy-copy-11.mp4';
   var IS_MOBILE   = window.innerWidth <= 767;
   var BAR_H       = IS_MOBILE ? 38 : 42;
-  var NAV_H       = IS_MOBILE ? 56 : 65;
+  var NAV_H       = IS_MOBILE ? 56 : 120;
   var BOTTOM_NAV_H = 64;
 
   /* ══════════════════════════════════════════════════════════════
@@ -602,7 +602,7 @@
 
   /* ── Page Header Offset ── */
   function fixPageHeaderOffset() {
-    var offset = BAR_H + 65 + 16;
+    var offset = BAR_H + 120 + 16;
     ['.page-header','.breadcrumb-area','.inner-banner','.page-title-area','.category-page-banner'].forEach(function (sel) {
       var el = document.querySelector(sel);
       if (el && !el.dataset.jwkOffset) {
