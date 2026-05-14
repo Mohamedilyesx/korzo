@@ -524,10 +524,10 @@ nav.navbar.navbar3 svg, nav.navbar.navbar3 i,
   inset: 0 !important;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,.78) 0%,
-    rgba(0,0,0,.3) 40%,
-    rgba(0,0,0,.15) 60%,
-    rgba(0,0,0,.6) 100%
+    rgba(0,0,0,.08) 0%,
+    rgba(0,0,0,.05) 30%,
+    rgba(0,0,0,.20) 65%,
+    rgba(0,0,0,.75) 100%
   ) !important;
   z-index: 1 !important;
   pointer-events: none !important;
@@ -545,17 +545,7 @@ nav.navbar.navbar3 svg, nav.navbar.navbar3 i,
   color: #d4cbb0 !important;
   text-shadow: 0 1px 8px rgba(0,0,0,.6);
 }
-.hero.hero-area .intro-excerpt a,
-.hero.hero-area .btn-hero,
-.hero.hero-area button:not(#jwk-close) {
-  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
-  border: none !important;
-  color: #0a0800 !important; font-weight: 800 !important;
-  border-radius: 999px !important; padding: 14px 36px !important;
-  box-shadow: 0 10px 30px rgba(218,174,73,.3) !important;
-  transition: transform .25s var(--ease), box-shadow .25s var(--ease) !important;
-  text-decoration: none !important;
-}
+
 .hero.hero-area .intro-excerpt a:hover { transform: translateY(-3px) !important; }
 
 /* ============================================================
