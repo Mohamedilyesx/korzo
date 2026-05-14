@@ -2657,6 +2657,8 @@ div.mobile-nav:not(.opacity-0) .mobile-nav-item.center-nav .mobile-nav-icon i {
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+
+
 /* ──────────────────────────────────────────────────────────────────────
    2. FOOTER WRAPPER — الهيكل والخلفية
 ────────────────────────────────────────────────────────────────────── */
@@ -3434,6 +3436,26 @@ footer hr {
     gap: 16px;
   }
 }
+
+.footer-section {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-top: 0px;
+}
+
+.store-section.footer-store-section::after, footer::after {
+    background: #242018 !important;
+}
+
+.store-section.footer-store-section > .container, footer > .container {
+    padding-top: 20px !important;
+    padding-bottom: 0px !important;
+}
+.store-section.footer-store-section > .container, footer > .container {
+    padding-top: 20px !important;
+    padding-bottom: 0px !important;
+}
+
 
 
 
