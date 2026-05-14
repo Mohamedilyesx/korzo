@@ -22,6 +22,28 @@
   --nav-h: 65px;
 }
 
+.custom-navbar .custom-navbar-nav li a {
+    color: white;
+}
+
+.pb-5 {
+    background: #242018;
+}
+
+custom-navbar .offcanvas.show .custom-navbar-nav li a {
+    color: #ffffff !important;
+}
+
+.custom-navbar .navbar-brand img {
+    max-width: 160px;
+    max-height: 90px;
+    margin-bottom: -31px;
+}
+
+.hero.hero-area .intro-excerpt a, .hero.hero-area .btn-hero, .hero.hero-area button:not(#jwk-close) {
+    visibility: hidden;
+}
+
 /* ===هيدر شفاف في هاتف === */
 .offcanvas-body {
     background-color: transparen!important;
@@ -532,6 +554,7 @@ nav.navbar.navbar3 svg, nav.navbar.navbar3 i,
   z-index: 1 !important;
   pointer-events: none !important;
 }
+
 .hero.hero-area .container,
 .hero.hero-area .intro-excerpt {
   position: relative !important; z-index: 2 !important;
@@ -547,6 +570,36 @@ nav.navbar.navbar3 svg, nav.navbar.navbar3 i,
 }
 
 .hero.hero-area .intro-excerpt a:hover { transform: translateY(-3px) !important; }
+
+
+.hero.hero-area .container,
+.hero.hero-area .intro-excerpt {
+  position: relative !important; z-index: 2 !important;
+}
+.hero.hero-area .intro-excerpt h1,
+.hero.hero-area .intro-excerpt h2 {
+  color: #fff !important;
+  text-shadow: 0 2px 24px rgba(0,0,0,.8);
+}
+.hero.hero-area .intro-excerpt p {
+  color: #d4cbb0 !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,.6);
+}
+
+.hero.hero-area .intro-excerpt a:hover { transform: translateY(-3px) !important; }
+
+.hero.hero-area .intro-excerpt a,
+.hero.hero-area .btn-hero,
+.hero.hero-area button:not(#jwk-close) {
+  background: linear-gradient(135deg, var(--gx), var(--g), var(--gl)) !important;
+  border: none !important;
+  color: #0a0800 !important; font-weight: 800 !important;
+  border-radius: 999px !important; padding: 14px 36px !important;
+  box-shadow: 0 10px 30px rgba(218,174,73,.3) !important;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease) !important;
+  text-decoration: none !important;
+}
+
 
 /* ============================================================
    HERO bottom Splide slider (banner images below hero)
