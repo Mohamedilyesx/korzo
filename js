@@ -1,6 +1,6 @@
 /* =====================================================
    JAWAK TV — TJAR PLATFORM REDESIGN
-   jawaktv-tjar.js  |  v3.6  |  2026
+   jawaktv-tjar.js  |  v3.7  |  2026
    ===================================================== */
 
 /* ================================================================
@@ -39,13 +39,18 @@
     style.id = "jwkBarStyles";
     style.textContent = [
       ".xc-header-two__top { display:none !important; }",
+      /* ═══ FIX: position:fixed بدلاً من relative ═══ */
       "#jwkBar {",
-      "  position: relative; display: flex; align-items: center;",
+      "  position: fixed !important;",
+      "  top: 0 !important;",
+      "  left: 0 !important;",
+      "  right: 0 !important;",
+      "  display: flex; align-items: center;",
       "  width: 100%; height: 42px; overflow: hidden;",
       "  background: linear-gradient(135deg,#0e0901 0%,#1a1000 35%,#221400 65%,#0e0901 100%);",
       "  border-bottom: 1px solid rgba(218,174,73,0.22);",
       "  box-shadow: 0 2px 12px rgba(0,0,0,0.55), inset 0 1px 0 rgba(218,174,73,0.08);",
-      "  z-index: 99999; box-sizing: border-box; direction: ltr;",
+      "  z-index: 100000 !important; box-sizing: border-box; direction: ltr;",
       "}",
       "#jwkBar::before {",
       "  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;",
@@ -121,13 +126,8 @@
     bar.appendChild(closeBtn);
     bar.appendChild(mask);
 
-    var inserted = false;
-    var anchors  = [".vs-header",".site-header","header","#masthead","#header"];
-    for (var a = 0; a < anchors.length; a++) {
-      var el = document.querySelector(anchors[a]);
-      if (el) { el.insertBefore(bar, el.firstChild); inserted = true; break; }
-    }
-    if (!inserted) document.body.insertBefore(bar, document.body.firstChild);
+    /* ═══ FIX: نضع الشريط مباشرة في body كأول عنصر ═══ */
+    document.body.insertBefore(bar, document.body.firstChild);
 
     var pos = 0, paused = false, raf = null, singleW = 0;
     var oneCopy = buildOneCopy();
@@ -227,8 +227,12 @@
   var NAV_H       = IS_MOBILE ? 56 : 65;
   var BOTTOM_NAV_H = 64;
 
-  /* ── body padding ── */
+  /* ══════════════════════════════════════════════════════════════
+     FIX: body padding — فقط ارتفاع الهيدر بدون ضرب الشريط
+     لأن الشريط الآن fixed فلا يحتاج padding إضافي
+     ══════════════════════════════════════════════════════════════ */
   function applyBodyPadding() {
+    /* الـ padding = ارتفاع الشريط + ارتفاع الهيدر */
     document.body.style.setProperty('padding-top', (BAR_H + NAV_H) + 'px', 'important');
   }
   applyBodyPadding();
@@ -275,7 +279,10 @@
     document.head.appendChild(s);
   })();
 
-  /* ── Navbar scroll ── */
+  /* ══════════════════════════════════════════════════════════════
+     FIX: Navbar — يبدأ دائماً بعد الشريط (top: BAR_H)
+     وعند scroll يصبح شفافاً تماماً → dark glass
+     ══════════════════════════════════════════════════════════════ */
   function initNavScroll() {
     var nav = document.querySelector('nav.navbar.navbar3, .custom-navbar, .navbar.navbar3');
     if (!nav) return;
@@ -284,6 +291,9 @@
     nav.style.setProperty('left', '0', 'important');
     nav.style.setProperty('right', '0', 'important');
     nav.style.setProperty('z-index', '9999', 'important');
+    /* إزالة أي فراغ أبيض/شفاف فوق الهيدر */
+    nav.style.setProperty('margin-top', '0', 'important');
+    nav.style.setProperty('padding-top', '0', 'important');
     function update() { nav.classList.toggle('scrolled', window.scrollY > 8); }
     update();
     window.addEventListener('scroll', update, { passive: true });
@@ -324,10 +334,6 @@
     src.type = 'video/mp4';
     video.appendChild(src);
 
-    /* ================================================================
-       FIX A1 — Overlay: ظل خفيف فوق + ظل خفيف تحت
-       بدلاً من display:none — الآن مفعّل بتدرجين منفصلين
-       ================================================================ */
     var overlay = document.createElement('div');
     overlay.className = 'jwk-hero-overlay';
     overlay.style.cssText = [
@@ -335,7 +341,6 @@
       'inset:0',
       'z-index:1',
       'pointer-events:none',
-      /* ظل علوي خفيف (يحمي النص من الأعلى) + ظل سفلي خفيف (يذيب الحافة) */
       'background:linear-gradient(' +
         'to bottom,' +
         'rgba(0,0,0,0.45) 0%,' +
@@ -540,11 +545,7 @@
     });
   }
 
-  /* ================================================================
-     FIX B — Brand Images: أكبر حجماً
-     max-height رُفع من 72px → 100px
-     min-width أُضيف 80px لمنع التقلّص الزائد
-     ================================================================ */
+  /* ── Brand Images ── */
   function styleBrandImages() {
     document.querySelectorAll('.brand-img').forEach(function (el) {
       if (el.dataset.jwkBrand) return;
@@ -560,8 +561,8 @@
       if (img) {
         img.style.setProperty('filter', 'brightness(0) invert(1)', 'important');
         img.style.setProperty('opacity', '0.6', 'important');
-        img.style.setProperty('max-height', '100px', 'important');  /* كان 72px → الآن 100px */
-        img.style.setProperty('min-width', '80px', 'important');    /* جديد: يمنع التقلص */
+        img.style.setProperty('max-height', '100px', 'important');
+        img.style.setProperty('min-width', '80px', 'important');
         img.style.setProperty('width', 'auto', 'important');
         img.style.setProperty('object-fit', 'contain', 'important');
         img.style.setProperty('transition', 'opacity .25s ease, transform .25s ease', 'important');
@@ -671,9 +672,7 @@
     init();
   }
 
-  /* ================================================================
-     FIX C — MutationObserver: يوقف tryAddVideo بعد نجاح الحقن
-     ================================================================ */
+  /* ── MutationObserver ── */
   var moDebounce;
   var _mo = new MutationObserver(function (mutations) {
     if (!mutations.some(function (m) { return m.addedNodes.length > 0; })) return;
@@ -685,7 +684,6 @@
       applyDarkOverrides();
       styleWhatsAppBtn();
       upgradeFeatureIcons();
-      /* يحاول مرة واحدة فقط إذا لم يُحقن بعد */
       if (!_videoInjected) tryAddVideo();
     }, 200);
   });
