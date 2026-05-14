@@ -22,6 +22,10 @@
   --nav-h: 65px;
 }
 
+/* ===هيدر شفاف في هاتف === */
+.offcanvas-body {
+    background-color: transparen!important;
+}
 
 .prevBtn-SD5kV i {
   color: #000 !important;
@@ -62,9 +66,7 @@
     font-weight: 600;
 }
 
-.offcanvas-body {
-    background-color: transparen!important;
-}
+
 
 /* ===fix border === */
 .widgetArea.slider-widget-area {
