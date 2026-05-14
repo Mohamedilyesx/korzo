@@ -22,6 +22,42 @@
   --nav-h: 65px;
 }
 
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background: #000000 !important;
+}
+
+
+.cat-list-item span {
+    color: #ffffff;
+}
+
+.showing-results {
+    color: #ffffff;
+}
+
+.single-shop-left .shop-left-title .shop-left-list .tag-lists .list a, .single-shop-left .shop-left-title .shop-left-list .color-lists .list a, .single-shop-left .shop-left-title .shop-left-list .size-lists .list a {
+    background: #ffffff !important;
+}
+
+.select2-container--default .select2-results__option--selected:not(.select2-results__option--highlighted) {
+    background: #6b4d0a !important;
+}
+
+.single-shop-left .shop-left-title .shop-left-list .tag-lists .list a {
+    color: #000000;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #ffffff;
+
+}
+
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #ffffff;
+}
+
+
 /* === txt page  === */
 
 .text-dark {
@@ -984,317 +1020,7 @@ p.single-promo-contents-para {
   background-color: var(--bg2) !important;
 }
 
-/* ============================================================
-   FOOTER — JAWAK TV LUXURY REDESIGN v2
-   ============================================================ */
 
-/* ── بنية الفوتر الأساسية ── */
-.store-section.footer-store-section,
-footer,
-.footer-area {
-  background: transparent !important;
-  position: relative !important;
-  isolation: isolate !important;
-}
-
-/* ── خلفية الفوتر بالتدرج الفاخر ── */
-.store-section.footer-store-section::after,
-footer::after {
-  content: '' !important;
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: -1 !important;
-  background:
-    radial-gradient(ellipse 80% 40% at 50% -10%, rgba(218,174,73,.09) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 60% at 0% 100%, rgba(185,136,40,.06) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 60% at 100% 100%, rgba(218,174,73,.06) 0%, transparent 55%),
-    linear-gradient(180deg, #100f0c 0%, #0d0b08 40%, #080705 100%) !important;
-  pointer-events: none !important;
-}
-
-/* ── الخط الذهبي العلوي ── */
-.store-section.footer-store-section::before,
-footer::before {
-  content: '' !important;
-  position: absolute !important;
-  top: 0 !important; left: 0 !important; right: 0 !important;
-  height: 1px !important;
-  z-index: 2 !important;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(185,136,40,.4) 15%,
-    rgba(218,174,73,.85) 35%,
-    rgba(240,216,120,1) 50%,
-    rgba(218,174,73,.85) 65%,
-    rgba(185,136,40,.4) 85%,
-    transparent 100%
-  ) !important;
-  box-shadow: 0 0 28px rgba(218,174,73,.25), 0 0 6px rgba(240,216,120,.3) !important;
-}
-
-/* ── المحتوى الداخلي للفوتر ── */
-.store-section.footer-store-section .container,
-.store-section.footer-store-section .row,
-footer .container,
-footer .row {
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-/* ── عناوين الأقسام ── */
-.store-section.footer-store-section h4,
-.store-section.footer-store-section h5,
-.store-section.footer-store-section h3,
-.store-section.footer-store-section .footer-widget-title,
-.store-section.footer-store-section .widget-title,
-footer h4, footer h5, footer h3,
-footer .footer-widget-title,
-footer .widget-title {
-  color: transparent !important;
-  background: linear-gradient(135deg, #c9922a 0%, #daae49 45%, #f0d878 70%, #daae49 100%) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  font-weight: 800 !important;
-  font-size: 15px !important;
-  letter-spacing: 0.04em !important;
-  text-transform: uppercase !important;
-  padding-bottom: 12px !important;
-  margin-bottom: 18px !important;
-  border-bottom: none !important;
-  position: relative !important;
-  display: inline-block !important;
-  width: 100% !important;
-}
-
-/* خط تحت العنوان */
-.store-section.footer-store-section h4::after,
-.store-section.footer-store-section h5::after,
-.store-section.footer-store-section .footer-widget-title::after,
-footer h4::after, footer h5::after,
-footer .footer-widget-title::after {
-  content: '' !important;
-  position: absolute !important;
-  bottom: 0 !important;
-  right: 0 !important;
-  width: 38px !important;
-  height: 2px !important;
-  background: linear-gradient(90deg, #daae49, transparent) !important;
-  border-radius: 2px !important;
-}
-
-/* ── الروابط ── */
-.store-section.footer-store-section a,
-footer a {
-  color: #b8aa94 !important;
-  font-size: 13.5px !important;
-  font-weight: 500 !important;
-  text-decoration: none !important;
-  transition: color .22s ease, padding-right .22s ease !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-}
-
-.store-section.footer-store-section a:hover,
-footer a:hover {
-  color: #f0d878 !important;
-  padding-right: 4px !important;
-}
-
-/* ── النصوص العادية ── */
-.store-section.footer-store-section p,
-.store-section.footer-store-section span,
-.store-section.footer-store-section li,
-footer p, footer span, footer li {
-  color: #8a8070 !important;
-  font-size: 13.5px !important;
-  line-height: 1.85 !important;
-}
-
-/* ── وصف المتجر (الفقرة الأولى) ── */
-.store-section.footer-store-section .footer-about p,
-.store-section.footer-store-section .footer-desc,
-.store-section.footer-store-section .footer-widget:first-child p {
-  color: #9a9080 !important;
-  font-size: 13.5px !important;
-  line-height: 2 !important;
-  max-width: 300px !important;
-}
-
-/* ── قوائم الروابط ── */
-.store-section.footer-store-section ul,
-footer ul {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.store-section.footer-store-section ul li,
-footer ul li {
-  padding: 5px 0 !important;
-  border-bottom: 1px solid rgba(218,174,73,.05) !important;
-}
-
-.store-section.footer-store-section ul li:last-child,
-footer ul li:last-child {
-  border-bottom: none !important;
-}
-
-/* ── أيقونات السوشيال ── */
-.footer-social a,
-.social-links a,
-.store-section.footer-store-section .social-icon a {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 10px !important;
-  border: 1px solid rgba(218,174,73,.2) !important;
-  background: linear-gradient(145deg, rgba(218,174,73,.06), rgba(185,136,40,.03)) !important;
-  color: #8a8070 !important;
-  padding: 0 !important;
-  gap: 0 !important;
-  transition: all .25s ease !important;
-  margin-left: 6px !important;
-}
-
-.footer-social a:hover,
-.social-links a:hover,
-.store-section.footer-store-section .social-icon a:hover {
-  border-color: rgba(218,174,73,.55) !important;
-  background: linear-gradient(135deg, rgba(218,174,73,.15), rgba(240,216,120,.08)) !important;
-  color: #f0d878 !important;
-  transform: translateY(-3px) !important;
-  box-shadow: 0 8px 20px rgba(218,174,73,.15) !important;
-  padding: 0 !important;
-}
-
-.footer-social i,
-.social-links i {
-  color: inherit !important;
-  font-size: 16px !important;
-}
-
-/* ── أيقونات الدفع ── */
-.payment-methods img,
-.footer-payments img,
-.store-section.footer-store-section [class*="payment"] img {
-  filter: grayscale(1) brightness(.5) sepia(.2) !important;
-  border: 1px solid rgba(218,174,73,.12) !important;
-  border-radius: 7px !important;
-  padding: 5px 9px !important;
-  background: rgba(218,174,73,.04) !important;
-  transition: all .25s ease !important;
-  max-height: 28px !important;
-  width: auto !important;
-}
-
-.payment-methods img:hover,
-.footer-payments img:hover {
-  filter: grayscale(0) brightness(1) !important;
-  border-color: rgba(218,174,73,.35) !important;
-  box-shadow: 0 4px 12px rgba(218,174,73,.12) !important;
-}
-
-/* ── فاصل الحقوق (bottom bar) ── */
-.store-section.footer-store-section .footer-bottom,
-.store-section.footer-store-section [class*="copyright"],
-.store-section.footer-store-section [class*="footer-copy"],
-footer .footer-bottom,
-footer [class*="copyright"] {
-  position: relative !important;
-  margin-top: 32px !important;
-  padding-top: 20px !important;
-  border-top: none !important;
-}
-
-.store-section.footer-store-section .footer-bottom::before,
-footer .footer-bottom::before {
-  content: '' !important;
-  position: absolute !important;
-  top: 0 !important; left: 0 !important; right: 0 !important;
-  height: 1px !important;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(218,174,73,.22) 30%,
-    rgba(218,174,73,.22) 70%,
-    transparent
-  ) !important;
-}
-
-/* ── نص الحقوق ── */
-.store-section.footer-store-section .footer-bottom p,
-.store-section.footer-store-section .footer-bottom span,
-footer .footer-bottom p,
-footer .footer-bottom span,
-footer [class*="copyright"] p,
-footer [class*="copyright"] span {
-  color: #5a5248 !important;
-  font-size: 12.5px !important;
-  letter-spacing: 0.03em !important;
-}
-
-footer [class*="copyright"] a,
-.store-section.footer-store-section .footer-bottom a {
-  color: rgba(218,174,73,.55) !important;
-  font-size: 12.5px !important;
-}
-
-footer [class*="copyright"] a:hover,
-.store-section.footer-store-section .footer-bottom a:hover {
-  color: #daae49 !important;
-  padding-right: 0 !important;
-}
-
-/* ── Divider بين الأعمدة ── */
-.store-section.footer-store-section hr,
-footer hr {
-  border: none !important;
-  height: 1px !important;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(218,174,73,.18) 50%,
-    transparent
-  ) !important;
-  margin: 28px 0 !important;
-  opacity: 1 !important;
-}
-
-/* ── اللون الكلي للنصوص ── */
-.store-section.footer-store-section,
-footer {
-  color: #8a8070 !important;
-}
-
-/* ── رقم الهاتف والإيميل ── */
-.store-section.footer-store-section .footer-contact a,
-footer .footer-contact a {
-  color: #b8aa94 !important;
-  direction: ltr !important;
-  unicode-bidi: embed !important;
-  font-size: 13.5px !important;
-}
-
-/* ── padding الفوتر ── */
-.store-section.footer-store-section > .container,
-footer > .container {
-  padding-top: 56px !important;
-  padding-bottom: 16px !important;
-}
-
-/* ── تأثير الـ col ── */
-.store-section.footer-store-section .col-lg-3,
-.store-section.footer-store-section .col-lg-4,
-.store-section.footer-store-section .col-md-6,
-footer .col-lg-3,
-footer .col-lg-4,
-footer .col-md-6 {
-  padding: 0 24px 24px !important;
-}
 
 /* ============================================================
    PRODUCT PAGE —  MODE
@@ -2730,3 +2456,984 @@ div.mobile-nav:not(.opacity-0) .mobile-nav-item.center-nav .mobile-nav-icon i {
   .dash_overview-icon { width: 46px !important; height: 46px !important; }
   .dash_overview-icon svg { width: 22px !important; height: 22px !important; }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   JAWAK TV — MOBILE MENU CSS v3
+   ✅ أيقونات SVG ذهبية — جوال فقط (< 992px)
+   ══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 991.98px) {
+
+  :root {
+    --bg3:        #0d0b08;
+    --jwk-gold:   #daae49;
+    --jwk-border: rgba(218,174,73,.14);
+    --jwk-dim:    rgba(218,174,73,.07);
+    --jwk-text:   #f0ead8;
+  }
+
+  /* ── Offcanvas wrapper ── */
+  .offcanvas.offcanvas-end {
+    background: var(--bg3) !important;
+    border-left: 1px solid var(--jwk-border) !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  /* ── Header ── */
+  .offcanvas-header {
+    background: linear-gradient(135deg,rgba(218,174,73,.08) 0%,rgba(13,11,8,1) 100%) !important;
+    border-bottom: 1px solid var(--jwk-border) !important;
+    padding: 18px 20px 16px !important;
+    min-height: 72px;
+    align-items: center !important;
+  }
+  .offcanvas-header .logo-wrapper img {
+    height: 44px !important;
+    width: auto !important;
+  }
+  .offcanvas-header .btn-close {
+    filter: invert(1) brightness(.7) !important;
+    opacity: .7 !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    background: rgba(255,255,255,.06) !important;
+    transition: all .25s ease !important;
+  }
+  .offcanvas-header .btn-close:hover {
+    opacity: 1 !important;
+    background: rgba(218,174,73,.2) !important;
+  }
+
+  /* ── Body ── */
+  .offcanvas-body {
+    background: var(--bg3) !important;
+    padding: 20px 16px 32px !important;
+  }
+
+  /* ── List ── */
+  .custom-navbar .offcanvas.show .custom-navbar-nav,
+  .offcanvas-body .custom-navbar-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 7px !important;
+    padding: 4px 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .custom-navbar .offcanvas.show .custom-navbar-nav li,
+  .offcanvas-body .custom-navbar-nav li { width: 100% !important; }
+
+  .custom-navbar .offcanvas.show .custom-navbar-nav li .link-wrapper,
+  .offcanvas-body .custom-navbar-nav li .link-wrapper {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    transition: transform .2s cubic-bezier(.16,1,.3,1) !important;
+  }
+  .offcanvas-body .custom-navbar-nav li .link-wrapper:active {
+    transform: scale(.97) !important;
+  }
+
+  /* ── Link ── */
+  .custom-navbar .offcanvas.show .custom-navbar-nav li a,
+  .offcanvas-body .custom-navbar-nav li a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 13px !important;
+    padding: 14px 18px !important;
+    width: 100% !important;
+    color: var(--jwk-text) !important;
+    font-size: 15.5px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    background: rgba(255,255,255,.03) !important;
+    border: 1px solid rgba(255,255,255,.05) !important;
+    border-radius: 14px !important;
+    transition: background .2s, border-color .2s, color .2s !important;
+    direction: rtl !important;
+    text-align: right !important;
+  }
+
+  .custom-navbar .offcanvas.show .custom-navbar-nav li a:hover,
+  .offcanvas-body .custom-navbar-nav li a:hover {
+    background: var(--jwk-dim) !important;
+    border-color: var(--jwk-border) !important;
+    color: var(--jwk-gold) !important;
+  }
+  .offcanvas-body .custom-navbar-nav li a:hover .jwk-nav-icon svg {
+    stroke: var(--jwk-gold) !important;
+  }
+
+  /* ── أيقونة SVG ── */
+  .jwk-nav-icon {
+    width: 36px !important;
+    height: 36px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(218,174,73,.1) !important;
+    border: 1px solid rgba(218,174,73,.18) !important;
+    border-radius: 10px !important;
+    color: var(--jwk-gold) !important;
+    transition: background .2s, border-color .2s !important;
+  }
+
+  .jwk-nav-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+    stroke: var(--jwk-gold) !important;
+    display: block !important;
+  }
+
+  .offcanvas-body .custom-navbar-nav li a:hover .jwk-nav-icon {
+    background: rgba(218,174,73,.18) !important;
+    border-color: rgba(218,174,73,.35) !important;
+  }
+
+  /* ── نص ── */
+  .jwk-nav-label {
+    flex: 1 !important;
+    font-size: 15.5px !important;
+    font-weight: 500 !important;
+  }
+
+  /* ── سهم ── */
+  .jwk-nav-arrow {
+    opacity: .3 !important;
+    display: flex !important;
+    align-items: center !important;
+    transition: opacity .2s !important;
+  }
+  .jwk-nav-arrow svg {
+    stroke: var(--jwk-text) !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .offcanvas-body .custom-navbar-nav li a:hover .jwk-nav-arrow {
+    opacity: .6 !important;
+  }
+  .offcanvas-body .custom-navbar-nav li a:hover .jwk-nav-arrow svg {
+    stroke: var(--jwk-gold) !important;
+  }
+
+  /* ── الرئيسية مميّزة ── */
+  .custom-navbar-nav li:first-child > .link-wrapper > a {
+    background: linear-gradient(135deg,rgba(218,174,73,.1) 0%,rgba(218,174,73,.03) 100%) !important;
+    border-color: rgba(218,174,73,.22) !important;
+    color: var(--jwk-gold) !important;
+  }
+  .custom-navbar-nav li:first-child > .link-wrapper > a .jwk-nav-icon {
+    background: rgba(218,174,73,.18) !important;
+    border-color: rgba(218,174,73,.3) !important;
+  }
+
+} /* end @media */
+/* ══ END jawaktv-mobile-menu-v3.css ══ */
+
+/* ══════════════════════════════════════════════════════════════════════
+   JAWAK TV — FOOTER COMPLETE v4.0
+   كود الفوتر الكامل: التصميم + روابط هامة + اتصل بنا + جدول العمل
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ──────────────────────────────────────────────────────────────────────
+   1. VARIABLES
+────────────────────────────────────────────────────────────────────── */
+:root {
+  --g:    #daae49;
+  --gl:   #f0d878;
+  --gd:   #c9922a;
+  --gx:   #b88b3c;
+  --bg:   #1a1815;
+  --bg2:  #1f1c19;
+  --bg3:  #242018;
+  --bg4:  #141109;
+  --txt:  #f0ead8;
+  --txs:  #c8bfa8;
+  --txm:  #908778;
+  --bdr:  rgba(218,174,73,.18);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   2. FOOTER WRAPPER — الهيكل والخلفية
+────────────────────────────────────────────────────────────────────── */
+
+.store-section.footer-store-section,
+footer,
+.footer-area {
+  background: transparent !important;
+  position: relative !important;
+  isolation: isolate !important;
+}
+
+/* خلفية التدرج الداكن الفاخر */
+.store-section.footer-store-section::after,
+footer::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  background:
+    radial-gradient(ellipse 80% 40% at 50% -10%, rgba(218,174,73,.09) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 0% 100%, rgba(185,136,40,.06) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 100% 100%, rgba(218,174,73,.06) 0%, transparent 55%),
+    linear-gradient(180deg, #100f0c 0%, #0d0b08 40%, #080705 100%) !important;
+  pointer-events: none !important;
+}
+
+/* الخط الذهبي العلوي المضيء */
+.store-section.footer-store-section::before,
+footer::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important; left: 0 !important; right: 0 !important;
+  height: 1px !important;
+  z-index: 2 !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(185,136,40,.4) 15%,
+    rgba(218,174,73,.85) 35%,
+    rgba(240,216,120,1) 50%,
+    rgba(218,174,73,.85) 65%,
+    rgba(185,136,40,.4) 85%,
+    transparent 100%
+  ) !important;
+  box-shadow: 0 0 28px rgba(218,174,73,.25), 0 0 6px rgba(240,216,120,.3) !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   3. FOOTER CONTAINER — المحتوى الداخلي
+────────────────────────────────────────────────────────────────────── */
+
+.store-section.footer-store-section .container,
+.store-section.footer-store-section .row,
+footer .container,
+footer .row {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.store-section.footer-store-section > .container,
+footer > .container {
+  padding-top: 56px !important;
+  padding-bottom: 16px !important;
+}
+
+.store-section.footer-store-section .col-lg-3,
+.store-section.footer-store-section .col-lg-4,
+.store-section.footer-store-section .col-md-6,
+footer .col-lg-3,
+footer .col-lg-4,
+footer .col-md-6 {
+  padding: 0 24px 24px !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   4. FOOTER HEADINGS — عناوين الأقسام بتأثير الذهب
+────────────────────────────────────────────────────────────────────── */
+
+.store-section.footer-store-section h4,
+.store-section.footer-store-section h5,
+.store-section.footer-store-section h3,
+.store-section.footer-store-section .footer-widget-title,
+.store-section.footer-store-section .widget-title,
+footer h4, footer h5, footer h3,
+footer .footer-widget-title,
+footer .widget-title {
+  color: transparent !important;
+  background: linear-gradient(135deg, #c9922a 0%, #daae49 45%, #f0d878 70%, #daae49 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  padding-bottom: 12px !important;
+  margin-bottom: 18px !important;
+  position: relative !important;
+  display: inline-block !important;
+  width: 100% !important;
+}
+
+/* خط ذهبي تحت كل عنوان */
+.store-section.footer-store-section h4::after,
+.store-section.footer-store-section h5::after,
+.store-section.footer-store-section .footer-widget-title::after,
+footer h4::after,
+footer h5::after,
+footer .footer-widget-title::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  width: 38px !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, #daae49, transparent) !important;
+  border-radius: 2px !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   5. FOOTER LINKS — الروابط
+────────────────────────────────────────────────────────────────────── */
+
+.store-section.footer-store-section a,
+footer a {
+  color: #b8aa94 !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: color .22s ease, padding-right .22s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.store-section.footer-store-section a:hover,
+footer a:hover {
+  color: #f0d878 !important;
+  padding-right: 4px !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   6. FOOTER TEXT — النصوص
+────────────────────────────────────────────────────────────────────── */
+
+.store-section.footer-store-section p,
+.store-section.footer-store-section span,
+.store-section.footer-store-section li,
+footer p, footer span, footer li {
+  color: #8a8070 !important;
+  font-size: 13.5px !important;
+  line-height: 1.85 !important;
+}
+
+.store-section.footer-store-section,
+footer {
+  color: #8a8070 !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   7. FOOTER LISTS — القوائم
+────────────────────────────────────────────────────────────────────── */
+
+.store-section.footer-store-section ul,
+footer ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.store-section.footer-store-section ul li,
+footer ul li {
+  padding: 5px 0 !important;
+  border-bottom: 1px solid rgba(218,174,73,.05) !important;
+}
+
+.store-section.footer-store-section ul li:last-child,
+footer ul li:last-child {
+  border-bottom: none !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   8. SOCIAL ICONS — أيقونات التواصل
+────────────────────────────────────────────────────────────────────── */
+
+.footer-social a,
+.social-links a,
+.store-section.footer-store-section .social-icon a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(218,174,73,.2) !important;
+  background: linear-gradient(145deg, rgba(218,174,73,.06), rgba(185,136,40,.03)) !important;
+  color: #8a8070 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  transition: all .25s ease !important;
+  margin-left: 6px !important;
+}
+
+.footer-social a:hover,
+.social-links a:hover,
+.store-section.footer-store-section .social-icon a:hover {
+  border-color: rgba(218,174,73,.55) !important;
+  background: linear-gradient(135deg, rgba(218,174,73,.15), rgba(240,216,120,.08)) !important;
+  color: #f0d878 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 20px rgba(218,174,73,.15) !important;
+  padding: 0 !important;
+}
+
+.footer-social i,
+.social-links i {
+  color: inherit !important;
+  font-size: 16px !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   9. PAYMENT ICONS — أيقونات الدفع
+────────────────────────────────────────────────────────────────────── */
+
+.payment-methods img,
+.footer-payments img,
+.store-section.footer-store-section [class*="payment"] img {
+  filter: grayscale(1) brightness(.5) sepia(.2) !important;
+  border: 1px solid rgba(218,174,73,.12) !important;
+  border-radius: 7px !important;
+  padding: 5px 9px !important;
+  background: rgba(218,174,73,.04) !important;
+  transition: all .25s ease !important;
+  max-height: 28px !important;
+  width: auto !important;
+}
+
+.payment-methods img:hover,
+.footer-payments img:hover {
+  filter: grayscale(0) brightness(1) !important;
+  border-color: rgba(218,174,73,.35) !important;
+  box-shadow: 0 4px 12px rgba(218,174,73,.12) !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   10. FOOTER BOTTOM BAR — شريط حقوق الملكية
+────────────────────────────────────────────────────────────────────── */
+
+.store-section.footer-store-section .footer-bottom,
+.store-section.footer-store-section [class*="copyright"],
+footer .footer-bottom,
+footer [class*="copyright"] {
+  position: relative !important;
+  margin-top: 32px !important;
+  padding-top: 20px !important;
+  border-top: none !important;
+}
+
+.store-section.footer-store-section .footer-bottom::before,
+footer .footer-bottom::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important; left: 0 !important; right: 0 !important;
+  height: 1px !important;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(218,174,73,.22) 30%,
+    rgba(218,174,73,.22) 70%,
+    transparent
+  ) !important;
+}
+
+.store-section.footer-store-section .footer-bottom p,
+.store-section.footer-store-section .footer-bottom span,
+footer .footer-bottom p,
+footer .footer-bottom span,
+footer [class*="copyright"] p,
+footer [class*="copyright"] span {
+  color: #5a5248 !important;
+  font-size: 12.5px !important;
+  letter-spacing: 0.03em !important;
+}
+
+footer [class*="copyright"] a,
+.store-section.footer-store-section .footer-bottom a {
+  color: rgba(218,174,73,.55) !important;
+  font-size: 12.5px !important;
+}
+
+footer [class*="copyright"] a:hover,
+.store-section.footer-store-section .footer-bottom a:hover {
+  color: #daae49 !important;
+  padding-right: 0 !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   11. HR DIVIDERS
+────────────────────────────────────────────────────────────────────── */
+
+.store-section.footer-store-section hr,
+footer hr {
+  border: none !important;
+  height: 1px !important;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(218,174,73,.18) 50%,
+    transparent
+  ) !important;
+  margin: 28px 0 !important;
+  opacity: 1 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   12. #jwk-footer-extra — الكتلة المضافة بالكامل
+       (روابط هامة + اتصل بنا + جدول ساعات العمل)
+   ══════════════════════════════════════════════════════════════════════ */
+
+#jwk-footer-extra {
+  direction: rtl;
+  width: 100%;
+  border-top: 1px solid rgba(218,174,73,.1);
+  padding: 48px 0 0;
+  margin-top: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+/* الشبكة الثلاثية */
+#jwk-footer-extra .jwk-fe-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 32px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   12A. عناوين الأعمدة — col titles
+────────────────────────────────────────────────────────────────────── */
+
+.jwk-fe-col-title {
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: transparent !important;
+  background: linear-gradient(135deg, #c9922a, #daae49, #f0d878) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 20px !important;
+  padding-bottom: 12px !important;
+  position: relative !important;
+  border-bottom: none !important;
+  width: 100% !important;
+}
+
+.jwk-fe-col-title::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  width: 36px !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, #daae49, transparent) !important;
+  border-radius: 2px !important;
+}
+
+.jwk-fe-col-title svg {
+  width: 16px !important;
+  height: 16px !important;
+  stroke: #daae49 !important;
+  fill: none !important;
+  flex-shrink: 0 !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   12B. عمود "اتصل بنا" — contact column
+────────────────────────────────────────────────────────────────────── */
+
+.jwk-contact-card {
+  background: linear-gradient(145deg, rgba(218,174,73,.05), rgba(185,136,40,.02));
+  border: 1px solid rgba(218,174,73,.14);
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.jwk-contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.jwk-contact-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(218,174,73,.1);
+  border: 1px solid rgba(218,174,73,.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.jwk-contact-icon svg {
+  width: 16px !important;
+  height: 16px !important;
+  stroke: #daae49 !important;
+  fill: none !important;
+}
+
+.jwk-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.jwk-contact-label {
+  font-size: 11px !important;
+  color: #6a6055 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  line-height: 1.4 !important;
+}
+
+.jwk-contact-value {
+  font-size: 13.5px !important;
+  color: #c8bfa8 !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+}
+
+.jwk-contact-value a {
+  color: #c8bfa8 !important;
+  font-size: 13.5px !important;
+  display: inline !important;
+  transition: color .2s !important;
+  padding: 0 !important;
+}
+
+.jwk-contact-value a:hover {
+  color: #f0d878 !important;
+  padding: 0 !important;
+}
+
+/* زر واتساب */
+.jwk-wa-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 11px 20px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #1a3a1f, #1f4a24) !important;
+  border: 1px solid rgba(45,214,107,.25) !important;
+  color: #4ade80 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  transition: all .25s ease !important;
+  margin-top: 4px !important;
+  width: 100% !important;
+}
+
+.jwk-wa-btn:hover {
+  background: linear-gradient(135deg, #1f4a24, #25562a) !important;
+  border-color: rgba(45,214,107,.45) !important;
+  color: #86efac !important;
+  box-shadow: 0 6px 18px rgba(45,214,107,.12) !important;
+  transform: translateY(-2px) !important;
+  padding-right: 20px !important;
+}
+
+.jwk-wa-btn svg {
+  width: 16px !important;
+  height: 16px !important;
+  fill: currentColor !important;
+  stroke: none !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   12C. عمود "روابط هامة" — important links column
+────────────────────────────────────────────────────────────────────── */
+
+.jwk-imp-links {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.jwk-imp-links li {
+  border-bottom: none !important;
+  padding: 0 !important;
+}
+
+.jwk-imp-link-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 9px 12px !important;
+  border-radius: 10px !important;
+  color: #b8aa94 !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: all .22s ease !important;
+  border: 1px solid transparent !important;
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+}
+
+.jwk-imp-link-item::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(90deg, rgba(218,174,73,.06), transparent) !important;
+  opacity: 0 !important;
+  transition: opacity .22s !important;
+  border-radius: inherit !important;
+}
+
+.jwk-imp-link-item:hover {
+  color: #f0d878 !important;
+  border-color: rgba(218,174,73,.18) !important;
+  background: rgba(218,174,73,.04) !important;
+  padding-right: 16px !important;
+}
+
+.jwk-imp-link-item:hover::before {
+  opacity: 1 !important;
+}
+
+.jwk-link-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(218,174,73,.08);
+  border: 1px solid rgba(218,174,73,.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all .22s ease;
+}
+
+.jwk-imp-link-item:hover .jwk-link-icon {
+  background: rgba(218,174,73,.14);
+  border-color: rgba(218,174,73,.3);
+}
+
+.jwk-link-icon svg {
+  width: 13px !important;
+  height: 13px !important;
+  stroke: #daae49 !important;
+  fill: none !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   12D. عمود "ساعات العمل" — Night Schedule الفكرة الجبارة ✦
+────────────────────────────────────────────────────────────────────── */
+
+.jwk-night-schedule {
+  background: linear-gradient(145deg, #0e0c08, #15120a);
+  border: 1px solid rgba(218,174,73,.18);
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.jwk-night-schedule::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(218,174,73,.5) 50%, transparent);
+}
+
+/* رأس الجدول مع النقطة الخضراء النابضة */
+.jwk-schedule-header {
+  padding: 14px 18px;
+  background: linear-gradient(135deg, rgba(218,174,73,.08), rgba(185,136,40,.04));
+  border-bottom: 1px solid rgba(218,174,73,.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jwk-schedule-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34,197,94,.5);
+  animation: jwkPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes jwkPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(34,197,94,.5); }
+  50%       { box-shadow: 0 0 16px rgba(34,197,94,.8); }
+}
+
+.jwk-schedule-status {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #22c55e !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+
+/* صفوف الجدول */
+.jwk-schedule-rows {
+  padding: 12px 0;
+}
+
+.jwk-schedule-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 18px;
+  transition: background .18s ease;
+  gap: 12px;
+}
+
+.jwk-schedule-row:hover {
+  background: rgba(218,174,73,.04);
+}
+
+/* تمييز اليوم الحالي بخط ذهبي على الجانب */
+.jwk-schedule-row.today {
+  background: rgba(218,174,73,.07);
+  position: relative;
+}
+
+.jwk-schedule-row.today::after {
+  content: '' !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 2px !important;
+  background: linear-gradient(180deg, transparent, #daae49, transparent) !important;
+}
+
+.jwk-day-name {
+  font-size: 12.5px !important;
+  color: #8a8070 !important;
+  font-weight: 500 !important;
+  flex: 1 !important;
+}
+
+.jwk-schedule-row.today .jwk-day-name {
+  color: #f0d878 !important;
+  font-weight: 700 !important;
+}
+
+.jwk-day-time {
+  font-size: 12px !important;
+  color: #6a6055 !important;
+  font-weight: 600 !important;
+  direction: ltr !important;
+  unicode-bidi: embed !important;
+  white-space: nowrap !important;
+  background: rgba(218,174,73,.07) !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  border: 1px solid rgba(218,174,73,.1) !important;
+}
+
+.jwk-schedule-row.today .jwk-day-time {
+  color: #daae49 !important;
+  background: rgba(218,174,73,.14) !important;
+  border-color: rgba(218,174,73,.28) !important;
+}
+
+.jwk-day-time.closed {
+  color: #6b5a5a !important;
+  background: rgba(180,80,80,.07) !important;
+  border-color: rgba(180,80,80,.15) !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   12E. الشريط السفلي للكتلة الإضافية
+────────────────────────────────────────────────────────────────────── */
+
+#jwk-footer-extra .jwk-fe-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 1200px;
+  margin: 32px auto 0;
+  padding: 20px 24px;
+  border-top: 1px solid rgba(218,174,73,.08);
+}
+
+.jwk-fe-copy {
+  font-size: 12px !important;
+  color: #4a4440 !important;
+  direction: rtl !important;
+}
+
+.jwk-fe-copy span {
+  color: rgba(218,174,73,.4) !important;
+  font-size: 12px !important;
+}
+
+.jwk-fe-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jwk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(218,174,73,.12);
+  background: rgba(218,174,73,.04);
+  font-size: 11px !important;
+  color: #6a6055 !important;
+  font-weight: 600 !important;
+  white-space: nowrap;
+}
+
+.jwk-badge svg {
+  width: 12px !important;
+  height: 12px !important;
+  stroke: #daae49 !important;
+  fill: none !important;
+  opacity: .7;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   13. RESPONSIVE — موبايل
+────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  #jwk-footer-extra .jwk-fe-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 32px;
+  }
+  .jwk-fe-contact-col {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  #jwk-footer-extra .jwk-fe-grid {
+    grid-template-columns: 1fr;
+  }
+  .jwk-fe-contact-col {
+    grid-column: auto;
+  }
+  #jwk-footer-extra .jwk-fe-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+
+
