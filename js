@@ -372,7 +372,7 @@
           'جـــوك <span style="background:linear-gradient(135deg,#c9922a,#daae49,#f0d878);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">TV</span>' +
         '</h1>' +
         '<p style="font-size:clamp(1rem,2.5vw,1.3rem);color:rgba(240,234,216,0.92);margin:0 0 28px;text-shadow:0 2px 12px rgba(0,0,0,0.5);font-weight:500">أفلام · مسلسلات · مباريات بلا حدود</p>' +
-        '<a href="/products" style="pointer-events:auto;display:inline-flex;align-items:center;padding:14px 48px;background:linear-gradient(135deg,#b88b3c,#daae49,#f0d878);color:#0a0800!important;font-weight:900;font-size:15px;border-radius:999px;text-decoration:none;box-shadow:0 10px 30px rgba(218,174,73,0.4),0 4px 12px rgba(0,0,0,0.4);letter-spacing:0.02em;transition:transform .25s ease,box-shadow .25s ease" onmouseover="this.style.transform=\'translateY(-3px) scale(1.03)\';this.style.boxShadow=\'0 18px 40px rgba(218,174,73,0.55)\'" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'0 10px 30px rgba(218,174,73,0.4),0 4px 12px rgba(0,0,0,0.4)\'">تسوق الآن</a>';
+        '<a href="/shop" style="pointer-events:auto;display:inline-flex;align-items:center;padding:14px 48px;background:linear-gradient(135deg,#b88b3c,#daae49,#f0d878);color:#0a0800!important;font-weight:900;font-size:15px;border-radius:999px;text-decoration:none;box-shadow:0 10px 30px rgba(218,174,73,0.4),0 4px 12px rgba(0,0,0,0.4);letter-spacing:0.02em;transition:transform .25s ease,box-shadow .25s ease" onmouseover="this.style.transform=\'translateY(-3px) scale(1.03)\';this.style.boxShadow=\'0 18px 40px rgba(218,174,73,0.55)\'" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'0 10px 30px rgba(218,174,73,0.4),0 4px 12px rgba(0,0,0,0.4)\'">تسوق الآن</a>';
       hero.appendChild(heroText);
     }
 
@@ -449,7 +449,7 @@
             '<div class="jawak-feature-view">' +
               '<h4 class="jawak-feature-title"></h4>' +
               '<p class="jawak-feature-desc"></p>' +
-              '<a class="jawak-buy-btn" href="/products">تسوق الآن ←</a>' +
+              '<a class="jawak-buy-btn" href="/shop">تسوق الآن ←</a>' +
             '</div>' +
           '</div>' +
         '</div>' +
@@ -690,3 +690,139 @@
   _mo.observe(document.body, { childList: true, subtree: true });
 
 })();
+
+/* ══════════════════════════════════════════════════════════════
+   JAWAK TV — MOBILE MENU ENHANCER (JS) v3
+   ✅ أيقونات SVG ذهبية أنيقة — جوال فقط (< 992px)
+   ══════════════════════════════════════════════════════════════ */
+
+(function () {
+  'use strict';
+
+  function isMobile() { return window.innerWidth < 992; }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     أيقونات SVG — كل واحدة مرسومة يدوياً لتناسب القسم
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  var SVG = {
+
+    /* 🏠 الرئيسية — بيت */
+    home:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+        '<path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>' +
+        '<path d="M9 21V12h6v9"/>' +
+      '</svg>',
+
+    /* 📺 جوك سترونج — تلفاز */
+    tv:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+        '<rect x="2" y="7" width="20" height="13" rx="2"/>' +
+        '<path d="M8 7V5"/><path d="M16 7V5"/>' +
+        '<path d="M8 17h8"/>' +
+      '</svg>',
+
+    /* 🖥️ شاشتين — شاشتان متداخلتان */
+    dual:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+        '<rect x="1" y="5" width="14" height="10" rx="1.5"/>' +
+        '<path d="M1 12h14"/>' +
+        '<path d="M5 15v2"/>' +
+        '<rect x="9" y="9" width="14" height="10" rx="1.5"/>' +
+        '<path d="M9 16h14"/>' +
+        '<path d="M16 19v2"/>' +
+      '</svg>',
+
+    /* 🔄 تجديد — سهمان دائريان */
+    renew:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' +
+        '<path d="M1 4v6h6"/>' +
+        '<path d="M23 20v-6h-6"/>' +
+        '<path d="M20.49 9A9 9 0 005.64 5.64L1 10"/>' +
+        '<path d="M3.51 15a9 9 0 0014.85 3.36L23 14"/>' +
+      '</svg>',
+
+    /* 📱 تطبيقات — شبكة تطبيقات */
+    apps:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+        '<rect x="2" y="2" width="9" height="9" rx="1.5"/>' +
+        '<rect x="13" y="2" width="9" height="9" rx="1.5"/>' +
+        '<rect x="2" y="13" width="9" height="9" rx="1.5"/>' +
+        '<rect x="13" y="13" width="9" height="9" rx="1.5"/>' +
+      '</svg>',
+
+    /* 🏷️ عروض — تاج خصم */
+    offers:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+        '<path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/>' +
+        '<circle cx="7" cy="7" r="1.2" fill="currentColor" stroke="none"/>' +
+        '<line x1="15" y1="9" x2="9" y2="15"/>' +
+      '</svg>',
+
+    /* fallback */
+    link:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+        '<path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/>' +
+        '<path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/>' +
+      '</svg>'
+  };
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     خريطة النص → مفتاح الأيقونة
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  var ICON_MAP = [
+    { match: 'الرئيسية',    key: 'home'   },
+    { match: 'جوك سترونج', key: 'tv'     },
+    { match: 'شاشتين',     key: 'dual'   },
+    { match: 'تجديد',      key: 'renew'  },
+    { match: 'تطبيقات',    key: 'apps'   },
+    { match: 'عروض',       key: 'offers' }
+  ];
+
+  function pickSvg(text) {
+    for (var i = 0; i < ICON_MAP.length; i++) {
+      if ((text || '').indexOf(ICON_MAP[i].match) !== -1) return SVG[ICON_MAP[i].key];
+    }
+    return SVG.link;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     حقن الأيقونات
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  function enhanceLinks() {
+    if (!isMobile()) return;
+
+    var nav = document.querySelector('#multi_tenancy_menu .custom-navbar-nav');
+    if (!nav) return;
+
+    nav.querySelectorAll('li a').forEach(function (a) {
+      if (a.querySelector('.jwk-nav-icon')) return;
+      var text = a.textContent.trim();
+      a.innerHTML =
+        '<span class="jwk-nav-icon" aria-hidden="true">' + pickSvg(text) + '</span>' +
+        '<span class="jwk-nav-label">' + text + '</span>' +
+        '<span class="jwk-nav-arrow" aria-hidden="true">' +
+          '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+            '<polyline points="15 18 9 12 15 6"/>' +
+          '</svg>' +
+        '</span>';
+    });
+  }
+
+  function init() {
+    enhanceLinks();
+    var el = document.getElementById('multi_tenancy_menu');
+    if (el) {
+      el.addEventListener('show.bs.offcanvas',  enhanceLinks);
+      el.addEventListener('shown.bs.offcanvas', enhanceLinks);
+    }
+    window.addEventListener('resize', enhanceLinks);
+    new MutationObserver(function () { enhanceLinks(); })
+      .observe(document.body, { subtree: true, childList: true });
+  }
+
+  document.readyState === 'loading'
+    ? document.addEventListener('DOMContentLoaded', init)
+    : init();
+
+})();
+/* ══ END jawaktv-mobile-menu-v3.js ══ */
