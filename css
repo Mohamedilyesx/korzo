@@ -3951,3 +3951,10 @@ body.jwk-on { padding-bottom: 68px; }
 .single-shop-left:has(.star-list) {
   display: none !important;
 }
+/* تصليح رد الادمن */
+.rv2_admin-replay {
+  background-color: #3d2a00 !important;
+  color: #f0d070 !important;
+  border-color: rgba(218,174,73,.4) !important;
+}
+
