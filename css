@@ -3945,3 +3945,9 @@ body.jwk-on { padding-bottom: 68px; }
   .jwk-qb { width: 28px; height: 28px; font-size: 16px; }
   .jwk-qn { width: 30px; font-size: 14px; }
 }
+
+
+/* إخفاء فلتر التقييم في صفحة المتجر */
+.single-shop-left:has(.star-list) {
+  display: none !important;
+}
