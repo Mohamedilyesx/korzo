@@ -692,8 +692,8 @@
 })();
 
 /* ══════════════════════════════════════════════════════════════
-   JAWAK TV — MOBILE MENU ENHANCER (JS) v3
-   ✅ أيقونات SVG ذهبية أنيقة — جوال فقط (< 992px)
+   JAWAK TV — MOBILE MENU JS v3 FIXED
+   ✅ أيقونات SVG ذهبية + زر X أسود — جوال فقط (< 992px)
    ══════════════════════════════════════════════════════════════ */
 
 (function () {
@@ -701,47 +701,34 @@
 
   function isMobile() { return window.innerWidth < 992; }
 
-  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     أيقونات SVG — كل واحدة مرسومة يدوياً لتناسب القسم
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     أيقونات SVG — كما هي بالضبط
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   var SVG = {
-
-    /* 🏠 الرئيسية — بيت */
     home:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
         '<path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>' +
         '<path d="M9 21V12h6v9"/>' +
       '</svg>',
-
-    /* 📺 جوك سترونج — تلفاز */
     tv:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
         '<rect x="2" y="7" width="20" height="13" rx="2"/>' +
         '<path d="M8 7V5"/><path d="M16 7V5"/>' +
         '<path d="M8 17h8"/>' +
       '</svg>',
-
-    /* 🖥️ شاشتين — شاشتان متداخلتان */
     dual:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
         '<rect x="1" y="5" width="14" height="10" rx="1.5"/>' +
-        '<path d="M1 12h14"/>' +
-        '<path d="M5 15v2"/>' +
+        '<path d="M1 12h14"/><path d="M5 15v2"/>' +
         '<rect x="9" y="9" width="14" height="10" rx="1.5"/>' +
-        '<path d="M9 16h14"/>' +
-        '<path d="M16 19v2"/>' +
+        '<path d="M9 16h14"/><path d="M16 19v2"/>' +
       '</svg>',
-
-    /* 🔄 تجديد — سهمان دائريان */
     renew:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' +
-        '<path d="M1 4v6h6"/>' +
-        '<path d="M23 20v-6h-6"/>' +
+        '<path d="M1 4v6h6"/><path d="M23 20v-6h-6"/>' +
         '<path d="M20.49 9A9 9 0 005.64 5.64L1 10"/>' +
         '<path d="M3.51 15a9 9 0 0014.85 3.36L23 14"/>' +
       '</svg>',
-
-    /* 📱 تطبيقات — شبكة تطبيقات */
     apps:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
         '<rect x="2" y="2" width="9" height="9" rx="1.5"/>' +
@@ -749,16 +736,12 @@
         '<rect x="2" y="13" width="9" height="9" rx="1.5"/>' +
         '<rect x="13" y="13" width="9" height="9" rx="1.5"/>' +
       '</svg>',
-
-    /* 🏷️ عروض — تاج خصم */
     offers:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
         '<path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/>' +
         '<circle cx="7" cy="7" r="1.2" fill="currentColor" stroke="none"/>' +
         '<line x1="15" y1="9" x2="9" y2="15"/>' +
       '</svg>',
-
-    /* fallback */
     link:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
         '<path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/>' +
@@ -766,9 +749,6 @@
       '</svg>'
   };
 
-  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     خريطة النص → مفتاح الأيقونة
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   var ICON_MAP = [
     { match: 'الرئيسية',    key: 'home'   },
     { match: 'جوك سترونج', key: 'tv'     },
@@ -785,15 +765,13 @@
     return SVG.link;
   }
 
-  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     حقن الأيقونات
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     حقن الأيقونات — بدون تعديل
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   function enhanceLinks() {
     if (!isMobile()) return;
-
     var nav = document.querySelector('#multi_tenancy_menu .custom-navbar-nav');
     if (!nav) return;
-
     nav.querySelectorAll('li a').forEach(function (a) {
       if (a.querySelector('.jwk-nav-icon')) return;
       var text = a.textContent.trim();
@@ -808,16 +786,71 @@
     });
   }
 
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     زر X — دائرة سوداء + خط أبيض
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  function addCloseBtn() {
+    if (!isMobile()) return;
+
+    var offcanvas = document.getElementById('multi_tenancy_menu');
+    if (!offcanvas) return;
+    if (offcanvas.querySelector('.jwk-close-btn')) return;
+
+    var header = offcanvas.querySelector('.offcanvas-header');
+    if (!header) return;
+
+    /* إخفاء الزر الأصلي */
+    var oldBtn = header.querySelector('.btn-close');
+    if (oldBtn) oldBtn.style.cssText = 'display:none!important';
+
+    /* بناء الزر */
+    var btn = document.createElement('button');
+    btn.className    = 'jwk-close-btn';
+    btn.type         = 'button';
+    btn.setAttribute('aria-label', 'إغلاق القائمة');
+
+    /* SVG خطّان يشكّلان X */
+    btn.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">' +
+        '<line x1="18" y1="6"  x2="6"  y2="18" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>' +
+        '<line x1="6"  y1="6"  x2="18" y2="18" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>' +
+      '</svg>';
+
+    /* إغلاق القائمة */
+    btn.addEventListener('click', function () {
+      if (window.bootstrap && window.bootstrap.Offcanvas) {
+        var inst = window.bootstrap.Offcanvas.getInstance(offcanvas);
+        if (inst) { inst.hide(); return; }
+      }
+      /* Fallback يدوي */
+      offcanvas.classList.remove('show');
+      offcanvas.style.visibility = 'hidden';
+      document.body.classList.remove('offcanvas-open', 'modal-open');
+      var backdrop = document.querySelector('.offcanvas-backdrop');
+      if (backdrop) backdrop.remove();
+    });
+
+    header.appendChild(btn);
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━
+     تهيئة
+  ━━━━━━━━━━━━━━━━━━━ */
   function init() {
     enhanceLinks();
+    addCloseBtn();
+
     var el = document.getElementById('multi_tenancy_menu');
     if (el) {
-      el.addEventListener('show.bs.offcanvas',  enhanceLinks);
-      el.addEventListener('shown.bs.offcanvas', enhanceLinks);
+      el.addEventListener('show.bs.offcanvas',  function () { addCloseBtn(); enhanceLinks(); });
+      el.addEventListener('shown.bs.offcanvas', function () { addCloseBtn(); enhanceLinks(); });
     }
+
     window.addEventListener('resize', enhanceLinks);
-    new MutationObserver(function () { enhanceLinks(); })
-      .observe(document.body, { subtree: true, childList: true });
+
+    new MutationObserver(function () {
+      enhanceLinks();
+    }).observe(document.body, { subtree: true, childList: true });
   }
 
   document.readyState === 'loading'
@@ -825,4 +858,253 @@
     : init();
 
 })();
-/* ══ END jawaktv-mobile-menu-v3.js ══ */
+
+
+(function () {
+  'use strict';
+
+  var scrollY = 0;
+  var offcanvas = document.getElementById('multi_tenancy_menu');
+  if (!offcanvas) return;
+
+  offcanvas.addEventListener('show.bs.offcanvas', function () {
+    scrollY = window.scrollY || window.pageYOffset;
+    document.body.style.cssText =
+      'overflow:hidden!important;' +
+      'position:fixed!important;' +
+      'top:-' + scrollY + 'px!important;' +
+      'width:100%!important;' +
+      'touch-action:none!important;';
+  });
+
+  offcanvas.addEventListener('hide.bs.offcanvas', function () {
+    document.body.style.cssText = '';
+    window.scrollTo({ top: scrollY, behavior: 'instant' });
+  });
+
+  offcanvas.addEventListener('hidden.bs.offcanvas', function () {
+    document.body.style.cssText = '';
+    window.scrollTo({ top: scrollY, behavior: 'instant' });
+  });
+
+})();
+
+/* ══ END jawaktv-menu-v3-fixed.js ══ */
+
+/* ══════════════════════════════════════════════════════════════
+   JAWAK TV — Sticky Add to Cart (JS)
+   ══════════════════════════════════════════════════════════════ */
+(function () {
+
+  /* هل صفحة منتج؟ */
+  if (
+    !document.querySelector('.product-details-wrapper') &&
+    !document.querySelector('.add_to_cart_single_page') &&
+    !document.querySelector('.but_now_single_page')
+  ) return;
+
+  function build() {
+    if (document.getElementById('jwk-atc')) return null;
+
+    var prEl = document.querySelector('.prprice');
+    var tiEl = document.querySelector(
+      '.details-title h1,.details-title h2,h1.product-title,.product-details-wrapper h1'
+    );
+    var imEl = document.querySelector(
+      '.product-image-slide img,.splide__slide.is-active img'
+    );
+
+    var price = prEl ? prEl.textContent.trim() : '';
+    var title = tiEl ? tiEl.textContent.trim() : '';
+    var img   = imEl ? imEl.src : '';
+
+    var bar = document.createElement('div');
+    bar.id = 'jwk-atc';
+
+    /*
+      هيكل HTML نظيف — بدون تكرار:
+      ┌─────────────────────────────────┐
+      │ .jwk-prod  (ديسكتوب فقط)       │
+      │ .jwk-row1  (موبايل: سعر+كمية)  │
+      │   .jwk-price                   │
+      │   .jwk-qty  ← واحدة فقط        │
+      │ .jwk-btns  (أضف + اشتري)       │
+      └─────────────────────────────────┘
+      في الديسكتوب: .jwk-inner → flex row
+        نُظهر .jwk-prod + .jwk-price + .jwk-qty + .jwk-btns
+      في الموبايل: .jwk-inner → flex column
+        نُخفي .jwk-prod، ونُظهر .jwk-row1 (يحتوي السعر+الكمية) + .jwk-btns
+    */
+
+    bar.innerHTML =
+      '<div class="jwk-inner">' +
+
+        /* صورة + اسم — DESKTOP فقط */
+        '<div class="jwk-prod">' +
+          (img ? '<img class="jwk-prod-img" src="' + img + '" alt="" width="46" height="46" loading="lazy">' : '') +
+          '<span class="jwk-prod-name">' + title + '</span>' +
+        '</div>' +
+
+        /* السعر + الكمية — يُعاد ترتيبهما في الموبايل داخل .jwk-row1 */
+        '<div class="jwk-row1">' +
+          '<span class="jwk-price" id="jwk-price">' + price + '</span>' +
+          '<div class="jwk-qty">' +
+            '<button class="jwk-qb" data-d="p" type="button" aria-label="زيادة الكمية">+</button>' +
+            '<input  class="jwk-qn" id="jwk-qty" type="number" value="1" min="1" max="999" aria-label="الكمية">' +
+            '<button class="jwk-qb" data-d="m" type="button" aria-label="إنقاص الكمية">\u2212</button>' +
+          '</div>' +
+        '</div>' +
+
+        /* الأزرار */
+        '<div class="jwk-btns">' +
+          '<button class="jwk-add" id="jwk-badd" type="button">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+              '<path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>' +
+              '<line x1="3" y1="6" x2="21" y2="6"/>' +
+              '<path d="M16 10a4 4 0 01-8 0"/>' +
+            '</svg>' +
+            '<span id="jwk-atxt">\u0623\u0636\u0641 \u0625\u0644\u0649 \u0627\u0644\u0633\u0644\u0629</span>' +
+          '</button>' +
+          '<button class="jwk-buy" id="jwk-bbuy" type="button">\u0627\u0634\u062a\u0631\u064a \u0627\u0644\u0622\u0646</button>' +
+        '</div>' +
+
+      '</div>';
+
+    document.body.appendChild(bar);
+    document.body.classList.add('jwk-on');
+    return bar;
+  }
+
+  /* ── الكمية ── */
+  function getQ() {
+    var el = document.getElementById('jwk-qty');
+    return el ? Math.max(1, parseInt(el.value) || 1) : 1;
+  }
+  function setQ(v) {
+    var el = document.getElementById('jwk-qty');
+    if (el) el.value = v;
+  }
+  function syncPage(v) {
+    var inp = document.querySelector('.productQty .quantityInput');
+    if (!inp) return;
+    var cur = parseInt(inp.value) || 1;
+    var d = v - cur;
+    if (d > 0) {
+      var pp = document.querySelector('.productQty .plus');
+      for (var i = 0; i < d; i++) if (pp) pp.click();
+    } else if (d < 0) {
+      var pm = document.querySelector('.productQty .substract,.productQty .minus');
+      for (var j = 0; j > d; j--) if (pm) pm.click();
+    }
+  }
+
+  function bindQty(bar) {
+    bar.addEventListener('click', function (e) {
+      var b = e.target.closest('.jwk-qb');
+      if (!b) return;
+      var v = getQ();
+      if (b.getAttribute('data-d') === 'p' && v < 999) v++;
+      if (b.getAttribute('data-d') === 'm' && v > 1)   v--;
+      setQ(v); syncPage(v);
+    });
+    bar.addEventListener('change', function (e) {
+      if (e.target.id !== 'jwk-qty') return;
+      var v = Math.max(1, parseInt(e.target.value) || 1);
+      setQ(v); syncPage(v);
+    });
+  }
+
+  /* ── إطلاق ضغطة ── */
+  function fire(sel) {
+    var el = document.querySelector(sel);
+    if (!el) return false;
+    el.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+    return true;
+  }
+
+  function bindBtns() {
+    /* أضف للسلة */
+    document.getElementById('jwk-badd').addEventListener('click', function () {
+      var btn = this;
+      var txt = document.getElementById('jwk-atxt');
+      var ok  =
+        fire('.add_to_cart_single_page') ||
+        fire('.addtocartsinglepage')     ||
+        fire('[data-co="0"]');
+      if (!ok) return;
+      btn.classList.add('ok');
+      if (txt) txt.textContent = '\u062a\u0645\u062a \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u2713';
+      setTimeout(function () {
+        btn.classList.remove('ok');
+        if (txt) txt.textContent = '\u0623\u0636\u0641 \u0625\u0644\u0649 \u0627\u0644\u0633\u0644\u0629';
+      }, 2500);
+    });
+
+    /* اشتري الآن */
+    document.getElementById('jwk-bbuy').addEventListener('click', function () {
+      var ok =
+        fire('.but_now_single_page') ||
+        fire('[data-co="1"]')        ||
+        fire('.btn-buy-now')         ||
+        fire('.order-now');
+      if (!ok) window.location.href = '/shop/checkout';
+    });
+  }
+
+  /* ── مراقبة السعر ── */
+  function observe(bar) {
+    var pw = document.querySelector('.prprice-wrap,.product-details-wrapper');
+    if (pw) {
+      new MutationObserver(function () {
+        var p = document.querySelector('.prprice');
+        if (!p) return;
+        var el = document.getElementById('jwk-price');
+        if (el) el.textContent = p.textContent.trim();
+      }).observe(pw, { childList: true, subtree: true, characterData: true });
+    }
+    var sl = document.querySelector('.product-image-slide .splide__list');
+    if (sl) {
+      new MutationObserver(function () {
+        var ai = document.querySelector('.splide__slide.is-active img');
+        if (!ai) return;
+        var bi = bar.querySelector('.jwk-prod-img');
+        if (bi && bi.src !== ai.src) bi.src = ai.src;
+      }).observe(sl, { attributes: true, subtree: true });
+    }
+  }
+
+  /* ── ظهور عند التمرير ── */
+  function watchScroll(bar) {
+    var trig = document.querySelector(
+      '.add_to_cart_single_page,.addtocartsinglepage,.prcartrow,.product-btn'
+    );
+    if (!trig) {
+      window.addEventListener('scroll', function () {
+        bar.classList.toggle('jwk-show', window.scrollY > 280);
+      }, { passive: true });
+      return;
+    }
+    new IntersectionObserver(function (en) {
+      bar.classList.toggle('jwk-show', !en[0].isIntersecting);
+    }, { threshold: 0.05 }).observe(trig);
+  }
+
+  /* ── تشغيل ── */
+  function init() {
+    var bar = build();
+    if (!bar) return;
+    bindQty(bar);
+    bindBtns();
+    observe(bar);
+    watchScroll(bar);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    setTimeout(init, 300);
+  }
+
+})();
+
+
