@@ -22,10 +22,65 @@
   --nav-h: 65px;
 }
 
+/* ===حل مشكلة السلة في القالب    === */
+
+.dropdown-contents .btn-wrapper.mt-3 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px;
+  margin-top: 2rem !important;
+  width: 100%;
+  flex-wrap: nowrap !important;
+}
+
+.dropdown-contents a[href*="/shop/checkout"],
+.dropdown-contents a[href*="/shop/cart"] {
+  width: auto !important;
+  min-width: 140px;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  padding: 10px 24px !important;
+  margin: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+.dropdown-contents .btn-wrapper.mt-3 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px;
+  margin-top: 2rem !important;
+  width: 100%;
+  flex-wrap: nowrap !important;
+}
+
+.dropdown-contents a[href*="/shop/checkout"],
+.dropdown-contents a[href*="/shop/cart"] {
+  width: auto !important;
+  min-width: 140px;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  padding: 10px 24px !important;
+  margin: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+.dropdown-contents a[href*="/shop/cart"].mt-3 {
+  margin-top: 0 !important;
+}
+
+
+/* === زر التنبيهات في لوحة التحكم   === */
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
     background: #000000 !important;
 }
 
+/* ===  الواتس اب   === */
 
 @media (max-width: 992px) {
     ._wa {
@@ -39,8 +94,6 @@
     height: 50px!important;
     background-color: #44c052!important;
 }
-
-
 
 /* === لوحة تحكم  === */
 
@@ -122,9 +175,6 @@
     background: #242018!important;
 }
 
-.store-section.footer-store-section p, .store-section.footer-store-section span, .store-section.footer-store-section li, footer p, footer span, footer li {
-    color: #b1a48e !important;
-}
 
 custom-navbar .offcanvas.show .custom-navbar-nav li a {
     color: #ffffff !important;
@@ -3513,3 +3563,8 @@ footer hr {
     padding-top: 20px !important;
     padding-bottom: 0px !important;
 }
+
+.store-section.footer-store-section p, .store-section.footer-store-section span, .store-section.footer-store-section li, footer p, footer span, footer li {
+    color: #b1a48e !important;
+}
+
