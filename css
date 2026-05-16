@@ -2592,7 +2592,7 @@ div.mobile-nav:not(.opacity-0) .mobile-nav-item.center-nav .mobile-nav-icon i {
   .offcanvas-header {
     background: linear-gradient(135deg,rgba(218,174,73,.08) 0%,rgba(13,11,8,1) 100%) !important;
     border-bottom: 1px solid var(--jwk-border) !important;
-   padding: 50px 20px 20px 16px !important;
+    padding: 18px 20px 16px !important;
     min-height: 72px;
     align-items: center !important;
   }
@@ -2606,7 +2606,7 @@ div.mobile-nav:not(.opacity-0) .mobile-nav-item.center-nav .mobile-nav-icon i {
     width: 32px !important;
     height: 32px !important;
     border-radius: 50% !important;
-    background: #0043ff!important;
+    background: rgba(255,255,255,.06) !important;
     transition: all .25s ease !important;
   }
   .offcanvas-header .btn-close:hover {
@@ -3564,9 +3564,6 @@ footer hr {
     padding-bottom: 0px !important;
 }
 
-
-
 .store-section.footer-store-section p, .store-section.footer-store-section span, .store-section.footer-store-section li, footer p, footer span, footer li {
     color: #b1a48e !important;
 }
-
