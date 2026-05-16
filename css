@@ -3958,3 +3958,14 @@ body.jwk-on { padding-bottom: 68px; }
   border-color: rgba(218,174,73,.4) !important;
 }
 
+
+
+@media (max-width: 767px) {
+  .cart-item-img img {
+    object-fit: contain !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+}
