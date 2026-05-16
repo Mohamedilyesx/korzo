@@ -84,7 +84,7 @@
 
 @media (max-width: 992px) {
     ._wa {
-        bottom: 140px!important;
+        bottom: 200px!important;
         right: 12px!important;
     }
 }
@@ -675,6 +675,8 @@ nav.navbar.navbar3 svg, nav.navbar.navbar3 i,
   display: flex !important;
   align-items: center !important;
 }
+
+
 
 /* Hide Tjar's static hero image */
 .hero.hero-area .hero-img-wrap { display: none !important; }
@@ -2565,9 +2567,40 @@ div.mobile-nav:not(.opacity-0) .mobile-nav-item.center-nav .mobile-nav-icon i {
   .dash_overview-icon svg { width: 22px !important; height: 22px !important; }
 }
 
+@media (max-width: 991.98px) {
+
+  body.offcanvas-open,
+  body.modal-open {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+    touch-action: none !important;
+  }
+
+  .offcanvas.offcanvas-end {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .offcanvas-body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+  }
+
+}
+
+
+
 /* ══════════════════════════════════════════════════════════════
-   JAWAK TV — MOBILE MENU CSS v3
-   ✅ أيقونات SVG ذهبية — جوال فقط (< 992px)
+   JAWAK TV — MOBILE MENU CSS v3 FIXED
+   ✅ أيقونات SVG ذهبية + إصلاح التمرير + زر X — جوال فقط
    ══════════════════════════════════════════════════════════════ */
 
 @media (max-width: 991.98px) {
@@ -2580,47 +2613,103 @@ div.mobile-nav:not(.opacity-0) .mobile-nav-item.center-nav .mobile-nav-icon i {
     --jwk-text:   #f0ead8;
   }
 
-  /* ── Offcanvas wrapper ── */
+  /* ══════════════════════════════════
+     1. الحاوية — ثابتة لا تنكسر
+     ✅ هذا هو إصلاح مشكلة الاختفاء
+  ══════════════════════════════════ */
   .offcanvas.offcanvas-end {
     background: var(--bg3) !important;
     border-left: 1px solid var(--jwk-border) !important;
     width: 100% !important;
     max-width: 100vw !important;
+    height: 100% !important;
+    max-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
   }
 
-  /* ── Header ── */
+  /* ══════════════════════════════════
+     2. الهيدر — ثابت لا يتقلص أبداً
+  ══════════════════════════════════ */
   .offcanvas-header {
+    flex-shrink: 0 !important;
     background: linear-gradient(135deg,rgba(218,174,73,.08) 0%,rgba(13,11,8,1) 100%) !important;
     border-bottom: 1px solid var(--jwk-border) !important;
-    padding: 18px 20px 16px !important;
-    min-height: 72px;
+    padding: 80px 40px 40px 40px !important;
+    height: 68px !important;
+    display: flex !important;
     align-items: center !important;
+    justify-content: space-between !important;
   }
+
   .offcanvas-header .logo-wrapper img {
     height: 44px !important;
     width: auto !important;
   }
+
+  /* إخفاء زر Bootstrap الأصلي */
   .offcanvas-header .btn-close {
-    filter: invert(1) brightness(.7) !important;
-    opacity: .7 !important;
-    width: 32px !important;
-    height: 32px !important;
+    display: none !important;
+  }
+
+  /* ══════════════════════════════════
+     زر X الجديد — يُضاف بالـ JS
+  ══════════════════════════════════ */
+  .jwk-close-btn {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
     border-radius: 50% !important;
-    background: rgba(255,255,255,.06) !important;
-    transition: all .25s ease !important;
+    background: #111 !important;
+    border: 1.5px solid rgba(255,255,255,.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    transition: background .2s ease, transform .22s ease !important;
   }
-  .offcanvas-header .btn-close:hover {
-    opacity: 1 !important;
-    background: rgba(218,174,73,.2) !important;
+  .jwk-close-btn:hover {
+    background: #222 !important;
+    transform: rotate(90deg) !important;
+  }
+  .jwk-close-btn svg {
+    width: 14px !important;
+    height: 14px !important;
+    display: block !important;
+    pointer-events: none !important;
+  }
+  .jwk-close-btn svg line {
+    stroke: #ffffff !important;
+    stroke-width: 2.5 !important;
+    stroke-linecap: round !important;
   }
 
-  /* ── Body ── */
+  /* ══════════════════════════════════
+     3. Body — التمرير هنا فقط
+  ══════════════════════════════════ */
   .offcanvas-body {
+    flex: 1 1 auto !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
     background: var(--bg3) !important;
-    padding: 20px 16px 32px !important;
+    padding: 20px 16px 40px !important;
   }
 
-  /* ── List ── */
+  .offcanvas-body::-webkit-scrollbar { width: 3px !important; }
+  .offcanvas-body::-webkit-scrollbar-track { background: transparent !important; }
+  .offcanvas-body::-webkit-scrollbar-thumb {
+    background: rgba(218,174,73,.25) !important;
+    border-radius: 10px !important;
+  }
+
+  /* ══════════════════════════════════
+     4. القائمة — بدون تعديل
+  ══════════════════════════════════ */
   .custom-navbar .offcanvas.show .custom-navbar-nav,
   .offcanvas-body .custom-navbar-nav {
     display: flex !important;
@@ -2720,12 +2809,8 @@ div.mobile-nav:not(.opacity-0) .mobile-nav-item.center-nav .mobile-nav-icon i {
     width: 14px !important;
     height: 14px !important;
   }
-  .offcanvas-body .custom-navbar-nav li a:hover .jwk-nav-arrow {
-    opacity: .6 !important;
-  }
-  .offcanvas-body .custom-navbar-nav li a:hover .jwk-nav-arrow svg {
-    stroke: var(--jwk-gold) !important;
-  }
+  .offcanvas-body .custom-navbar-nav li a:hover .jwk-nav-arrow { opacity: .6 !important; }
+  .offcanvas-body .custom-navbar-nav li a:hover .jwk-nav-arrow svg { stroke: var(--jwk-gold) !important; }
 
   /* ── الرئيسية مميّزة ── */
   .custom-navbar-nav li:first-child > .link-wrapper > a {
@@ -2739,7 +2824,7 @@ div.mobile-nav:not(.opacity-0) .mobile-nav-item.center-nav .mobile-nav-icon i {
   }
 
 } /* end @media */
-/* ══ END jawaktv-mobile-menu-v3.css ══ */
+/* ══ END jawaktv-menu-v3-fixed.css ══ */
 
 /* ══════════════════════════════════════════════════════════════════════
    JAWAK TV — FOOTER COMPLETE v4.0
@@ -3566,4 +3651,297 @@ footer hr {
 
 .store-section.footer-store-section p, .store-section.footer-store-section span, .store-section.footer-store-section li, footer p, footer span, footer li {
     color: #b1a48e !important;
+}
+
+@media (max-width: 767px) {
+  .hero.hero-area,
+  .hero-area {
+    min-height: 70vh !important;
+    max-height: 70vh !important;
+    margin-top: -65px !important;
+  }
+}
+
+
+
+/* ╔══════════════════════════════════════════════════════╗
+   ║        JAWAK TV — STICKY ATC BAR — CSS              ║
+   ╚══════════════════════════════════════════════════════╝ */
+
+/* ══════════════════════════════════════
+   STICKY ATC — FINAL v4 (NO REPEAT)
+   ══════════════════════════════════════ */
+
+#jwk-atc {
+  position: fixed;
+  left: 0; right: 0;
+  bottom: 0;
+  z-index: 9200;
+  background: linear-gradient(160deg, #0f0a00 0%, #1a1100 55%, #0f0a00 100%);
+  border-top: 1px solid rgba(218,174,73,.4);
+  box-shadow: 0 -6px 30px rgba(0,0,0,.75),
+              inset 0 1px 0 rgba(218,174,73,.15);
+  transform: translateY(110%);
+  opacity: 0;
+  transition: transform .38s cubic-bezier(0.16,1,0.3,1),
+              opacity   .38s cubic-bezier(0.16,1,0.3,1);
+  pointer-events: none;
+}
+
+#jwk-atc::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%, rgba(218,174,73,.85) 50%, transparent 100%);
+}
+
+#jwk-atc.jwk-show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── الداخل ── */
+.jwk-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 28px;
+  box-sizing: border-box;
+}
+
+/* ── صورة + عنوان ── */
+.jwk-prod {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex: 0 1 240px;
+  min-width: 0;
+}
+
+.jwk-prod-img {
+  width: 46px; height: 46px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid rgba(218,174,73,.28);
+  flex-shrink: 0;
+}
+
+.jwk-prod-name {
+  color: #f0ead8;
+  font-size: 13px; font-weight: 600;
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  direction: rtl;
+}
+
+/* ── السعر ── */
+.jwk-price {
+  color: #daae49;
+  font-size: 19px; font-weight: 800;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── الكمية ── */
+.jwk-qty {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(218,174,73,.08);
+  border: 1px solid rgba(218,174,73,.25);
+  border-radius: 999px;
+  padding: 3px;
+  flex-shrink: 0;
+  direction: ltr;
+  gap: 0;
+}
+
+.jwk-qb {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(218,174,73,.14);
+  border: 1px solid rgba(218,174,73,.2);
+  color: #daae49;
+  font-size: 18px; font-weight: 700;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .18s;
+  font-family: inherit;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.jwk-qb:hover { background: rgba(218,174,73,.3); }
+.jwk-qb:active { background: rgba(218,174,73,.4); }
+
+.jwk-qn {
+  width: 36px;
+  text-align: center;
+  background: transparent; border: none;
+  color: #f0ead8;
+  font-size: 15px; font-weight: 700;
+  outline: none; padding: 0;
+  -moz-appearance: textfield;
+  font-family: inherit;
+}
+.jwk-qn::-webkit-inner-spin-button,
+.jwk-qn::-webkit-outer-spin-button { -webkit-appearance: none; }
+
+/* ── الأزرار ── */
+.jwk-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  direction: rtl;
+  min-width: 0;
+}
+
+.jwk-add {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  gap: 7px;
+  padding: 0 20px; height: 44px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #c49535 0%, #daae49 50%, #efd070 100%);
+  border: none;
+  color: #0a0800 !important;
+  font-size: 14px; font-weight: 800;
+  cursor: pointer; white-space: nowrap;
+  box-shadow: 0 4px 18px rgba(218,174,73,.35);
+  transition: transform .2s cubic-bezier(0.16,1,0.3,1), box-shadow .2s;
+  text-decoration: none !important;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+.jwk-add:hover  { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(218,174,73,.5); color: #0a0800 !important; }
+.jwk-add:active { transform: translateY(0); }
+.jwk-add svg    { width: 16px; height: 16px; flex-shrink: 0; }
+
+.jwk-add.ok {
+  background: linear-gradient(135deg, #1a7020, #2cc234) !important;
+  box-shadow: 0 4px 18px rgba(44,194,52,.3) !important;
+}
+
+.jwk-buy {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  padding: 0 20px; height: 44px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1.5px solid rgba(218,174,73,.5);
+  color: #daae49 !important;
+  font-size: 14px; font-weight: 700;
+  cursor: pointer; white-space: nowrap;
+  transition: background .2s, border-color .2s, color .2s;
+  text-decoration: none !important;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+.jwk-buy:hover {
+  background: linear-gradient(135deg, #c49535, #daae49, #efd070);
+  border-color: transparent;
+  color: #0a0800 !important;
+}
+.jwk-buy:active { opacity: .85; }
+
+body.jwk-on { padding-bottom: 68px; }
+
+/* ════════════════════════════════════
+   DESKTOP ≥ 768px
+   ════════════════════════════════════ */
+@media (min-width: 768px) {
+  #jwk-atc { bottom: 0; }
+  body.jwk-on { padding-bottom: 72px; }
+  /* في الديسكتوب نخفي السعر المتحرك لأننا نعرضه داخل .jwk-inner مباشرة */
+}
+
+/* ════════════════════════════════════
+   MOBILE ≤ 767px
+   ════════════════════════════════════
+   صف واحد: [سعر] — [كمية في الوسط] — [أضف] [اشتري]
+   لكن نريد:
+     السطر 1: سعر | كمية (في المنتصف)
+     السطر 2: [أضف إلى السلة] [اشتري الآن]
+   ════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  /* رفع البار فوق بار التنقل السفلي بمسافة واضحة */
+  #jwk-atc {
+    bottom: 60px;   /* ارتفاع بار التنقل */
+    margin-bottom: 6px; /* فاصل إضافي */
+  }
+
+  body.jwk-on {
+    padding-bottom: calc(60px + 6px + 80px);
+  }
+
+  /* الداخل: عمودين بـ flex-direction column */
+  .jwk-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px 14px 40px;
+  }
+
+  /* إخفاء صورة + عنوان في الموبايل */
+  .jwk-prod { display: none !important; }
+
+  /* السطر الأول: سعر يمين + كمية في المنتصف
+     نستخدم flex مع justify-content: space-between */
+  .jwk-price {
+    display: flex;
+    align-items: center;
+  }
+
+  /* نغلف السعر والكمية في div.jwk-row1 عبر JS */
+  .jwk-row1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    direction: rtl;
+  }
+
+  /* الكمية في منتصف السطر الأول */
+  .jwk-row1 .jwk-qty {
+    margin: 0 auto; /* توسيط */
+    flex-shrink: 0;
+  }
+
+  .jwk-row1 .jwk-price {
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+
+  /* السطر الثاني: الأزرار جنب بعض بالتساوي */
+  .jwk-btns {
+    flex: unset;
+    width: 100%;
+    gap: 8px;
+    justify-content: stretch;
+  }
+
+  .jwk-add {
+    flex: 1;
+    padding: 0 8px;
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .jwk-buy {
+    flex: 1;
+    padding: 0 8px;
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .jwk-qb { width: 28px; height: 28px; font-size: 16px; }
+  .jwk-qn { width: 30px; font-size: 14px; }
 }
