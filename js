@@ -435,7 +435,7 @@
     block.innerHTML =
       '<div class="container">' +
         '<div class="jawak-section-header">' +
-          '<span class="jawak-pill">لماذا جواك تي في؟</span>' +
+          '<span class="jawak-pill"> ترفيهك على مزاجك في جوك TV </span>' +
           '<h2 class="jawak-h2">كل ما تحتاجه في اشتراك واحد</h2>' +
           '<p class="jawak-lead">اختر القسم الذي يهمك لتتعرف على أبرز مميزات اشتراك Jawak TV، ثم انتقل مباشرة لصفحة الشراء.</p>' +
         '</div>' +
