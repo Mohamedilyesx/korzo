@@ -519,7 +519,7 @@
   /* ── Dark Mode ── */
   function applyDarkOverrides() {
     document.querySelectorAll('.bg-white:not(.product-thumbnail-wrap):not(.product-item):not(.card2)').forEach(function (el) {
-      el.style.setProperty('background-color', '#1f1c19', 'important');
+      el.style.setProperty('background-color', '#151515', 'important');
     });
     document.querySelectorAll('.bg-light:not(.product-thumbnail-wrap):not(.product-item):not(.card2)').forEach(function (el) {
       el.style.setProperty('background-color', '#242018', 'important');
@@ -527,12 +527,12 @@
     document.querySelectorAll('.text-dark').forEach(function (el) { el.style.setProperty('color', '#f0ead8', 'important'); });
     document.querySelectorAll('.text-muted').forEach(function (el) { el.style.setProperty('color', '#908778', 'important'); });
     document.querySelectorAll('.product-details-wrapper').forEach(function (el) {
-      el.style.setProperty('background-color', '#1f1c19', 'important');
+      el.style.setProperty('background-color', '#151515', 'important');
       el.style.setProperty('border-color', 'rgba(218,174,73,.18)', 'important');
     });
     document.querySelectorAll('.product-image-slide .splide').forEach(function (el) {
       el.classList.remove('bg-white');
-      el.style.setProperty('background-color', '#1f1c19', 'important');
+      el.style.setProperty('background-color', '#151515', 'important');
     });
   }
 
@@ -550,7 +550,7 @@
     document.querySelectorAll('.brand-img').forEach(function (el) {
       if (el.dataset.jwkBrand) return;
       el.dataset.jwkBrand = '1';
-      el.style.setProperty('background', 'linear-gradient(135deg,#1f1c19,#242018)', 'important');
+      el.style.setProperty('background', 'linear-gradient(135deg,#151515,#242018)', 'important');
       el.style.setProperty('border', '1px solid rgba(218,174,73,.15)', 'important');
       el.style.setProperty('border-radius', '14px', 'important');
       el.style.setProperty('padding', '18px 28px', 'important');
@@ -618,7 +618,7 @@
     var box = document.querySelector('.tamara-summary-widget--inline-outlined');
     if (!box) return;
     function applyStyles() {
-      box.style.setProperty('background-color', '#1f1c19', 'important');
+      box.style.setProperty('background-color', '#151515', 'important');
       box.style.setProperty('border', '1px solid #daae49', 'important');
       box.style.setProperty('box-shadow', 'none', 'important');
       box.querySelectorAll('*').forEach(function (el) {
