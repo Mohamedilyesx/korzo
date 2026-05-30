@@ -12,28 +12,28 @@
   if (window.__JWK_BAR_LOADED__) return;
   window.__JWK_BAR_LOADED__ = true;
 
-  var MESSAGES = [
-    "أكثر من 150,000 فيلم ومسلسل — كل شيء في اشتراك واحد",
-    "جودة 4K و8K بثبات تام — شاهد بلا تقطيع",
-    "مونديال 2026 — عيشه بأعلى جودة مع Jawak TV",
-    "يعمل على جميع أجهزتك — تلفاز، جوال، Apple TV",
-    "تفعيل فوري خلال دقيقة — دعم فني على مدار الساعة",
-    "عروض حصرية على الاشتراكات السنوية — لا تفوّتها",
-    "أكثر من 20,000 قناة عالمية — رياضة، أفلام، أنمي",
-    "وداعاً للتقطيع — أهلاً بالثبات الذي تستحقه",
-    "اشتراك واحد يكفي العائلة كلها — أجهزة غير محدودة",
-    "صورة نقية وصوت احترافي — تجربة المشاهدة الحقيقية",
-    "تحميل فوري بلا تأخير — لأن وقتك أغلى من الانتظار",
-    "محتوى حصري لا تجده في أي منصة أخرى",
-    "الخيار الأول لمحبي الرياضة في الوطن العربي",
-    "الدوريات الأوروبية والعالمية والعربية — كلها في مكان واحد",
-    "أفلام، مسلسلات، رياضة — منصة واحدة للجميع"
-  ];
+ var MESSAGES = [
+  "أكثر من 150,000 فيلم ومسلسل — كل شيء في اشتراك واحد",
+  "جودة 4K و8K بثبات أعلى — شاهد بلا تقطيع",
+  "مونديال 2026 — عيشه بأعلى جودة مع QSUBS",
+  "يعمل على جميع أجهزتك — تلفاز، جوال، Apple TV",
+  "تفعيل فوري خلال دقيقة — دعم فني على مدار الساعة",
+  "عروض حصرية على الاشتراكات السنوية — لا تفوّتها",
+  "أكثر من 20,000 قناة عالمية — رياضة، أفلام، أنمي",
+  "وداعًا للتقطيع — أهلاً بالثبات الذي تستحقه",
+  "اشتراك واحد يكفي العائلة كلها — أجهزة متعددة",
+  "صورة نقية وصوت احترافي — تجربة المشاهدة الحقيقية",
+  "تحميل فوري بلا تأخير — لأن وقتك أغلى من الانتظار",
+  "محتوى حصري لا تجده في أي منصة أخرى",
+  "الخيار الأول لمحبي الرياضة في الوطن العربي",
+  "الدوريات الأوروبية والعالمية والعربية — كلها في مكان واحد",
+  "أفلام، مسلسلات، رياضة — منصة واحدة للجميع"
+];
 
   var SEPARATOR = "◆";
   var SPEED = 0.6;
 
-  function injectStyles() {
+ function injectStyles() {
     if (document.getElementById("jwkBarStyles")) return;
     var style = document.createElement("style");
     style.id = "jwkBarStyles";
@@ -47,14 +47,14 @@
       "  right: 0 !important;",
       "  display: flex; align-items: center;",
       "  width: 100%; height: 42px; overflow: hidden;",
-      "  background: linear-gradient(135deg,#0e0901 0%,#1a1000 35%,#221400 65%,#0e0901 100%);",
-      "  border-bottom: 1px solid rgba(218,174,73,0.22);",
-      "  box-shadow: 0 2px 12px rgba(0,0,0,0.55), inset 0 1px 0 rgba(218,174,73,0.08);",
+      "  background: linear-gradient(135deg,#0b0b0e 0%,#111116 35%,#17171d 65%,#0b0b0e 100%);",
+      "  border-bottom: 1px solid rgba(225,25,43,0.22);",
+      "  box-shadow: 0 2px 12px rgba(0,0,0,0.55), inset 0 1px 0 rgba(225,25,43,0.08);",
       "  z-index: 100000 !important; box-sizing: border-box; direction: ltr;",
       "}",
       "#jwkBar::before {",
       "  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;",
-      "  background: linear-gradient(90deg, transparent, rgba(218,174,73,0.55) 50%, transparent);",
+      "  background: linear-gradient(90deg, transparent, rgba(225,25,43,0.55) 50%, transparent);",
       "  pointer-events: none;",
       "}",
       "#jwkMask {",
@@ -69,17 +69,17 @@
       "}",
       ".jwk-item {",
       "  display: inline-flex; align-items: center; height: 100%; padding: 0 28px;",
-      "  color: #e8dfc0;",
+      "  color: #ffffff;",
       "  font-family: 'IBM Plex Sans Arabic','Tajawal','Cairo',Arial,sans-serif;",
       "  font-size: 13.5px; font-weight: 500; letter-spacing: 0.01em;",
       "  white-space: nowrap; direction: rtl; flex: 0 0 auto;",
       "  text-shadow: 0 1px 6px rgba(0,0,0,0.6);",
       "  transition: color 0.2s; cursor: default;",
       "}",
-      ".jwk-item:hover { color: #f5e9aa; }",
+      ".jwk-item:hover { color: #e8e8e8; }",
       ".jwk-sep {",
       "  display: inline-flex; align-items: center; height: 100%; padding: 0 4px;",
-      "  color: rgba(218,174,73,0.6); font-size: 8px;",
+      "  color: rgba(225,25,43,0.6); font-size: 8px;",
       "  white-space: nowrap; flex: 0 0 auto;",
       "}",
       "#jwkX {",
@@ -87,9 +87,9 @@
       "  display: flex; align-items: center; justify-content: center;",
       "  background: transparent; border: none; cursor: pointer;",
       "  padding: 0; margin: 0; opacity: 0.55;",
-      "  transition: opacity 0.2s, color 0.2s; color: #c9a84c;",
+      "  transition: opacity 0.2s, color 0.2s; color: #e1192b;",
       "}",
-      "#jwkX:hover { opacity: 1; color: #f0d080; }",
+      "#jwkX:hover { opacity: 1; color: #ff5a67; }",
       "@media (max-width: 767px) {",
       "  #jwkBar   { height: 38px; }",
       "  .jwk-item { font-size: 12.5px; padding: 0 18px; }",
